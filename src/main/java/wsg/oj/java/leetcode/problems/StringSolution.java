@@ -358,7 +358,7 @@ public class StringSolution {
         return max * 1.0 / k;
     }
 
-    private char[][] codes = new char[][]{{
+    private final char[][] codes = new char[][]{{
             'a', 'b', 'c'
     }, {
             'd', 'e', 'f'
@@ -409,29 +409,6 @@ public class StringSolution {
             }
         }
         return new int[]{line, total};
-    }
-
-    public int lengthOfLongestSubstring(String s) {
-        Map<Character, Integer> char2IndexMap = new HashMap<>();
-        int max = 0;
-        char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            char c = chars[i];
-            Integer last = char2IndexMap.get(c);
-            if (last == null)
-                char2IndexMap.put(c, i);
-            else {
-                int length = char2IndexMap.size();
-                if (length > max)
-                    max = length;
-                char2IndexMap = new HashMap<>();
-                for (int j = last + 1; j <= i; j++) char2IndexMap.put(chars[j], j);
-            }
-        }
-        int length = char2IndexMap.size();
-        if (length > max)
-            max = length;
-        return max;
     }
 
     // 5. 最长回文子串

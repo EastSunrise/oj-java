@@ -65,21 +65,6 @@ public class ArraySolution {
         return profit;
     }
 
-    public int[] twoSum(int[] numbers, int target) {
-        if (numbers.length < 2)
-            return null;
-        int index1 = 0, index2 = numbers.length - 1;
-        while (index1 < index2) {
-            int sum = numbers[index1] + numbers[index2];
-            if (sum < target)
-                index1++;
-            else if (sum > target)
-                index2--;
-            else
-                return new int[]{index1 + 1, index2 + 1};
-        }
-        return null;
-    }
 
     // 189. 旋转数组
     public void rotate(int[] nums, int k) {
