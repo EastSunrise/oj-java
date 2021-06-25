@@ -1,51 +1,30 @@
 package wsg.oj.java.leetcode.problems;
 
-import java.util.Arrays;
-import java.util.BitSet;
-
 /**
+ * 705. Design HashSet (Easy)
+ *
  * @author Kingen
+ * @see MyHashMap
+ * @see Skiplist
+ * @see <a href="https://leetcode-cn.com/problems/design-hashset/">Design HashSet</a>
+ * @since 2021-06-25
  */
-public class MyHashSet {
+class MyHashSet {
 
-    private BitSet hashSet;
-    private BitSet[] keySet;
-    private static final int CAPACITY = 10001;
-    private static final int BASE = 100;
-
-    /**
-     * Initialize your data structure here.
-     */
-    public MyHashSet() {
-        hashSet = new BitSet(CAPACITY);
-        keySet = new BitSet[CAPACITY];
-        Arrays.fill(keySet, new BitSet(BASE));
+    MyHashSet() {
+        // todo
     }
 
-    public void add(int key) {
-        int hash = hash(key);
-        hashSet.set(hash);
-        keySet[hash].set(key % 100);
+    void add(int key) {
+        // todo
     }
 
-    public void remove(int key) {
-        int hash = hash(key);
-        if (hashSet.get(hash)) {
-            keySet[hash].clear(key % 100);
-            if (keySet[hash].isEmpty())
-                hashSet.clear(hash);
-        }
+    void remove(int key) {
+        // todo
     }
 
-    /**
-     * Returns true if this set contains the specified element
-     */
-    public boolean contains(int key) {
-        int hash = hash(key);
-        return hashSet.get(hash) && keySet[hash].get(key % 100);
-    }
-
-    private int hash(int key) {
-        return key / BASE;
+    boolean contains(int key) {
+        // todo
+        return false;
     }
 }

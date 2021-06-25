@@ -1,39 +1,32 @@
 package wsg.oj.java.leetcode.problems;
 
-import java.util.Stack;
-
 /**
+ * 173. Binary Search Tree Iterator (Medium)
+ *
  * @author Kingen
+ * @see Solution1#inorderTraversal(TreeNode)
+ * @see Vector2D
+ * @see Solution201#ZigzagIterator(int[], int[])
+ * @see Solution201#PeekingIterator(int[], int[])
+ * @see Solution201#inorderSuccessor(TreeNode, int)
+ * @see BSTIterator
+ * @see <a href="https://leetcode-cn.com/problems/binary-search-tree-iterator/">Binary Search Tree
+ * Iterator</a>
+ * @since 2021-06-25
  */
-public class BSTIterator {
+class BSTIterator {
 
-    private Stack<TreeNode> stack;
-
-    public BSTIterator(TreeNode root) {
-        stack = new Stack<>();
-        while (root != null) {
-            stack.push(root);
-            root = root.left;
-        }
+    BSTIterator(TreeNode root) {
+        // todo
     }
 
-    /**
-     * @return the next smallest number
-     */
-    public int next() {
-        TreeNode cur = stack.pop(),
-                node = cur.right;
-        while (node != null) {
-            stack.push(node);
-            node = node.left;
-        }
-        return cur.val;
+    int next() {
+        // todo
+        return 0;
     }
 
-    /**
-     * @return whether we have a next smallest number
-     */
-    public boolean hasNext() {
-        return !stack.isEmpty();
+    boolean hasNext() {
+        // todo
+        return false;
     }
 }

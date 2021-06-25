@@ -1,44 +1,23 @@
 package wsg.oj.java.leetcode.problems;
 
-import java.util.Arrays;
-import java.util.Comparator;
-
 /**
+ * 703. Kth Largest Element in a Stream (Easy)
+ *
  * @author Kingen
+ * @see Solution201#findKthLargest(int[], int)
+ * @see MKAverage
+ * @see <a href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/">Kth Largest
+ * Element in a Stream</a>
+ * @since 2021-06-25
  */
-public class KthLargest {
+class KthLargest {
 
-    private int k;
-    private Integer[] data;
-
-    private KthLargest(int k, int[] nums) {
-        this.k = k;
-        data = new Integer[k];
-        int len = Math.min(nums.length, k);
-        for (int i = 0; i < len; i++)
-            data[i] = nums[i];
-        Arrays.sort(data, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                if (o1 == null)
-                    return -1;
-                else if (o2 == null)
-                    return 1;
-                else
-                    return o1.compareTo(o2);
-            }
-        });
+    KthLargest(int k, int[] nums, int numsSize) {
+        // todo
     }
 
-    public int add(int val) {
-        int i = -1;
-        while (++i < k)
-            if (data[i] == null || data[i] < val) {
-                if (k - 1 - i >= 0)
-                    System.arraycopy(data, i, data, i + 1, k - 1 - i);
-                data[i] = val;
-                break;
-            }
-        return data[k - 1];
+    int add(int val) {
+        // todo
+        return 0;
     }
 }

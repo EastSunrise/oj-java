@@ -1,91 +1,47 @@
 package wsg.oj.java.leetcode.problems;
 
 /**
+ * 622. Design Circular Queue (Medium)
+ *
  * @author Kingen
+ * @see MyCircularDeque
+ * @see FrontMiddleBackQueue
+ * @see <a href="https://leetcode-cn.com/problems/design-circular-queue/">Design Circular Queue</a>
+ * @since 2021-06-25
  */
-public class MyCircularQueue {
-    private int[] data;
-    private int capacity;
-    private int length;
-    private int front;
-    private int rear;
+class MyCircularQueue {
 
-    /**
-     * Initialize your data structure here. Set the size of the queue to be k.
-     */
-    public MyCircularQueue(int k) {
-        capacity = k;
-        data = new int[k];
-        length = front = rear = 0;
+    MyCircularQueue(int k) {
+        // todo
     }
 
-    /**
-     * Insert an element into the circular queue. Return true if the operation is successful.
-     */
-    public boolean enQueue(int value) {
-        if (capacity == length)
-            return false;
-        data[rear] = value;
-        rear = (rear + 1) % capacity;
-        length++;
-        return true;
+    boolean enQueue(int value) {
+        // todo
+        return false;
     }
 
-    /**
-     * Delete an element from the circular queue. Return true if the operation is successful.
-     */
-    public boolean deQueue() {
-        if (length == 0)
-            return false;
-        front = (front + 1) % capacity;
-        length--;
-        return true;
+    boolean deQueue() {
+        // todo
+        return false;
     }
 
-    /**
-     * Get the front item from the queue.
-     */
-    public int Front() {
-        if (length == 0)
-            return -1;
-        else
-            return data[front];
+    int Front() {
+        // todo
+        return 0;
     }
 
-    /**
-     * Get the last item from the queue.
-     */
-    public int Rear() {
-        if (length == 0)
-            return -1;
-        else
-            return data[(rear + capacity - 1) % capacity];
+    int Rear() {
+        // todo
+        return 0;
     }
 
-    /**
-     * Checks whether the circular queue is empty or not.
-     */
-    public boolean isEmpty() {
-        return length == 0;
+    boolean isEmpty() {
+        // todo
+        return false;
     }
 
-    /**
-     * Checks whether the circular queue is full or not.
-     */
-    public boolean isFull() {
-        return length == capacity;
-    }
-
-    public static void main(String[] args) {
-        MyCircularQueue queue = new MyCircularQueue(3);
-        queue.enQueue(1);
-        queue.enQueue(2);
-        queue.enQueue(3);
-        queue.enQueue(4);
-        queue.Rear();
-        queue.isFull();
-        queue.deQueue();
-        queue.enQueue(4);
-        queue.Rear();
+    boolean isFull() {
+        // todo
+        return false;
     }
 }

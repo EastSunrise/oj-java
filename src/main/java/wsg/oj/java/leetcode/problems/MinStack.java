@@ -1,45 +1,35 @@
 package wsg.oj.java.leetcode.problems;
 
-import java.util.Stack;
-
 /**
+ * 155. Min Stack (Easy)
+ *
  * @author Kingen
+ * @see Solution201#maxSlidingWindow(int[], int)
+ * @see MaxStack
+ * @see <a href="https://leetcode-cn.com/problems/min-stack/">Min Stack</a>
+ * @since 2021-06-25
  */
-public class MinStack {
+class MinStack {
 
-    private Stack<Integer> stack;
-    private Integer min;
-
-    /**
-     * initialize your data structure here.
-     */
-    public MinStack() {
-        stack = new Stack<>();
+    MinStack(int maxSize) {
+        // todo
     }
 
-    public void push(int x) {
-        if (min == null || x < min)
-            min = x;
-        stack.push(x);
+    void push(int val) {
+        // todo
     }
 
-    public void pop() {
-        if (!stack.empty() && stack.pop().equals(min)) {
-            min = null;
-            for (Integer integer : stack) {
-                if (min == null || integer < min)
-                    min = integer;
-            }
-        }
+    void pop() {
+        // todo
     }
 
-    public int top() {
-        if (!stack.empty())
-            return stack.peek();
-        return -1;
+    int top() {
+        // todo
+        return 0;
     }
 
-    public int getMin() {
-        return min;
+    int getMin() {
+        // todo
+        return 0;
     }
 }

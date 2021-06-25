@@ -1,27 +1,24 @@
 package wsg.oj.java.leetcode.problems;
 
 /**
+ * 303. Range Sum Query - Immutable (Easy)
+ *
  * @author Kingen
+ * @see NumMatrix
+ * @see NumArray
+ * @see Solution301#maxSubArrayLen(int[], int)
+ * @see <a href="https://leetcode-cn.com/problems/range-sum-query-immutable/">Range Sum Query -
+ * Immutable</a>
+ * @since 2021-06-25
  */
-public class NumArray {
+class NumArray {
 
-    private int[] sum;
-    private int len;
-
-    public NumArray(int[] nums) {
-        len = nums.length;
-        sum = new int[len];
-        if (len > 0) {
-            sum[0] = nums[0];
-            for (int i = 1; i < len; i++) {
-                sum[i] = sum[i - 1] + nums[i];
-            }
-        }
+    NumArray(int[] nums, int numsSize) {
+        // todo
     }
 
-    public int sumRange(int i, int j) {
-        if (i <= j && j < len)
-            return i == 0 ? sum[j] : (i > 0 ? sum[j] - sum[i - 1] : -1);
-        return -1;
+    int sumRange(int left, int right) {
+        // todo
+        return 0;
     }
 }

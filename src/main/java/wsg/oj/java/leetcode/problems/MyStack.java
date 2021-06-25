@@ -1,59 +1,36 @@
 package wsg.oj.java.leetcode.problems;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
+ * 225. Implement Stack using Queues (Easy)
+ *
  * @author Kingen
+ * @see MyQueue
+ * @see <a href="https://leetcode-cn.com/problems/implement-stack-using-queues/">Implement Stack
+ * using Queues</a>
+ * @since 2021-06-25
  */
-public class MyStack {
+class MyStack {
 
-    private Queue<Integer> queue;
-
-    /**
-     * Initialize your data structure here.
-     */
-    public MyStack() {
-        queue = new LinkedList<>();
+    MyStack(int maxSize) {
+        // todo
     }
 
-    /**
-     * Push element x onto stack.
-     */
-    public void push(int x) {
-        queue.offer(x);
+    void push(int x) {
+        // todo
     }
 
-    /**
-     * Removes the element on top of the stack and returns that element.
-     */
-    public int pop() {
-        int size = queue.size();
-        int value;
-        for (int i = 1; i < size; i++) {
-            value = queue.poll();
-            queue.offer(value);
-        }
-        return queue.poll();
+    int pop() {
+        // todo
+        return 0;
     }
 
-    /**
-     * Get the top element.
-     */
-    public int top() {
-        int size = queue.size();
-        int value = 0;
-        for (int i = 0; i < size; i++) {
-            value = queue.poll();
-            queue.offer(value);
-        }
-        return value;
+    int top() {
+        // todo
+        return 0;
     }
 
-    /**
-     * Returns whether the stack is empty.
-     */
-    public boolean empty() {
-        return queue.isEmpty();
+    boolean empty() {
+        // todo
+        return false;
     }
 }

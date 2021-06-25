@@ -4,16 +4,22 @@ import java.util.List;
 
 /**
  * @author Kingen
+ * @since 2021/6/19
  */
-public class Node {
-    public int val;
-    public List<Node> children;
+class Node {
 
-    public Node() {
+    int val;
+    List<Node> children;
+
+    Node() {
     }
 
-    public Node(int _val, List<Node> _children) {
-        val = _val;
-        children = _children;
+    Node(int val) {
+        this.val = val;
+    }
+
+    Node(int val, List<Node> children) {
+        this.val = val;
+        this.children = children;
     }
 }

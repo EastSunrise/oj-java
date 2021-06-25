@@ -1,38 +1,28 @@
 package wsg.oj.java.leetcode.problems;
 
-import java.util.LinkedHashMap;
-
 /**
+ * 146. LRU Cache (Medium)
+ *
  * @author Kingen
+ * @see LFUCache
+ * @see FileSystem
+ * @see StringIterator
+ * @see MRUQueue
+ * @see <a href="https://leetcode-cn.com/problems/lru-cache/">LRU Cache</a>
+ * @since 2021-06-25
  */
-public class LRUCache {
+class LRUCache {
 
-    private LinkedHashMap<Integer, Integer> map;
-    private int capacity;
-
-    public LRUCache(int capacity) {
-        map = new LinkedHashMap<>(capacity, 0.75f, true);
-        this.capacity = capacity;
+    LRUCache(int capacity) {
+        // todo
     }
 
-    public int get(int key) {
-        return map.getOrDefault(key, -1);
+    int get(int key) {
+        // todo
+        return 0;
     }
 
-    public void put(int key, int value) {
-        if (capacity > 0) {
-            if (!map.containsKey(key) && map.size() == capacity)
-                map.remove(map.keySet().iterator().next());
-            map.put(key, value);
-        }
-    }
-
-    public static void main(String[] args) {
-        LRUCache cache = new LRUCache(1);
-        cache.put(2, 6);
-        cache.put(1, 5);
-        cache.put(1, 2);
-        System.out.println(cache.get(1));
-        System.out.println(cache.get(2));
+    void put(int key, int value) {
+        // todo
     }
 }
