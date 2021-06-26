@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import wsg.oj.java.leetcode.problems.impl.Trie;
 
 /**
  * Solutions to problems No.601-No.700.

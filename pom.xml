@@ -28,5 +28,12 @@
             <groupId>com.eclipsesource.minimal-json</groupId>
             <version>0.9.4</version>
         </dependency>
+        <dependency>
+            <artifactId>junit-jupiter</artifactId>
+            <groupId>org.junit.jupiter</groupId>
+            <version>5.7.2</version>
+        </dependency>
+
+
     </dependencies>
 </project>

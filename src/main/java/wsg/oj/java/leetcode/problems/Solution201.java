@@ -1,11 +1,14 @@
 package wsg.oj.java.leetcode.problems;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 import wsg.oj.java.leetcode.problems.impl.MinStack;
 
 /**
@@ -23,8 +26,14 @@ public class Solution201 extends Solution {
      * Numbers Range</a>
      */
     public int rangeBitwiseAnd(int left, int right) {
-        // todo
-        return 0;
+        // the count of bits after consecutive same bits from the first bit
+        int bits = 0;
+        while (left > 0 && left != right) {
+            left >>>= 1;
+            right >>>= 1;
+            bits++;
+        }
+        return left == right ? left << bits : 0;
     }
 
     /**
@@ -150,6 +159,8 @@ public class Solution201 extends Solution {
     /**
      * 207. Course Schedule (Medium)
      *
+     * @complexity O(| E |)
+     * @see #DFS
      * @see Solution201#findOrder(int, int[][])
      * @see Solution201#validTree(int, int[][])
      * @see Solution301#findMinHeightTrees(int, int[][])
@@ -157,8 +168,43 @@ public class Solution201 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/course-schedule/">Course Schedule</a>
      */
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        // todo
-        return false;
+        Map<Integer, List<Integer>> edges = Arrays.stream(prerequisites)
+            .collect(Collectors
+                .groupingBy(a -> a[0], Collectors.mapping(a -> a[1], Collectors.toList())));
+        Set<Integer> finished = new HashSet<>(numCourses);
+        for (int end : edges.keySet()) {
+            if (!canFinish(edges, finished, new HashSet<>(), end)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Finishes the target.
+     *
+     * @param edges     all edges in the graph
+     * @param finished  courses that have been finished
+     * @param finishing the courses being finished
+     * @param target    the course to be finished
+     */
+    private boolean canFinish(Map<Integer, List<Integer>> edges, Set<Integer> finished,
+        Set<Integer> finishing, int target) {
+        if (finishing.contains(target)) {
+            return false;
+        }
+        List<Integer> starts = edges.get(target);
+        if (starts != null) {
+            finishing.add(target);
+            for (int start : starts) {
+                if (!finished.contains(start) && !canFinish(edges, finished, finishing, start)) {
+                    return false;
+                }
+            }
+            finishing.remove(target);
+        }
+        finished.add(target);
+        return true;
     }
 
 
@@ -173,8 +219,29 @@ public class Solution201 extends Solution {
      * Subarray Sum</a>
      */
     public int minSubArrayLen(int target, int[] nums) {
-        // todo
-        return 0;
+        for (int num : nums) {
+            if (num >= target) {
+                return 1;
+            }
+        }
+        // i: the left (inclusive) of the window
+        // j: the right (exclusive) of the window
+        int i = 0, j = 0, len = nums.length;
+        int sum = 0, res = Integer.MAX_VALUE;
+        while (j < len) {
+            // move the the right side
+            sum += nums[j++];
+            if (sum >= target) {
+                // find one subarray
+                res = Math.min(res, j - i);
+                do {
+                    // move the left side
+                    sum -= nums[i++];
+                } while (sum >= target);
+                res = Math.min(res, j - i + 1);
+            }
+        }
+        return res == Integer.MAX_VALUE ? 0 : res;
     }
 
     /**
@@ -189,8 +256,20 @@ public class Solution201 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/course-schedule-ii/">Course Schedule II</a>
      */
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        // todo
-        return new int[0];
+        Map<Integer, List<Integer>> edges = Arrays.stream(prerequisites).collect(
+            Collectors.groupingBy(a -> a[0], Collectors.mapping(a -> a[1], Collectors.toList())));
+        Set<Integer> finished = new LinkedHashSet<>(numCourses);
+        for (int i = 0; i < numCourses; i++) {
+            if (!canFinish(edges, finished, new HashSet<>(), i)) {
+                return new int[0];
+            }
+        }
+        int[] res = new int[numCourses];
+        int i = 0;
+        for (int course : finished) {
+            res[i++] = course;
+        }
+        return res;
     }
 
 

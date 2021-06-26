@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.impl.WordDictionary;
+
 /**
  * 745. Prefix and Suffix Search (Hard)
  *
@@ -9,7 +11,7 @@ package wsg.oj.java.leetcode.problems;
  * Search</a>
  * @since 2021-06-25
  */
-class WordFilter {
+public class WordFilter {
 
     WordFilter(String[] words) {
         // todo

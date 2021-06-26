@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.impl.Trie;
+
 /**
  * 642. Design Search Autocomplete System (Hard)
  *
@@ -9,7 +11,7 @@ package wsg.oj.java.leetcode.problems;
  * Autocomplete System</a>
  * @since 2021-06-25
  */
-class AutocompleteSystem {
+public class AutocompleteSystem {
 
     AutocompleteSystem(String[] sentences, int[] times, int sentencesSize, int timesSize) {
         // todo

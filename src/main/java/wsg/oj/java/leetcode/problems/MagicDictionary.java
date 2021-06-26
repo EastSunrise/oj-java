@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.impl.Trie;
+
 /**
  * 676. Implement Magic Dictionary (Medium)
  *
@@ -10,7 +12,7 @@ package wsg.oj.java.leetcode.problems;
  * Dictionary</a>
  * @since 2021-06-25
  */
-class MagicDictionary {
+public class MagicDictionary {
 
     MagicDictionary() {
         // todo
