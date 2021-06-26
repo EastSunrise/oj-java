@@ -1,11 +1,17 @@
-package wsg.oj.java.leetcode.problems.old;
+package wsg.oj.java.leetcode.problems.impl;
 
 import java.util.Stack;
 
 /**
+ * 232. Implement Queue using Stacks (Easy)
+ *
  * @author Kingen
+ * @see MyStack
+ * @see <a href="https://leetcode-cn.com/problems/implement-queue-using-stacks/">Implement Queue
+ * using Stacks</a>
+ * @since 2021-06-25
  */
-public class MyQueue {
+class MyQueue {
 
     private final Stack<Integer> stack;
 
@@ -20,43 +26,34 @@ public class MyQueue {
      * Push element x to the back of queue.
      */
     public void push(int x) {
+        Stack<Integer> temp = new Stack<>();
+        while (!stack.isEmpty()) {
+            temp.push(stack.pop());
+        }
         stack.push(x);
+        while (!temp.isEmpty()) {
+            stack.push(temp.pop());
+        }
     }
 
     /**
      * Removes the element from in front of queue and returns that element.
      */
     public int pop() {
-        Stack<Integer> temp = new Stack<>();
-        while (!stack.empty()) {
-            temp.push(stack.pop());
-        }
-        int first = temp.pop();
-        while (!temp.empty()) {
-            stack.push(temp.pop());
-        }
-        return first;
+        return stack.pop();
     }
 
     /**
      * Get the front element.
      */
     public int peek() {
-        Stack<Integer> temp = new Stack<>();
-        while (!stack.empty()) {
-            temp.push(stack.pop());
-        }
-        int first = temp.peek();
-        while (!temp.empty()) {
-            stack.push(temp.pop());
-        }
-        return first;
+        return stack.peek();
     }
 
     /**
      * Returns whether the queue is empty.
      */
     public boolean empty() {
-        return stack.empty();
+        return stack.isEmpty();
     }
 }

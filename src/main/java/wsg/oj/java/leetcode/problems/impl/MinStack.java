@@ -1,13 +1,16 @@
 package wsg.oj.java.leetcode.problems.impl;
 
 import java.util.Stack;
+import wsg.oj.java.leetcode.problems.Solution201;
 
 /**
  * 155. Min Stack (Easy)
  *
  * @author Kingen
- * @date 2021/6/17
+ * @see Solution201#maxSlidingWindow(int[], int)
+ * @see MaxStack
  * @see <a href="https://leetcode-cn.com/problems/min-stack/">Min Stack</a>
+ * @since 2021-06-25
  */
 public class MinStack {
 
@@ -21,20 +24,20 @@ public class MinStack {
         delegate = new Stack<>();
     }
 
-    public void push(int x) {
-        if (min == null || x < min) {
-            min = x;
+    public void push(int val) {
+        delegate.push(val);
+        if (min == null || val < min) {
+            min = val;
         }
-        delegate.push(x);
     }
 
     public void pop() {
         int top = delegate.pop();
         if (top == min) {
             min = null;
-            for (Integer integer : delegate) {
-                if (min == null || integer < min) {
-                    min = integer;
+            for (int val : delegate) {
+                if (min == null || val < min) {
+                    min = val;
                 }
             }
         }
