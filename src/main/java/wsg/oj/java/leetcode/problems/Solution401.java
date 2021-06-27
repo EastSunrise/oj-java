@@ -471,8 +471,8 @@ public class Solution401 extends Solution {
      * 429. N-ary Tree Level Order Traversal (Medium)
      *
      * @see Solution101#levelOrder(TreeNode)
-     * @see Solution501#preorder(Node)
-     * @see Solution501#postorder(Node)
+     * @see Solution501#preorder(Solution501.Node)
+     * @see Solution501#postorder(Solution501.Node)
      * @see <a href="https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/">N-ary Tree
      * Level Order Traversal</a>
      */

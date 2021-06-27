@@ -2,6 +2,8 @@ package wsg.oj.java.leetcode.problems;
 
 
 import com.eclipsesource.json.JsonArray;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utility of testing.
@@ -39,6 +41,35 @@ public class TestUtil {
             arr[i] = stringToIntArray(cols.toString());
         }
         return arr;
+    }
+
+    public static List<Integer> stringToIntList(String input) {
+        input = input.trim();
+        input = input.substring(1, input.length() - 1);
+        if (input.length() == 0) {
+            return new ArrayList<>(0);
+        }
+
+        String[] parts = input.split(",");
+        List<Integer> output = new ArrayList<>(parts.length);
+        for (String s : parts) {
+            output.add(Integer.parseInt(s.trim()));
+        }
+        return output;
+    }
+
+    public static List<List<Integer>> stringToInt2dList(String input) {
+        JsonArray jsonArray = JsonArray.readFrom(input);
+        if (jsonArray.size() == 0) {
+            return new ArrayList<>(0);
+        }
+
+        List<List<Integer>> res = new ArrayList<>(jsonArray.size());
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JsonArray cols = jsonArray.get(i).asArray();
+            res.add(stringToIntList(cols.toString()));
+        }
+        return res;
     }
 
     public static char[] stringToCharArray(String input) {

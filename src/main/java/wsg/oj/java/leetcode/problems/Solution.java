@@ -14,6 +14,10 @@ class Solution {
     static final String BACKTRACKING = "Backtracking";
     static final String DYNAMIC_PROGRAMMING = "Dynamic Programming";
     static final String DFS = "Depth-First Search";
+    static final String BFS = "Breadth-First Search";
+    static final String PREORDER = "Preorder";
+    static final String INORDER = "Inorder";
+    static final String POSTORDER = "Postorder";
 
     static final String TIME_CONSTANT = "O(1)";
     static final String TIME_LOG_N = "O(log_n)";

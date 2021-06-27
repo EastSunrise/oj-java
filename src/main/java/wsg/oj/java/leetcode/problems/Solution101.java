@@ -1,7 +1,11 @@
 package wsg.oj.java.leetcode.problems;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -32,6 +36,7 @@ public class Solution101 extends Solution {
     /**
      * 102. Binary Tree Level Order Traversal (Medium)
      *
+     * @see #BFS
      * @see Solution101#zigzagLevelOrder(TreeNode)
      * @see Solution101#levelOrderBottom(TreeNode)
      * @see Solution101#minDepth(TreeNode)
@@ -42,21 +47,69 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">Binary
      * Tree Level Order Traversal</a>
      */
-    public int[][] levelOrder(TreeNode root) {
-        // todo
-        return new int[0][0];
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new LinkedList<>();
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            // traverse a level
+            int size = queue.size();
+            List<Integer> level = new ArrayList<>(size);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                level.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            res.add(level);
+        }
+        return res;
     }
 
     /**
      * 103. Binary Tree Zigzag Level Order Traversal (Medium)
      *
+     * @see #BFS
      * @see Solution101#levelOrder(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/">Binary
      * Tree Zigzag Level Order Traversal</a>
      */
-    public int[][] zigzagLevelOrder(TreeNode root) {
-        // todo
-        return new int[0][0];
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new LinkedList<>();
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        boolean inverted = false;
+        while (!queue.isEmpty()) {
+            // traverse a level
+            int size = queue.size();
+            List<Integer> level = new ArrayList<>(size);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                level.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            if (inverted) {
+                Collections.reverse(level);
+            }
+            res.add(level);
+            inverted = !inverted;
+        }
+        return res;
     }
 
     /**
@@ -64,7 +117,7 @@ public class Solution101 extends Solution {
      *
      * @see Solution101#isBalanced(TreeNode)
      * @see Solution101#minDepth(TreeNode)
-     * @see Solution501#maxDepth(Node)
+     * @see Solution501#maxDepth(Solution501.Node)
      * @see Solution1301#numOfMinutes(int, int, int[], int[])
      * @see <a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/">Maximum Depth
      * of Binary Tree</a>
@@ -84,8 +137,63 @@ public class Solution101 extends Solution {
      * Binary Tree from Preorder and Inorder Traversal</a>
      */
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        // todo
-        return new TreeNode();
+        return buildTree(preorder, 0, inorder, 0, preorder.length);
+    }
+
+    /**
+     * Builds a subtree.
+     *
+     * @param sp  the start index of the subtree in the preorder
+     * @param si  the start index of the subtree in the inorder
+     * @param len the total numbers of nodes in the subtree
+     * @return the root of the subtree
+     */
+    private TreeNode buildTree(int[] preorder, int sp, int[] inorder, int si, int len) {
+        TreeNode node = new TreeNode(preorder[sp]);
+        // find the index of the root node in the inorder
+        int ri = si;
+        while (inorder[ri] != node.val) {
+            ri++;
+        }
+        int leftLen = ri - si;
+        if (leftLen > 0) {
+            // there is left child node
+            node.left = buildTree(preorder, sp + 1, inorder, si, leftLen);
+        }
+        int rightLen = len - leftLen - 1;
+        if (rightLen > 0) {
+            // there is right child node
+            node.right = buildTree(preorder, sp + 1 + leftLen, inorder, si + leftLen + 1, rightLen);
+        }
+        return node;
+    }
+
+    /**
+     * 105.2 Construct Binary Tree from Preorder and Inorder Traversal (Medium) (Inorder)
+     */
+    public TreeNode buildTree2(int[] preorder, int[] inorder) {
+        int len = preorder.length;
+        TreeNode root = new TreeNode(preorder[0]);
+        Stack<TreeNode> stack = new Stack<>();
+        int inIdx = 0;
+        stack.push(root);
+        for (int i = 1; i < len; i++) {
+            TreeNode node = stack.peek();
+            if (inorder[inIdx] != node.val) {
+                // there is a left child node
+                node.left = new TreeNode(preorder[i]);
+                stack.push(node.left);
+            } else {
+                // reach the leftmost leaf node, rollback to ancestor node that has right subtree
+                do {
+                    node = stack.pop();
+                    inIdx++;
+                } while (!stack.isEmpty() && stack.peek().val == inorder[inIdx]);
+                node.right = new TreeNode(preorder[i]);
+                stack.push(node.right);
+            }
+        }
+        return root;
     }
 
     /**
@@ -96,8 +204,67 @@ public class Solution101 extends Solution {
      * Binary Tree from Inorder and Postorder Traversal</a>
      */
     public TreeNode buildTreeII(int[] inorder, int[] postorder) {
-        // todo
-        return new TreeNode();
+        return buildTreeII(inorder, 0, postorder, 0, postorder.length);
+    }
+
+    /**
+     * Builds a subtree.
+     *
+     * @param si  the start index of the subtree in the inorder
+     * @param sp  the start index of the subtree in the postorder
+     * @param len the total numbers of nodes in the subtree
+     * @return the root of the subtree
+     */
+    private TreeNode buildTreeII(int[] inorder, int si, int[] postorder, int sp, int len) {
+        TreeNode node = new TreeNode(postorder[sp + len - 1]);
+        // find the index of the root node in the inorder
+        int ri = si;
+        while (inorder[ri] != node.val) {
+            ri++;
+        }
+        int leftLen = ri - si;
+        if (leftLen > 0) {
+            // there is left child node
+            node.left = buildTreeII(inorder, si, postorder, sp, leftLen);
+        }
+        int rightLen = len - leftLen - 1;
+        if (rightLen > 0) {
+            // there is right child node
+            node.right = buildTreeII(inorder, si + leftLen + 1, postorder, sp + leftLen, rightLen);
+        }
+        return node;
+    }
+
+    /**
+     * 106.2 Construct Binary Tree from Inorder and Postorder Traversal (Medium) (Inorder)
+     *
+     * @see #TIME_N
+     * @see #SPACE_LOG_N
+     * @see #buildTree2(int[], int[])
+     */
+    public TreeNode buildTreeII2(int[] inorder, int[] postorder) {
+        int len = postorder.length;
+        TreeNode root = new TreeNode(postorder[len - 1]);
+        Stack<TreeNode> stack = new Stack<>();
+        int inIdx = inorder.length - 1;
+        stack.push(root);
+        for (int i = len - 2; i >= 0; i--) {
+            TreeNode node = stack.peek();
+            if (inorder[inIdx] != node.val) {
+                // there is a right child node
+                node.right = new TreeNode(postorder[i]);
+                stack.push(node.right);
+            } else {
+                // reach the rightmost leaf node, rollback to ancestor node that has left subtree
+                do {
+                    node = stack.pop();
+                    inIdx--;
+                } while (!stack.isEmpty() && stack.peek().val == inorder[inIdx]);
+                node.left = new TreeNode(postorder[i]);
+                stack.push(node.left);
+            }
+        }
+        return root;
     }
 
     /**
@@ -108,9 +275,10 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">Binary
      * Tree Level Order Traversal II</a>
      */
-    public int[][] levelOrderBottom(TreeNode root) {
-        // todo
-        return new int[0][0];
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+        List<List<Integer>> res = levelOrder(root);
+        Collections.reverse(res);
+        return res;
     }
 
     /**
@@ -137,13 +305,47 @@ public class Solution101 extends Solution {
     /**
      * 109. Convert Sorted List to Binary Search Tree (Medium)
      *
+     * @see #TIME_N
      * @see Solution101#sortedArrayToBST(int[])
      * @see <a href="https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/">Convert
      * Sorted List to Binary Search Tree</a>
      */
     public TreeNode sortedListToBST(ListNode head) {
-        // todo
-        return new TreeNode();
+        if (head == null) {
+            return null;
+        }
+        int len = 1;
+        ListNode cursor = head.next;
+        while (cursor != null) {
+            cursor = cursor.next;
+            len++;
+        }
+        TreeNode root = new TreeNode();
+        buildTree(root, head, len);
+        return root;
+    }
+
+    /**
+     * @param node the tree to be built
+     * @param len  the total numbers of nodes of the tree
+     * @return remaining list nodes
+     */
+    private ListNode buildTree(TreeNode node, ListNode remaining, int len) {
+        int mid = len >>> 1;
+        if (mid > 0) {
+            // there is left subtree
+            node.left = new TreeNode();
+            remaining = buildTree(node.left, remaining, mid);
+        }
+        node.val = remaining.val;
+        remaining = remaining.next;
+        int rightLen = len - mid - 1;
+        if (rightLen > 0) {
+            // there is right subtree
+            node.right = new TreeNode();
+            remaining = buildTree(node.right, remaining, rightLen);
+        }
+        return remaining;
     }
 
     /**
@@ -223,15 +425,32 @@ public class Solution101 extends Solution {
     /**
      * 113. Path Sum II (Medium)
      *
+     * @see #PREORDER
      * @see Solution101#hasPathSum(TreeNode, int)
      * @see Solution201#binaryTreePaths(TreeNode)
      * @see Solution401#pathSum(TreeNode, int)
      * @see Solution601#pathSum(int[])
      * @see <a href="https://leetcode-cn.com/problems/path-sum-ii/">Path Sum II</a>
      */
-    public int[][] pathSum(TreeNode root, int targetSum) {
-        // todo
-        return new int[0][0];
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        List<List<Integer>> res = new ArrayList<>();
+        pathSum(res, root, new ArrayList<>(), targetSum);
+        return res;
+    }
+
+    private void pathSum(List<List<Integer>> res, TreeNode node, List<Integer> temp, int target) {
+        if (node == null) {
+            return;
+        }
+        temp.add(node.val);
+        target -= node.val;
+        if (node.left == null && node.right == null && target == 0) {
+            // find a path
+            res.add(new ArrayList<>(temp));
+        }
+        pathSum(res, node.left, temp, target);
+        pathSum(res, node.right, temp, target);
+        temp.remove(temp.size() - 1);
     }
 
     /**
@@ -243,7 +462,54 @@ public class Solution101 extends Solution {
      * Binary Tree to Linked List</a>
      */
     public void flatten(TreeNode root) {
-        // todo
+        if (root == null) {
+            return;
+        }
+        // store the right nodes
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (node != null) {
+            if (node.left == null) {
+                if (node.right == null) {
+                    if (stack.isEmpty()) {
+                        // reach the end
+                        break;
+                    }
+                    // switch the branch
+                    node.right = stack.pop();
+                }
+            } else {
+                if (node.right != null) {
+                    // cache the right node
+                    stack.push(node.right);
+                }
+                node.right = node.left;
+                node.left = null;
+            }
+            node = node.right;
+        }
+    }
+
+    /**
+     * 114.2 Flatten Binary Tree to Linked List (Medium)
+     */
+    public void flatten2(TreeNode root) {
+        TreeNode node = root;
+        while (node != null) {
+            if (node.left != null) {
+                if (node.right != null) {
+                    // append the right subtree after the rightmost of the left subtree
+                    TreeNode cursor = node.left;
+                    while (cursor.right != null) {
+                        cursor = cursor.right;
+                    }
+                    cursor.right = node.right;
+                }
+                node.right = node.left;
+                node.left = null;
+            }
+            node = node.right;
+        }
     }
 
     /**
@@ -260,26 +526,61 @@ public class Solution101 extends Solution {
     /**
      * 116. Populating Next Right Pointers in Each Node (Medium)
      *
-     * @see Solution101#connect(TreeNode)
+     * @see Solution101#connect(Node)
      * @see Solution101#rightSideView(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/">Populating
      * Next Right Pointers in Each Node</a>
      */
-    public TreeNode connect(TreeNode root) {
-        // todo
-        return new TreeNode();
+    public Node connect(Node root) {
+        if (root == null || root.right == null) {
+            return root;
+        }
+        root.left.next = root.right;
+        if (root.next != null) {
+            root.right.next = root.next.left;
+        }
+        connect(root.left);
+        connect(root.right);
+        return root;
     }
 
     /**
      * 117. Populating Next Right Pointers in Each Node II (Medium)
      *
-     * @see Solution101#connect(TreeNode)
+     * @see Solution101#connect(Node)
      * @see <a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/">Populating
      * Next Right Pointers in Each Node II</a>
      */
-    public TreeNode connectII(TreeNode root) {
-        // todo
-        return new TreeNode();
+    public Node connectII(Node root) {
+        if (root == null) {
+            return null;
+        }
+        if (root.left != null || root.right != null) {
+            // get the next node
+            Node next = null;
+            Node cursor = root.next;
+            while (cursor != null) {
+                if (cursor.left != null) {
+                    next = cursor.left;
+                    break;
+                }
+                if (cursor.right != null) {
+                    next = cursor.right;
+                    break;
+                }
+                cursor = cursor.next;
+            }
+            if (root.right != null) {
+                root.right.next = next;
+                next = root.right;
+            }
+            if (root.left != null) {
+                root.left.next = next;
+            }
+        }
+        connect(root.right);
+        connect(root.left);
+        return root;
     }
 
     /**
@@ -344,11 +645,26 @@ public class Solution101 extends Solution {
     /**
      * 120. Triangle (Medium)
      *
+     * @see #DYNAMIC_PROGRAMMING
+     * @see #TIME_N
+     * @see #SPACE_LOG_N
      * @see <a href="https://leetcode-cn.com/problems/triangle/">Triangle</a>
      */
-    public int minimumTotal(int[][] triangle) {
-        // todo
-        return 0;
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int size = triangle.size();
+        int[] res = new int[size];
+        List<Integer> bottom = triangle.get(size - 1);
+        for (int i = 0; i < size; i++) {
+            res[i] = bottom.get(i);
+        }
+        for (int level = size - 2; level >= 0; level--) {
+            List<Integer> values = triangle.get(level);
+            for (int i = 0; i <= level; i++) {
+                // res[i]: the minimum path sum of the triangle with vertex [level, i]
+                res[i] = Math.min(res[i], res[i + 1]) + values.get(i);
+            }
+        }
+        return res[0];
     }
 
     /**
@@ -490,18 +806,38 @@ public class Solution101 extends Solution {
     /**
      * 128. Longest Consecutive Sequence (Medium)
      *
+     * @see #TIME_N_LOG_N
+     * @see #SPACE_CONSTANT
      * @see Solution201#longestConsecutive(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/longest-consecutive-sequence/">Longest
      * Consecutive Sequence</a>
      */
     public int longestConsecutive(int[] nums) {
-        // todo
-        return 0;
+        int len = nums.length;
+        if (len == 0) {
+            return 0;
+        }
+        Arrays.sort(nums);
+        int max = 1, count = 1, last = nums[0];
+        for (int i = 1; i < len; i++) {
+            int dif = nums[i] - last;
+            if (dif > 0) {
+                if (dif > 1) {
+                    max = Math.max(max, count);
+                    count = 1;
+                } else {
+                    count++;
+                }
+                last = nums[i];
+            }
+        }
+        return Math.max(max, count);
     }
 
     /**
      * 129. Sum Root to Leaf Numbers (Medium)
      *
+     * @see #BACKTRACKING
      * @see Solution101#hasPathSum(TreeNode, int)
      * @see Solution101#maxPathSum(TreeNode)
      * @see Solution901#smallestFromLeaf(TreeNode)
@@ -509,19 +845,87 @@ public class Solution101 extends Solution {
      * Numbers</a>
      */
     public int sumNumbers(TreeNode root) {
-        // todo
-        return 0;
+        return sumNumbers(root, 0);
+    }
+
+    private int sumNumbers(TreeNode node, int temp) {
+        if (node.left == null && node.right == null) {
+            // find a path
+            return temp * 10 + node.val;
+        }
+        int sum = 0;
+        temp = temp * 10 + node.val;
+        if (node.left != null) {
+            sum += sumNumbers(node.left, temp);
+        }
+        if (node.right != null) {
+            sum += sumNumbers(node.right, temp);
+        }
+        return sum;
     }
 
     /**
      * 130. Surrounded Regions (Medium)
      *
+     * @see #BACKTRACKING
      * @see Solution101#numIslands(char[][])
      * @see Solution201#wallsAndGates(int[][])
      * @see <a href="https://leetcode-cn.com/problems/surrounded-regions/">Surrounded Regions</a>
      */
     public void solve(char[][] board) {
-        // todo
+        int m = board.length, n = board[0].length;
+        // the first and last columns
+        for (int i = 0; i < m; i++) {
+            flip(board, i, 0);
+        }
+        if (n > 1) {
+            int j = n - 1;
+            for (int i = 0; i < m; i++) {
+                flip(board, i, j);
+            }
+        }
+        // the first and last rows
+        for (int j = 0; j < n; j++) {
+            flip(board, 0, j);
+        }
+        if (m > 1) {
+            int i = m - 1;
+            for (int j = 0; j < n; j++) {
+                flip(board, i, j);
+            }
+        }
+        // flip all left 'O's
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (board[i][j] == 'O') {
+                    board[i][j] = 'X';
+                }
+            }
+        }
+        // flip 'N's back to 'O's
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 'N') {
+                    board[i][j] = 'O';
+                }
+            }
+        }
+    }
+
+    private void flip(char[][] board, int i, int j) {
+        if (i < 0 || j < 0 || i == board.length || j == board[0].length) {
+            // out of range
+            return;
+        }
+        if (board[i][j] != 'O') {
+            return;
+        }
+        // mark as not-flipped
+        board[i][j] = 'N';
+        flip(board, i - 1, j);
+        flip(board, i + 1, j);
+        flip(board, i, j - 1);
+        flip(board, i, j + 1);
     }
 
     /**
@@ -697,7 +1101,7 @@ public class Solution101 extends Solution {
      * @see Solution1#inorderTraversal(TreeNode)
      * @see Solution101#postorderTraversal(TreeNode)
      * @see Solution201#verifyPreorder(int[])
-     * @see Solution501#preorder(Node)
+     * @see Solution501#preorder(Solution501.Node)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">Binary Tree
      * Preorder Traversal</a>
      */
@@ -740,7 +1144,7 @@ public class Solution101 extends Solution {
      * 145. Binary Tree Postorder Traversal (Easy)
      *
      * @see Solution1#inorderTraversal(TreeNode)
-     * @see Solution501#postorder(Node)
+     * @see Solution501#postorder(Solution501.Node)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">Binary Tree
      * Postorder Traversal</a>
      */
@@ -788,7 +1192,6 @@ public class Solution101 extends Solution {
         }
         return res;
     }
-
 
     /**
      * 147. Insertion Sort List (Medium)
@@ -892,7 +1295,6 @@ public class Solution101 extends Solution {
         // todo
         return 0;
     }
-
 
     /**
      * 156. Binary Tree Upside Down (Medium)
@@ -1097,7 +1499,6 @@ public class Solution101 extends Solution {
         return major;
     }
 
-
     /**
      * 171. Excel Sheet Column Number (Easy)
      *
@@ -1130,7 +1531,6 @@ public class Solution101 extends Solution {
         return count;
     }
 
-
     /**
      * 174. Dungeon Game (Hard)
      *
@@ -1144,7 +1544,6 @@ public class Solution101 extends Solution {
         return 0;
     }
 
-
     /**
      * 179. Largest Number (Medium)
      *
@@ -1154,7 +1553,6 @@ public class Solution101 extends Solution {
         // todo
         return "";
     }
-
 
     /**
      * 186. Reverse Words in a String II (Medium)
@@ -1255,7 +1653,7 @@ public class Solution101 extends Solution {
     /**
      * 199. Binary Tree Right Side View (Medium)
      *
-     * @see Solution101#connect(TreeNode)
+     * @see Solution101#connect(Node)
      * @see Solution501#boundaryOfBinaryTree(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">Binary Tree
      * Right Side View</a>
@@ -1280,5 +1678,27 @@ public class Solution101 extends Solution {
     public int numIslands(char[][] grid) {
         // todo
         return 0;
+    }
+
+    static class Node {
+
+        public int val;
+        public Node left;
+        public Node right;
+        public Node next;
+
+        public Node() {
+        }
+
+        public Node(int _val) {
+            val = _val;
+        }
+
+        public Node(int _val, Node _left, Node _right, Node _next) {
+            val = _val;
+            left = _left;
+            right = _right;
+            next = _next;
+        }
     }
 }

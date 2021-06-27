@@ -4,7 +4,6 @@ package wsg.oj.java.leetcode.problems.old;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -56,45 +55,6 @@ public class StackSolution {
 
         }
         return 0;
-    }
-
-    // 103. 二叉树的锯齿形层次遍历
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> listList = new LinkedList<>();
-        Stack<TreeNode> current = new Stack<>(), next;
-        boolean flag = true;
-
-        current.push(root);
-        while (!current.empty()) {
-            next = new Stack<>();
-            List<Integer> list = new LinkedList<>();
-            if (flag) {
-                while (!current.empty()) {
-                    TreeNode node = current.pop();
-                    if (node != null) {
-                        list.add(node.val);
-                        next.push(node.left);
-                        next.push(node.right);
-                    }
-                }
-            } else {
-                while (!current.empty()) {
-                    TreeNode node = current.pop();
-                    if (node != null) {
-                        list.add(node.val);
-                        next.push(node.right);
-                        next.push(node.left);
-                    }
-                }
-            }
-
-            flag = !flag;
-            current = next;
-            if (list.size() > 0) {
-                listList.add(list);
-            }
-        }
-        return listList;
     }
 
     // 331. 验证二叉树的前序序列化
