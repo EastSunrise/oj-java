@@ -3,9 +3,11 @@ package wsg.oj.java.leetcode.problems;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -931,14 +933,49 @@ public class Solution101 extends Solution {
     /**
      * 131. Palindrome Partitioning (Medium)
      *
+     * @see #DYNAMIC_PROGRAMMING
+     * @see #BACKTRACKING
      * @see Solution101#minCut(String)
      * @see Solution1701#checkPartitioning(String)
      * @see <a href="https://leetcode-cn.com/problems/palindrome-partitioning/">Palindrome
      * Partitioning</a>
      */
-    public String[][] partition(String s) {
-        // todo
-        return new String[0][0];
+    public List<List<String>> partition(String s) {
+        int len = s.length();
+        // i: the start index of the substring
+        // c: the length of the substring
+        // res[i][c]: whether s[i,i+c) is palindrome
+        boolean[][] flags = new boolean[len][len + 1];
+        for (int i = 0; i < len; i++) {
+            // the length of the substring is 1
+            flags[i][0] = true;
+            flags[i][1] = true;
+        }
+        for (int c = 2; c <= len; c++) {
+            for (int i = 0, n = len - c; i <= n; i++) {
+                flags[i][c] = s.charAt(i) == s.charAt(i + c - 1) && flags[i + 1][c - 2];
+            }
+        }
+
+        List<List<String>> res = new ArrayList<>();
+        partition(res, s.toCharArray(), flags, new ArrayList<>(), 0);
+        return res;
+    }
+
+    private void partition(List<List<String>> res, char[] chars, boolean[][] flags,
+        List<String> temp, int start) {
+        if (start == chars.length) {
+            // reach the end
+            res.add(new ArrayList<>(temp));
+            return;
+        }
+        for (int c = 1, maxCount = chars.length - start; c <= maxCount; c++) {
+            if (flags[start][c]) {
+                temp.add(new String(chars, start, c));
+                partition(res, chars, flags, temp, start + c);
+                temp.remove(temp.size() - 1);
+            }
+        }
     }
 
     /**
@@ -952,19 +989,6 @@ public class Solution101 extends Solution {
     public int minCut(String s) {
         // todo
         return 0;
-    }
-
-    /**
-     * 133. Clone Graph (Medium)
-     *
-     * @see Solution101#copyRandomList(ListNode)
-     * @see Solution1401#copyRandomBinaryTree(TreeNode)
-     * @see Solution1401#cloneTree(int)
-     * @see <a href="https://leetcode-cn.com/problems/clone-graph/">Clone Graph</a>
-     */
-    public boolean cloneGraph(int[][] edges) {
-        // todo
-        return false;
     }
 
     /**
@@ -1013,39 +1037,44 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/single-number-ii/">Single Number II</a>
      */
     public int singleNumberII(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 138. Copy List with Random Pointer (Medium)
-     *
-     * @see Solution101#cloneGraph(int[][])
-     * @see Solution1401#copyRandomBinaryTree(TreeNode)
-     * @see Solution1401#cloneTree(int)
-     * @see <a href="https://leetcode-cn.com/problems/copy-list-with-random-pointer/">Copy List with
-     * Random Pointer</a>
-     */
-    public ListNode copyRandomList(ListNode head) {
-        // todo
-        return new ListNode();
+        // x->(x,0)->(0,x)->(0,0)
+        int a = 0, b = 0;
+        for (int num : nums) {
+            a = (num ^ a) & ~b;
+            b = (num ^ b) & ~a;
+        }
+        return a;
     }
 
     /**
      * 139. Word Break (Medium)
      *
-     * @see Solution101#wordBreak(String, String[])
+     * @see #DYNAMIC_PROGRAMMING
+     * @see Solution101#wordBreakII(String, String[])
      * @see <a href="https://leetcode-cn.com/problems/word-break/">Word Break</a>
      */
-    public boolean wordBreak(String s, String[] wordDict) {
-        // todo
-        return false;
+    public boolean wordBreak(String s, List<String> wordDict) {
+        int len = s.length();
+        // dp[i]: whether the substring s[0,i) can be broken to dict
+        Set<String> dict = new HashSet<>(wordDict);
+        boolean[] dp = new boolean[len + 1];
+        dp[0] = true;
+        for (int i = 0; i <= len; i++) {
+            // split s[0,i) into s[0,j)+s[j,i)
+            for (int j = i - 1; j >= 0; j--) {
+                if (dp[j] && dict.contains(s.substring(j, i))) {
+                    dp[i] = true;
+                    break;
+                }
+            }
+        }
+        return dp[len];
     }
 
     /**
      * 140. Word Break II (Hard)
      *
-     * @see Solution101#wordBreak(String, String[])
+     * @see Solution101#wordBreak(String, List)
      * @see Solution401#findAllConcatenatedWordsInADict(String[])
      * @see <a href="https://leetcode-cn.com/problems/word-break-ii/">Word Break II</a>
      */
@@ -1057,7 +1086,7 @@ public class Solution101 extends Solution {
     /**
      * 141. Linked List Cycle (Easy)
      *
-     * @see Solution101#detectCycle(ListNode, int)
+     * @see Solution101#detectCycle(ListNode)
      * @see Solution201#isHappy(int)
      * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle/">Linked List Cycle</a>
      */
@@ -1076,14 +1105,33 @@ public class Solution101 extends Solution {
     /**
      * 142. Linked List Cycle II (Medium)
      *
+     * @see #TIME_N
+     * @see #SPACE_CONSTANT
      * @see Solution101#hasCycle(ListNode)
      * @see Solution201#findDuplicate(int[])
      * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">Linked List Cycle
      * II</a>
      */
-    public ListNode detectCycle(ListNode head, int pos) {
-        // todo
-        return new ListNode();
+    public ListNode detectCycle(ListNode head) {
+        ListNode slow = head, fast = head;
+        boolean hasCycle = false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                hasCycle = true;
+                break;
+            }
+        }
+        if (!hasCycle) {
+            return null;
+        }
+        fast = head;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return fast;
     }
 
     /**
@@ -1092,7 +1140,31 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/reorder-list/">Reorder List</a>
      */
     public void reorderList(ListNode head) {
-        // todo
+        ListNode slow = head, fast = head.next;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode mid = slow.next;
+        // cut the list at the middle
+        slow.next = null;
+        // reverse the right half
+        ListNode right = null, cur = mid, temp;
+        while (cur != null) {
+            temp = cur.next;
+            cur.next = right;
+            right = cur;
+            cur = temp;
+        }
+        // merge the two lists
+        ListNode left = head;
+        while (right != null) {
+            temp = right.next;
+            right.next = left.next;
+            left.next = right;
+            left = right.next;
+            right = temp;
+        }
     }
 
     /**
@@ -1201,8 +1273,25 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/insertion-sort-list/">Insertion Sort List</a>
      */
     public ListNode insertionSortList(ListNode head) {
-        // todo
-        return new ListNode();
+        ListNode res = new ListNode(0, head);
+        ListNode prev = head, cur = prev.next;
+        while (cur != null) {
+            prev.next = null;
+            ListNode node = res;
+            while (node.next != null && node.next.val < cur.val) {
+                node = node.next;
+            }
+            if (node == prev) {
+                prev.next = cur;
+                prev = cur;
+            } else {
+                prev.next = cur.next;
+                cur.next = node.next;
+                node.next = cur;
+            }
+            cur = prev.next;
+        }
+        return res.next;
     }
 
     /**
@@ -1214,8 +1303,35 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/sort-list/">Sort List</a>
      */
     public ListNode sortList(ListNode head) {
-        // todo
-        return new ListNode();
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode res = new ListNode(0, head);
+        ListNode slow = res;
+        for (ListNode fast = res; fast != null && fast.next != null; fast = fast.next.next) {
+            slow = slow.next;
+        }
+        ListNode right = sortList(slow.next);
+        slow.next = null;
+        ListNode left = sortList(head);
+        slow = res;
+        while (left != null && right != null) {
+            if (left.val > right.val) {
+                slow.next = right;
+                right = right.next;
+            } else {
+                slow.next = left;
+                left = left.next;
+            }
+            slow = slow.next;
+        }
+        if (left != null) {
+            slow.next = left;
+        }
+        if (right != null) {
+            slow.next = right;
+        }
+        return res.next;
     }
 
     /**
@@ -1239,8 +1355,24 @@ public class Solution101 extends Solution {
      * Reverse Polish Notation</a>
      */
     public int evalRPN(String[] tokens) {
-        // todo
-        return 0;
+        Stack<Integer> stack = new Stack<>();
+        for (String token : tokens) {
+            char ch = token.charAt(token.length() - 1);
+            if ('+' == ch) {
+                stack.push(stack.pop() + stack.pop());
+            } else if ('-' == ch) {
+                stack.push(-stack.pop() + stack.pop());
+            } else if ('*' == ch) {
+                stack.push(stack.pop() * stack.pop());
+            } else if ('/' == ch) {
+                int divisor = stack.pop();
+                int dividend = stack.pop();
+                stack.push(dividend / divisor);
+            } else {
+                stack.push(Integer.parseInt(token));
+            }
+        }
+        return stack.pop();
     }
 
     /**
@@ -1251,8 +1383,23 @@ public class Solution101 extends Solution {
      * String</a>
      */
     public String reverseWords(String s) {
-        // todo
-        return "";
+        List<String> res = new ArrayList<>();
+        StringBuilder builder = new StringBuilder();
+        for (char ch : s.toCharArray()) {
+            if (ch == ' ') {
+                if (builder.length() > 0) {
+                    res.add(builder.toString());
+                    builder = new StringBuilder();
+                }
+            } else {
+                builder.append(ch);
+            }
+        }
+        if (builder.length() > 0) {
+            res.add(builder.toString());
+        }
+        Collections.reverse(res);
+        return String.join(" ", res);
     }
 
     /**
@@ -1267,8 +1414,18 @@ public class Solution101 extends Solution {
      * Subarray</a>
      */
     public int maxProduct(int[] nums) {
-        // todo
-        return 0;
+        int max = nums[0], min = nums[0], res = max;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < 0) {
+                int temp = max;
+                max = min;
+                min = temp;
+            }
+            max = Math.max(nums[i], max * nums[i]);
+            min = Math.min(nums[i], min * nums[i]);
+            res = Math.max(max, res);
+        }
+        return res;
     }
 
     /**
@@ -1279,9 +1436,20 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">Find
      * Minimum in Rotated Sorted Array</a>
      */
+
     public int findMin(int[] nums) {
-        // todo
-        return 0;
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = (left + right) >>> 1;
+            if (nums[mid] > nums[right]) {
+                left = mid + 1;
+            } else if (nums[mid] < nums[left]) {
+                right = mid;
+            } else {
+                return nums[left];
+            }
+        }
+        return nums[left];
     }
 
     /**

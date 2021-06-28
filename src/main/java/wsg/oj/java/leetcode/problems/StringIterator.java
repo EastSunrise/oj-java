@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.impl.LRUCache;
+
 /**
  * 604. Design Compressed String Iterator (Easy)
  *
@@ -10,7 +12,7 @@ package wsg.oj.java.leetcode.problems;
  * Compressed String Iterator</a>
  * @since 2021-06-25
  */
-class StringIterator {
+public class StringIterator {
 
     StringIterator(String compressedString) {
         // todo

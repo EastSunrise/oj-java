@@ -25,14 +25,14 @@ public class Trie {
      * Initialize your data structure here.
      */
     public Trie() {
-        root = new Node();
+        this.root = new Node();
     }
 
     /**
      * Inserts a word into the trie.
      */
     public void insert(String word) {
-        Node node = root;
+        Node node = this.root;
         for (char ch : word.toCharArray()) {
             int i = ch - 'a';
             if (node.next[i] == null) {

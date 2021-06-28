@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.impl.LRUCache;
+
 /**
  * 460. LFU Cache (Hard)
  *
@@ -9,7 +11,7 @@ package wsg.oj.java.leetcode.problems;
  * @see <a href="https://leetcode-cn.com/problems/lfu-cache/">LFU Cache</a>
  * @since 2021-06-25
  */
-class LFUCache {
+public class LFUCache {
 
     LFUCache(int capacity) {
         // todo

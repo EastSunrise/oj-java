@@ -63,24 +63,6 @@ public class Solution {
         return sum1;
     }
 
-    public int findMin(int[] nums) {
-        int left = 0, right = nums.length - 1;
-        while (left < right) {
-            if (nums[left] <= nums[right]) {
-                return nums[left];
-            }
-            int mid = (left + right) >> 1;
-            if (nums[mid] >= nums[left]) {
-                left = mid + 1;
-            } else if (nums[mid] < nums[right]) {
-                right = mid;
-            } else {
-                return nums[mid];
-            }
-        }
-        return nums[right];
-    }
-
     public int calculate(String s) {
         Stack<String> operation = new Stack<>();
         Stack<String> temp = new Stack<>();

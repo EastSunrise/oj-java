@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.impl.LRUCache;
+
 /**
  * 1756. Design Most Recently Used Queue (Medium)
  *
@@ -9,7 +11,7 @@ package wsg.oj.java.leetcode.problems;
  * Recently Used Queue</a>
  * @since 2021-06-25
  */
-class MRUQueue {
+public class MRUQueue {
 
     MRUQueue(int n) {
         // todo

@@ -20,11 +20,11 @@ public class WordDictionary {
      * Initialize your data structure here.
      */
     public WordDictionary() {
-        root = new Node();
+        this.root = new Node();
     }
 
     public void addWord(String word) {
-        Node node = root;
+        Node node = this.root;
         for (char ch : word.toCharArray()) {
             int i = ch - 'a';
             if (node.next[i] == null) {
@@ -36,7 +36,7 @@ public class WordDictionary {
     }
 
     public boolean search(String word) {
-        return search(root, word.toCharArray(), 0);
+        return search(this.root, word.toCharArray(), 0);
     }
 
     private boolean search(Node node, char[] chars, int i) {

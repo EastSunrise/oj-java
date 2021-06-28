@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.Solution133.Node;
+
 /**
  * Solutions to problems No.1401-No.1500.
  *
@@ -784,8 +786,8 @@ public class Solution1401 extends Solution {
     /**
      * 1485. Clone Binary Tree With Random Pointer (Medium)
      *
-     * @see Solution101#cloneGraph(int[][])
-     * @see Solution101#copyRandomList(ListNode)
+     * @see Solution133#cloneGraph(Node)
+     * @see Solution138#copyRandomList(Solution138.Node)
      * @see Solution1401#cloneTree(int)
      * @see <a href="https://leetcode-cn.com/problems/clone-binary-tree-with-random-pointer/">Clone
      * Binary Tree With Random Pointer</a>
@@ -842,8 +844,8 @@ public class Solution1401 extends Solution {
     /**
      * 1490. Clone N-ary Tree (Medium)
      *
-     * @see Solution101#cloneGraph(int[][])
-     * @see Solution101#copyRandomList(ListNode)
+     * @see Solution133#cloneGraph(Node)
+     * @see Solution138#copyRandomList(Solution138.Node)
      * @see Solution1401#copyRandomBinaryTree(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/clone-n-ary-tree/">Clone N-ary Tree</a>
      */

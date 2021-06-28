@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.impl.LRUCache;
+
 /**
  * 588. Design In-Memory File System (Hard)
  *
@@ -11,7 +13,7 @@ package wsg.oj.java.leetcode.problems;
  * File System</a>
  * @since 2021-06-25
  */
-class FileSystem {
+public class FileSystem {
 
     FileSystem() {
         // todo
