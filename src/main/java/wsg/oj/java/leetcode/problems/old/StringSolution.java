@@ -15,90 +15,6 @@ import java.util.Stack;
  */
 public class StringSolution {
 
-    // 443. 压缩字符串
-    public int compress(char[] chars) {
-        int charIndex = 0, count = 1;
-        for (int i = 1; i < chars.length; i++) {
-            if (chars[i] == chars[i - 1]) {
-                count++;
-            } else {
-                if (count > 1) {
-                    for (char c : String.valueOf(count).toCharArray()) {
-                        chars[++charIndex] = c;
-                    }
-                }
-                count = 1;
-                chars[++charIndex] = chars[i];
-            }
-        }
-        if (count > 1) {
-            for (char c : String.valueOf(count).toCharArray()) {
-                chars[++charIndex] = c;
-            }
-        }
-        return charIndex + 1;
-    }
-
-    private String lastAllSame(char[] chars, int len) {
-        String last = String.valueOf(chars[len - 1]);
-        if (len == 1 || chars[len - 1] != chars[len - 2]) {
-            return last;
-        }
-        return lastAllSame(chars, len - 1) + last;
-    }
-
-    // 65. 有效数字
-    public boolean isNumber(String s) {
-        s = s.replaceAll(" ", "");
-        for (char c : s.toCharArray()) {
-            if (c != 'e' && c != '.' && (c < '0' || c > '9')) {
-                return false;
-            }
-        }
-        String[] parts = s.split("e", 3);
-        if (parts.length > 2 || parts.length == 0) {
-            return false;
-        }
-        for (String part : parts) {
-            if ("".equals(part) || part.startsWith(".") || part.endsWith(".") || part
-                .matches(".*\\..*\\..*")) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    // 816. 模糊坐标
-    public List<String> ambiguousCoordinates(String S) {
-        S = S.substring(1, S.length() - 1);
-        List<String> list = new LinkedList<>();
-        for (int comma = 1; comma < S.length(); comma++) {
-            for (String s1 : getValidString(S.substring(0, comma))) {
-                for (String s2 : getValidString(S.substring(comma))) {
-                    list.add("(" + s1 + ", " + s2 + ")");
-                }
-            }
-        }
-        return list;
-    }
-
-    private List<String> getValidString(String s) {
-        List<String> list = new LinkedList<>();
-        if (s.endsWith("0")) {
-            if ("0".equals(s) || !s.startsWith("0")) {
-                list.add(s);
-            }
-        } else if (s.startsWith("0")) {
-            list.add("0." + s.substring(1));
-        } else {
-            list.add(s);
-            for (int i = 1; i < s.length(); i++) {
-                list.add(s.substring(0, i) + "." + s.substring(i));
-            }
-        }
-        return list;
-    }
-
     // 10. 正则表达式匹配
     public boolean isMatch(String s, String p) {
         if ("".equals(p)) {
@@ -148,71 +64,25 @@ public class StringSolution {
         }
     }
 
-    // 399. 除法求值
-    public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
-        Map<String, GroupValue> map = new HashMap<>();
-        List<Set<String>> list = new LinkedList<>();
-        int groupId = 0;
-        for (int i = 0; i < equations.length; i++) {
-            String[] equation = equations[i];
-            double value = values[i];
-            String a = equation[0], b = equation[1];
-            GroupValue groupValueA = map.get(a);
-            GroupValue groupValueB = map.get(b);
-            if (groupValueA != null) {
-                if (groupValueB != null) {
-                    int idA = groupValueA.groupId, idB = groupValueB.groupId;
-                    if (idA != idB) {
-                        Set<String> setA = list.get(groupValueA.groupId);
-                        double k = value * groupValueB.value / groupValueA.value;
-                        for (String s : setA) {
-                            GroupValue groupValueS = map.get(s);
-                            groupValueS.groupId = idB;
-                            groupValueS.value *= k;
-                        }
-                        list.get(idB).addAll(setA);
-                        list.set(idA, null);
-                    }
-                } else {
-                    map.put(b, new GroupValue(groupValueA.groupId, groupValueA.value / value));
-                }
-            } else {
-                if (groupValueB != null) {
-                    map.put(a, new GroupValue(groupValueB.groupId, groupValueB.value * value));
-                } else {
-                    map.put(b, new GroupValue(groupId, 1));
-                    map.put(a, new GroupValue(groupId++, value));
-                    Set<String> set = new HashSet<>(Arrays.asList(a, b));
-                    list.add(set);
-                }
+    // 65. 有效数字
+    public boolean isNumber(String s) {
+        s = s.replaceAll(" ", "");
+        for (char c : s.toCharArray()) {
+            if (c != 'e' && c != '.' && (c < '0' || c > '9')) {
+                return false;
             }
         }
-        double[] ret = new double[queries.length];
-        for (int i = 0; i < queries.length; i++) {
-            String[] query = queries[i];
-            GroupValue groupValueX = map.get(query[0]), groupValueY = map.get(query[1]);
-            if (groupValueX == null || groupValueY == null
-                || groupValueX.groupId != groupValueY.groupId) {
-                ret[i] = -1.0;
-            } else {
-                ret[i] = groupValueX.value / groupValueY.value;
+        String[] parts = s.split("e", 3);
+        if (parts.length > 2 || parts.length == 0) {
+            return false;
+        }
+        for (String part : parts) {
+            if ("".equals(part) || part.startsWith(".") || part.endsWith(".") || part
+                .matches(".*\\..*\\..*")) {
+                return false;
             }
         }
-        return ret;
-    }
-
-    // 537. 复数乘法
-    public String complexNumberMultiply(String a, String b) {
-        int[] aInts = getInts(a), bInts = getInts(b);
-        return "" + (aInts[0] * bInts[0] - aInts[1] * bInts[1])
-            + "+" + (aInts[0] * bInts[1] + aInts[1] * bInts[0]) + "i";
-    }
-
-    private int[] getInts(String s) {
-        String[] ss = s.substring(0, s.length() - 1).split("\\+");
-        return new int[]{
-            Integer.parseInt(ss[0]), Integer.parseInt(ss[1])
-        };
+        return true;
     }
 
     // 187. 重复的DNA序列
@@ -272,28 +142,129 @@ public class StringSolution {
         return max;
     }
 
-    // 165. 比较版本号
-    public int compareVersion(String version1, String version2) {
-        String[] vs1 = version1.split("\\."), vs2 = version2.split("\\.");
-        int len = Math.max(vs1.length, vs2.length);
-        int[] v1 = new int[len], v2 = new int[len];
-        for (int i = 0; i < vs1.length; i++) {
-            v1[i] = Integer.parseInt(vs1[i]);
-        }
-        for (int i = 0; i < vs2.length; i++) {
-            v2[i] = Integer.parseInt(vs2[i]);
-        }
-        for (int i = 0; i < len; i++) {
-            if (v1[i] > v2[i]) {
-                return 1;
-            } else if (v1[i] < v2[i]) {
-                return -1;
+    // 399. 除法求值
+    public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
+        Map<String, GroupValue> map = new HashMap<>();
+        List<Set<String>> list = new LinkedList<>();
+        int groupId = 0;
+        for (int i = 0; i < equations.length; i++) {
+            String[] equation = equations[i];
+            double value = values[i];
+            String a = equation[0], b = equation[1];
+            GroupValue groupValueA = map.get(a);
+            GroupValue groupValueB = map.get(b);
+            if (groupValueA != null) {
+                if (groupValueB != null) {
+                    int idA = groupValueA.groupId, idB = groupValueB.groupId;
+                    if (idA != idB) {
+                        Set<String> setA = list.get(groupValueA.groupId);
+                        double k = value * groupValueB.value / groupValueA.value;
+                        for (String s : setA) {
+                            GroupValue groupValueS = map.get(s);
+                            groupValueS.groupId = idB;
+                            groupValueS.value *= k;
+                        }
+                        list.get(idB).addAll(setA);
+                        list.set(idA, null);
+                    }
+                } else {
+                    map.put(b, new GroupValue(groupValueA.groupId, groupValueA.value / value));
+                }
+            } else {
+                if (groupValueB != null) {
+                    map.put(a, new GroupValue(groupValueB.groupId, groupValueB.value * value));
+                } else {
+                    map.put(b, new GroupValue(groupId, 1));
+                    map.put(a, new GroupValue(groupId++, value));
+                    Set<String> set = new HashSet<>(Arrays.asList(a, b));
+                    list.add(set);
+                }
             }
         }
-        return 0;
+        double[] ret = new double[queries.length];
+        for (int i = 0; i < queries.length; i++) {
+            String[] query = queries[i];
+            GroupValue groupValueX = map.get(query[0]), groupValueY = map.get(query[1]);
+            if (groupValueX == null || groupValueY == null
+                || groupValueX.groupId != groupValueY.groupId) {
+                ret[i] = -1.0;
+            } else {
+                ret[i] = groupValueX.value / groupValueY.value;
+            }
+        }
+        return ret;
     }
 
-    class GroupValue {
+    // 443. 压缩字符串
+    public int compress(char[] chars) {
+        int charIndex = 0, count = 1;
+        for (int i = 1; i < chars.length; i++) {
+            if (chars[i] == chars[i - 1]) {
+                count++;
+            } else {
+                if (count > 1) {
+                    for (char c : String.valueOf(count).toCharArray()) {
+                        chars[++charIndex] = c;
+                    }
+                }
+                count = 1;
+                chars[++charIndex] = chars[i];
+            }
+        }
+        if (count > 1) {
+            for (char c : String.valueOf(count).toCharArray()) {
+                chars[++charIndex] = c;
+            }
+        }
+        return charIndex + 1;
+    }
+
+    // 537. 复数乘法
+    public String complexNumberMultiply(String a, String b) {
+        int[] aInts = getInts(a), bInts = getInts(b);
+        return "" + (aInts[0] * bInts[0] - aInts[1] * bInts[1])
+            + "+" + (aInts[0] * bInts[1] + aInts[1] * bInts[0]) + "i";
+    }
+
+    private int[] getInts(String s) {
+        String[] ss = s.substring(0, s.length() - 1).split("\\+");
+        return new int[]{
+            Integer.parseInt(ss[0]), Integer.parseInt(ss[1])
+        };
+    }
+
+    // 816. 模糊坐标
+    public List<String> ambiguousCoordinates(String S) {
+        S = S.substring(1, S.length() - 1);
+        List<String> list = new LinkedList<>();
+        for (int comma = 1; comma < S.length(); comma++) {
+            for (String s1 : getValidString(S.substring(0, comma))) {
+                for (String s2 : getValidString(S.substring(comma))) {
+                    list.add("(" + s1 + ", " + s2 + ")");
+                }
+            }
+        }
+        return list;
+    }
+
+    private List<String> getValidString(String s) {
+        List<String> list = new LinkedList<>();
+        if (s.endsWith("0")) {
+            if ("0".equals(s) || !s.startsWith("0")) {
+                list.add(s);
+            }
+        } else if (s.startsWith("0")) {
+            list.add("0." + s.substring(1));
+        } else {
+            list.add(s);
+            for (int i = 1; i < s.length(); i++) {
+                list.add(s.substring(0, i) + "." + s.substring(i));
+            }
+        }
+        return list;
+    }
+
+    static class GroupValue {
 
         int groupId;
         double value;

@@ -716,7 +716,7 @@ public class Solution201 extends Solution {
     /**
      * 242. Valid Anagram (Easy)
      *
-     * @see Solution1#groupAnagrams(String[])
+     * @see Solution49#groupAnagrams(String[])
      * @see Solution201#canPermutePalindrome(String)
      * @see Solution401#findAnagrams(String, String)
      * @see <a href="https://leetcode-cn.com/problems/valid-anagram/">Valid Anagram</a>
@@ -809,7 +809,7 @@ public class Solution201 extends Solution {
     /**
      * 249. Group Shifted Strings (Medium)
      *
-     * @see Solution1#groupAnagrams(String[])
+     * @see Solution49#groupAnagrams(String[])
      * @see <a href="https://leetcode-cn.com/problems/group-shifted-strings/">Group Shifted
      * Strings</a>
      */
@@ -1334,7 +1334,7 @@ public class Solution201 extends Solution {
      *
      * @see Solution1#firstMissingPositive(int[])
      * @see Solution101#singleNumber(int[])
-     * @see Solution101#detectCycle(ListNode, int)
+     * @see Solution101#detectCycle(ListNode)
      * @see Solution201#missingNumber(int[])
      * @see Solution601#findErrorNums(int[])
      * @see <a href="https://leetcode-cn.com/problems/find-the-duplicate-number/">Find the Duplicate

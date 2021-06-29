@@ -1520,32 +1520,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 49. Group Anagrams (Medium)
-     *
-     * @see Solution201#isAnagram(String, String)
-     * @see Solution201#groupStrings(String[])
-     * @see <a href="https://leetcode-cn.com/problems/group-anagrams/">Group Anagrams</a>
-     */
-    public List<List<String>> groupAnagrams(String[] strs) {
-        Map<Stat, List<String>> groups = new HashMap<>();
-        for (String str : strs) {
-            int[] values = new int[26];
-            for (char ch : str.toCharArray()) {
-                values[ch - 'a']++;
-            }
-            Stat stat = new Stat(values);
-            if (groups.containsKey(stat)) {
-                groups.get(stat).add(str);
-            } else {
-                List<String> group = new ArrayList<>();
-                group.add(str);
-                groups.put(stat, group);
-            }
-        }
-        return new ArrayList<>(groups.values());
-    }
-
-    /**
      * 50. Pow(x, n) (Medium)
      *
      * @see Math#pow(double, double)
@@ -2997,30 +2971,5 @@ public class Solution1 extends Solution {
         }
         return q != null && p.val == q.val
             && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-    }
-
-    private static class Stat {
-
-        private final int[] values;
-
-        private Stat(int[] values) {
-            this.values = values;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            int[] stat = ((Stat) o).values;
-            for (int i = 0; i < 26; i++) {
-                if (values[i] != stat[i]) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        @Override
-        public int hashCode() {
-            return Arrays.hashCode(values);
-        }
     }
 }

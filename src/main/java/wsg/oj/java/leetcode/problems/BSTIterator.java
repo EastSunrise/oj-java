@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import java.util.Stack;
+
 /**
  * 173. Binary Search Tree Iterator (Medium)
  *
@@ -16,17 +18,27 @@ package wsg.oj.java.leetcode.problems;
  */
 class BSTIterator {
 
-    BSTIterator(TreeNode root) {
-        // todo
+    private final Stack<TreeNode> stack = new Stack<>();
+
+    public BSTIterator(TreeNode root) {
+        do {
+            stack.push(root);
+            root = root.left;
+        } while (root != null);
     }
 
-    int next() {
-        // todo
-        return 0;
+    public int next() {
+        TreeNode node = stack.pop();
+        int res = node.val;
+        node = node.right;
+        while (node != null) {
+            stack.push(node);
+            node = node.left;
+        }
+        return res;
     }
 
-    boolean hasNext() {
-        // todo
-        return false;
+    public boolean hasNext() {
+        return !stack.isEmpty();
     }
 }

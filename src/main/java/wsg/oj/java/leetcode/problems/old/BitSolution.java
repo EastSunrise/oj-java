@@ -12,23 +12,6 @@ public class BitSolution {
         return carry != 0 ? getSum(xor, carry) : xor;
     }
 
-    // N为正整数, N > 1
-    private String convert2baseN(int num, int N) {
-        if (num == 0) {
-            return "0";
-        }
-        int value = Math.abs(num);
-        StringBuilder builder = new StringBuilder();
-        while (value > 0) {
-            builder.append(value % N);
-            value /= N;
-        }
-        if (num < 0) {
-            builder.append("-");
-        }
-        return builder.reverse().toString();
-    }
-
     // 318. 最大单词长度乘积
     public int maxProduct(String[] words) {
         int[] hash = new int[words.length];

@@ -12,37 +12,6 @@ import java.util.Stack;
  */
 public class StackSolution {
 
-    // 853. 车队
-    public int carFleet(int target, int[] position, int[] speed) {
-        if (position.length == 0) {
-            return 0;
-        }
-        if (position.length == 1) {
-            return 1;
-        }
-        int[] pos2Index = new int[target];
-        Arrays.fill(pos2Index, -1);
-        for (int i = 0; i < position.length; i++) {
-            pos2Index[position[i]] = i;
-        }
-        int[] speeds = new int[speed.length];
-        for (int pos = 0, i = 0; pos < pos2Index.length; pos++) {
-            if (pos2Index[pos] >= 0) {
-                position[i] = pos;
-                speeds[i++] = speed[pos2Index[pos]];
-            }
-        }
-        int preIndex = 0, count = 1;
-        for (int i = 1; i < position.length; i++) {
-            if ((target - position[i]) * speeds[preIndex] < speeds[i] * (target
-                - position[preIndex])) {
-                count++;
-            }
-            preIndex = i;
-        }
-        return count;
-    }
-
     // 32. 最长有效括号
     public int longestValidParentheses(String s) {
         char[] chars = s.toCharArray();
@@ -269,5 +238,36 @@ public class StackSolution {
             }
         }
         return ret;
+    }
+
+    // 853. 车队
+    public int carFleet(int target, int[] position, int[] speed) {
+        if (position.length == 0) {
+            return 0;
+        }
+        if (position.length == 1) {
+            return 1;
+        }
+        int[] pos2Index = new int[target];
+        Arrays.fill(pos2Index, -1);
+        for (int i = 0; i < position.length; i++) {
+            pos2Index[position[i]] = i;
+        }
+        int[] speeds = new int[speed.length];
+        for (int pos = 0, i = 0; pos < pos2Index.length; pos++) {
+            if (pos2Index[pos] >= 0) {
+                position[i] = pos;
+                speeds[i++] = speed[pos2Index[pos]];
+            }
+        }
+        int preIndex = 0, count = 1;
+        for (int i = 1; i < position.length; i++) {
+            if ((target - position[i]) * speeds[preIndex] < speeds[i] * (target
+                - position[preIndex])) {
+                count++;
+            }
+            preIndex = i;
+        }
+        return count;
     }
 }

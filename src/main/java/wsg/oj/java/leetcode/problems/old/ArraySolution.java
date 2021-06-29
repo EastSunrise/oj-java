@@ -12,20 +12,85 @@ import java.util.TreeMap;
  */
 public class ArraySolution {
 
-    // 189. 旋转数组
-    public void rotate(int[] nums, int k) {
-        int len = nums.length;
-        if (len <= 1) {
-            return;
-        }
-        k = len - k % len;
-        for (int mod = 0; mod < k; mod++) {
-            int temp = nums[mod];
-            for (int i = mod; i < len - k; i += k) {
-                nums[i] = nums[i + k];
+    // 274. H指数
+    public int hIndex(int[] citations) {
+        TreeMap<Integer, Integer> map = new TreeMap<>(Comparator.reverseOrder());
+        for (int citation : citations) {
+            Integer count = map.get(citation);
+            if (count == null) {
+                count = 0;
             }
-            nums[len - 1 - mod] = temp;
+            map.put(citation, count + 1);
         }
+        int sum = 0;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            int citation = entry.getKey();
+            sum += entry.getValue();
+            if (sum >= citation) {
+                return citation;
+            }
+        }
+        return citations.length;
+    }
+
+    // wsg 324. 摆动排序 II
+    public void wiggleSort(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                int next = i;
+                while (++next < nums.length && nums[i] == nums[next]) {
+                }
+                int temp = nums[i] > nums[next] ^ i % 2 == 0 ? i - 1 : i;
+                nums[temp] += nums[next];
+                nums[next] = nums[temp] - nums[next];
+                nums[temp] -= nums[next];
+            } else if ((i % 2 == 1 && nums[i - 1] > nums[i]) || (i % 2 == 0
+                && nums[i - 1] < nums[i])) {
+                nums[i] += nums[i - 1];
+                nums[i - 1] = nums[i] - nums[i - 1];
+                nums[i] -= nums[i - 1];
+            }
+        }
+    }
+
+    // 376. 摆动序列
+    public int wiggleMaxLength(int[] nums) {
+        if (nums.length < 2) {
+            return nums.length;
+        }
+        int up = 1, down = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                up = down + 1;
+            } else if (nums[i] < nums[i - 1]) {
+                down = up + 1;
+            }
+        }
+        return Math.max(up, down);
+    }
+
+    // 474. 一和零
+    public int findMaxForm(String[] strs, int m, int n) {
+        return findMaxForm(strs, strs.length - 1, m, n);
+    }
+
+    private int findMaxForm(String[] strs, int end, int m, int n) {
+        if (end < 0) {
+            return 0;
+        }
+        String last = strs[end];
+        int count0 = 0;
+        for (char c : last.toCharArray()) {
+            if (c == '0') {
+                count0++;
+            }
+        }
+        int count1 = last.length() - count0;
+        int noLast = findMaxForm(strs, end - 1, m, n);
+        if (m < count0 || n < count1) {
+            return noLast;
+        }
+        return Math.max(findMaxForm(strs, end - 1, m - count0, n - count1) + 1, noLast);
     }
 
     // 532. 数组中的K-diff数对
@@ -129,113 +194,5 @@ public class ArraySolution {
             first = next;
         }
         return max;
-    }
-
-    // 376. 摆动序列
-    public int wiggleMaxLength(int[] nums) {
-        if (nums.length < 2) {
-            return nums.length;
-        }
-        int up = 1, down = 1;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > nums[i - 1]) {
-                up = down + 1;
-            } else if (nums[i] < nums[i - 1]) {
-                down = up + 1;
-            }
-        }
-        return Math.max(up, down);
-    }
-
-    // 474. 一和零
-    public int findMaxForm(String[] strs, int m, int n) {
-        return findMaxForm(strs, strs.length - 1, m, n);
-    }
-
-    private int findMaxForm(String[] strs, int end, int m, int n) {
-        if (end < 0) {
-            return 0;
-        }
-        String last = strs[end];
-        int count0 = 0;
-        for (char c : last.toCharArray()) {
-            if (c == '0') {
-                count0++;
-            }
-        }
-        int count1 = last.length() - count0;
-        int noLast = findMaxForm(strs, end - 1, m, n);
-        if (m < count0 || n < count1) {
-            return noLast;
-        }
-        return Math.max(findMaxForm(strs, end - 1, m - count0, n - count1) + 1, noLast);
-    }
-
-    // 179. 最大数
-    public String largestNumber(int[] nums) {
-        String[] strings = new String[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            strings[i] = String.valueOf(nums[i]);
-        }
-        Arrays.sort(strings, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return (o2 + o1).compareTo(o1 + o2);
-            }
-        });
-        if (strings.length > 0 && "0".equals(strings[0])) {
-            return "0";
-        }
-        StringBuilder builder = new StringBuilder();
-        for (String string : strings) {
-            builder.append(string);
-        }
-        return builder.toString();
-    }
-
-    // 274. H指数
-    public int hIndex(int[] citations) {
-        TreeMap<Integer, Integer> map = new TreeMap<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2.compareTo(o1);
-            }
-        });
-        for (int citation : citations) {
-            Integer count = map.get(citation);
-            if (count == null) {
-                count = 0;
-            }
-            map.put(citation, count + 1);
-        }
-        int sum = 0;
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            int citation = entry.getKey();
-            sum += entry.getValue();
-            if (sum >= citation) {
-                return citation;
-            }
-        }
-        return citations.length;
-    }
-
-    // wsg 324. 摆动排序 II
-    public void wiggleSort(int[] nums) {
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == nums[i - 1]) {
-                int next = i;
-                while (++next < nums.length && nums[i] == nums[next]) {
-                }
-                int temp = nums[i] > nums[next] ^ i % 2 == 0 ? i - 1 : i;
-                nums[temp] += nums[next];
-                nums[next] = nums[temp] - nums[next];
-                nums[temp] -= nums[next];
-            } else if ((i % 2 == 1 && nums[i - 1] > nums[i]) || (i % 2 == 0
-                && nums[i - 1] < nums[i])) {
-                nums[i] += nums[i - 1];
-                nums[i - 1] = nums[i] - nums[i - 1];
-                nums[i] -= nums[i - 1];
-            }
-        }
     }
 }

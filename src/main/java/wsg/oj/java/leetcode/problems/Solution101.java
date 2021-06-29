@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+import wsg.oj.java.leetcode.problems.Solution116.Node;
 
 /**
  * Solutions to problems No.101-No.200.
@@ -523,66 +524,6 @@ public class Solution101 extends Solution {
     public int numDistinct(String s, String t) {
         // todo
         return 0;
-    }
-
-    /**
-     * 116. Populating Next Right Pointers in Each Node (Medium)
-     *
-     * @see Solution101#connect(Node)
-     * @see Solution101#rightSideView(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/">Populating
-     * Next Right Pointers in Each Node</a>
-     */
-    public Node connect(Node root) {
-        if (root == null || root.right == null) {
-            return root;
-        }
-        root.left.next = root.right;
-        if (root.next != null) {
-            root.right.next = root.next.left;
-        }
-        connect(root.left);
-        connect(root.right);
-        return root;
-    }
-
-    /**
-     * 117. Populating Next Right Pointers in Each Node II (Medium)
-     *
-     * @see Solution101#connect(Node)
-     * @see <a href="https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/">Populating
-     * Next Right Pointers in Each Node II</a>
-     */
-    public Node connectII(Node root) {
-        if (root == null) {
-            return null;
-        }
-        if (root.left != null || root.right != null) {
-            // get the next node
-            Node next = null;
-            Node cursor = root.next;
-            while (cursor != null) {
-                if (cursor.left != null) {
-                    next = cursor.left;
-                    break;
-                }
-                if (cursor.right != null) {
-                    next = cursor.right;
-                    break;
-                }
-                cursor = cursor.next;
-            }
-            if (root.right != null) {
-                root.right.next = next;
-                next = root.right;
-            }
-            if (root.left != null) {
-                root.left.next = next;
-            }
-        }
-        connect(root.right);
-        connect(root.left);
-        return root;
     }
 
     /**
@@ -1550,8 +1491,24 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/find-peak-element/">Find Peak Element</a>
      */
     public int findPeakElement(int[] nums) {
-        // todo
-        return 0;
+        int len = nums.length;
+        if (len == 1) {
+            return 0;
+        }
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int mid = (left + right) >>> 1;
+            if (nums[mid] < nums[right]) {
+                left = mid + 1;
+            } else if (nums[mid] < nums[left]) {
+                right = mid - 1;
+            } else if (nums[mid] > nums[mid + 1]) {
+                right = mid;
+            } else {
+                left = mid;
+            }
+        }
+        return left;
     }
 
     /**
@@ -1582,7 +1539,32 @@ public class Solution101 extends Solution {
      * Numbers</a>
      */
     public int compareVersion(String version1, String version2) {
-        // todo
+        int i1 = 0, i2 = 0, len1 = version1.length(), len2 = version2.length();
+        while (i1 < len1 || i2 < len2) {
+            int v1 = 0;
+            if (i1 < len1) {
+                int j1 = i1;
+                while (j1 < len1 && version1.charAt(j1) != '.') {
+                    j1++;
+                }
+                v1 = Integer.parseInt(version1, i1, j1, 10);
+                i1 = j1 + 1;
+            }
+            int v2 = 0;
+            if (i2 < len2) {
+                int j2 = i2;
+                while (j2 < len2 && version2.charAt(j2) != '.') {
+                    j2++;
+                }
+                v2 = Integer.parseInt(version2, i2, j2, 10);
+                i2 = j2 + 1;
+            }
+            if (v1 < v2) {
+                return -1;
+            } else if (v1 > v2) {
+                return 1;
+            }
+        }
         return 0;
     }
 
@@ -1593,8 +1575,44 @@ public class Solution101 extends Solution {
      * Recurring Decimal</a>
      */
     public String fractionToDecimal(int numerator, int denominator) {
-        // todo
-        return "";
+        StringBuilder res = new StringBuilder();
+        if (numerator != 0 && (numerator < 0 ^ denominator < 0)) {
+            // negative
+            res.append("-");
+        }
+        // the integer part
+        res.append(Math.abs(((long) numerator / denominator)));
+        long remainder = numerator % denominator;
+        if (remainder == 0) {
+            return res.toString();
+        }
+        res.append(".");
+        // appeared remainders
+        List<Long> remainders = new ArrayList<>();
+        // fraction part
+        List<Integer> fractions = new ArrayList<>();
+        do {
+            int idx = remainders.lastIndexOf(remainder);
+            if (idx >= 0) {
+                // recurring decimal
+                for (int i = 0; i < idx; i++) {
+                    res.append(fractions.get(i));
+                }
+                res.append("(");
+                for (int i = idx; i < remainders.size(); i++) {
+                    res.append(fractions.get(i));
+                }
+                return res.append(")").toString();
+            }
+            remainders.add(remainder);
+            remainder *= 10;
+            fractions.add((int) Math.abs(remainder / denominator));
+            remainder = remainder % denominator;
+        } while (remainder != 0);
+        for (int fraction : fractions) {
+            res.append(fraction);
+        }
+        return res.toString();
     }
 
     /**
@@ -1718,8 +1736,32 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/largest-number/">Largest Number</a>
      */
     public String largestNumber(int[] nums) {
-        // todo
-        return "";
+        boolean positive = false;
+        for (int num : nums) {
+            if (num > 0) {
+                positive = true;
+                break;
+            }
+        }
+        if (!positive) {
+            // all zeros
+            return "0";
+        }
+        String[] arr = new String[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            arr[i] = String.valueOf(nums[i]);
+        }
+        Arrays.sort(arr, (o1, o2) -> {
+            if (o1.length() == o2.length()) {
+                return o2.compareTo(o1);
+            }
+            return (o2 + o1).compareTo(o1 + o2);
+        });
+        StringBuilder res = new StringBuilder();
+        for (String s : arr) {
+            res.append(s);
+        }
+        return res.toString();
     }
 
     /**
@@ -1740,9 +1782,47 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/repeated-dna-sequences/">Repeated DNA
      * Sequences</a>
      */
-    public String[] findRepeatedDnaSequences(String s) {
-        // todo
-        return new String[0];
+    public List<String> findRepeatedDnaSequences(String s) {
+        int len = s.length();
+        if (len <= 10) {
+            return new ArrayList<>();
+        }
+        int value = 0;
+        // the value of the first 9 digits
+        for (int i = 0; i < 9; i++) {
+            value = (value << 2) + charToQuaternary(s.charAt(i));
+        }
+        // key: the quaternary value of the 10-letter-long sequence
+        // value: count of same values
+        byte[] counts = new byte[1 << 20];
+        List<String> res = new ArrayList<>();
+        // (1<<(c*2-1))-1
+        int base = 0x3ffff;
+        // start: the start index of the 10-letter-long sequence
+        for (int start = 0, sLen = len - 10; start <= sLen; start++) {
+            value = (value << 2) + charToQuaternary(s.charAt(start + 9));
+            counts[value]++;
+            if (counts[value] == 2) {
+                // more than one
+                res.add(s.substring(start, start + 10));
+            }
+            // remove the first digit
+            value = value & base;
+        }
+        return res;
+    }
+
+    private int charToQuaternary(char ch) {
+        switch (ch) {
+            case 'A':
+                return 0;
+            case 'C':
+                return 1;
+            case 'G':
+                return 2;
+            default:
+                return 3;
+        }
     }
 
     /**
@@ -1767,7 +1847,20 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/rotate-array/">Rotate Array</a>
      */
     public void rotate(int[] nums, int k) {
-        // todo
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    private void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
+        }
     }
 
     /**
@@ -1803,6 +1896,9 @@ public class Solution101 extends Solution {
     /**
      * 198. House Robber (Medium)
      *
+     * @see #DYNAMIC_PROGRAMMING
+     * @see #TIME_N
+     * @see #SPACE_N
      * @see Solution101#maxProduct(int[])
      * @see Solution201#rob(int[])
      * @see Solution201#minCost(int[][])
@@ -1814,26 +1910,58 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/house-robber/">House Robber</a>
      */
     public int rob(int[] nums) {
-        // todo
-        return 0;
+        int len = nums.length;
+        if (len == 1) {
+            return nums[0];
+        }
+        // dp[i]: the maximum amount robbed from nums[0,i]
+        int[] dp = new int[len];
+        dp[0] = nums[0];
+        dp[1] = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < len; i++) {
+            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        }
+        return dp[len - 1];
     }
 
     /**
      * 199. Binary Tree Right Side View (Medium)
      *
-     * @see Solution101#connect(Node)
+     * @see #LEVEL_ORDER
+     * @see #TIME_N
+     * @see #SPACE_LOG_N
+     * @see Solution116#connect(Node)
      * @see Solution501#boundaryOfBinaryTree(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">Binary Tree
      * Right Side View</a>
      */
-    public int[] rightSideView(TreeNode root) {
-        // todo
-        return new int[0];
+    public List<Integer> rightSideView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            res.add(queue.peek().val);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+            }
+        }
+        return res;
     }
 
     /**
      * 200. Number of Islands (Medium)
      *
+     * @see #DFS
      * @see Solution101#solve(char[][])
      * @see Solution201#wallsAndGates(int[][])
      * @see Solution301#numIslands2(int, int, int[][])
@@ -1844,29 +1972,32 @@ public class Solution101 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/number-of-islands/">Number of Islands</a>
      */
     public int numIslands(char[][] grid) {
-        // todo
-        return 0;
+        int num = 0;
+        int m = grid.length, n = grid[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    sinkIsland(grid, i, j);
+                    num++;
+                }
+            }
+        }
+        return num;
     }
 
-    static class Node {
-
-        public int val;
-        public Node left;
-        public Node right;
-        public Node next;
-
-        public Node() {
+    private void sinkIsland(char[][] grid, int i, int j) {
+        if (i < 0 || j < 0 || i == grid.length || j == grid[0].length) {
+            // out of index
+            return;
         }
-
-        public Node(int _val) {
-            val = _val;
+        if (grid[i][j] == '0') {
+            // water or sank
+            return;
         }
-
-        public Node(int _val, Node _left, Node _right, Node _next) {
-            val = _val;
-            left = _left;
-            right = _right;
-            next = _next;
-        }
+        grid[i][j] = '0';
+        sinkIsland(grid, i - 1, j);
+        sinkIsland(grid, i + 1, j);
+        sinkIsland(grid, i, j - 1);
+        sinkIsland(grid, i, j + 1);
     }
 }
