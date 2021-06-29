@@ -8,6 +8,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import wsg.oj.java.leetcode.problems.impl.MinStack;
 
@@ -288,6 +289,9 @@ public class Solution201 extends Solution {
     /**
      * 213. House Robber II (Medium)
      *
+     * @see #DYNAMIC_PROGRAMMING
+     * @see #TIME_N
+     * @see #SPACE_N
      * @see Solution101#rob(int[])
      * @see Solution201#minCost(int[][])
      * @see Solution201#numWays(int, int)
@@ -297,8 +301,27 @@ public class Solution201 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/house-robber-ii/">House Robber II</a>
      */
     public int rob(int[] nums) {
-        // todo
-        return 0;
+        int len = nums.length;
+        if (len == 1) {
+            return nums[0];
+        }
+        if (len == 2) {
+            return Math.max(nums[0], nums[1]);
+        }
+        // dp[i]: the maximum amount robbed from nums[0,i]
+        // dp0: rob nums[0] while nums[len-1] won't be robbed
+        // dpn: rob nums[len-1] while nums[0] won't be robbed
+        int[] dp0 = new int[len];
+        int[] dpn = new int[len];
+        dp0[0] = nums[0];
+        dp0[1] = Math.max(nums[0], nums[1]);
+        dpn[0] = 0;
+        dpn[1] = nums[1];
+        for (int i = 2; i < len; i++) {
+            dp0[i] = Math.max(dp0[i - 1], dp0[i - 2] + nums[i]);
+            dpn[i] = Math.max(dpn[i - 1], dpn[i - 2] + nums[i]);
+        }
+        return Math.max(dp0[len - 2], dpn[len - 1]);
     }
 
     /**
@@ -326,19 +349,39 @@ public class Solution201 extends Solution {
      * Element in an Array</a>
      */
     public int findKthLargest(int[] nums, int k) {
-        // todo
-        return 0;
+        Arrays.sort(nums);
+        return nums[nums.length - k];
     }
 
     /**
      * 216. Combination Sum III (Medium)
      *
+     * @see #BACKTRACKING
      * @see Solution1#combinationSum(int[], int)
      * @see <a href="https://leetcode-cn.com/problems/combination-sum-iii/">Combination Sum III</a>
      */
-    public int[][] combinationSum3(int k, int n) {
-        // todo
-        return new int[0][0];
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (n < k * (k + 1) / 2 || n > (19 - k) * k / 2) {
+            return res;
+        }
+        combinationSum3(res, new ArrayList<>(k), k, n, 1);
+        return res;
+    }
+
+    void combinationSum3(List<List<Integer>> res, List<Integer> temp, int k, int n, int start) {
+        if (k == 0 || n <= 0) {
+            if (k == 0 && n == 0) {
+                res.add(new ArrayList<>(temp));
+            }
+            return;
+        }
+        k--;
+        for (int i = start; i < 10; i++) {
+            temp.add(i);
+            combinationSum3(res, temp, k, n - i, i + 1);
+            temp.remove(temp.size() - 1);
+        }
     }
 
     /**
@@ -397,7 +440,20 @@ public class Solution201 extends Solution {
      * III</a>
      */
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-        // todo
+        int len = nums.length;
+        TreeSet<Long> window = new TreeSet<>();
+        // slide the window
+        // j: the right (inclusive) index of the window
+        for (int j = 0; j < len; j++) {
+            Long ceiling = window.ceiling(((long) nums[j] - t));
+            if (ceiling != null && ceiling - nums[j] <= t) {
+                return true;
+            }
+            window.add((long) nums[j]);
+            if (window.size() == k + 1) {
+                window.remove((long) nums[j - k]);
+            }
+        }
         return false;
     }
 
