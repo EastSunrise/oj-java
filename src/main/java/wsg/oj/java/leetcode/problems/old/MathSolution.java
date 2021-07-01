@@ -11,63 +11,6 @@ import java.util.Stack;
  */
 public class MathSolution {
 
-    // wsg 240. 搜索二维矩阵 II
-    public boolean searchMatrix(int[][] matrix, int target) {
-        int x1 = matrix.length - 1;
-        if (x1 == -1) {
-            return false;
-        }
-        int y1 = matrix[0].length - 1, x0 = 0, y0 = 0;
-        while (x0 <= x1 && y0 <= y1) {
-            int x = Arrays.binarySearch(matrix[y0], x0, x1, target);
-            if (x >= 0) {
-                return true;
-            }
-            x1 = -2 - x;
-            if (x0 > x1) {
-                return false;
-            }
-            x = Arrays.binarySearch(matrix[y1], x0, x1, target);
-            if (x >= 0) {
-                return true;
-            }
-            x0 = -1 - x;
-            if (x0 > x1) {
-                return false;
-            }
-            int y = binarySearchMatrix(matrix, x0, y0, y1, target);
-            if (y >= 0) {
-                return true;
-            }
-            y1 = -2 - y;
-            if (y0 > y1) {
-                return false;
-            }
-            y = binarySearchMatrix(matrix, x1, y0, y1, target);
-            if (y >= 0) {
-                return true;
-            }
-            y0 = -1 - y;
-        }
-        return false;
-    }
-
-    private int binarySearchMatrix(int[][] matrix, int x, int y0, int y1, int target) {
-        while (y0 <= y1) {
-            int mid = (y0 + y1) >>> 1;
-            int midVal = matrix[mid][x];
-
-            if (midVal < target) {
-                y0 = mid + 1;
-            } else if (midVal > target) {
-                y1 = mid - 1;
-            } else {
-                return mid;
-            }
-        }
-        return -(y0 + 1);
-    }
-
     // 368. 最大整除子集
     public List<Integer> largestDivisibleSubset(int[] nums) {
         if (nums.length < 1) {

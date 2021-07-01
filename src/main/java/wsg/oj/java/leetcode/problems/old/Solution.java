@@ -30,7 +30,6 @@ public class Solution {
         }
 
         int left1 = 0, left2 = 0;
-        int right1 = len1, right2 = len2;
         return 0.0;
     }
 
@@ -61,76 +60,6 @@ public class Solution {
             }
         }
         return sum1;
-    }
-
-    public int calculate(String s) {
-        Stack<String> operation = new Stack<>();
-        Stack<String> temp = new Stack<>();
-        Map<String, Integer> priority = new HashMap<>() {{
-            put("+", 1);
-            put("-", 1);
-            put("*", 2);
-            put("/", 2);
-        }};
-
-        Stack<String> src = new Stack<>();
-        char[] chars = s.toCharArray();
-        StringBuilder stringBuilder = new StringBuilder();
-        for (char aChar : chars) {
-            if (aChar != ' ') {
-                if (priority.containsKey(String.valueOf(aChar))) {
-                    src.push(stringBuilder.toString());
-                    src.push(String.valueOf(aChar));
-                    stringBuilder = new StringBuilder();
-                } else {
-                    stringBuilder.append(aChar);
-                }
-            }
-        }
-        src.push(stringBuilder.toString());
-        while (!src.empty()) {
-            String unit = src.pop();
-            if (priority.containsKey(unit)) {
-                while (!operation.empty() && !(priority.get(unit) >= priority
-                    .get(operation.peek()))) {
-                    temp.push(operation.pop());
-                }
-                operation.push(unit);
-            } else {
-                temp.push(unit);
-            }
-        }
-        while (!operation.empty()) {
-            temp.push(operation.pop());
-        }
-        while (!temp.empty()) {
-            src.push(temp.pop());
-        }
-        Stack<Integer> num = new Stack<>();
-        while (!src.empty()) {
-            String unit = src.pop();
-            if (priority.containsKey(unit)) {
-                int num1 = num.pop();
-                int num2 = num.pop();
-                switch (unit) {
-                    case "+":
-                        num.push(num1 + num2);
-                        break;
-                    case "*":
-                        num.push(num1 * num2);
-                        break;
-                    case "-":
-                        num.push(num1 - num2);
-                        break;
-                    case "/":
-                        num.push(num1 / num2);
-                        break;
-                }
-            } else {
-                num.push(Integer.valueOf(unit));
-            }
-        }
-        return num.pop();
     }
 
     public int leastBricks(List<List<Integer>> wall) {
