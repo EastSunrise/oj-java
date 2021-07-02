@@ -246,6 +246,33 @@ public class Solution201 extends Solution {
     }
 
     /**
+     * Finishes the target.
+     *
+     * @param edges     all edges in the graph
+     * @param finished  courses that have been finished
+     * @param finishing the courses being finished
+     * @param target    the course to be finished
+     */
+    private boolean canFinish(Map<Integer, List<Integer>> edges, Set<Integer> finished,
+        Set<Integer> finishing, int target) {
+        if (finishing.contains(target)) {
+            return false;
+        }
+        List<Integer> starts = edges.get(target);
+        if (starts != null) {
+            finishing.add(target);
+            for (int start : starts) {
+                if (!finished.contains(start) && !canFinish(edges, finished, finishing, start)) {
+                    return false;
+                }
+            }
+            finishing.remove(target);
+        }
+        finished.add(target);
+        return true;
+    }
+
+    /**
      * 212. Word Search II (Hard)
      *
      * @see Solution1#exist(char[][], String)
@@ -338,6 +365,21 @@ public class Solution201 extends Solution {
         }
         combinationSum3(res, new ArrayList<>(k), k, n, 1);
         return res;
+    }
+
+    void combinationSum3(List<List<Integer>> res, List<Integer> temp, int k, int n, int start) {
+        if (k == 0 || n <= 0) {
+            if (k == 0 && n == 0) {
+                res.add(new ArrayList<>(temp));
+            }
+            return;
+        }
+        k--;
+        for (int i = start; i < 10; i++) {
+            temp.add(i);
+            combinationSum3(res, temp, k, n - i, i + 1);
+            temp.remove(temp.size() - 1);
+        }
     }
 
     /**
@@ -586,6 +628,21 @@ public class Solution201 extends Solution {
         return operand2;
     }
 
+    private int calculate(char operator, int operand1, int operand2) {
+        switch (operator) {
+            case '+':
+                return operand1 + operand2;
+            case '*':
+                return operand1 * operand2;
+            case '-':
+                return operand1 - operand2;
+            case '/':
+                return operand1 / operand2;
+            default:
+                throw new IllegalArgumentException("Unknown operator: " + operator);
+        }
+    }
+
     /**
      * 228. Summary Ranges (Easy)
      *
@@ -624,6 +681,61 @@ public class Solution201 extends Solution {
      */
     public List<Integer> majorityElement(int[] nums) {
         return majorityElements(nums, 3);
+    }
+
+    /**
+     * Finds elements that appear more than [n/m] times.
+     */
+    private List<Integer> majorityElements(int[] nums, int m) {
+        m--;
+        int[] majorities = new int[m];
+        Arrays.fill(majorities, Integer.MAX_VALUE);
+        int[] counts = new int[m];
+        for (int num : nums) {
+            int i = 0;
+            while (i < m) {
+                if (num == majorities[i]) {
+                    counts[i]++;
+                    break;
+                }
+                i++;
+            }
+            if (i == m) {
+                // not in majorities
+                int j = 0;
+                while (j < m) {
+                    if (counts[j] == 0) {
+                        // replace
+                        majorities[j] = num;
+                        counts[j]++;
+                        break;
+                    }
+                    j++;
+                }
+                if (j == m) {
+                    // all majorities are placed
+                    for (int k = 0; k < m; k++) {
+                        counts[k]--;
+                    }
+                }
+            }
+        }
+        List<Integer> res = new ArrayList<>();
+        int target = nums.length / (m + 1);
+        for (int i = 0; i < m; i++) {
+            if (counts[i] > 0) {
+                counts[i] = 0;
+                for (int num : nums) {
+                    if (num == majorities[i]) {
+                        counts[i]++;
+                    }
+                }
+                if (counts[i] > target) {
+                    res.add(majorities[i]);
+                }
+            }
+        }
+        return res;
     }
 
     /**
@@ -777,6 +889,22 @@ public class Solution201 extends Solution {
             j--;
         }
         return pas.get(i + 1);
+    }
+
+    private boolean getAncestor(TreeNode node, TreeNode target, List<TreeNode> ancestors) {
+        if (node == target) {
+            ancestors.add(node);
+            return true;
+        }
+        if (node.left != null && getAncestor(node.left, target, ancestors)) {
+            ancestors.add(node);
+            return true;
+        }
+        if (node.right != null && getAncestor(node.right, target, ancestors)) {
+            ancestors.add(node);
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -1186,6 +1314,7 @@ public class Solution201 extends Solution {
     /**
      * 264. Ugly Number II (Medium)
      *
+     * @see #DYNAMIC_PROGRAMMING
      * @see Solution1#mergeKLists(ListNode[])
      * @see Solution201#countPrimes(int)
      * @see Solution201#isUgly(int)
@@ -1195,8 +1324,25 @@ public class Solution201 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/ugly-number-ii/">Ugly Number II</a>
      */
     public int nthUglyNumber(int n) {
-        // todo
-        return 0;
+        int[] dp = new int[n];
+        int i2 = 0, i3 = 0, i5 = 0;
+        dp[0] = 1;
+        for (int i = 1; i < n; i++) {
+            int num2 = 2 * dp[i2];
+            int num3 = 3 * dp[i3];
+            int num5 = 5 * dp[i5];
+            dp[i] = Math.min(num2, Math.min(num3, num5));
+            if (dp[i] == num2) {
+                i2++;
+            }
+            if (dp[i] == num3) {
+                i3++;
+            }
+            if (dp[i] == num5) {
+                i5++;
+            }
+        }
+        return dp[n - 1];
     }
 
     /**
@@ -1330,10 +1476,17 @@ public class Solution201 extends Solution {
      *
      * @see Solution201#hIndex(int[])
      * @see <a href="https://leetcode-cn.com/problems/h-index/">H-Index</a>
+     * @see <a href="https://en.wikipedia.org/wiki/H-index>h-index</a>
      */
     public int hIndex(int[] citations) {
-        // todo
-        return 0;
+        Arrays.sort(citations);
+        int len = citations.length - 1, h = 0;
+        for (int i = len; i >= 0; i--) {
+            if (citations[i] > len - i) {
+                h++;
+            }
+        }
+        return h;
     }
 
     /**
@@ -1343,8 +1496,19 @@ public class Solution201 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/h-index-ii/">H-Index II</a>
      */
     public int hIndexII(int[] citations) {
-        // todo
-        return 0;
+        int len = citations.length;
+        int low = 0, high = len - 1;
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            if (citations[mid] < len - mid) {
+                low = mid + 1;
+            } else if (citations[mid] > len - mid) {
+                high = mid - 1;
+            } else {
+                return citations[mid];
+            }
+        }
+        return len - low;
     }
 
     /**
@@ -1393,16 +1557,70 @@ public class Solution201 extends Solution {
         return left;
     }
 
+    private boolean isBadVersion(int version) {
+        // defined api
+        return version >= 5;
+    }
+
     /**
      * 279. Perfect Squares (Medium)
      *
+     * @see #DYNAMIC_PROGRAMMING
      * @see Solution201#countPrimes(int)
      * @see Solution201#nthUglyNumber(int)
      * @see <a href="https://leetcode-cn.com/problems/perfect-squares/">Perfect Squares</a>
      */
     public int numSquares(int n) {
-        // todo
-        return 0;
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        int base = 2, square = 4;
+        for (int i = 2; i <= n; i++) {
+            if (i == square) {
+                dp[i] = 1;
+                base++;
+                square = base * base;
+            } else {
+                dp[i] = Integer.MAX_VALUE;
+                for (int j = 1, jj = 1; jj <= i; j++, jj = j * j) {
+                    dp[i] = Math.min(dp[i], dp[i - jj] + 1);
+                }
+            }
+        }
+        return dp[n];
+    }
+
+    /**
+     * 279.2 Perfect Squares (Medium)
+     * <p>
+     * Every natural number n can be represented as the sum of four integers squares.
+     * <p>
+     * If and only if n=(4^k)(8m+7), n can only be represented as the sum of four positive integers
+     * squares.
+     *
+     * @see <a href="https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem>Lagrange's
+     * four-square theorem</a>
+     */
+    public int numSquares2(int n) {
+        if (isSquare(n)) {
+            return 1;
+        }
+        while (n % 4 == 0) {
+            n /= 4;
+        }
+        if (n % 8 == 7) {
+            return 4;
+        }
+        for (int i = 1; i * i < n; i++) {
+            if (isSquare(n - i * i)) {
+                return 2;
+            }
+        }
+        return 3;
+    }
+
+    private boolean isSquare(int num) {
+        int sqrt = (int) Math.sqrt(num);
+        return sqrt * sqrt == num;
     }
 
     /**
@@ -1421,7 +1639,7 @@ public class Solution201 extends Solution {
      *
      * @see BSTIterator
      * @see Vector2D
-     * @see Solution201#PeekingIterator(int[], int[])
+     * @see wsg.oj.java.leetcode.problems.impl.PeekingIterator
      * @see NestedInteger
      * @see Solution1701#mergeAlternately(String, String)
      * @see <a href="https://leetcode-cn.com/problems/zigzag-iterator/">Zigzag Iterator</a>
@@ -1465,18 +1683,6 @@ public class Solution201 extends Solution {
         }
     }
 
-    /**
-     * 284. Peeking Iterator (Medium)
-     *
-     * @see BSTIterator
-     * @see Vector2D
-     * @see Solution201#ZigzagIterator(int[], int[])
-     * @see <a href="https://leetcode-cn.com/problems/peeking-iterator/">Peeking Iterator</a>
-     */
-    public String[] PeekingIterator(int[] nums, int[] commands) {
-        // todo
-        return new String[0];
-    }
 
     /**
      * 285. Inorder Successor in BST (Medium)
@@ -1518,8 +1724,17 @@ public class Solution201 extends Solution {
      * Number</a>
      */
     public int findDuplicate(int[] nums) {
-        // todo
-        return 0;
+        int fast = 0, slow = 0;
+        do {
+            fast = nums[nums[fast]];
+            slow = nums[slow];
+        } while (fast != slow);
+        fast = 0;
+        do {
+            fast = nums[fast];
+            slow = nums[slow];
+        } while (fast != slow);
+        return fast;
     }
 
     /**
@@ -1529,7 +1744,45 @@ public class Solution201 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/game-of-life/">Game of Life</a>
      */
     public void gameOfLife(int[][] board) {
-        // todo
+        int m = board.length, n = board[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                nextState(board, i, j);
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                board[i][j] >>>= 1;
+            }
+        }
+    }
+
+    private void nextState(int[][] board, int i, int j) {
+        int lives = 0;
+        lives += isLive(board, i - 1, j - 1);
+        lives += isLive(board, i, j - 1);
+        lives += isLive(board, i + 1, j - 1);
+        lives += isLive(board, i - 1, j);
+        lives += isLive(board, i + 1, j);
+        lives += isLive(board, i - 1, j + 1);
+        lives += isLive(board, i, j + 1);
+        lives += isLive(board, i + 1, j + 1);
+        if (board[i][j] == 0) {
+            if (lives == 3) {
+                board[i][j] = 2;
+            }
+        } else {
+            if (lives == 2 || lives == 3) {
+                board[i][j] = 3;
+            }
+        }
+    }
+
+    private int isLive(int[][] board, int i, int j) {
+        if (i < 0 || j < 0 || i == board.length || j == board[0].length) {
+            return 0;
+        }
+        return board[i][j] & 1;
     }
 
     /**
@@ -1656,8 +1909,24 @@ public class Solution201 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/bulls-and-cows/">Bulls and Cows</a>
      */
     public String getHint(String secret, String guess) {
-        // todo
-        return "";
+        int bulls = 0;
+        int[] inSecret = new int[10];
+        int[] inGuess = new int[10];
+        for (int i = 0, len = secret.length(); i < len; i++) {
+            char c1 = secret.charAt(i);
+            char c2 = guess.charAt(i);
+            if (c1 == c2) {
+                bulls++;
+            } else {
+                inSecret[c1 - '0']++;
+                inGuess[c2 - '0']++;
+            }
+        }
+        int cows = 0;
+        for (int i = 0; i < 10; i++) {
+            cows += Math.min(inSecret[i], inGuess[i]);
+        }
+        return bulls + "A" + cows + "B";
     }
 
     /**
@@ -1673,140 +1942,21 @@ public class Solution201 extends Solution {
      * Increasing Subsequence</a>
      */
     public int lengthOfLIS(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    void combinationSum3(List<List<Integer>> res, List<Integer> temp, int k, int n, int start) {
-        if (k == 0 || n <= 0) {
-            if (k == 0 && n == 0) {
-                res.add(new ArrayList<>(temp));
-            }
-            return;
-        }
-        k--;
-        for (int i = start; i < 10; i++) {
-            temp.add(i);
-            combinationSum3(res, temp, k, n - i, i + 1);
-            temp.remove(temp.size() - 1);
-        }
-    }
-
-    /**
-     * Finishes the target.
-     *
-     * @param edges     all edges in the graph
-     * @param finished  courses that have been finished
-     * @param finishing the courses being finished
-     * @param target    the course to be finished
-     */
-    private boolean canFinish(Map<Integer, List<Integer>> edges, Set<Integer> finished,
-        Set<Integer> finishing, int target) {
-        if (finishing.contains(target)) {
-            return false;
-        }
-        List<Integer> starts = edges.get(target);
-        if (starts != null) {
-            finishing.add(target);
-            for (int start : starts) {
-                if (!finished.contains(start) && !canFinish(edges, finished, finishing, start)) {
-                    return false;
+        int len = nums.length;
+        // dp[i]: the longest increasing subsequence that ends with nums[i]
+        int[] dp = new int[len];
+        dp[0] = 1;
+        int max = 1;
+        for (int i = 1; i < len; i++) {
+            dp[i] = 0;
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {
+                    dp[i] = Math.max(dp[i], dp[j]);
                 }
             }
-            finishing.remove(target);
+            dp[i]++;
+            max = Math.max(max, dp[i]);
         }
-        finished.add(target);
-        return true;
-    }
-
-    private int calculate(char operator, int operand1, int operand2) {
-        switch (operator) {
-            case '+':
-                return operand1 + operand2;
-            case '*':
-                return operand1 * operand2;
-            case '-':
-                return operand1 - operand2;
-            case '/':
-                return operand1 / operand2;
-            default:
-                throw new IllegalArgumentException("Unknown operator: " + operator);
-        }
-    }
-
-    /**
-     * Finds elements that appear more than [n/m] times.
-     */
-    private List<Integer> majorityElements(int[] nums, int m) {
-        m--;
-        int[] majorities = new int[m];
-        Arrays.fill(majorities, Integer.MAX_VALUE);
-        int[] counts = new int[m];
-        for (int num : nums) {
-            int i = 0;
-            while (i < m) {
-                if (num == majorities[i]) {
-                    counts[i]++;
-                    break;
-                }
-                i++;
-            }
-            if (i == m) {
-                // not in majorities
-                int j = 0;
-                while (j < m) {
-                    if (counts[j] == 0) {
-                        // replace
-                        majorities[j] = num;
-                        counts[j]++;
-                        break;
-                    }
-                    j++;
-                }
-                if (j == m) {
-                    // all majorities are placed
-                    for (int k = 0; k < m; k++) {
-                        counts[k]--;
-                    }
-                }
-            }
-        }
-        List<Integer> res = new ArrayList<>();
-        int target = nums.length / (m + 1);
-        for (int i = 0; i < m; i++) {
-            if (counts[i] > 0) {
-                counts[i] = 0;
-                for (int num : nums) {
-                    if (num == majorities[i]) {
-                        counts[i]++;
-                    }
-                }
-                if (counts[i] > target) {
-                    res.add(majorities[i]);
-                }
-            }
-        }
-        return res;
-    }
-
-    private boolean getAncestor(TreeNode node, TreeNode target, List<TreeNode> ancestors) {
-        if (node == target) {
-            ancestors.add(node);
-            return true;
-        }
-        if (node.left != null && getAncestor(node.left, target, ancestors)) {
-            ancestors.add(node);
-            return true;
-        }
-        if (node.right != null && getAncestor(node.right, target, ancestors)) {
-            ancestors.add(node);
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isBadVersion(int version) {
-        // defined api
-        return version >= 5;
+        return max;
     }
 }

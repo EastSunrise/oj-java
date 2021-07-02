@@ -1,37 +1,13 @@
 package wsg.oj.java.leetcode.problems.old;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 /**
  * @author Kingen
  */
 public class ArraySolution {
-
-    // 274. H指数
-    public int hIndex(int[] citations) {
-        TreeMap<Integer, Integer> map = new TreeMap<>(Comparator.reverseOrder());
-        for (int citation : citations) {
-            Integer count = map.get(citation);
-            if (count == null) {
-                count = 0;
-            }
-            map.put(citation, count + 1);
-        }
-        int sum = 0;
-        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            int citation = entry.getKey();
-            sum += entry.getValue();
-            if (sum >= citation) {
-                return citation;
-            }
-        }
-        return citations.length;
-    }
 
     // wsg 324. 摆动排序 II
     public void wiggleSort(int[] nums) {

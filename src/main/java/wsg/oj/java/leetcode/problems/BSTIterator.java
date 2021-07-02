@@ -9,14 +9,14 @@ import java.util.Stack;
  * @see Solution1#inorderTraversal(TreeNode)
  * @see Vector2D
  * @see Solution201#ZigzagIterator(int[], int[])
- * @see Solution201#PeekingIterator(int[], int[])
+ * @see wsg.oj.java.leetcode.problems.impl.PeekingIterator
  * @see Solution201#inorderSuccessor(TreeNode, int)
  * @see BSTIterator
  * @see <a href="https://leetcode-cn.com/problems/binary-search-tree-iterator/">Binary Search Tree
  * Iterator</a>
  * @since 2021-06-25
  */
-class BSTIterator {
+public class BSTIterator {
 
     private final Stack<TreeNode> stack = new Stack<>();
 
