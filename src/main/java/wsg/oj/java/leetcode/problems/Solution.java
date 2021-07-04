@@ -6,34 +6,34 @@ package wsg.oj.java.leetcode.problems;
  * @author Kingen
  * @since 2021/6/24
  */
-class Solution {
+public class Solution {
 
     /**
      * @see <a href="https://leetcode-cn.com/tag/backtracking/problemset/">Backtracking</a>
      */
-    static final String BACKTRACKING = "Backtracking";
-    static final String DYNAMIC_PROGRAMMING = "Dynamic Programming";
-    static final String DFS = "Depth-First Search";
-    static final String BFS = "Breadth-First Search";
-    static final String PREORDER = "Preorder";
-    static final String INORDER = "Inorder";
-    static final String POSTORDER = "Postorder";
-    static final String LEVEL_ORDER = "Level Order";
-    static final String HASHTABLE = "Hash Table";
+    protected static final String BACKTRACKING = "Backtracking";
+    protected static final String DYNAMIC_PROGRAMMING = "Dynamic Programming";
+    protected static final String DFS = "Depth-First Search";
+    protected static final String BFS = "Breadth-First Search";
+    protected static final String PREORDER = "Preorder";
+    protected static final String INORDER = "Inorder";
+    protected static final String POSTORDER = "Postorder";
+    protected static final String LEVEL_ORDER = "Level Order";
+    protected static final String HASHTABLE = "Hash Table";
 
-    static final String TIME_CONSTANT = "O(1)";
-    static final String TIME_LOG_N = "O(log_n)";
-    static final String TIME_N = "O(n)";
-    static final String TIME_M_PLUS_N = "O(m+n)";
-    static final String TIME_N_LOG_N = "O(nlog_n)";
-    static final String TIME_NN = "O(n^2)";
-    static final String TIME_MN = "O(mn)";
+    protected static final String TIME_CONSTANT = "O(1)";
+    protected static final String TIME_LOG_N = "O(log_n)";
+    protected static final String TIME_N = "O(n)";
+    protected static final String TIME_M_PLUS_N = "O(m+n)";
+    protected static final String TIME_N_LOG_N = "O(nlog_n)";
+    protected static final String TIME_NN = "O(n^2)";
+    protected static final String TIME_MN = "O(mn)";
 
-    static final String SPACE_CONSTANT = "O(1)";
-    static final String SPACE_LOG_N = "O(log_n)";
-    static final String SPACE_N = "O(n)";
-    static final String SPACE_M_PLUS_N = "O(m+n)";
-    static final String SPACE_N_LOG_N = "O(nlog_n)";
-    static final String SPACE_NN = "O(n^2)";
-    static final String SPACE_MN = "O(mn)";
+    protected static final String SPACE_CONSTANT = "O(1)";
+    protected static final String SPACE_LOG_N = "O(log_n)";
+    protected static final String SPACE_N = "O(n)";
+    protected static final String SPACE_M_PLUS_N = "O(m+n)";
+    protected static final String SPACE_N_LOG_N = "O(nlog_n)";
+    protected static final String SPACE_NN = "O(n^2)";
+    protected static final String SPACE_MN = "O(mn)";
 }

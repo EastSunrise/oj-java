@@ -1,7 +1,5 @@
 package wsg.oj.java.leetcode.problems.impl;
 
-import wsg.oj.java.leetcode.problems.WordFilter;
-
 /**
  * 211. Design Add and Search Words Data Structure (Medium)
  *

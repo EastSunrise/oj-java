@@ -10,10 +10,10 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 import wsg.oj.java.leetcode.problems.Solution116.Node;
+import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
- * Solutions to problems No.101-No.200.
- *
  * @author Kingen
  * @since 2021/6/25
  */
@@ -1891,37 +1891,6 @@ public class Solution101 extends Solution {
      */
     public int hammingWeight(int n) {
         return Integer.bitCount(n);
-    }
-
-    /**
-     * 198. House Robber (Medium)
-     *
-     * @see #DYNAMIC_PROGRAMMING
-     * @see #TIME_N
-     * @see #SPACE_N
-     * @see Solution101#maxProduct(int[])
-     * @see Solution201#rob(int[])
-     * @see Solution201#minCost(int[][])
-     * @see Solution201#numWays(int, int)
-     * @see Solution301#rob(TreeNode)
-     * @see Solution501#findIntegers(int)
-     * @see Solution601#cheapestJump(int[], int)
-     * @see Solution701#deleteAndEarn(int[])
-     * @see <a href="https://leetcode-cn.com/problems/house-robber/">House Robber</a>
-     */
-    public int rob(int[] nums) {
-        int len = nums.length;
-        if (len == 1) {
-            return nums[0];
-        }
-        // dp[i]: the maximum amount robbed from nums[0,i]
-        int[] dp = new int[len];
-        dp[0] = nums[0];
-        dp[1] = Math.max(nums[0], nums[1]);
-        for (int i = 2; i < len; i++) {
-            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
-        }
-        return dp[len - 1];
     }
 
     /**

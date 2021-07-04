@@ -1,7 +1,5 @@
 package wsg.oj.java.leetcode.problems.impl;
 
-import wsg.oj.java.leetcode.problems.AutocompleteSystem;
-import wsg.oj.java.leetcode.problems.MagicDictionary;
 import wsg.oj.java.leetcode.problems.Solution601;
 
 /**

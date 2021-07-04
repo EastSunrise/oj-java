@@ -11,11 +11,11 @@ import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
+import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.impl.MinStack;
 
 /**
- * Solutions to problems No.201-No.300.
- *
  * @author Kingen
  * @since 2021/6/25
  */
@@ -285,44 +285,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 213. House Robber II (Medium)
-     *
-     * @see #DYNAMIC_PROGRAMMING
-     * @see #TIME_N
-     * @see #SPACE_N
-     * @see Solution101#rob(int[])
-     * @see Solution201#minCost(int[][])
-     * @see Solution201#numWays(int, int)
-     * @see Solution301#rob(TreeNode)
-     * @see Solution501#findIntegers(int)
-     * @see Solution601#cheapestJump(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/house-robber-ii/">House Robber II</a>
-     */
-    public int rob(int[] nums) {
-        int len = nums.length;
-        if (len == 1) {
-            return nums[0];
-        }
-        if (len == 2) {
-            return Math.max(nums[0], nums[1]);
-        }
-        // dp[i]: the maximum amount robbed from nums[0,i]
-        // dp0: rob nums[0] while nums[len-1] won't be robbed
-        // dpn: rob nums[len-1] while nums[0] won't be robbed
-        int[] dp0 = new int[len];
-        int[] dpn = new int[len];
-        dp0[0] = nums[0];
-        dp0[1] = Math.max(nums[0], nums[1]);
-        dpn[0] = 0;
-        dpn[1] = nums[1];
-        for (int i = 2; i < len; i++) {
-            dp0[i] = Math.max(dp0[i - 1], dp0[i - 2] + nums[i]);
-            dpn[i] = Math.max(dpn[i - 1], dpn[i - 2] + nums[i]);
-        }
-        return Math.max(dp0[len - 2], dpn[len - 1]);
-    }
-
-    /**
      * 214. Shortest Palindrome (Hard)
      *
      * @see Solution1#longestPalindrome(String)
@@ -333,22 +295,6 @@ public class Solution201 extends Solution {
     public String shortestPalindrome(String s) {
         // todo
         return "";
-    }
-
-    /**
-     * 215. Kth Largest Element in an Array (Medium)
-     *
-     * @see Solution301#wiggleSort(int[])
-     * @see Solution301#topKFrequent(int[], int)
-     * @see Solution401#thirdMax(int[])
-     * @see KthLargest
-     * @see Solution901#kClosest(int[][], int)
-     * @see <a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">Kth Largest
-     * Element in an Array</a>
-     */
-    public int findKthLargest(int[] nums, int k) {
-        Arrays.sort(nums);
-        return nums[nums.length - k];
     }
 
     /**
@@ -1927,36 +1873,5 @@ public class Solution201 extends Solution {
             cows += Math.min(inSecret[i], inGuess[i]);
         }
         return bulls + "A" + cows + "B";
-    }
-
-    /**
-     * 300. Longest Increasing Subsequence (Medium)
-     *
-     * @see Solution301#increasingTriplet(int[])
-     * @see Solution301#maxEnvelopes(int[][])
-     * @see Solution601#findLongestChain(int[][])
-     * @see Solution601#findNumberOfLIS(int[])
-     * @see Solution701#minimumDeleteSum(String, String)
-     * @see Solution1601#minimumMountainRemovals(int[])
-     * @see <a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/">Longest
-     * Increasing Subsequence</a>
-     */
-    public int lengthOfLIS(int[] nums) {
-        int len = nums.length;
-        // dp[i]: the longest increasing subsequence that ends with nums[i]
-        int[] dp = new int[len];
-        dp[0] = 1;
-        int max = 1;
-        for (int i = 1; i < len; i++) {
-            dp[i] = 0;
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
-                    dp[i] = Math.max(dp[i], dp[j]);
-                }
-            }
-            dp[i]++;
-            max = Math.max(max, dp[i]);
-        }
-        return max;
     }
 }

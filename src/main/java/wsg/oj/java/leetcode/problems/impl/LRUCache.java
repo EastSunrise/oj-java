@@ -2,10 +2,6 @@ package wsg.oj.java.leetcode.problems.impl;
 
 import java.util.HashMap;
 import java.util.Map;
-import wsg.oj.java.leetcode.problems.FileSystem;
-import wsg.oj.java.leetcode.problems.LFUCache;
-import wsg.oj.java.leetcode.problems.MRUQueue;
-import wsg.oj.java.leetcode.problems.StringIterator;
 
 /**
  * 146. LRU Cache (Medium)

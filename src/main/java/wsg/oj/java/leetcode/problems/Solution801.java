@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
+import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * Solutions to problems No.801-No.900.

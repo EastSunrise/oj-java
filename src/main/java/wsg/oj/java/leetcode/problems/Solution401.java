@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
+import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * Solutions to problems No.401-No.500.
@@ -1022,7 +1024,7 @@ public class Solution401 extends Solution {
     /**
      * 472. Concatenated Words (Hard)
      *
-     * @see Solution101#wordBreak(String, String[])
+     * @see Solution101#wordBreakII(String, String[])
      * @see <a href="https://leetcode-cn.com/problems/concatenated-words/">Concatenated Words</a>
      */
     public String[] findAllConcatenatedWordsInADict(String[] words) {

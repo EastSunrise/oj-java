@@ -3,7 +3,6 @@ package wsg.oj.java.leetcode.problems.impl;
 import java.util.Iterator;
 import wsg.oj.java.leetcode.problems.BSTIterator;
 import wsg.oj.java.leetcode.problems.Solution201;
-import wsg.oj.java.leetcode.problems.Vector2D;
 
 /**
  * 284. Peeking Iterator (Medium)

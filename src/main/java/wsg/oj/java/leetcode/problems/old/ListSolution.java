@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems.old;
 
+import wsg.oj.java.leetcode.problems.base.ListNode;
+
 /**
  * @author Kingen
  */

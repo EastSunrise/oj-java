@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
 import java.util.Stack;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 173. Binary Search Tree Iterator (Medium)

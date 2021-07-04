@@ -1,13 +1,19 @@
 package wsg.oj.java.leetcode.problems;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 import java.util.stream.Collectors;
+import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
+import wsg.oj.java.leetcode.problems.impl.NumArray;
 
 /**
- * Solutions to problems No.301-No.400.
- *
  * @author Kingen
  * @since 2021/6/25
  */
@@ -52,30 +58,107 @@ public class Solution301 extends Solution {
     /**
      * 306. Additive Number (Medium)
      *
+     * @see #DFS
+     * @see BigInteger
      * @see Solution801#splitIntoFibonacci(String)
      * @see <a href="https://leetcode-cn.com/problems/additive-number/">Additive Number</a>
      */
     public boolean isAdditiveNumber(String num) {
-        // todo
+        int len = num.length();
+        if (len <= 2) {
+            return false;
+        }
+        char[] chars = num.toCharArray();
+        for (int b = 1; b < len; b++) {
+            for (int c = b + 1; c < len; c++) {
+                if (isAdditiveNumber(chars, 0, b, c)) {
+                    return true;
+                }
+            }
+        }
         return false;
+    }
+
+    private boolean isAdditiveNumber(char[] chars, int a, int b, int c) {
+        if ((chars[a] == '0' && b - a > 1) || (chars[b] == '0' && c - b > 1)) {
+            // leading zeros
+            return false;
+        }
+        int cLen = Math.max(b - a, c - b);
+        if (c + cLen > chars.length) {
+            // not enough chars left
+            return false;
+        }
+        int[] temp = new int[cLen];
+        int i = b - 1, j = c - 1, k = cLen - 1, carry = 0;
+        while (i >= a && j >= b) {
+            int sum = chars[i--] - '0' + chars[j--] - '0' + carry;
+            temp[k--] = sum % 10;
+            carry = sum / 10;
+        }
+        while (i >= a) {
+            int sum = chars[i--] - '0' + carry;
+            temp[k--] = sum % 10;
+            carry = sum / 10;
+        }
+        while (j >= b) {
+            int sum = +chars[j--] - '0' + carry;
+            temp[k--] = sum % 10;
+            carry = sum / 10;
+        }
+        k = c;
+        if (carry > 0) {
+            if (chars[k++] - '0' != carry) {
+                return false;
+            }
+        }
+        for (int digit : temp) {
+            if (chars[k++] - '0' != digit) {
+                return false;
+            }
+        }
+        if (k == chars.length) {
+            return true;
+        }
+        return isAdditiveNumber(chars, b, c, k);
     }
 
 
     /**
      * 309. Best Time to Buy and Sell Stock with Cooldown (Medium)
      *
+     * @see #DYNAMIC_PROGRAMMING
+     * @see #TIME_N
+     * @see #SPACE_N
      * @see Solution101#maxProfit(int[])
-     * @see Solution101#maxProfit(int[])
+     * @see Solution101#maxProfitII(int[])
      * @see <a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/">Best
      * Time to Buy and Sell Stock with Cooldown</a>
      */
     public int maxProfit(int[] prices) {
-        // todo
-        return 0;
+        int len = prices.length;
+        if (len <= 1) {
+            return 0;
+        }
+        // be holding a stock after i days
+        int[] holding = new int[len];
+        // be cooldown after i days
+        int[] cooldown = new int[len];
+        // not hold a stock and not cooldown after i days
+        int[] free = new int[len];
+        holding[0] = -prices[0];
+        for (int i = 1; i < len; i++) {
+            holding[i] = Math.max(holding[i - 1], free[i - 1] - prices[i]);
+            cooldown[i] = holding[i - 1] + prices[i];
+            free[i] = Math.max(free[i - 1], cooldown[i - 1]);
+        }
+        return Math.max(cooldown[len - 1], free[len - 1]);
     }
 
     /**
      * 310. Minimum Height Trees (Medium)
+     * <p>
+     * todo
      *
      * @see Solution201#canFinish(int, int[][])
      * @see Solution201#findOrder(int, int[][])
@@ -83,8 +166,64 @@ public class Solution301 extends Solution {
      * Trees</a>
      */
     public int[] findMinHeightTrees(int n, int[][] edges) {
-        // todo
-        return new int[0];
+        Map<Integer, List<Integer>> map = new HashMap<>(n);
+        for (int[] edge : edges) {
+            map.computeIfAbsent(edge[0], k -> new ArrayList<>()).add(edge[1]);
+            map.computeIfAbsent(edge[1], k -> new ArrayList<>()).add(edge[0]);
+        }
+        // distances[i]: the distance between i and a given key
+        int[] distances = new int[n];
+        distances[0] = 1;
+        // find one side of the longest path
+        int left = findFurthest(map, 0, distances);
+        Arrays.fill(distances, 0);
+        distances[left] = 1;
+        // find the other side of the longest path
+        int right = findFurthest(map, left, distances);
+        Arrays.fill(distances, 0);
+        // find the longest path
+        List<Integer> longestPath = new ArrayList<>();
+        findPath(map, longestPath, left, right, distances);
+        int mid = longestPath.size() / 2;
+        if ((longestPath.size() & 1) == 0) {
+            return new int[]{longestPath.get(mid - 1), longestPath.get(mid)};
+        } else {
+            return new int[]{longestPath.get(mid)};
+        }
+    }
+
+    private int findFurthest(Map<Integer, List<Integer>> edges, int target, int[] distances) {
+        int furthest = target;
+        for (int vertex : edges.get(target)) {
+            if (distances[vertex] == 0) {
+                distances[vertex] = distances[target] + 1;
+                int res = findFurthest(edges, vertex, distances);
+                if (distances[res] > distances[furthest]) {
+                    furthest = res;
+                }
+            }
+        }
+        return furthest;
+    }
+
+    private boolean findPath(Map<Integer, List<Integer>> edges, List<Integer> path, int cur,
+        int target, int[] visited) {
+        if (visited[cur] == 1) {
+            return false;
+        }
+        if (cur == target) {
+            path.add(cur);
+            return true;
+        }
+        visited[cur] = 1;
+        path.add(cur);
+        for (int vertex : edges.get(cur)) {
+            if (findPath(edges, path, vertex, target, visited)) {
+                return true;
+            }
+        }
+        path.remove(path.size() - 1);
+        return false;
     }
 
     /**
@@ -116,8 +255,25 @@ public class Solution301 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/super-ugly-number/">Super Ugly Number</a>
      */
     public int nthSuperUglyNumber(int n, int[] primes) {
-        // todo
-        return 0;
+        int[] dp = new int[n];
+        int[] indices = new int[primes.length];
+        dp[0] = 1;
+        for (int i = 1; i < n; i++) {
+            dp[i] = primes[0] * dp[indices[0]];
+            int idx = 0;
+            for (int p = 1; p < indices.length; p++) {
+                int next = primes[p] * dp[indices[p]];
+                if (next < dp[i]) {
+                    dp[i] = next;
+                    idx = p;
+                }
+            }
+            indices[idx]++;
+            if (dp[i] == dp[i - 1]) {
+                i--;
+            }
+        }
+        return dp[n - 1];
     }
 
     /**
@@ -154,8 +310,35 @@ public class Solution301 extends Solution {
      * Letters</a>
      */
     public String removeDuplicateLetters(String s) {
-        // todo
-        return "";
+        Stack<Character> stack = new Stack<>();
+        boolean[] added = new boolean[26];
+        int[] remaining = new int[26];
+        for (char ch : s.toCharArray()) {
+            remaining[ch - 'a']++;
+        }
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            int idx = c - 'a';
+            remaining[idx]--;
+            if (added[idx]) {
+                // since the stack is increasing except the distinct ones
+                // ignore this one of the duplicate character
+                continue;
+            }
+            // think of the top of the stack: x
+            // if there is another x after c, choose which x to be removed
+            // if x>c, remove this x since x+c > c+x
+            while (!stack.isEmpty() && remaining[stack.peek() - 'a'] > 0 && stack.peek() > c) {
+                added[stack.pop() - 'a'] = false;
+            }
+            stack.push(c);
+            added[idx] = true;
+        }
+        StringBuilder builder = new StringBuilder(stack.size());
+        for (Character ch : stack) {
+            builder.append(ch);
+        }
+        return builder.toString();
     }
 
     /**
@@ -179,8 +362,22 @@ public class Solution301 extends Solution {
      * Product of Word Lengths</a>
      */
     public int maxProduct(String[] words) {
-        // todo
-        return 0;
+        int len = words.length;
+        int[] hashes = new int[len];
+        for (int i = 0; i < len; i++) {
+            for (char ch : words[i].toCharArray()) {
+                hashes[i] |= 1 << (ch - 'a');
+            }
+        }
+        int res = 0;
+        for (int i = 0; i < len; i++) {
+            for (int j = 1; j < len; j++) {
+                if ((hashes[i] & hashes[j]) == 0) {
+                    res = Math.max(res, words[i].length() * words[j].length());
+                }
+            }
+        }
+        return res;
     }
 
     /**
@@ -192,8 +389,11 @@ public class Solution301 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/bulb-switcher/">Bulb Switcher</a>
      */
     public int bulbSwitch(int n) {
-        // todo
-        return 0;
+        // the count of switching ith bulb is represented as the count of factors of the number i
+        // the bulb will be on if and only if the count of factors is odd
+        // which means the number i is a square
+        // so find the count of squares within n
+        return (int) Math.sqrt(n);
     }
 
     /**
@@ -230,8 +430,18 @@ public class Solution301 extends Solution {
      * @see <a href="https://leetcode-cn.com/problems/coin-change/">Coin Change</a>
      */
     public int coinChange(int[] coins, int amount) {
-        // todo
-        return 0;
+        int max = amount + 1;
+        int[] dp = new int[max];
+        Arrays.fill(dp, max);
+        dp[0] = 0;
+        for (int i = 1; i <= amount; i++) {
+            for (int coin : coins) {
+                if (i >= coin) {
+                    dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+                }
+            }
+        }
+        return dp[amount] == max ? -1 : dp[amount];
     }
 
     /**
@@ -246,18 +456,6 @@ public class Solution301 extends Solution {
     public int countComponents(int n, int[][] edges) {
         // todo
         return 0;
-    }
-
-    /**
-     * 324. Wiggle Sort II (Medium)
-     *
-     * @see Solution1#sortColors(int[])
-     * @see Solution201#findKthLargest(int[], int)
-     * @see Solution201#wiggleSort(int[])
-     * @see <a href="https://leetcode-cn.com/problems/wiggle-sort-ii/">Wiggle Sort II</a>
-     */
-    public void wiggleSort(int[] nums) {
-        // todo
     }
 
     /**
@@ -306,18 +504,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 328. Odd Even Linked List (Medium)
-     *
-     * @see Solution701#splitListToParts(ListNode, int)
-     * @see <a href="https://leetcode-cn.com/problems/odd-even-linked-list/">Odd Even Linked
-     * List</a>
-     */
-    public ListNode oddEvenList(ListNode head) {
-        // todo
-        return new ListNode();
-    }
-
-    /**
      * 329. Longest Increasing Path in a Matrix (Hard)
      *
      * @see <a href="https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/">Longest
@@ -337,28 +523,6 @@ public class Solution301 extends Solution {
     public int minPatches(int[] nums, int n) {
         // todo
         return 0;
-    }
-
-    /**
-     * 331. Verify Preorder Serialization of a Binary Tree (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/">Verify
-     * Preorder Serialization of a Binary Tree</a>
-     */
-    public boolean isValidSerialization(String preorder) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 332. Reconstruct Itinerary (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/reconstruct-itinerary/">Reconstruct
-     * Itinerary</a>
-     */
-    public String[] findItinerary(String[][] tickets) {
-        // todo
-        return new String[0];
     }
 
     /**
@@ -403,18 +567,6 @@ public class Solution301 extends Solution {
     public int[][] palindromePairs(String[] words) {
         // todo
         return new int[0][0];
-    }
-
-    /**
-     * 337. House Robber III (Medium)
-     *
-     * @see Solution101#rob(int[])
-     * @see Solution201#rob(int[])
-     * @see <a href="https://leetcode-cn.com/problems/house-robber-iii/">House Robber III</a>
-     */
-    public int rob(TreeNode root) {
-        // todo
-        return 0;
     }
 
     /**
@@ -482,16 +634,6 @@ public class Solution301 extends Solution {
         // todo
         return 0;
     }
-
-    /**
-     * 341. Flatten Nested List Iterator (Medium)
-     *
-     * @see Vector2D
-     * @see Solution201#ZigzagIterator(int[], int[])
-     * @see Solution301#deserialize(String)
-     * @see Solution501#arrayNesting(int[])
-     * @see <a href="https://leetcode-cn.com/problems/flatten-nested-list-iterator/">Flatten Nested List Iterator</a>
-     */
 
     /**
      * 342. Power of Four (Easy)
@@ -962,19 +1104,6 @@ public class Solution301 extends Solution {
         return true;
     }
 
-
-    /**
-     * 385. Mini Parser (Medium)
-     *
-     * @see Solution301#(NestedInteger[])
-     * @see Solution401#parseTernary(String)
-     * @see Solution701#removeComments(String[])
-     * @see <a href="https://leetcode-cn.com/problems/mini-parser/">Mini Parser</a>
-     */
-    public NestedInteger deserialize(String s) {
-        // todo
-        return null;
-    }
 
     /**
      * 386. Lexicographical Numbers (Medium)
