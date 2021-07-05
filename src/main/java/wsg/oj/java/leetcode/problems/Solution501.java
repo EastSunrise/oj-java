@@ -897,19 +897,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 565. Array Nesting (Medium)
-     *
-     * @see Solution301#depthSum(NestedInteger[])
-     * @see NestedInteger
-     * @see Solution301#depthSumInverse(NestedInteger[])
-     * @see <a href="https://leetcode-cn.com/problems/array-nesting/">Array Nesting</a>
-     */
-    public int arrayNesting(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 566. Reshape the Matrix (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/reshape-the-matrix/">Reshape the Matrix</a>

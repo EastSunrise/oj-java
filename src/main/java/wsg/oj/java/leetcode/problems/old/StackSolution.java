@@ -26,24 +26,6 @@ public class StackSolution {
         return 0;
     }
 
-    // 331. 验证二叉树的前序序列化
-    public boolean isValidSerialization(String preorder) {
-        String[] nodes = preorder.split(",");
-        int count = 0;
-        for (int i = nodes.length - 1; i >= 0; i--) {
-            String node = nodes[i];
-            if ("#".equals(node)) {
-                count++;
-            } else {
-                if (count < 2) {
-                    return false;
-                }
-                count--;
-            }
-        }
-        return count == 1;
-    }
-
     // 385. 迷你语法分析器
     public NestedInteger deserialize(String s) {
         char[] chars = ("[" + s + "]").toCharArray();

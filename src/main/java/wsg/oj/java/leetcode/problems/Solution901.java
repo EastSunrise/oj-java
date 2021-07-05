@@ -80,10 +80,6 @@ public class Solution901 extends Solution {
         return true;
     }
 
-    private int gcd(int a, int b) {
-        return a == 0 ? b : gcd(b % a, a);
-    }
-
     /**
      * 917. Reverse Only Letters (Easy)
      *

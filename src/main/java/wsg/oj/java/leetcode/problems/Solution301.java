@@ -424,27 +424,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 322. Coin Change (Medium)
-     *
-     * @see Solution901#mincostTickets(int[], int[])
-     * @see <a href="https://leetcode-cn.com/problems/coin-change/">Coin Change</a>
-     */
-    public int coinChange(int[] coins, int amount) {
-        int max = amount + 1;
-        int[] dp = new int[max];
-        Arrays.fill(dp, max);
-        dp[0] = 0;
-        for (int i = 1; i <= amount; i++) {
-            for (int coin : coins) {
-                if (i >= coin) {
-                    dp[i] = Math.min(dp[i], dp[i - coin] + 1);
-                }
-            }
-        }
-        return dp[amount] == max ? -1 : dp[amount];
-    }
-
-    /**
      * 323. Number of Connected Components in an Undirected Graph (Medium)
      *
      * @see Solution101#numIslands(char[][])
@@ -603,20 +582,6 @@ public class Solution301 extends Solution {
             res[i] = res[i >> 1] + (i % 2);
         }
         return res;
-    }
-
-    /**
-     * 339. Nested List Weight Sum (Medium)
-     *
-     * @see Solution301#depthSumInverse(NestedInteger[])
-     * @see Solution501#arrayNesting(int[])
-     * @see Solution601#getImportance(List, int)
-     * @see <a href="https://leetcode-cn.com/problems/nested-list-weight-sum/">Nested List Weight
-     * Sum</a>
-     */
-    public int depthSum(NestedInteger[] nestedList) {
-        // todo
-        return 0;
     }
 
     /**
@@ -872,19 +837,6 @@ public class Solution301 extends Solution {
      * Sum of Rectangle No Larger Than K</a>
      */
     public int maxSumSubmatrix(int[][] matrix, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 364. Nested List Weight Sum II (Medium)
-     *
-     * @see Solution301#depthSum(NestedInteger[])
-     * @see Solution501#arrayNesting(int[])
-     * @see <a href="https://leetcode-cn.com/problems/nested-list-weight-sum-ii/">Nested List Weight
-     * Sum II</a>
-     */
-    public int depthSumInverse(NestedInteger[] nestedList) {
         // todo
         return 0;
     }

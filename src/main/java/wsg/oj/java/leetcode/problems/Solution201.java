@@ -1581,21 +1581,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 281. Zigzag Iterator (Medium)
-     *
-     * @see BSTIterator
-     * @see Vector2D
-     * @see wsg.oj.java.leetcode.problems.impl.PeekingIterator
-     * @see NestedInteger
-     * @see Solution1701#mergeAlternately(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/zigzag-iterator/">Zigzag Iterator</a>
-     */
-    public int[] ZigzagIterator(int[] v1, int[] v2) {
-        // todo
-        return new int[0];
-    }
-
-    /**
      * 282. Expression Add Operators (Hard)
      *
      * @see Solution101#evalRPN(String[])

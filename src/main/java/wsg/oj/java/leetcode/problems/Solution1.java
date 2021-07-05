@@ -39,9 +39,6 @@ public class Solution1 extends Solution {
      * @see Solution101#twoSumII(int[], int)
      * @see Solution501#subarraySum(int[], int)
      * @see Solution601#findTarget(TreeNode, int)
-     * @see Solution1001#twoSumLessThanK(int[], int)
-     * @see Solution1601#maxOperations(int[], int)
-     * @see Solution1701#countPairs(int[])
      * @see <a href="https://leetcode-cn.com/problems/two-sum/">Two Sum</a>
      */
     public int[] twoSum(int[] nums, int target) {
@@ -68,7 +65,6 @@ public class Solution1 extends Solution {
      * @see Solution401#addStrings(String, String)
      * @see Solution401#addTwoNumbers(ListNode, ListNode)
      * @see Solution901#addToArrayForm(int[], int)
-     * @see Solution1601#addPoly(int[][], int[][])
      * @see <a href="https://leetcode-cn.com/problems/add-two-numbers/">Add Two Numbers</a>
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -108,8 +104,6 @@ public class Solution1 extends Solution {
      *
      * @see Solution101#lengthOfLongestSubstringTwoDistinct(String)
      * @see Solution301#lengthOfLongestSubstringKDistinct(String, int)
-     * @see Solution901#subarraysWithKDistinct(int[], int)
-     * @see Solution1601#maximumUniqueSubarray(int[])
      * @see <a href="https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/">Longest
      * Substring Without Repeating Characters</a>
      */
@@ -592,7 +586,6 @@ public class Solution1 extends Solution {
      * 17. Letter Combinations of a Phone Number (Medium)
      *
      * @see Solution1#generateParenthesis(int)
-     * @see Solution1#combinationSum(int[], int)
      * @see Solution401#readBinaryWatch(int)
      * @see <a href="https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/">Letter
      * Combinations of a Phone Number</a>
@@ -688,8 +681,6 @@ public class Solution1 extends Solution {
     /**
      * 19. Remove Nth Node From End of List (Medium)
      *
-     * @see Solution1701#swapNodes(ListNode, int)
-     * @see Solution1401#deleteNodes(ListNode, int, int)
      * @see <a href="https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/">Remove Nth
      * Node From End of List</a>
      */
@@ -1208,47 +1199,6 @@ public class Solution1 extends Solution {
             res = builder.toString();
         }
         return res;
-    }
-
-    /**
-     * 39. Combination Sum (Medium)
-     *
-     * @see Solution1#letterCombinations(String)
-     * @see Solution1#combinationSum2(int[], int)
-     * @see Solution1#combine(int, int)
-     * @see Solution201#combinationSum3(int, int)
-     * @see Solution201#getFactors(int)
-     * @see Solution301#combinationSum4(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/combination-sum/">Combination Sum</a>
-     */
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<>();
-        Arrays.sort(candidates);
-        combinationSum(candidates, res, new ArrayList<>(), target, 0);
-        return res;
-    }
-
-    /**
-     * @param res    the whole result
-     * @param chosen list of all chosen elements
-     * @param target the left target after subtracting the elements chosen in {@code chosen}
-     * @param start  the start index of left elements to be chosen
-     */
-    private void combinationSum(int[] candidates, List<List<Integer>> res, List<Integer> chosen,
-        int target, int start) {
-        if (target == 0) {
-            res.add(new ArrayList<>(chosen));
-            return;
-        }
-        for (int i = start; i < candidates.length; i++) {
-            if (target < candidates[i]) {
-                // since the array is sorted, the left elements are ignored
-                break;
-            }
-            chosen.add(candidates[i]);
-            combinationSum(candidates, res, chosen, target - candidates[i], i);
-            chosen.remove(chosen.size() - 1);
-        }
     }
 
     /**

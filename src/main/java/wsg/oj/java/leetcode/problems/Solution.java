@@ -36,4 +36,8 @@ public class Solution {
     protected static final String SPACE_N_LOG_N = "O(nlog_n)";
     protected static final String SPACE_NN = "O(n^2)";
     protected static final String SPACE_MN = "O(mn)";
+
+    protected static int gcd(int a, int b) {
+        return a == 0 ? b : gcd(b % a, a);
+    }
 }

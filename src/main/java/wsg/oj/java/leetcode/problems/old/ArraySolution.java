@@ -9,26 +9,6 @@ import java.util.Set;
  */
 public class ArraySolution {
 
-    // wsg 324. 摆动排序 II
-    public void wiggleSort(int[] nums) {
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == nums[i - 1]) {
-                int next = i;
-                while (++next < nums.length && nums[i] == nums[next]) {
-                }
-                int temp = nums[i] > nums[next] ^ i % 2 == 0 ? i - 1 : i;
-                nums[temp] += nums[next];
-                nums[next] = nums[temp] - nums[next];
-                nums[temp] -= nums[next];
-            } else if ((i % 2 == 1 && nums[i - 1] > nums[i]) || (i % 2 == 0
-                && nums[i - 1] < nums[i])) {
-                nums[i] += nums[i - 1];
-                nums[i - 1] = nums[i] - nums[i - 1];
-                nums[i] -= nums[i - 1];
-            }
-        }
-    }
-
     // 376. 摆动序列
     public int wiggleMaxLength(int[] nums) {
         if (nums.length < 2) {
