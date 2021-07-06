@@ -32,6 +32,11 @@ public class TestUtil {
         return stringToArray(input, char[]::new, (arr, i, str) -> arr[i] = str.charAt(1));
     }
 
+    public static double[] stringToDoubleArray(String input) {
+        return stringToArray(input, double[]::new,
+            (arr, i, str) -> arr[i] = Double.parseDouble(str));
+    }
+
     public static String[][] stringToString2dArray(String input) {
         return stringTo2dArray(input, String[][]::new, String[]::new,
             (arr, i, str) -> arr[i] = str.substring(1, str.length() - 1));

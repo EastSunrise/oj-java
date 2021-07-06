@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-import wsg.oj.java.leetcode.problems.base.NestedInteger;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.impl.Trie;
 
@@ -142,7 +141,6 @@ public class Solution601 extends Solution {
     /**
      * 621. Task Scheduler (Medium)
      *
-     * @see Solution301#rearrangeString(String, int)
      * @see Solution701#reorganizeString(String)
      * @see <a href="https://leetcode-cn.com/problems/task-scheduler/">Task Scheduler</a>
      */
@@ -1053,7 +1051,6 @@ public class Solution601 extends Solution {
     /**
      * 690. Employee Importance (Easy)
      *
-     * @see Solution301#depthSum(NestedInteger[])
      * @see <a href="https://leetcode-cn.com/problems/employee-importance/">Employee Importance</a>
      */
     public int getImportance(List<Employee> employees, int id) {

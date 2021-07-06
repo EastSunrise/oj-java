@@ -9,51 +9,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
-import wsg.oj.java.leetcode.problems.base.ListNode;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
-import wsg.oj.java.leetcode.problems.impl.NumArray;
 
 /**
  * @author Kingen
  * @since 2021/6/25
  */
 public class Solution301 extends Solution {
-
-    /**
-     * 301. Remove Invalid Parentheses (Hard)
-     *
-     * @see Solution1#isValid(String)
-     * @see <a href="https://leetcode-cn.com/problems/remove-invalid-parentheses/">Remove Invalid
-     * Parentheses</a>
-     */
-    public String[] removeInvalidParentheses(String s) {
-        // todo
-        return new String[0];
-    }
-
-    /**
-     * 302. Smallest Rectangle Enclosing Black Pixels (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/smallest-rectangle-enclosing-black-pixels/">Smallest
-     * Rectangle Enclosing Black Pixels</a>
-     */
-    public int minArea(char[][] image, int x, int y) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 305. Number of Islands II (Hard)
-     *
-     * @see Solution101#numIslands(char[][])
-     * @see <a href="https://leetcode-cn.com/problems/number-of-islands-ii/">Number of Islands
-     * II</a>
-     */
-    public int[] numIslands2(int m, int n, int[][] positions) {
-        // todo
-        return new int[0];
-    }
 
     /**
      * 306. Additive Number (Medium)
@@ -227,28 +188,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 311. Sparse Matrix Multiplication (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/sparse-matrix-multiplication/">Sparse Matrix
-     * Multiplication</a>
-     */
-    public int[][] multiply(int[][] mat1, int[][] mat2) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
-     * 312. Burst Balloons (Hard)
-     *
-     * @see Solution901#mergeStones(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/burst-balloons/">Burst Balloons</a>
-     */
-    public int maxCoins(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 313. Super Ugly Number (Medium)
      *
      * @see Solution201#nthUglyNumber(int)
@@ -274,33 +213,6 @@ public class Solution301 extends Solution {
             }
         }
         return dp[n - 1];
-    }
-
-    /**
-     * 314. Binary Tree Vertical Order Traversal (Medium)
-     *
-     * @see Solution101#levelOrder(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-vertical-order-traversal/">Binary
-     * Tree Vertical Order Traversal</a>
-     */
-    public int[][] verticalOrder(TreeNode root) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
-     * 315. Count of Smaller Numbers After Self (Hard)
-     *
-     * @see Solution301#countRangeSum(int[], int, int)
-     * @see Solution401#reconstructQueue(int[][])
-     * @see Solution401#reversePairs(int[])
-     * @see Solution1301#smallerNumbersThanCurrent(int[])
-     * @see <a href="https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/">Count of
-     * Smaller Numbers After Self</a>
-     */
-    public int[] countSmaller(int[] nums) {
-        // todo
-        return new int[0];
     }
 
     /**
@@ -339,20 +251,6 @@ public class Solution301 extends Solution {
             builder.append(ch);
         }
         return builder.toString();
-    }
-
-    /**
-     * 317. Shortest Distance from All Buildings (Hard)
-     *
-     * @see Solution201#wallsAndGates(int[][])
-     * @see Solution201#minTotalDistance(int[][])
-     * @see Solution1101#maxDistance(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/shortest-distance-from-all-buildings/">Shortest
-     * Distance from All Buildings</a>
-     */
-    public int shortestDistance(int[][] grid) {
-        // todo
-        return 0;
     }
 
     /**
@@ -397,62 +295,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 320. Generalized Abbreviation (Medium)
-     *
-     * @see Solution1#subsets(int[])
-     * @see ValidWordAbbr
-     * @see Solution401#minAbbreviation(String, String[])
-     * @see <a href="https://leetcode-cn.com/problems/generalized-abbreviation/">Generalized
-     * Abbreviation</a>
-     */
-    public String[] generateAbbreviations(String word) {
-        // todo
-        return new String[0];
-    }
-
-    /**
-     * 321. Create Maximum Number (Hard)
-     *
-     * @see Solution401#removeKdigits(String, int)
-     * @see Solution601#maximumSwap(int)
-     * @see <a href="https://leetcode-cn.com/problems/create-maximum-number/">Create Maximum
-     * Number</a>
-     */
-    public int[] maxNumber(int[] nums1, int[] nums2, int k) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 323. Number of Connected Components in an Undirected Graph (Medium)
-     *
-     * @see Solution101#numIslands(char[][])
-     * @see Solution201#validTree(int, int[][])
-     * @see Solution501#findCircleNum(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/number-of-connected-components-in-an-undirected-graph/">Number
-     * of Connected Components in an Undirected Graph</a>
-     */
-    public int countComponents(int n, int[][] edges) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 325. Maximum Size Subarray Sum Equals k (Medium)
-     *
-     * @see Solution201#minSubArrayLen(int, int[])
-     * @see NumArray
-     * @see Solution501#findMaxLength(int[])
-     * @see Solution701#numSubarrayProductLessThanK(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/maximum-size-subarray-sum-equals-k/">Maximum
-     * Size Subarray Sum Equals k</a>
-     */
-    public int maxSubArrayLen(int[] nums, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 326. Power of Three (Easy)
      *
      * @see Solution201#isPowerOfTwo(int)
@@ -468,84 +310,6 @@ public class Solution301 extends Solution {
             n /= 3;
         }
         return n == 1;
-    }
-
-    /**
-     * 327. Count of Range Sum (Hard)
-     *
-     * @see Solution301#countSmaller(int[])
-     * @see Solution401#reversePairs(int[])
-     * @see <a href="https://leetcode-cn.com/problems/count-of-range-sum/">Count of Range Sum</a>
-     */
-    public int countRangeSum(int[] nums, int lower, int upper) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 329. Longest Increasing Path in a Matrix (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix/">Longest
-     * Increasing Path in a Matrix</a>
-     */
-    public int longestIncreasingPath(int[][] matrix) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 330. Patching Array (Hard)
-     *
-     * @see Solution1701#getMaximumConsecutive(int[])
-     * @see <a href="https://leetcode-cn.com/problems/patching-array/">Patching Array</a>
-     */
-    public int minPatches(int[] nums, int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 333. Largest BST Subtree (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/largest-bst-subtree/">Largest BST Subtree</a>
-     */
-    public int largestBSTSubtree(TreeNode root) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 334. Increasing Triplet Subsequence (Medium)
-     *
-     * @see Solution201#lengthOfLIS(int[])
-     * @see <a href="https://leetcode-cn.com/problems/increasing-triplet-subsequence/">Increasing
-     * Triplet Subsequence</a>
-     */
-    public boolean increasingTriplet(int[] nums) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 335. Self Crossing (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/self-crossing/">Self Crossing</a>
-     */
-    public boolean isSelfCrossing(int[] distance) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 336. Palindrome Pairs (Hard)
-     *
-     * @see Solution1#longestPalindrome(String)
-     * @see Solution201#shortestPalindrome(String)
-     * @see <a href="https://leetcode-cn.com/problems/palindrome-pairs/">Palindrome Pairs</a>
-     */
-    public int[][] palindromePairs(String[] words) {
-        // todo
-        return new int[0][0];
     }
 
     /**
@@ -585,22 +349,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 340. Longest Substring with At Most K Distinct Characters (Medium)
-     *
-     * @see Solution1#lengthOfLongestSubstring(String)
-     * @see Solution101#lengthOfLongestSubstringTwoDistinct(String)
-     * @see Solution401#characterReplacement(String, int)
-     * @see Solution901#subarraysWithKDistinct(int[], int)
-     * @see Solution1001#longestOnes(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters/">Longest
-     * Substring with At Most K Distinct Characters</a>
-     */
-    public int lengthOfLongestSubstringKDistinct(String s, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 342. Power of Four (Easy)
      *
      * @see Solution201#isPowerOfTwo(int)
@@ -615,17 +363,6 @@ public class Solution301 extends Solution {
         }
         // a power of 2 = (3-1)^n = 3k + (-1)^n
         return n % 3 == 1;
-    }
-
-    /**
-     * 343. Integer Break (Medium)
-     *
-     * @see Solution1801#maxNiceDivisors(int)
-     * @see <a href="https://leetcode-cn.com/problems/integer-break/">Integer Break</a>
-     */
-    public int integerBreak(int n) {
-        // todo
-        return 0;
     }
 
     /**
@@ -674,25 +411,6 @@ public class Solution301 extends Solution {
         }
         return ch != 'A' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U';
     }
-
-
-    /**
-     * 347. Top K Frequent Elements (Medium)
-     *
-     * @see Solution201#findKthLargest(int[], int)
-     * @see Solution401#frequencySort(String)
-     * @see Solution601#isPossible(int[])
-     * @see Solution601#topKFrequent(String[], int)
-     * @see Solution901#kClosest(int[][], int)
-     * @see Solution1701#sortFeatures(String[], String[])
-     * @see <a href="https://leetcode-cn.com/problems/top-k-frequent-elements/">Top K Frequent
-     * Elements</a>
-     */
-    public int[] topKFrequent(int[] nums, int k) {
-        // todo
-        return new int[0];
-    }
-
 
     /**
      * 349. Intersection of Two Arrays (Easy)
@@ -746,124 +464,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 351. Android Unlock Patterns (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/android-unlock-patterns/">Android Unlock
-     * Patterns</a>
-     */
-    public int numberOfPatterns(int m, int n) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 354. Russian Doll Envelopes (Hard)
-     *
-     * @see Solution201#lengthOfLIS(int[])
-     * @see <a href="https://leetcode-cn.com/problems/russian-doll-envelopes/">Russian Doll
-     * Envelopes</a>
-     */
-    public int maxEnvelopes(int[][] envelopes) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 356. Line Reflection (Medium)
-     *
-     * @see Solution101#maxPoints(int[][])
-     * @see Solution401#numberOfBoomerangs(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/line-reflection/">Line Reflection</a>
-     */
-    public boolean isReflected(int[][] points) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 357. Count Numbers with Unique Digits (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/count-numbers-with-unique-digits/">Count
-     * Numbers with Unique Digits</a>
-     */
-    public int countNumbersWithUniqueDigits(int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 358. Rearrange String k Distance Apart (Hard)
-     *
-     * @see Solution601#leastInterval(char[], int)
-     * @see Solution701#reorganizeString(String)
-     * @see <a href="https://leetcode-cn.com/problems/rearrange-string-k-distance-apart/">Rearrange
-     * String k Distance Apart</a>
-     */
-    public String rearrangeString(String s, int k) {
-        // todo
-        return "";
-    }
-
-
-    /**
-     * 360. Sort Transformed Array (Medium)
-     *
-     * @see Solution901#sortedSquares(int[])
-     * @see <a href="https://leetcode-cn.com/problems/sort-transformed-array/">Sort Transformed
-     * Array</a>
-     */
-    public int[] sortTransformedArray(int[] nums, int a, int b, int c) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 361. Bomb Enemy (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/bomb-enemy/">Bomb Enemy</a>
-     */
-    public int maxKilledEnemies(char[][] grid) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 363. Max Sum of Rectangle No Larger Than K (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/">Max
-     * Sum of Rectangle No Larger Than K</a>
-     */
-    public int maxSumSubmatrix(int[][] matrix, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 365. Water and Jug Problem (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/water-and-jug-problem/">Water and Jug
-     * Problem</a>
-     */
-    public boolean canMeasureWater(int jug1Capacity, int jug2Capacity, int targetCapacity) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 366. Find Leaves of Binary Tree (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/find-leaves-of-binary-tree/">Find Leaves of
-     * Binary Tree</a>
-     */
-    public int[][] findLeaves(TreeNode root) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
      * 367. Valid Perfect Square (Easy)
      *
      * @see Solution1#mySqrt(int)
@@ -878,75 +478,6 @@ public class Solution301 extends Solution {
             left = num / right;
         }
         return right * right == num;
-    }
-
-    /**
-     * 368. Largest Divisible Subset (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/largest-divisible-subset/">Largest Divisible
-     * Subset</a>
-     */
-    public int[] largestDivisibleSubset(int[] nums) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 369. Plus One Linked List (Medium)
-     *
-     * @see Solution1#plusOne(int[])
-     * @see <a href="https://leetcode-cn.com/problems/plus-one-linked-list/">Plus One Linked
-     * List</a>
-     */
-    public ListNode plusOne(ListNode head) {
-        // todo
-        return new ListNode();
-    }
-
-    /**
-     * 370. Range Addition (Medium)
-     *
-     * @see Solution501#maxCount(int, int, int[][])
-     * @see <a href="https://leetcode-cn.com/problems/range-addition/">Range Addition</a>
-     */
-    public int[] getModifiedArray(int length, int[][] updates) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 371. Sum of Two Integers (Medium)
-     *
-     * @see Solution1#addTwoNumbers(ListNode, ListNode)
-     * @see <a href="https://leetcode-cn.com/problems/sum-of-two-integers/">Sum of Two Integers</a>
-     */
-    public int getSum(int a, int b) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 372. Super Pow (Medium)
-     *
-     * @see Solution1#myPow(double, int)
-     * @see <a href="https://leetcode-cn.com/problems/super-pow/">Super Pow</a>
-     */
-    public int superPow(int a, int[] b) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 373. Find K Pairs with Smallest Sums (Medium)
-     *
-     * @see Solution301#kthSmallest(int[][], int)
-     * @see Solution701#smallestDistancePair(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/">Find K Pairs
-     * with Smallest Sums</a>
-     */
-    public int[][] kSmallestPairs(int[] nums1, int[] nums2, int k) {
-        // todo
-        return new int[0][0];
     }
 
     /**
@@ -979,58 +510,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 375. Guess Number Higher or Lower II (Medium)
-     *
-     * @see Solution201#canWin(String)
-     * @see Solution301#guessNumber(int)
-     * @see Solution401#canIWin(int, int)
-     * @see Solution601#findClosestElements(int[], int, int)
-     * @see <a href="https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/">Guess Number
-     * Higher or Lower II</a>
-     */
-    public int getMoneyAmount(int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 376. Wiggle Subsequence (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/wiggle-subsequence/">Wiggle Subsequence</a>
-     */
-    public int wiggleMaxLength(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 377. Combination Sum IV (Medium)
-     *
-     * @see Solution1#combinationSum(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/combination-sum-iv/">Combination Sum IV</a>
-     */
-    public int combinationSum4(int[] nums, int target) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 378. Kth Smallest Element in a Sorted Matrix (Medium)
-     *
-     * @see Solution301#kSmallestPairs(int[], int[], int)
-     * @see Solution601#findKthNumber(int, int, int)
-     * @see Solution701#smallestDistancePair(int[], int)
-     * @see Solution701#kthSmallestPrimeFraction(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/kth-smallest-element-in-a-sorted-matrix/">Kth
-     * Smallest Element in a Sorted Matrix</a>
-     */
-    public int kthSmallest(int[][] matrix, int k) {
-        // todo
-        return 0;
-    }
-
-
-    /**
      * 383. Ransom Note (Easy)
      *
      * @see Solution601#minStickers(String[], String)
@@ -1054,18 +533,6 @@ public class Solution301 extends Solution {
             }
         }
         return true;
-    }
-
-
-    /**
-     * 386. Lexicographical Numbers (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/lexicographical-numbers/">Lexicographical
-     * Numbers</a>
-     */
-    public int[] lexicalOrder(int n) {
-        // todo
-        return new int[0];
     }
 
     /**
@@ -1094,17 +561,6 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 388. Longest Absolute File Path (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/longest-absolute-file-path/">Longest Absolute
-     * File Path</a>
-     */
-    public int lengthLongestPath(String input) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 389. Find the Difference (Easy)
      *
      * @see Solution101#singleNumber(int[])
@@ -1123,30 +579,9 @@ public class Solution301 extends Solution {
     }
 
     /**
-     * 390. Elimination Game (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/elimination-game/">Elimination Game</a>
-     */
-    public int lastRemaining(int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 391. Perfect Rectangle (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/perfect-rectangle/">Perfect Rectangle</a>
-     */
-    public boolean isRectangleCover(int[][] rectangles) {
-        // todo
-        return false;
-    }
-
-    /**
      * 392. Is Subsequence (Easy)
      *
      * @see Solution701#numMatchingSubseq(String, String[])
-     * @see Solution1001#shortestWay(String, String)
      * @see <a href="https://leetcode-cn.com/problems/is-subsequence/">Is Subsequence</a>
      */
     public boolean isSubsequence(String s, String t) {
@@ -1160,80 +595,5 @@ public class Solution301 extends Solution {
             ti--;
         }
         return si < 0;
-    }
-
-    /**
-     * 393. UTF-8 Validation (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/utf-8-validation/">UTF-8 Validation</a>
-     */
-    public boolean validUtf8(int[] data) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 394. Decode String (Medium)
-     *
-     * @see Solution401#encode(String)
-     * @see Solution701#countOfAtoms(String)
-     * @see Solution1001#expand(String)
-     * @see <a href="https://leetcode-cn.com/problems/decode-string/">Decode String</a>
-     */
-    public String decodeString(String s) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 395. Longest Substring with At Least K Repeating Characters (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/">Longest
-     * Substring with At Least K Repeating Characters</a>
-     */
-    public int longestSubstring(String s, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 396. Rotate Function (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/rotate-function/">Rotate Function</a>
-     */
-    public int maxRotateFunction(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 397. Integer Replacement (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/integer-replacement/">Integer Replacement</a>
-     */
-    public int integerReplacement(int n) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 399. Evaluate Division (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/evaluate-division/">Evaluate Division</a>
-     */
-    public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
-        // todo
-        return new double[0];
-    }
-
-    /**
-     * 400. Nth Digit (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/nth-digit/">Nth Digit</a>
-     */
-    public int findNthDigit(int n) {
-        // todo
-        return 0;
     }
 }

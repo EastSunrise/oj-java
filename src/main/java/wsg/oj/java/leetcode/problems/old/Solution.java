@@ -14,6 +14,8 @@ import java.util.Stack;
 public class Solution {
 
     /**
+     * 4.
+     *
      * @see <a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">4.
      * 寻找两个正序数组的中位数</a>
      */
@@ -33,6 +35,7 @@ public class Solution {
         return 0.0;
     }
 
+    // 481.
     public int magicalString(int n) {
         if (n <= 0) {
             return 0;
@@ -62,6 +65,7 @@ public class Solution {
         return sum1;
     }
 
+    // 554.
     public int leastBricks(List<List<Integer>> wall) {
         Map<Integer, Integer> times = new HashMap<>();
         for (List<Integer> list : wall) {
@@ -93,6 +97,34 @@ public class Solution {
         return wall.size() - max;
     }
 
+    // 593.
+    public boolean validSquare(int[] p1, int[] p2, int[] p3, int[] p4) {
+        int len12 = getDistance(p1, p2);
+        int len13 = getDistance(p1, p3);
+        int len14 = getDistance(p1, p4);
+        if (len13 > len12) {
+            return isValidSquare(p1, p2, p3, p4, len13, len12, len14);
+        }
+        if (len14 > len12) {
+            return isValidSquare(p1, p2, p4, p3, len14, len12, len13);
+        }
+        if (len12 > 0) {
+            return isValidSquare(p1, p3, p2, p4, len12, len13, len14);
+        }
+        return false;
+    }
+
+    private boolean isValidSquare(int[] p1, int[] p2, int[] p3, int[] p4, int len13, int len12,
+        int len14) {
+        return (p1[0] + p3[0]) == (p2[0] + p4[0]) && (p1[1] + p3[1]) == (p2[1] + p4[1])
+            && len13 == getDistance(p2, p4) && len12 == len14;
+    }
+
+    private int getDistance(int[] p1, int[] p2) {
+        return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
+    }
+
+    // 880.
     public String decodeAtIndex(String S, int K) {
         Stack<Object> stack = new Stack<>();
         StringBuilder stringBuilder = new StringBuilder();
@@ -135,32 +167,6 @@ public class Solution {
             }
         }
         return String.valueOf(S.charAt(K - 1));
-    }
-
-    public boolean validSquare(int[] p1, int[] p2, int[] p3, int[] p4) {
-        int len12 = getDistance(p1, p2);
-        int len13 = getDistance(p1, p3);
-        int len14 = getDistance(p1, p4);
-        if (len13 > len12) {
-            return isValidSquare(p1, p2, p3, p4, len13, len12, len14);
-        }
-        if (len14 > len12) {
-            return isValidSquare(p1, p2, p4, p3, len14, len12, len13);
-        }
-        if (len12 > 0) {
-            return isValidSquare(p1, p3, p2, p4, len12, len13, len14);
-        }
-        return false;
-    }
-
-    private boolean isValidSquare(int[] p1, int[] p2, int[] p3, int[] p4, int len13, int len12,
-        int len14) {
-        return (p1[0] + p3[0]) == (p2[0] + p4[0]) && (p1[1] + p3[1]) == (p2[1] + p4[1])
-            && len13 == getDistance(p2, p4) && len12 == len14;
-    }
-
-    private int getDistance(int[] p1, int[] p2) {
-        return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
     }
 
     public int minFlipsMonoIncr(String S) {

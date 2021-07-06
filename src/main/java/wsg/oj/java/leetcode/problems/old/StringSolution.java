@@ -1,14 +1,10 @@
 package wsg.oj.java.leetcode.problems.old;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.Stack;
 
 /**
  * @author Kingen
@@ -107,92 +103,6 @@ public class StringSolution {
             }
         }
         return list;
-    }
-
-    // 388. 文件的最长绝对路径
-    public int lengthLongestPath(String input) {
-        char[] chars = (input + "\n").toCharArray();
-        int level = 0, len = 0, length = 0, max = 0;
-        boolean isFile = false;
-        Stack<Integer> stack = new Stack<>();
-        for (char c : chars) {
-            if (c == '\n') {
-                if (!isFile) {
-                    len++;
-                }
-                while (stack.size() > level) {
-                    length -= stack.pop();
-                }
-                stack.push(len);
-                length += len;
-                if (isFile) {
-                    max = Math.max(length, max);
-                }
-                level = len = 0;
-                isFile = false;
-            } else if (c == '\t') {
-                level++;
-            } else {
-                if (c == '.') {
-                    isFile = true;
-                }
-                len++;
-            }
-        }
-        return max;
-    }
-
-    // 399. 除法求值
-    public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
-        Map<String, GroupValue> map = new HashMap<>();
-        List<Set<String>> list = new LinkedList<>();
-        int groupId = 0;
-        for (int i = 0; i < equations.length; i++) {
-            String[] equation = equations[i];
-            double value = values[i];
-            String a = equation[0], b = equation[1];
-            GroupValue groupValueA = map.get(a);
-            GroupValue groupValueB = map.get(b);
-            if (groupValueA != null) {
-                if (groupValueB != null) {
-                    int idA = groupValueA.groupId, idB = groupValueB.groupId;
-                    if (idA != idB) {
-                        Set<String> setA = list.get(groupValueA.groupId);
-                        double k = value * groupValueB.value / groupValueA.value;
-                        for (String s : setA) {
-                            GroupValue groupValueS = map.get(s);
-                            groupValueS.groupId = idB;
-                            groupValueS.value *= k;
-                        }
-                        list.get(idB).addAll(setA);
-                        list.set(idA, null);
-                    }
-                } else {
-                    map.put(b, new GroupValue(groupValueA.groupId, groupValueA.value / value));
-                }
-            } else {
-                if (groupValueB != null) {
-                    map.put(a, new GroupValue(groupValueB.groupId, groupValueB.value * value));
-                } else {
-                    map.put(b, new GroupValue(groupId, 1));
-                    map.put(a, new GroupValue(groupId++, value));
-                    Set<String> set = new HashSet<>(Arrays.asList(a, b));
-                    list.add(set);
-                }
-            }
-        }
-        double[] ret = new double[queries.length];
-        for (int i = 0; i < queries.length; i++) {
-            String[] query = queries[i];
-            GroupValue groupValueX = map.get(query[0]), groupValueY = map.get(query[1]);
-            if (groupValueX == null || groupValueY == null
-                || groupValueX.groupId != groupValueY.groupId) {
-                ret[i] = -1.0;
-            } else {
-                ret[i] = groupValueX.value / groupValueY.value;
-            }
-        }
-        return ret;
     }
 
     // 443. 压缩字符串

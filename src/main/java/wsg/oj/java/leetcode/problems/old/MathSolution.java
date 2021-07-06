@@ -1,6 +1,5 @@
 package wsg.oj.java.leetcode.problems.old;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,38 +9,6 @@ import java.util.Stack;
  * @author Kingen
  */
 public class MathSolution {
-
-    // 368. 最大整除子集
-    public List<Integer> largestDivisibleSubset(int[] nums) {
-        if (nums.length < 1) {
-            return new ArrayList<>();
-        }
-        Arrays.sort(nums);
-        int[] dp = new int[nums.length], pre = new int[nums.length];
-        Arrays.fill(pre, -1);
-        Arrays.fill(dp, 1);
-        for (int i = 1; i < nums.length; i++) {
-            for (int j = 0; j < i; j++) {
-                if (nums[i] % nums[j] == 0 && dp[j] + 1 > dp[i]) {
-                    dp[i] = dp[j] + 1;
-                    pre[i] = j;
-                }
-            }
-        }
-        int max = dp[0], index = 0;
-        for (int i = 1; i < dp.length; i++) {
-            if (dp[i] > max) {
-                max = dp[i];
-                index = i;
-            }
-        }
-        List<Integer> list = new LinkedList<>();
-        while (index != -1) {
-            list.add(nums[index]);
-            index = pre[index];
-        }
-        return list;
-    }
 
     // 400. 第N个数字
     public int findNthDigit(int n) {
