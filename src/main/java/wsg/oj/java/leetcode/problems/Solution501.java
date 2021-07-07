@@ -61,29 +61,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 502. IPO (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/ipo/">IPO</a>
-     */
-    public int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 503. Next Greater Element II (Medium)
-     *
-     * @see Solution401#nextGreaterElement(int[], int[])
-     * @see Solution501#nextGreaterElement(int)
-     * @see <a href="https://leetcode-cn.com/problems/next-greater-element-ii/">Next Greater Element
-     * II</a>
-     */
-    public int[] nextGreaterElements(int[] nums) {
-        // todo
-        return new int[0];
-    }
-
-    /**
      * 504. Base 7 (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/base-7/">Base 7</a>
@@ -102,18 +79,6 @@ public class Solution501 extends Solution {
             builder.append("-");
         }
         return builder.reverse().toString();
-    }
-
-    /**
-     * 505. The Maze II (Medium)
-     *
-     * @see Solution401#hasPath(int[][], int[], int[])
-     * @see Solution401#findShortestWay(int[][], int[], int[])
-     * @see <a href="https://leetcode-cn.com/problems/the-maze-ii/">The Maze II</a>
-     */
-    public int shortestDistance(int[][] maze, int[] start, int[] destination) {
-        // todo
-        return 0;
     }
 
     /**
@@ -171,18 +136,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 508. Most Frequent Subtree Sum (Medium)
-     *
-     * @see Solution501#isSubtree(TreeNode, TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/most-frequent-subtree-sum/">Most Frequent
-     * Subtree Sum</a>
-     */
-    public int[] findFrequentTreeSum(TreeNode root) {
-        // todo
-        return new int[0];
-    }
-
-    /**
      * 509. Fibonacci Number (Easy)
      *
      * @see Solution1#climbStairs(int)
@@ -203,90 +156,6 @@ public class Solution501 extends Solution {
         }
         return nums[n];
     }
-
-    /**
-     * 510. Inorder Successor in BST II (Medium)
-     *
-     * @see Solution201#inorderSuccessor(TreeNode, int)
-     * @see <a href="https://leetcode-cn.com/problems/inorder-successor-in-bst-ii/">Inorder
-     * Successor in BST II</a>
-     */
-    public TreeNode inorderSuccessor(TreeNode tree, int node) {
-        // todo
-        return new TreeNode();
-    }
-
-
-    /**
-     * 513. Find Bottom Left Tree Value (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/find-bottom-left-tree-value/">Find Bottom Left
-     * Tree Value</a>
-     */
-    public int findBottomLeftValue(TreeNode root) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 514. Freedom Trail (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/freedom-trail/">Freedom Trail</a>
-     */
-    public int findRotateSteps(String ring, String key) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 515. Find Largest Value in Each Tree Row (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/">Find
-     * Largest Value in Each Tree Row</a>
-     */
-    public int[] largestValues(TreeNode root) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 516. Longest Palindromic Subsequence (Medium)
-     *
-     * @see Solution1#longestPalindrome(String)
-     * @see Solution601#countSubstrings(String)
-     * @see Solution701#countPalindromicSubsequences(String)
-     * @see Solution1101#longestCommonSubsequence(String, String)
-     * @see Solution1601#longestPalindromeSubseq(String)
-     * @see Solution1701#longestPalindrome(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/longest-palindromic-subsequence/">Longest
-     * Palindromic Subsequence</a>
-     */
-    public int longestPalindromeSubseq(String s) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 517. Super Washing Machines (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/super-washing-machines/">Super Washing
-     * Machines</a>
-     */
-    public int findMinMoves(int[] machines) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 518. Coin Change 2 (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/coin-change-2/">Coin Change 2</a>
-     */
-    public int change(int amount, int[] coins) {
-        // todo
-        return 0;
-    }
-
 
     /**
      * 520. Detect Capital (Easy)
@@ -318,100 +187,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 521. Longest Uncommon Subsequence I (Easy)
-     *
-     * @see Solution501#findLUSlength(String[])
-     * @see <a href="https://leetcode-cn.com/problems/longest-uncommon-subsequence-i/">Longest
-     * Uncommon Subsequence I</a>
-     */
-    public int findLUSlength(String a, String b) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 522. Longest Uncommon Subsequence II (Medium)
-     *
-     * @see Solution501#findLUSlength(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/longest-uncommon-subsequence-ii/">Longest
-     * Uncommon Subsequence II</a>
-     */
-    public int findLUSlength(String[] strs) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 523. Continuous Subarray Sum (Medium)
-     *
-     * @see Solution501#subarraySum(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/continuous-subarray-sum/">Continuous Subarray
-     * Sum</a>
-     */
-    public boolean checkSubarraySum(int[] nums, int k) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 524. Longest Word in Dictionary through Deleting (Medium)
-     *
-     * @see Solution701#longestWord(String[])
-     * @see <a href="https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/">Longest
-     * Word in Dictionary through Deleting</a>
-     */
-    public String findLongestWord(String s, String[] dictionary) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 525. Contiguous Array (Medium)
-     *
-     * @see Solution301#maxSubArrayLen(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/contiguous-array/">Contiguous Array</a>
-     */
-    public int findMaxLength(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 526. Beautiful Arrangement (Medium)
-     *
-     * @see Solution601#constructArray(int, int)
-     * @see <a href="https://leetcode-cn.com/problems/beautiful-arrangement/">Beautiful
-     * Arrangement</a>
-     */
-    public int countArrangement(int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 527. Word Abbreviation (Hard)
-     *
-     * @see Solution401#validWordAbbreviation(String, String)
-     * @see Solution401#minAbbreviation(String, String[])
-     * @see <a href="https://leetcode-cn.com/problems/word-abbreviation/">Word Abbreviation</a>
-     */
-    public String[] wordsAbbreviation(String[] words) {
-        // todo
-        return new String[0];
-    }
-
-
-    /**
-     * 529. Minesweeper (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/minesweeper/">Minesweeper</a>
-     */
-    public char[][] updateBoard(char[][] board, int[] click) {
-        // todo
-        return new char[0][0];
-    }
-
-    /**
      * 530. Minimum Absolute Difference in BST (Easy)
      *
      * @see Solution501#findPairs(int[], int)
@@ -440,108 +215,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 531. Lonely Pixel I (Medium)
-     *
-     * @see Solution501#findBlackPixel(char[][], int)
-     * @see <a href="https://leetcode-cn.com/problems/lonely-pixel-i/">Lonely Pixel I</a>
-     */
-    public int findLonelyPixel(char[][] picture) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 532. K-diff Pairs in an Array (Medium)
-     *
-     * @see Solution501#getMinimumDifference(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/k-diff-pairs-in-an-array/">K-diff Pairs in an
-     * Array</a>
-     */
-    public int findPairs(int[] nums, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 533. Lonely Pixel II (Medium)
-     *
-     * @see Solution501#findLonelyPixel(char[][])
-     * @see <a href="https://leetcode-cn.com/problems/lonely-pixel-ii/">Lonely Pixel II</a>
-     */
-    public int findBlackPixel(char[][] picture, int target) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 535. Encode and Decode TinyURL (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/encode-and-decode-tinyurl/">Encode and Decode
-     * TinyURL</a>
-     */
-    public String CodecDriver(String url) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 536. Construct Binary Tree from String (Medium)
-     *
-     * @see Solution601#tree2str(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/construct-binary-tree-from-string/">Construct
-     * Binary Tree from String</a>
-     */
-    public TreeNode str2tree(String s) {
-        // todo
-        return new TreeNode();
-    }
-
-    /**
-     * 537. Complex Number Multiplication (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/complex-number-multiplication/">Complex Number
-     * Multiplication</a>
-     */
-    public String complexNumberMultiply(String num1, String num2) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 538. Convert BST to Greater Tree (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree/">Convert BST to
-     * Greater Tree</a>
-     */
-    public TreeNode convertBST(TreeNode root) {
-        // todo
-        return new TreeNode();
-    }
-
-    /**
-     * 539. Minimum Time Difference (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/minimum-time-difference/">Minimum Time
-     * Difference</a>
-     */
-    public int findMinDifference(String[] timePoints) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 540. Single Element in a Sorted Array (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">Single
-     * Element in a Sorted Array</a>
-     */
-    public int singleNonDuplicate(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 541. Reverse String II (Easy)
      *
      * @see Solution301#reverseString(char[])
@@ -562,17 +235,6 @@ public class Solution501 extends Solution {
             }
         }
         return new String(chars);
-    }
-
-    /**
-     * 542. 01 Matrix (Medium)
-     *
-     * @see Solution1701#getFood(char[][])
-     * @see <a href="https://leetcode-cn.com/problems/01-matrix/">01 Matrix</a>
-     */
-    public int[][] updateMatrix(int[][] mat) {
-        // todo
-        return new int[0][0];
     }
 
     /**
@@ -603,80 +265,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 544. Output Contest Matches (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/output-contest-matches/">Output Contest
-     * Matches</a>
-     */
-    public String findContestMatch(int n) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 545. Boundary of Binary Tree (Medium)
-     *
-     * @see Solution101#rightSideView(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/boundary-of-binary-tree/">Boundary of Binary
-     * Tree</a>
-     */
-    public int[] boundaryOfBinaryTree(TreeNode root) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 546. Remove Boxes (Hard)
-     *
-     * @see Solution601#strangePrinter(String)
-     * @see <a href="https://leetcode-cn.com/problems/remove-boxes/">Remove Boxes</a>
-     */
-    public int removeBoxes(int[] boxes) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 547. Number of Provinces (Medium)
-     *
-     * @see Solution301#countComponents(int, int[][])
-     * @see Solution601#judgeCircle(String)
-     * @see Solution701#areSentencesSimilar(String[], String[], String[][])
-     * @see Solution701#areSentencesSimilarTwo(String[], String[], String[][])
-     * @see Solution1101#earliestAcq(int[][], int)
-     * @see <a href="https://leetcode-cn.com/problems/number-of-provinces/">Number of Provinces</a>
-     */
-    public int findCircleNum(int[][] isConnected) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 548. Split Array with Equal Sum (Medium)
-     *
-     * @see Solution1501#numWays(String)
-     * @see <a href="https://leetcode-cn.com/problems/split-array-with-equal-sum/">Split Array with
-     * Equal Sum</a>
-     */
-    public boolean splitArray(int[] nums) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 549. Binary Tree Longest Consecutive Sequence II (Medium)
-     *
-     * @see Solution201#longestConsecutive(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-longest-consecutive-sequence-ii/">Binary
-     * Tree Longest Consecutive Sequence II</a>
-     */
-    public int longestConsecutive(TreeNode root) {
-        // todo
-        return 0;
-    }
-
-
-    /**
      * 551. Student Attendance Record I (Easy)
      *
      * @see Solution501#checkRecord(int)
@@ -699,63 +287,6 @@ public class Solution501 extends Solution {
             }
         }
         return totalAbsent < 2;
-    }
-
-    /**
-     * 552. Student Attendance Record II (Hard)
-     *
-     * @see Solution501#checkRecord(String)
-     * @see <a href="https://leetcode-cn.com/problems/student-attendance-record-ii/">Student
-     * Attendance Record II</a>
-     */
-    public int checkRecord(int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 553. Optimal Division (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/optimal-division/">Optimal Division</a>
-     */
-    public String optimalDivision(int[] nums) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 554. Brick Wall (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/brick-wall/">Brick Wall</a>
-     */
-    public int leastBricks(int[][] wall) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 555. Split Concatenated Strings (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/split-concatenated-strings/">Split
-     * Concatenated Strings</a>
-     */
-    public String splitLoopedString(String[] strs) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 556. Next Greater Element III (Medium)
-     *
-     * @see Solution401#nextGreaterElement(int[], int[])
-     * @see Solution501#nextGreaterElements(int[])
-     * @see Solution1801#nextPalindrome(String)
-     * @see <a href="https://leetcode-cn.com/problems/next-greater-element-iii/">Next Greater
-     * Element III</a>
-     */
-    public int nextGreaterElement(int n) {
-        // todo
-        return 0;
     }
 
     /**
@@ -788,17 +319,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 558. Logical OR of Two Binary Grids Represented as Quad-Trees (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/">Logical
-     * OR of Two Binary Grids Represented as Quad-Trees</a>
-     */
-    public int[][] intersect(int[][] quadTree1, int[][] quadTree2) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
      * 559. Maximum Depth of N-ary Tree (Easy)
      *
      * @see Solution101#maxDepth(TreeNode)
@@ -817,23 +337,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 560. Subarray Sum Equals K (Medium)
-     *
-     * @see Solution1#twoSum(int[], int)
-     * @see Solution501#checkSubarraySum(int[], int)
-     * @see Solution701#numSubarrayProductLessThanK(int[], int)
-     * @see Solution701#pivotIndex(int[])
-     * @see Solution901#subarraysDivByK(int[], int)
-     * @see Solution1601#minOperations(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/">Subarray Sum Equals
-     * K</a>
-     */
-    public int subarraySum(int[] nums, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 561. Array Partition I (Easy)
      * <p>
      * Assume that min[i] is the ith minimum of the array. Then there exists a pair (min[0], x). If
@@ -849,17 +352,6 @@ public class Solution501 extends Solution {
             sum += nums[i];
         }
         return sum;
-    }
-
-    /**
-     * 562. Longest Line of Consecutive One in Matrix (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/longest-line-of-consecutive-one-in-matrix/">Longest
-     * Line of Consecutive One in Matrix</a>
-     */
-    public int longestLine(int[][] mat) {
-        // todo
-        return 0;
     }
 
     /**
@@ -886,18 +378,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 564. Find the Closest Palindrome (Hard)
-     *
-     * @see Solution1801#nextPalindrome(String)
-     * @see <a href="https://leetcode-cn.com/problems/find-the-closest-palindrome/">Find the Closest
-     * Palindrome</a>
-     */
-    public String nearestPalindromic(String n) {
-        // todo
-        return "";
-    }
-
-    /**
      * 566. Reshape the Matrix (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/reshape-the-matrix/">Reshape the Matrix</a>
@@ -919,32 +399,6 @@ public class Solution501 extends Solution {
         }
         return res;
     }
-
-    /**
-     * 567. Permutation in String (Medium)
-     *
-     * @see Solution1#minWindow(String, String)
-     * @see Solution401#findAnagrams(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/permutation-in-string/">Permutation in
-     * String</a>
-     */
-    public boolean checkInclusion(String s1, String s2) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 568. Maximum Vacation Days (Hard)
-     *
-     * @see Solution701#findCheapestPrice(int, int[][], int, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/maximum-vacation-days/">Maximum Vacation
-     * Days</a>
-     */
-    public int maxVacationDays(int[][] flights, int[][] days) {
-        // todo
-        return 0;
-    }
-
 
     /**
      * 572. Subtree of Another Tree (Easy)
@@ -970,17 +424,6 @@ public class Solution501 extends Solution {
     }
 
     /**
-     * 573. Squirrel Simulation (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/squirrel-simulation/">Squirrel Simulation</a>
-     */
-    public int minDistance(int height, int width, int[] tree, int[] squirrel, int[][] nuts) {
-        // todo
-        return 0;
-    }
-
-
-    /**
      * 575. Distribute Candies (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/distribute-candies/">Distribute Candies</a>
@@ -992,66 +435,6 @@ public class Solution501 extends Solution {
         }
         return Math.min(set.cardinality(), candies.length / 2);
     }
-
-    /**
-     * 576. Out of Boundary Paths (Medium)
-     *
-     * @see Solution601#knightProbability(int, int, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/out-of-boundary-paths/">Out of Boundary
-     * Paths</a>
-     */
-    public int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 581. Shortest Unsorted Continuous Subarray (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/shortest-unsorted-continuous-subarray/">Shortest
-     * Unsorted Continuous Subarray</a>
-     */
-    public int findUnsortedSubarray(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 582. Kill Process (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/kill-process/">Kill Process</a>
-     */
-    public int[] killProcess(int[] pid, int[] ppid, int kill) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 583. Delete Operation for Two Strings (Medium)
-     *
-     * @see Solution1#minDistance(String, String)
-     * @see Solution701#minimumDeleteSum(String, String)
-     * @see Solution1101#longestCommonSubsequence(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/delete-operation-for-two-strings/">Delete
-     * Operation for Two Strings</a>
-     */
-    public int minDistance(String word1, String word2) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 587. Erect the Fence (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/erect-the-fence/">Erect the Fence</a>
-     */
-    public int[][] outerTrees(int[][] trees) {
-        // todo
-        return new int[0][0];
-    }
-
 
     /**
      * 589. N-ary Tree Preorder Traversal (Easy)
@@ -1104,39 +487,6 @@ public class Solution501 extends Solution {
             }
             list.add(node.val);
         }
-    }
-
-    /**
-     * 591. Tag Validator (Hard)
-     *
-     * @see Solution601#addBoldTag(String, String[])
-     * @see <a href="https://leetcode-cn.com/problems/tag-validator/">Tag Validator</a>
-     */
-    public boolean isValid(String code) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 592. Fraction Addition and Subtraction (Medium)
-     *
-     * @see Solution601#solveEquation(String)
-     * @see <a href="https://leetcode-cn.com/problems/fraction-addition-and-subtraction/">Fraction
-     * Addition and Subtraction</a>
-     */
-    public String fractionAddition(String expression) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 593. Valid Square (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/valid-square/">Valid Square</a>
-     */
-    public boolean validSquare(int[] p1, int[] p2, int[] p3, int[] p4) {
-        // todo
-        return false;
     }
 
     /**
@@ -1209,20 +559,6 @@ public class Solution501 extends Solution {
             }
         }
         return common.toArray(new String[0]);
-    }
-
-    /**
-     * 600. Non-negative Integers without Consecutive Ones (Hard)
-     *
-     * @see Solution101#rob(int[])
-     * @see Solution201#rob(int[])
-     * @see Solution401#findMaxForm(String[], int, int)
-     * @see <a href="https://leetcode-cn.com/problems/non-negative-integers-without-consecutive-ones/">Non-negative
-     * Integers without Consecutive Ones</a>
-     */
-    public int findIntegers(int n) {
-        // todo
-        return 0;
     }
 
     /**

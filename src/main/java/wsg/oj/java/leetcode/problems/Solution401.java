@@ -262,80 +262,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 442. Find All Duplicates in an Array (Medium)
-     *
-     * @see Solution401#findDisappearedNumbers(int[])
-     * @see <a href="https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/">Find All
-     * Duplicates in an Array</a>
-     */
-    public int[] findDuplicates(int[] nums) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 443. String Compression (Medium)
-     *
-     * @see Solution1#countAndSay(int)
-     * @see Solution201#encode(String[])
-     * @see StringIterator
-     * @see Solution1301#decompressRLElist(int[])
-     * @see <a href="https://leetcode-cn.com/problems/string-compression/">String Compression</a>
-     */
-    public int compress(char[] chars) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 444. Sequence Reconstruction (Medium)
-     *
-     * @see Solution201#findOrder(int, int[][])
-     * @see <a href="https://leetcode-cn.com/problems/sequence-reconstruction/">Sequence
-     * Reconstruction</a>
-     */
-    public boolean sequenceReconstruction(int[] org, int[][] seqs) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 445. Add Two Numbers II (Medium)
-     *
-     * @see Solution1#addTwoNumbers(ListNode, ListNode)
-     * @see Solution1601#addPoly(int[][], int[][])
-     * @see <a href="https://leetcode-cn.com/problems/add-two-numbers-ii/">Add Two Numbers II</a>
-     */
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        // todo
-        return new ListNode();
-    }
-
-    /**
-     * 446. Arithmetic Slices II - Subsequence (Hard)
-     *
-     * @see Solution401#numberOfArithmeticSlices(int[])
-     * @see <a href="https://leetcode-cn.com/problems/arithmetic-slices-ii-subsequence/">Arithmetic
-     * Slices II - Subsequence</a>
-     */
-    public int numberOfArithmeticSlicesII(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 447. Number of Boomerangs (Medium)
-     *
-     * @see Solution301#isReflected(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/number-of-boomerangs/">Number of
-     * Boomerangs</a>
-     */
-    public int numberOfBoomerangs(int[][] points) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 448. Find All Numbers Disappeared in an Array (Easy)
      *
      * @see Solution1#firstMissingPositive(int[])
@@ -366,59 +292,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 449. Serialize and Deserialize BST (Medium)
-     *
-     * @see Solution201#Codec(TreeNode)
-     * @see Solution601#findDuplicateSubtrees(TreeNode)
-     * @see Solution401#CodecDriver(int)
-     * @see <a href="https://leetcode-cn.com/problems/serialize-and-deserialize-bst/">Serialize and
-     * Deserialize BST</a>
-     */
-    public TreeNode CodecDriverII(TreeNode root) {
-        // todo
-        return new TreeNode();
-    }
-
-    /**
-     * 450. Delete Node in a BST (Medium)
-     *
-     * @see Solution701#splitBST(TreeNode, int)
-     * @see <a href="https://leetcode-cn.com/problems/delete-node-in-a-bst/">Delete Node in a
-     * BST</a>
-     */
-    public TreeNode deleteNode(TreeNode root, int key) {
-        // todo
-        return new TreeNode();
-    }
-
-    /**
-     * 451. Sort Characters By Frequency (Medium)
-     *
-     * @see Solution301#topKFrequent(int[], int)
-     * @see Solution301#firstUniqChar(String)
-     * @see Solution1601#frequencySort(int[])
-     * @see <a href="https://leetcode-cn.com/problems/sort-characters-by-frequency/">Sort Characters
-     * By Frequency</a>
-     */
-    public String frequencySort(String s) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 452. Minimum Number of Arrows to Burst Balloons (Medium)
-     *
-     * @see Solution201#minMeetingRooms(int[][])
-     * @see Solution401#eraseOverlapIntervals(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/">Minimum
-     * Number of Arrows to Burst Balloons</a>
-     */
-    public int findMinArrowShots(int[][] points) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 453. Minimum Moves to Equal Array Elements (Easy)
      *
      * @see Solution401#minMoves2(int[])
@@ -437,57 +310,6 @@ public class Solution401 extends Solution {
             sum += num - min;
         }
         return sum;
-    }
-
-    /**
-     * 454. 4Sum II (Medium)
-     *
-     * @see Solution1#fourSum(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/4sum-ii/">4Sum II</a>
-     */
-    public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 455. Assign Cookies (Easy)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/assign-cookies/">Assign Cookies</a>
-     */
-    public int findContentChildren(int[] g, int[] s) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 456. 132 Pattern (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/132-pattern/">132 Pattern</a>
-     */
-    public boolean find132pattern(int[] nums) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 457. Circular Array Loop (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/circular-array-loop/">Circular Array Loop</a>
-     */
-    public boolean circularArrayLoop(int[] nums) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 458. Poor Pigs (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/poor-pigs/">Poor Pigs</a>
-     */
-    public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
-        // todo
-        return 0;
     }
 
     /**
@@ -531,165 +353,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 462. Minimum Moves to Equal Array Elements II (Medium)
-     *
-     * @see Solution201#minTotalDistance(int[][])
-     * @see Solution401#minMoves(int[])
-     * @see <a href="https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements-ii/">Minimum
-     * Moves to Equal Array Elements II</a>
-     */
-    public int minMoves2(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 463. Island Perimeter (Easy)
-     *
-     * @see Solution601#maxAreaOfIsland(int[][])
-     * @see Solution701#floodFill(int[][], int, int, int)
-     * @see Solution1001#colorBorder(int[][], int, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/island-perimeter/">Island Perimeter</a>
-     */
-    public int islandPerimeter(int[][] grid) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 464. Can I Win (Medium)
-     *
-     * @see Solution201#canWin(String)
-     * @see Solution301#getMoneyAmount(int)
-     * @see Solution401#PredictTheWinner(int[])
-     * @see <a href="https://leetcode-cn.com/problems/can-i-win/">Can I Win</a>
-     */
-    public boolean canIWin(int maxChoosableInteger, int desiredTotal) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 465. Optimal Account Balancing (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/optimal-account-balancing/">Optimal Account
-     * Balancing</a>
-     */
-    public int minTransfers(int[][] transactions) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 466. Count The Repetitions (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/count-the-repetitions/">Count The
-     * Repetitions</a>
-     */
-    public int getMaxRepetitions(String s1, int n1, String s2, int n2) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 467. Unique Substrings in Wraparound String (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/">Unique
-     * Substrings in Wraparound String</a>
-     */
-    public int findSubstringInWraproundString(String p) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 468. Validate IP Address (Medium)
-     *
-     * @see Solution701#ipToCIDR(String, int)
-     * @see <a href="https://leetcode-cn.com/problems/validate-ip-address/">Validate IP Address</a>
-     */
-    public String validIPAddress(String IP) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 469. Convex Polygon (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/convex-polygon/">Convex Polygon</a>
-     */
-    public boolean isConvex(int[][] points) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 470. Implement Rand10() Using Rand7() (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/implement-rand10-using-rand7/">Implement
-     * Rand10() Using Rand7()</a>
-     */
-    public void rand10(int n) {
-        // todo
-    }
-
-    /**
-     * 471. Encode String with Shortest Length (Hard)
-     *
-     * @see Solution301#decodeString(String)
-     * @see Solution701#countOfAtoms(String)
-     * @see <a href="https://leetcode-cn.com/problems/encode-string-with-shortest-length/">Encode
-     * String with Shortest Length</a>
-     */
-    public String encode(String s) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 472. Concatenated Words (Hard)
-     *
-     * @see Solution101#wordBreakII(String, String[])
-     * @see <a href="https://leetcode-cn.com/problems/concatenated-words/">Concatenated Words</a>
-     */
-    public String[] findAllConcatenatedWordsInADict(String[] words) {
-        // todo
-        return new String[0];
-    }
-
-    /**
-     * 473. Matchsticks to Square (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/matchsticks-to-square/">Matchsticks to
-     * Square</a>
-     */
-    public boolean makesquare(int[] matchsticks) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 474. Ones and Zeroes (Medium)
-     *
-     * @see Solution501#findIntegers(int)
-     * @see <a href="https://leetcode-cn.com/problems/ones-and-zeroes/">Ones and Zeroes</a>
-     */
-    public int findMaxForm(String[] strs, int m, int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 475. Heaters (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/heaters/">Heaters</a>
-     */
-    public int findRadius(int[] houses, int[] heaters) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 476. Number Complement (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/number-complement/">Number Complement</a>
@@ -700,52 +363,6 @@ public class Solution401 extends Solution {
             fff = fff * 2 + 1;
         }
         return num ^ fff;
-    }
-
-    /**
-     * 477. Total Hamming Distance (Medium)
-     *
-     * @see Solution401#hammingDistance(int, int)
-     * @see <a href="https://leetcode-cn.com/problems/total-hamming-distance/">Total Hamming
-     * Distance</a>
-     */
-    public int totalHammingDistance(int[] nums) {
-        // todo
-        return 0;
-    }
-
-
-    /**
-     * 479. Largest Palindrome Product (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/largest-palindrome-product/">Largest
-     * Palindrome Product</a>
-     */
-    public int largestPalindrome(int n) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 480. Sliding Window Median (Hard)
-     *
-     * @see MedianFinder
-     * @see <a href="https://leetcode-cn.com/problems/sliding-window-median/">Sliding Window
-     * Median</a>
-     */
-    public double[] medianSlidingWindow(int[] nums, int k) {
-        // todo
-        return new double[0];
-    }
-
-    /**
-     * 481. Magical String (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/magical-string/">Magical String</a>
-     */
-    public int magicalString(int n) {
-        // todo
-        return 0;
     }
 
     /**
@@ -783,26 +400,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 483. Smallest Good Base (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/smallest-good-base/">Smallest Good Base</a>
-     */
-    public String smallestGoodBase(String n) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 484. Find Permutation (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/find-permutation/">Find Permutation</a>
-     */
-    public int[] findPermutation(String s) {
-        // todo
-        return new int[0];
-    }
-
-    /**
      * 485. Max Consecutive Ones (Easy)
      *
      * @see Solution401#findMaxConsecutiveOnes(int[])
@@ -826,76 +423,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 486. Predict the Winner (Medium)
-     *
-     * @see Solution401#canIWin(int, int)
-     * @see <a href="https://leetcode-cn.com/problems/predict-the-winner/">Predict the Winner</a>
-     */
-    public boolean PredictTheWinner(int[] nums) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 487. Max Consecutive Ones II (Medium)
-     *
-     * @see Solution401#findMaxConsecutiveOnes(int[])
-     * @see Solution1001#longestOnes(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/max-consecutive-ones-ii/">Max Consecutive Ones
-     * II</a>
-     */
-    public int findMaxConsecutiveOnesII(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 488. Zuma Game (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/zuma-game/">Zuma Game</a>
-     */
-    public int findMinStep(String board, String hand) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 489. Robot Room Cleaner (Hard)
-     *
-     * @see Solution201#wallsAndGates(int[][])
-     * @see Solution1701#foobar(int[][])
-     * @see Solution1801#findShortestPath(int[][], int, int, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/robot-room-cleaner/">Robot Room Cleaner</a>
-     */
-    public void cleanRoom(int[][] room, int row, int col) {
-        // todo
-    }
-
-    /**
-     * 490. The Maze (Medium)
-     *
-     * @see Solution401#findShortestWay(int[][], int[], int[])
-     * @see Solution501#shortestDistance(int[][], int[], int[])
-     * @see <a href="https://leetcode-cn.com/problems/the-maze/">The Maze</a>
-     */
-    public boolean hasPath(int[][] maze, int[] start, int[] destination) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 491. Increasing Subsequences (Medium)
-     *
-     * @see Solution601#findLongestChain(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/increasing-subsequences/">Increasing
-     * Subsequences</a>
-     */
-    public int[][] findSubsequences(int[] nums) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
      * 492. Construct the Rectangle (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/construct-the-rectangle/">Construct the
@@ -907,29 +434,6 @@ public class Solution401 extends Solution {
             W--;
         }
         return new int[]{area / W, W};
-    }
-
-    /**
-     * 493. Reverse Pairs (Hard)
-     *
-     * @see Solution301#countSmaller(int[])
-     * @see Solution301#countRangeSum(int[], int, int)
-     * @see <a href="https://leetcode-cn.com/problems/reverse-pairs/">Reverse Pairs</a>
-     */
-    public int reversePairs(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 494. Target Sum (Medium)
-     *
-     * @see Solution201#addOperators(String, int)
-     * @see <a href="https://leetcode-cn.com/problems/target-sum/">Target Sum</a>
-     */
-    public int findTargetSumWays(int[] nums, int target) {
-        // todo
-        return 0;
     }
 
     /**
@@ -980,29 +484,6 @@ public class Solution401 extends Solution {
             res[i] = nextGreaterElements.getOrDefault(nums1[i], -1);
         }
         return res;
-    }
-
-
-    /**
-     * 498. Diagonal Traverse (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/diagonal-traverse/">Diagonal Traverse</a>
-     */
-    public int[] findDiagonalOrder(int[][] mat) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 499. The Maze III (Hard)
-     *
-     * @see Solution401#hasPath(int[][], int[], int[])
-     * @see Solution501#shortestDistance(int[][], int[], int[])
-     * @see <a href="https://leetcode-cn.com/problems/the-maze-iii/">The Maze III</a>
-     */
-    public String findShortestWay(int[][] maze, int[] ball, int[] hole) {
-        // todo
-        return "";
     }
 
     /**

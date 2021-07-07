@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
-import wsg.oj.java.leetcode.problems.impl.MinStack;
 
 /**
  * @author Kingen
@@ -274,31 +273,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 212. Word Search II (Hard)
-     *
-     * @see Solution1#exist(char[][], String)
-     * @see Solution901#uniquePathsIII(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/word-search-ii/">Word Search II</a>
-     */
-    public String[] findWords(char[][] board, String[] words) {
-        // todo
-        return new String[0];
-    }
-
-    /**
-     * 214. Shortest Palindrome (Hard)
-     *
-     * @see Solution1#longestPalindrome(String)
-     * @see Solution1#strStr(String, String)
-     * @see Solution301#palindromePairs(String[])
-     * @see <a href="https://leetcode-cn.com/problems/shortest-palindrome/">Shortest Palindrome</a>
-     */
-    public String shortestPalindrome(String s) {
-        // todo
-        return "";
-    }
-
-    /**
      * 216. Combination Sum III (Medium)
      *
      * @see #BACKTRACKING
@@ -344,17 +318,6 @@ public class Solution201 extends Solution {
             }
         }
         return false;
-    }
-
-    /**
-     * 218. The Skyline Problem (Hard)
-     *
-     * @see Solution601#fallingSquares(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/the-skyline-problem/">The Skyline Problem</a>
-     */
-    public int[][] getSkyline(int[][] buildings) {
-        // todo
-        return new int[0][0];
     }
 
     /**
@@ -506,21 +469,6 @@ public class Solution201 extends Solution {
         int cx2 = Math.min(ax2, bx2);
         int cy2 = Math.min(ay2, by2);
         return area - (cx2 - cx1) * (cy2 - cy1);
-    }
-
-    /**
-     * 224. Basic Calculator (Hard)
-     *
-     * @see Solution101#evalRPN(String[])
-     * @see Solution201#calculate(String)
-     * @see Solution201#diffWaysToCompute(String)
-     * @see Solution201#addOperators(String, int)
-     * @see Solution701#calculate(String)
-     * @see <a href="https://leetcode-cn.com/problems/basic-calculator/">Basic Calculator</a>
-     */
-    public int calculate(String s) {
-        // todo
-        return 0;
     }
 
     /**
@@ -744,18 +692,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 233. Number of Digit One (Hard)
-     *
-     * @see Solution101#trailingZeroes(int)
-     * @see Solution1001#digitsCount(int, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/number-of-digit-one/">Number of Digit One</a>
-     */
-    public int countDigitOne(int n) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 234. Palindrome Linked List (Easy)
      *
      * @see Solution1#isPalindrome(int)
@@ -894,22 +830,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 239. Sliding Window Maximum (Hard)
-     *
-     * @see Solution1#minWindow(String, String)
-     * @see MinStack
-     * @see Solution101#lengthOfLongestSubstringTwoDistinct(String)
-     * @see Solution201#minCostII(int[][])
-     * @see Solution1601#maxResult(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/sliding-window-maximum/">Sliding Window
-     * Maximum</a>
-     */
-    public int[] maxSlidingWindow(int[] nums, int k) {
-        // todo
-        return new int[0];
-    }
-
-    /**
      * 240. Search a 2D Matrix II (Medium)
      *
      * @see Arrays#binarySearch
@@ -937,20 +857,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 241. Different Ways to Add Parentheses (Medium)
-     *
-     * @see Solution1#generateTrees(int)
-     * @see Solution201#calculate(String)
-     * @see Solution201#addOperators(String, int)
-     * @see <a href="https://leetcode-cn.com/problems/different-ways-to-add-parentheses/">Different
-     * Ways to Add Parentheses</a>
-     */
-    public int[] diffWaysToCompute(String expression) {
-        // todo
-        return new int[0];
-    }
-
-    /**
      * 242. Valid Anagram (Easy)
      *
      * @see Solution49#groupAnagrams(String[])
@@ -974,160 +880,6 @@ public class Solution201 extends Solution {
             count[i]--;
         }
         return true;
-    }
-
-    /**
-     * 243. Shortest Word Distance (Easy)
-     *
-     * @see WordDistance
-     * @see Solution201#shortestWordDistance(String[], String, String)
-     * @see <a href="https://leetcode-cn.com/problems/shortest-word-distance/">Shortest Word
-     * Distance</a>
-     */
-    public int shortestDistance(String[] wordsDict, String word1, String word2) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 245. Shortest Word Distance III (Medium)
-     *
-     * @see Solution201#shortestDistance(String[], String, String)
-     * @see WordDistance
-     * @see <a href="https://leetcode-cn.com/problems/shortest-word-distance-iii/">Shortest Word
-     * Distance III</a>
-     */
-    public int shortestWordDistance(String[] wordsDict, String word1, String word2) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 246. Strobogrammatic Number (Easy)
-     *
-     * @see Solution201#findStrobogrammatic(int)
-     * @see Solution201#strobogrammaticInRange(String, String)
-     * @see Solution1001#confusingNumber(int)
-     * @see <a href="https://leetcode-cn.com/problems/strobogrammatic-number/">Strobogrammatic
-     * Number</a>
-     */
-    public boolean isStrobogrammatic(String num) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 247. Strobogrammatic Number II (Medium)
-     *
-     * @see Solution201#isStrobogrammatic(String)
-     * @see Solution201#strobogrammaticInRange(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/strobogrammatic-number-ii/">Strobogrammatic
-     * Number II</a>
-     */
-    public String[] findStrobogrammatic(int n) {
-        // todo
-        return new String[0];
-    }
-
-    /**
-     * 248. Strobogrammatic Number III (Hard)
-     *
-     * @see Solution201#isStrobogrammatic(String)
-     * @see Solution201#findStrobogrammatic(int)
-     * @see <a href="https://leetcode-cn.com/problems/strobogrammatic-number-iii/">Strobogrammatic
-     * Number III</a>
-     */
-    public int strobogrammaticInRange(String low, String high) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 249. Group Shifted Strings (Medium)
-     *
-     * @see Solution49#groupAnagrams(String[])
-     * @see <a href="https://leetcode-cn.com/problems/group-shifted-strings/">Group Shifted
-     * Strings</a>
-     */
-    public String[][] groupStrings(String[] strings) {
-        // todo
-        return new String[0][0];
-    }
-
-    /**
-     * 250. Count Univalue Subtrees (Medium)
-     *
-     * @see Solution501#isSubtree(TreeNode, TreeNode)
-     * @see Solution601#longestUnivaluePath(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/count-univalue-subtrees/">Count Univalue
-     * Subtrees</a>
-     */
-    public int countUnivalSubtrees(TreeNode root) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 252. Meeting Rooms (Easy)
-     *
-     * @see Solution1#merge(int[][])
-     * @see Solution201#minMeetingRooms(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/meeting-rooms/">Meeting Rooms</a>
-     */
-    public boolean canAttendMeetings(int[][] intervals) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 253. Meeting Rooms II (Medium)
-     *
-     * @see Solution1#merge(int[][])
-     * @see Solution201#canAttendMeetings(int[][])
-     * @see Solution401#findMinArrowShots(int[][])
-     * @see Solution1001#carPooling(int[][], int)
-     * @see <a href="https://leetcode-cn.com/problems/meeting-rooms-ii/">Meeting Rooms II</a>
-     */
-    public int minMeetingRooms(int[][] intervals) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 254. Factor Combinations (Medium)
-     *
-     * @see Solution1#combinationSum(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/factor-combinations/">Factor Combinations</a>
-     */
-    public int[][] getFactors(int n) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
-     * 255. Verify Preorder Sequence in Binary Search Tree (Medium)
-     *
-     * @see Solution101#preorderTraversal(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/verify-preorder-sequence-in-binary-search-tree/">Verify
-     * Preorder Sequence in Binary Search Tree</a>
-     */
-    public boolean verifyPreorder(int[] preorder) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 256. Paint House (Medium)
-     *
-     * @see Solution101#rob(int[])
-     * @see Solution201#rob(int[])
-     * @see Solution201#minCostII(int[][])
-     * @see Solution201#numWays(int, int)
-     * @see <a href="https://leetcode-cn.com/problems/paint-house/">Paint House</a>
-     */
-    public int minCost(int[][] costs) {
-        // todo
-        return 0;
     }
 
     /**
@@ -1174,20 +926,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 259. 3Sum Smaller (Medium)
-     *
-     * @see Solution1#threeSum(int[])
-     * @see Solution1#threeSumClosest(int[], int)
-     * @see Solution601#triangleNumber(int[])
-     * @see Solution1001#twoSumLessThanK(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/3sum-smaller/">3Sum Smaller</a>
-     */
-    public int threeSumSmaller(int[] nums, int target) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 260. Single Number III (Medium)
      *
      * @see Solution101#singleNumber(int[])
@@ -1220,18 +958,6 @@ public class Solution201 extends Solution {
             }
         }
         return new int[]{sum1, sum2};
-    }
-
-    /**
-     * 261. Graph Valid Tree (Medium)
-     *
-     * @see Solution201#canFinish(int, int[][])
-     * @see Solution301#countComponents(int, int[][])
-     * @see <a href="https://leetcode-cn.com/problems/graph-valid-tree/">Graph Valid Tree</a>
-     */
-    public boolean validTree(int n, int[][] edges) {
-        // todo
-        return false;
     }
 
     /**
@@ -1293,49 +1019,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 265. Paint House II (Hard)
-     *
-     * @see Solution201#productExceptSelf(int[])
-     * @see Solution201#maxSlidingWindow(int[], int)
-     * @see Solution201#minCost(int[][])
-     * @see Solution201#numWays(int, int)
-     * @see <a href="https://leetcode-cn.com/problems/paint-house-ii/">Paint House II</a>
-     */
-    public int minCostII(int[][] costs) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 266. Palindrome Permutation (Easy)
-     *
-     * @see Solution1#longestPalindrome(String)
-     * @see Solution201#isAnagram(String, String)
-     * @see Solution201#generatePalindromes(String)
-     * @see Solution401#longestPalindrome(String)
-     * @see <a href="https://leetcode-cn.com/problems/palindrome-permutation/">Palindrome
-     * Permutation</a>
-     */
-    public boolean canPermutePalindrome(String s) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 267. Palindrome Permutation II (Medium)
-     *
-     * @see Solution1#nextPermutation(int[])
-     * @see Solution1#permuteUnique(int[])
-     * @see Solution201#canPermutePalindrome(String)
-     * @see <a href="https://leetcode-cn.com/problems/palindrome-permutation-ii/">Palindrome
-     * Permutation II</a>
-     */
-    public String[] generatePalindromes(String s) {
-        // todo
-        return new String[0];
-    }
-
-    /**
      * 268. Missing Number (Easy)
      *
      * @see Solution1#firstMissingPositive(int[])
@@ -1351,71 +1034,6 @@ public class Solution201 extends Solution {
             sum -= num;
         }
         return sum;
-    }
-
-    /**
-     * 269. Alien Dictionary (Hard)
-     *
-     * @see Solution201#findOrder(int, int[][])
-     * @see <a href="https://leetcode-cn.com/problems/alien-dictionary/">Alien Dictionary</a>
-     */
-    public String alienOrder(String[] words) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 270. Closest Binary Search Tree Value (Easy)
-     *
-     * @see Solution201#countNodes(TreeNode)
-     * @see Solution201#closestKValues(TreeNode, double, int)
-     * @see Solution601#searchBST(TreeNode, int)
-     * @see <a href="https://leetcode-cn.com/problems/closest-binary-search-tree-value/">Closest
-     * Binary Search Tree Value</a>
-     */
-    public int closestValue(TreeNode root, double target) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 271. Encode and Decode Strings (Medium)
-     *
-     * @see Solution1#countAndSay(int)
-     * @see Solution201#Codec(TreeNode)
-     * @see Solution401#compress(char[])
-     * @see Solution601#countBinarySubstrings(String)
-     * @see <a href="https://leetcode-cn.com/problems/encode-and-decode-strings/">Encode and Decode
-     * Strings</a>
-     */
-    public String[] encode(String[] dummy_input) {
-        // todo
-        return new String[0];
-    }
-
-    /**
-     * 272. Closest Binary Search Tree Value II (Hard)
-     *
-     * @see Solution1#inorderTraversal(TreeNode)
-     * @see Solution201#closestValue(TreeNode, double)
-     * @see <a href="https://leetcode-cn.com/problems/closest-binary-search-tree-value-ii/">Closest
-     * Binary Search Tree Value II</a>
-     */
-    public int[] closestKValues(TreeNode root, double target, int k) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 273. Integer to English Words (Hard)
-     *
-     * @see Solution1#intToRoman(int)
-     * @see <a href="https://leetcode-cn.com/problems/integer-to-english-words/">Integer to English
-     * Words</a>
-     */
-    public String numberToWords(int num) {
-        // todo
-        return "";
     }
 
     /**
@@ -1456,31 +1074,6 @@ public class Solution201 extends Solution {
             }
         }
         return len - low;
-    }
-
-    /**
-     * 276. Paint Fence (Medium)
-     *
-     * @see Solution101#rob(int[])
-     * @see Solution201#rob(int[])
-     * @see Solution201#minCost(int[][])
-     * @see Solution201#minCostII(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/paint-fence/">Paint Fence</a>
-     */
-    public int numWays(int n, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 277. Find the Celebrity (Medium)
-     *
-     * @see Solution901#findJudge(int, int[][])
-     * @see <a href="https://leetcode-cn.com/problems/find-the-celebrity/">Find the Celebrity</a>
-     */
-    public int findCelebrity(int[][] graph) {
-        // todo
-        return 0;
     }
 
     /**
@@ -1571,33 +1164,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 280. Wiggle Sort (Medium)
-     *
-     * @see Solution1#sortColors(int[])
-     * @see Solution301#wiggleSort(int[])
-     * @see <a href="https://leetcode-cn.com/problems/wiggle-sort/">Wiggle Sort</a>
-     */
-    public void wiggleSort(int[] nums) {
-        // todo
-    }
-
-    /**
-     * 282. Expression Add Operators (Hard)
-     *
-     * @see Solution101#evalRPN(String[])
-     * @see Solution201#calculate(String)
-     * @see Solution201#calculate(String)
-     * @see Solution201#diffWaysToCompute(String)
-     * @see Solution401#findTargetSumWays(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/expression-add-operators/">Expression Add
-     * Operators</a>
-     */
-    public String[] addOperators(String num, int target) {
-        // todo
-        return new String[0];
-    }
-
-    /**
      * 283. Move Zeroes (Easy)
      *
      * @see Solution1#removeElement(int[], int)
@@ -1613,35 +1179,6 @@ public class Solution201 extends Solution {
         while (j < nums.length) {
             nums[j++] = 0;
         }
-    }
-
-
-    /**
-     * 285. Inorder Successor in BST (Medium)
-     *
-     * @see Solution1#inorderTraversal(TreeNode)
-     * @see BSTIterator
-     * @see Solution501#inorderSuccessor(TreeNode, int)
-     * @see <a href="https://leetcode-cn.com/problems/inorder-successor-in-bst/">Inorder Successor
-     * in BST</a>
-     */
-    public TreeNode inorderSuccessor(TreeNode root, int p) {
-        // todo
-        return new TreeNode();
-    }
-
-    /**
-     * 286. Walls and Gates (Medium)
-     *
-     * @see Solution101#solve(char[][])
-     * @see Solution101#numIslands(char[][])
-     * @see Solution301#shortestDistance(int[][])
-     * @see Solution401#cleanRoom(int[][], int, int)
-     * @see Solution901#orangesRotting(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/walls-and-gates/">Walls and Gates</a>
-     */
-    public void wallsAndGates(int[][] rooms) {
-        // todo
     }
 
     /**
@@ -1746,17 +1283,6 @@ public class Solution201 extends Solution {
     }
 
     /**
-     * 291. Word Pattern II (Medium)
-     *
-     * @see Solution201#wordPattern(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/word-pattern-ii/">Word Pattern II</a>
-     */
-    public boolean wordPatternMatch(String pattern, String s) {
-        // todo
-        return false;
-    }
-
-    /**
      * 292. Nim Game (Easy)
      * <p>
      * Bash Game: given n stones, take turns to remove 1-m stones, then the person who takes the
@@ -1768,71 +1294,6 @@ public class Solution201 extends Solution {
      */
     public boolean canWinNim(int n) {
         return n % 4 != 0;
-    }
-
-    /**
-     * 293. Flip Game (Easy)
-     *
-     * @see Solution201#canWin(String)
-     * @see <a href="https://leetcode-cn.com/problems/flip-game/">Flip Game</a>
-     */
-    public String[] generatePossibleNextMoves(String currentState) {
-        // todo
-        return new String[0];
-    }
-
-    /**
-     * 294. Flip Game II (Medium)
-     *
-     * @see Solution201#canWinNim(int)
-     * @see Solution201#generatePossibleNextMoves(String)
-     * @see Solution301#getMoneyAmount(int)
-     * @see Solution401#canIWin(int, int)
-     * @see <a href="https://leetcode-cn.com/problems/flip-game-ii/">Flip Game II</a>
-     */
-    public boolean canWin(String currentState) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 296. Best Meeting Point (Hard)
-     *
-     * @see Solution301#shortestDistance(int[][])
-     * @see Solution401#minMoves2(int[])
-     * @see <a href="https://leetcode-cn.com/problems/best-meeting-point/">Best Meeting Point</a>
-     */
-    public int minTotalDistance(int[][] grid) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 297. Serialize and Deserialize Binary Tree (Hard)
-     *
-     * @see Solution201#encode(String[])
-     * @see Solution401#CodecDriver(TreeNode)
-     * @see Solution601#findDuplicateSubtrees(TreeNode)
-     * @see Solution401#CodecDriver(int)
-     * @see <a href="https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/">Serialize
-     * and Deserialize Binary Tree</a>
-     */
-    public String Codec(TreeNode root) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 298. Binary Tree Longest Consecutive Sequence (Medium)
-     *
-     * @see Solution101#longestConsecutive(int[])
-     * @see Solution501#longestConsecutive(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-longest-consecutive-sequence/">Binary
-     * Tree Longest Consecutive Sequence</a>
-     */
-    public int longestConsecutive(TreeNode root) {
-        // todo
-        return 0;
     }
 
     /**

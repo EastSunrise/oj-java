@@ -131,17 +131,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 4. Median of Two Sorted Arrays (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">Median of Two
-     * Sorted Arrays</a>
-     */
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        // todo
-        return 0.0;
-    }
-
-    /**
      * 5. Longest Palindromic Substring (Medium)
      * <p>
      * Manacher Algorithm
@@ -248,19 +237,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 7. Reverse Integer (Easy)
-     *
-     * @see Integer#parseInt(String, int)
-     * @see Solution1#myAtoi(String)
-     * @see Solution101#reverseBits(int)
-     * @see <a href="https://leetcode-cn.com/problems/reverse-integer/">Reverse Integer</a>
-     */
-    public int reverse(int x) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 8. String to Integer (atoi) (Medium)
      *
      * @see Solution1#reverse(int)
@@ -328,18 +304,6 @@ public class Solution1 extends Solution {
             x /= 10;
         } while (x > reversed);
         return x == reversed || x == reversed / 10;
-    }
-
-    /**
-     * 10. Regular Expression Matching (Hard)
-     *
-     * @see Solution1#isMatch(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/regular-expression-matching/">Regular
-     * Expression Matching</a>
-     */
-    public boolean isMatch(String s, String p) {
-        // todo
-        return false;
     }
 
     /**
@@ -803,19 +767,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 23. Merge k Sorted Lists (Hard)
-     *
-     * @see Solution1#mergeTwoLists(ListNode, ListNode)
-     * @see Solution201#nthUglyNumber(int)
-     * @see <a href="https://leetcode-cn.com/problems/merge-k-sorted-lists/">Merge k Sorted
-     * Lists</a>
-     */
-    public ListNode mergeKLists(ListNode[] lists) {
-        // todo
-        return new ListNode();
-    }
-
-    /**
      * 24. Swap Nodes in Pairs (Medium)
      *
      * @see Solution1#reverseKGroup(ListNode, int)
@@ -837,18 +788,6 @@ public class Solution1 extends Solution {
         return res.next;
     }
 
-    /**
-     * 25. Reverse Nodes in k-Group (Hard)
-     *
-     * @see Solution1#swapPairs(ListNode)
-     * @see Solution1701#swapNodes(ListNode, int)
-     * @see <a href="https://leetcode-cn.com/problems/reverse-nodes-in-k-group/">Reverse Nodes in
-     * k-Group</a>
-     */
-    public ListNode reverseKGroup(ListNode head, int k) {
-        // todo
-        return new ListNode();
-    }
 
     /**
      * 26. Remove Duplicates from Sorted Array (Easy)
@@ -946,18 +885,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 30. Substring with Concatenation of All Words (Hard)
-     *
-     * @see Solution1#minWindow(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/">Substring
-     * with Concatenation of All Words</a>
-     */
-    public int[] findSubstring(String s, String[] words) {
-        // todo
-        return new int[0];
-    }
-
-    /**
      * 31. Next Permutation (Medium)
      *
      * @see Solution1#permute(int[])
@@ -997,18 +924,6 @@ public class Solution1 extends Solution {
             nums[i - 1] = nums[left];
             nums[left] = temp;
         }
-    }
-
-    /**
-     * 32. Longest Valid Parentheses (Hard)
-     *
-     * @see Solution1#isValid(String)
-     * @see <a href="https://leetcode-cn.com/problems/longest-valid-parentheses/">Longest Valid
-     * Parentheses</a>
-     */
-    public int longestValidParentheses(String s) {
-        // todo
-        return 0;
     }
 
     /**
@@ -1163,17 +1078,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 37. Sudoku Solver (Hard)
-     *
-     * @see Solution1#isValidSudoku(char[][])
-     * @see Solution901#uniquePathsIII(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/sudoku-solver/">Sudoku Solver</a>
-     */
-    public void solveSudoku(char[][] board) {
-        // todo
-    }
-
-    /**
      * 38. Count and Say (Medium)
      *
      * @see Solution201#encode(String[])
@@ -1270,35 +1174,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 41. First Missing Positive (Hard)
-     *
-     * @see Solution201#missingNumber(int[])
-     * @see Solution201#findDuplicate(int[])
-     * @see Solution401#findDisappearedNumbers(int[])
-     * @see Solution701#minSwapsCouples(int[])
-     * @see <a href="https://leetcode-cn.com/problems/first-missing-positive/">First Missing
-     * Positive</a>
-     */
-    public int firstMissingPositive(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 42. Trapping Rain Water (Hard)
-     *
-     * @see Solution1#maxArea(int[])
-     * @see Solution201#productExceptSelf(int[])
-     * @see Solution401#trapRainWater(int[][])
-     * @see Solution701#pourWater(int[], int, int)
-     * @see <a href="https://leetcode-cn.com/problems/trapping-rain-water/">Trapping Rain Water</a>
-     */
-    public int trap(int[] height) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 43. Multiply Strings (Medium)
      *
      * @see Solution1#addTwoNumbers(ListNode, ListNode)
@@ -1361,16 +1236,6 @@ public class Solution1 extends Solution {
         return res.reverse().toString();
     }
 
-    /**
-     * 44. Wildcard Matching (Hard)
-     *
-     * @see Solution1#isMatch(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/wildcard-matching/">Wildcard Matching</a>
-     */
-    public boolean isMatchII(String s, String p) {
-        // todo
-        return false;
-    }
 
     /**
      * 45. Jump Game II (Medium)
@@ -1438,20 +1303,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 47. Permutations II (Medium)
-     *
-     * @see Solution1#nextPermutation(int[])
-     * @see Solution1#permute(int[])
-     * @see Solution201#generatePalindromes(String)
-     * @see Solution901#numSquarefulPerms(int[])
-     * @see <a href="https://leetcode-cn.com/problems/permutations-ii/">Permutations II</a>
-     */
-    public int[][] permuteUnique(int[] nums) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
      * 48. Rotate Image (Medium)
      *
      * @see Solution1801#findRotation(int[][], int[][])
@@ -1496,29 +1347,6 @@ public class Solution1 extends Solution {
         } else {
             return 1 / myPow(x, -(n + 1)) / x;
         }
-    }
-
-    /**
-     * 51. N-Queens (Hard)
-     *
-     * @see Solution1#totalNQueens(int)
-     * @see Solution1001#gridIllumination(int, int[][], int[][])
-     * @see <a href="https://leetcode-cn.com/problems/n-queens/">N-Queens</a>
-     */
-    public String[][] solveNQueens(int n) {
-        // todo
-        return new String[0][0];
-    }
-
-    /**
-     * 52. N-Queens II (Hard)
-     *
-     * @see Solution1#solveNQueens(int)
-     * @see <a href="https://leetcode-cn.com/problems/n-queens-ii/">N-Queens II</a>
-     */
-    public int totalNQueens(int n) {
-        // todo
-        return 0;
     }
 
     /**
@@ -1759,19 +1587,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 60. Permutation Sequence (Hard)
-     *
-     * @see Solution1#nextPermutation(int[])
-     * @see Solution1#permute(int[])
-     * @see <a href="https://leetcode-cn.com/problems/permutation-sequence/">Permutation
-     * Sequence</a>
-     */
-    public String getPermutation(int n, int k) {
-        // todo
-        return "";
-    }
-
-    /**
      * 61. Rotate List (Medium)
      *
      * @see Solution101#rotate(int[], int)
@@ -1890,17 +1705,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 65. Valid Number (Hard)
-     *
-     * @see Solution1#myAtoi(String)
-     * @see <a href="https://leetcode-cn.com/problems/valid-number/">Valid Number</a>
-     */
-    public boolean isNumber(String s) {
-        // todo
-        return false;
-    }
-
-    /**
      * 66. Plus One (Easy)
      *
      * @see Solution1#multiply(String, String)
@@ -1983,17 +1787,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 68. Text Justification (Hard)
-     *
-     * @see Solution1501#reorderSpaces(String)
-     * @see <a href="https://leetcode-cn.com/problems/text-justification/">Text Justification</a>
-     */
-    public String[] fullJustify(String[] words, int maxWidth) {
-        // todo
-        return new String[0];
-    }
-
-    /**
      * 69. Sqrt(x) (Easy)
      *
      * @see Solution1#myPow(double, int)
@@ -2070,20 +1863,6 @@ public class Solution1 extends Solution {
             res.append("/").append(s);
         }
         return res.toString();
-    }
-
-    /**
-     * 72. Edit Distance (Hard)
-     *
-     * @see Solution101#isOneEditDistance(String, String)
-     * @see Solution501#minDistance(String, String)
-     * @see Solution701#minimumDeleteSum(String, String)
-     * @see Solution1001#maxUncrossedLines(int[], int[])
-     * @see <a href="https://leetcode-cn.com/problems/edit-distance/">Edit Distance</a>
-     */
-    public int minDistance(String word1, String word2) {
-        // todo
-        return 0;
     }
 
     /**
@@ -2200,23 +1979,6 @@ public class Solution1 extends Solution {
                 right--;
             }
         }
-    }
-
-    /**
-     * 76. Minimum Window Substring (Hard)
-     *
-     * @see Solution1#findSubstring(String, String[])
-     * @see Solution201#minSubArrayLen(int, int[])
-     * @see Solution201#maxSlidingWindow(int[], int)
-     * @see Solution501#checkInclusion(String, String)
-     * @see Solution601#smallestRange(int[][])
-     * @see Solution701#minWindow(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/minimum-window-substring/">Minimum Window
-     * Substring</a>
-     */
-    public String minWindow(String s, String t) {
-        // todo
-        return "";
     }
 
     /**
@@ -2457,31 +2219,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 84. Largest Rectangle in Histogram (Hard)
-     *
-     * @see Solution1#maximalRectangle(char[][])
-     * @see Solution1701#maximumScore(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/largest-rectangle-in-histogram/">Largest
-     * Rectangle in Histogram</a>
-     */
-    public int largestRectangleArea(int[] heights) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 85. Maximal Rectangle (Hard)
-     *
-     * @see Solution1#largestRectangleArea(int[])
-     * @see Solution201#maximalSquare(char[][])
-     * @see <a href="https://leetcode-cn.com/problems/maximal-rectangle/">Maximal Rectangle</a>
-     */
-    public int maximalRectangle(char[][] matrix) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 86. Partition List (Medium)
      *
      * @see <a href="https://leetcode-cn.com/problems/partition-list/">Partition List</a>
@@ -2505,16 +2242,6 @@ public class Solution1 extends Solution {
         }
         left.next = rightHead.next;
         return leftHead.next;
-    }
-
-    /**
-     * 87. Scramble String (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/scramble-string/">Scramble String</a>
-     */
-    public boolean isScramble(String s1, String s2) {
-        // todo
-        return false;
     }
 
     /**
@@ -2901,16 +2628,6 @@ public class Solution1 extends Solution {
         }
         return (node.left == null || isValidBST(node.left, min, val))
             && (node.right == null || isValidBST(node.right, val, max));
-    }
-
-    /**
-     * 99. Recover Binary Search Tree (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/recover-binary-search-tree/">Recover Binary
-     * Search Tree</a>
-     */
-    public void recoverTree(TreeNode root) {
-        // todo
     }
 
     /**
