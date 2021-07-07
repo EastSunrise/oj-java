@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * @author Kingen

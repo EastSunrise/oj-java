@@ -1,6 +1,6 @@
 package wsg.oj.java.leetcode.problems.impl;
 
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 307. Range Sum Query - Mutable

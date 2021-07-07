@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
-import wsg.oj.java.leetcode.problems.Solution;
 import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 328. Odd Even Linked List (Medium)

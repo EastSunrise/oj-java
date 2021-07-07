@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
@@ -62,30 +63,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 402. Remove K Digits (Medium)
-     *
-     * @see Solution301#maxNumber(int[], int[], int)
-     * @see Solution701#monotoneIncreasingDigits(int)
-     * @see Solution1601#mostCompetitive(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/remove-k-digits/">Remove K Digits</a>
-     */
-    public String removeKdigits(String num, int k) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 403. Frog Jump (Hard)
-     *
-     * @see Solution1801#minSideJumps(int[])
-     * @see <a href="https://leetcode-cn.com/problems/frog-jump/">Frog Jump</a>
-     */
-    public boolean canCross(int[] stones) {
-        // todo
-        return false;
-    }
-
-    /**
      * 404. Sum of Left Leaves (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/sum-of-left-leaves/">Sum of Left Leaves</a>
@@ -129,43 +106,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 406. Queue Reconstruction by Height (Medium)
-     *
-     * @see Solution301#countSmaller(int[])
-     * @see <a href="https://leetcode-cn.com/problems/queue-reconstruction-by-height/">Queue
-     * Reconstruction by Height</a>
-     */
-    public int[][] reconstructQueue(int[][] people) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
-     * 407. Trapping Rain Water II (Hard)
-     *
-     * @see Solution1#trap(int[])
-     * @see <a href="https://leetcode-cn.com/problems/trapping-rain-water-ii/">Trapping Rain Water
-     * II</a>
-     */
-    public int trapRainWater(int[][] heightMap) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 408. Valid Word Abbreviation (Easy)
-     *
-     * @see Solution401#minAbbreviation(String, String[])
-     * @see Solution501#wordsAbbreviation(String[])
-     * @see <a href="https://leetcode-cn.com/problems/valid-word-abbreviation/">Valid Word
-     * Abbreviation</a>
-     */
-    public boolean validWordAbbreviation(String word, String abbr) {
-        // todo
-        return false;
-    }
-
-    /**
      * 409. Longest Palindrome (Easy)
      *
      * @see Solution201#canPermutePalindrome(String)
@@ -182,31 +122,6 @@ public class Solution401 extends Solution {
             singles += i;
         }
         return s.length() - singles + (singles > 0 ? 1 : 0);
-    }
-
-    /**
-     * 410. Split Array Largest Sum (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/split-array-largest-sum/">Split Array Largest
-     * Sum</a>
-     */
-    public int splitArray(int[] nums, int m) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 411. Minimum Unique Word Abbreviation (Hard)
-     *
-     * @see Solution301#generateAbbreviations(String)
-     * @see Solution401#validWordAbbreviation(String, String)
-     * @see Solution501#wordsAbbreviation(String[])
-     * @see <a href="https://leetcode-cn.com/problems/minimum-unique-word-abbreviation/">Minimum
-     * Unique Word Abbreviation</a>
-     */
-    public String minAbbreviation(String target, String[] dictionary) {
-        // todo
-        return "";
     }
 
     /**
@@ -234,18 +149,6 @@ public class Solution401 extends Solution {
             }
         }
         return res;
-    }
-
-    /**
-     * 413. Arithmetic Slices (Medium)
-     *
-     * @see Solution401#numberOfArithmeticSlices(int[])
-     * @see Solution1601#checkArithmeticSubarrays(int[], int[], int[])
-     * @see <a href="https://leetcode-cn.com/problems/arithmetic-slices/">Arithmetic Slices</a>
-     */
-    public int numberOfArithmeticSlices(int[] nums) {
-        // todo
-        return 0;
     }
 
     /**
@@ -319,209 +222,6 @@ public class Solution401 extends Solution {
     }
 
     /**
-     * 416. Partition Equal Subset Sum (Medium)
-     *
-     * @see Solution601#canPartitionKSubsets(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/">Partition Equal
-     * Subset Sum</a>
-     */
-    public boolean canPartition(int[] nums) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 417. Pacific Atlantic Water Flow (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/pacific-atlantic-water-flow/">Pacific Atlantic
-     * Water Flow</a>
-     */
-    public int[][] pacificAtlantic(int[][] heights) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
-     * 418. Sentence Screen Fitting (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/sentence-screen-fitting/">Sentence Screen
-     * Fitting</a>
-     */
-    public int wordsTyping(String[] sentence, int rows, int cols) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 419. Battleships in a Board (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/battleships-in-a-board/">Battleships in a
-     * Board</a>
-     */
-    public int countBattleships(char[][] board) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 420. Strong Password Checker (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/strong-password-checker/">Strong Password
-     * Checker</a>
-     */
-    public int strongPasswordChecker(String password) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 421. Maximum XOR of Two Numbers in an Array (Medium)
-     *
-     * @see Solution1701#maximizeXor(int[], int[][])
-     * @see <a href="https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array/">Maximum
-     * XOR of Two Numbers in an Array</a>
-     */
-    public int findMaximumXOR(int[] nums) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 422. Valid Word Square (Easy)
-     *
-     * @see Solution401#wordSquares(String[])
-     * @see Solution701#isToeplitzMatrix(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/valid-word-square/">Valid Word Square</a>
-     */
-    public boolean validWordSquare(String[] words) {
-        // todo
-        return false;
-    }
-
-    /**
-     * 423. Reconstruct Original Digits from English (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/">Reconstruct
-     * Original Digits from English</a>
-     */
-    public String originalDigits(String s) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 424. Longest Repeating Character Replacement (Medium)
-     *
-     * @see Solution301#lengthOfLongestSubstringKDistinct(String, int)
-     * @see Solution1001#longestOnes(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/longest-repeating-character-replacement/">Longest
-     * Repeating Character Replacement</a>
-     */
-    public int characterReplacement(String s, int k) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 425. Word Squares (Hard)
-     *
-     * @see Solution401#validWordSquare(String[])
-     * @see <a href="https://leetcode-cn.com/problems/word-squares/">Word Squares</a>
-     */
-    public String[][] wordSquares(String[] words) {
-        // todo
-        return new String[0][0];
-    }
-
-    /**
-     * 426. Convert Binary Search Tree to Sorted Doubly Linked List (Medium)
-     *
-     * @see Solution1#inorderTraversal(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/">Convert
-     * Binary Search Tree to Sorted Doubly Linked List</a>
-     */
-    public ListNode treeToDoublyList(TreeNode root) {
-        // todo
-        return new ListNode();
-    }
-
-    /**
-     * 427. Construct Quad Tree (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/construct-quad-tree/">Construct Quad Tree</a>
-     */
-    public int[][] construct(int[][] grid) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
-     * 428. Serialize and Deserialize N-ary Tree (Hard)
-     *
-     * @see Solution201#Codec(TreeNode)
-     * @see Solution401#CodecDriver(TreeNode)
-     * @see Solution401#CodecDriver(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/serialize-and-deserialize-n-ary-tree/">Serialize
-     * and Deserialize N-ary Tree</a>
-     */
-    public int CodecDriver(int root) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 429. N-ary Tree Level Order Traversal (Medium)
-     *
-     * @see Solution101#levelOrder(TreeNode)
-     * @see Solution501#preorder(Solution501.Node)
-     * @see Solution501#postorder(Solution501.Node)
-     * @see <a href="https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/">N-ary Tree
-     * Level Order Traversal</a>
-     */
-    public int[][] levelOrder(int root) {
-        // todo
-        return new int[0][0];
-    }
-
-    /**
-     * 430. Flatten a Multilevel Doubly Linked List (Medium)
-     *
-     * @see Solution101#flatten(TreeNode)
-     * @see Solution1601#correctBinaryTree(TreeNode, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list/">Flatten
-     * a Multilevel Doubly Linked List</a>
-     */
-    public ListNode flatten(ListNode head) {
-        // todo
-        return new ListNode();
-    }
-
-    /**
-     * 431. Encode N-ary Tree to Binary Tree (Hard)
-     *
-     * @see Solution401#CodecDriver(int)
-     * @see <a href="https://leetcode-cn.com/problems/encode-n-ary-tree-to-binary-tree/">Encode
-     * N-ary Tree to Binary Tree</a>
-     */
-    public TreeNode CodecDriver(TreeNode root) {
-        // todo
-        return new TreeNode();
-    }
-
-
-    /**
-     * 433. Minimum Genetic Mutation (Medium)
-     *
-     * @see Solution101#ladderLength(String, String, String[])
-     * @see <a href="https://leetcode-cn.com/problems/minimum-genetic-mutation/">Minimum Genetic
-     * Mutation</a>
-     */
-    public int minMutation(String start, String end, String[] bank) {
-        // todo
-        return 0;
-    }
-
-    /**
      * 434. Number of Segments in a String (Easy)
      *
      * @see <a href="https://leetcode-cn.com/problems/number-of-segments-in-a-string/">Number of
@@ -540,81 +240,6 @@ public class Solution401 extends Solution {
             }
         }
         return count;
-    }
-
-    /**
-     * 435. Non-overlapping Intervals (Medium)
-     *
-     * @see Solution401#findMinArrowShots(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/non-overlapping-intervals/">Non-overlapping
-     * Intervals</a>
-     */
-    public int eraseOverlapIntervals(int[][] intervals) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 436. Find Right Interval (Medium)
-     *
-     * @see SummaryRanges
-     * @see <a href="https://leetcode-cn.com/problems/find-right-interval/">Find Right Interval</a>
-     */
-    public int[] findRightInterval(int[][] intervals) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 437. Path Sum III (Medium)
-     *
-     * @see Solution101#hasPathSum(TreeNode, int)
-     * @see Solution101#pathSum(TreeNode, int)
-     * @see Solution601#pathSum(int[])
-     * @see Solution601#longestUnivaluePath(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/path-sum-iii/">Path Sum III</a>
-     */
-    public int pathSum(TreeNode root, int targetSum) {
-        // todo
-        return 0;
-    }
-
-    /**
-     * 438. Find All Anagrams in a String (Medium)
-     *
-     * @see Solution201#isAnagram(String, String)
-     * @see Solution501#checkInclusion(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/">Find All
-     * Anagrams in a String</a>
-     */
-    public int[] findAnagrams(String s, String p) {
-        // todo
-        return new int[0];
-    }
-
-    /**
-     * 439. Ternary Expression Parser (Medium)
-     *
-     * @see Solution301#deserialize(String)
-     * @see Solution701#removeComments(String[])
-     * @see Solution701#evaluate(String)
-     * @see <a href="https://leetcode-cn.com/problems/ternary-expression-parser/">Ternary Expression
-     * Parser</a>
-     */
-    public String parseTernary(String expression) {
-        // todo
-        return "";
-    }
-
-    /**
-     * 440. K-th Smallest in Lexicographical Order (Hard)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order/">K-th
-     * Smallest in Lexicographical Order</a>
-     */
-    public int findKthNumber(int n, int k) {
-        // todo
-        return 0;
     }
 
     /**

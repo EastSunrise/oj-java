@@ -3,8 +3,8 @@ package wsg.oj.java.leetcode.problems.p300;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import wsg.oj.java.leetcode.problems.Solution;
 import wsg.oj.java.leetcode.problems.base.ListNode;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 381. Insert Delete GetRandom O(1) - Duplicates allowed (Hard)

@@ -1,4 +1,4 @@
-package wsg.oj.java.leetcode.problems;
+package wsg.oj.java.leetcode.problems.base;
 
 /**
  * Supplies some common tags.

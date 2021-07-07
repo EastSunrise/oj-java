@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 373. Find K Pairs with Smallest Sums (Medium)

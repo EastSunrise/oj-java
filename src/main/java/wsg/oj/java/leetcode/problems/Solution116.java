@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems;
 
+import wsg.oj.java.leetcode.problems.base.Solution;
+
 /**
  * Solutions to problems No.116, No.117.
  *

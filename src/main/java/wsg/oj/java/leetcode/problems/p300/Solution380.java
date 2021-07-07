@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 380. Insert Delete GetRandom O(1) (Medium)

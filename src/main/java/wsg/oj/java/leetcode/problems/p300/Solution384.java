@@ -2,7 +2,7 @@ package wsg.oj.java.leetcode.problems.p300;
 
 import java.util.Arrays;
 import java.util.Random;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 384. Shuffle an Array (Medium)

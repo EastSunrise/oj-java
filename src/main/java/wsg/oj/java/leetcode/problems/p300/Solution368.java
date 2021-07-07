@@ -3,7 +3,7 @@ package wsg.oj.java.leetcode.problems.p300;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 368. Largest Divisible Subset (Medium)

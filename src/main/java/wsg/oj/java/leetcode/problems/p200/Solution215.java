@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
 import java.util.Random;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p300.Solution324;
 import wsg.oj.java.leetcode.problems.p300.Solution347;
 

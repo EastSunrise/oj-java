@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems;
 
 import java.util.HashMap;
 import java.util.Map;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * @author Kingen

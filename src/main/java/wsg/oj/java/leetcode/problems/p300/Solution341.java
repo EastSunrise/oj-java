@@ -3,7 +3,7 @@ package wsg.oj.java.leetcode.problems.p300;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 341. Flatten Nested List Iterator

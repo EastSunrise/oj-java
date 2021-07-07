@@ -2,7 +2,7 @@ package wsg.oj.java.leetcode.problems.p300;
 
 import java.util.List;
 import java.util.Stack;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 385. Mini Parser (Medium)

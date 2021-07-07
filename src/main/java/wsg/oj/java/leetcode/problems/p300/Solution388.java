@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
 import java.util.Stack;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 388. Longest Absolute File Path (Medium)

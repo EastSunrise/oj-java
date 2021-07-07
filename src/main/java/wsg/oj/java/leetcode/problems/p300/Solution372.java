@@ -1,6 +1,6 @@
 package wsg.oj.java.leetcode.problems.p300;
 
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 372. Super Pow (Medium)

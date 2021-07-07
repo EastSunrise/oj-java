@@ -1,9 +1,7 @@
 package wsg.oj.java.leetcode.problems.old;
 
 
-import java.util.ArrayDeque;
 import java.util.Arrays;
-import java.util.Deque;
 import java.util.List;
 import java.util.Stack;
 
@@ -24,38 +22,6 @@ public class StackSolution {
 
         }
         return 0;
-    }
-
-    // 402. 移掉K位数字
-    public String removeKdigits(String num, int k) {
-        if (k >= num.length()) {
-            return "0";
-        }
-        char[] chars = num.toCharArray();
-        Deque<Character> queue = new ArrayDeque<>();
-        for (char c : chars) {
-            if (k > 0) {
-                while (!queue.isEmpty() && c < queue.peekLast() && k > 0) {
-                    queue.pollLast();
-                    k--;
-                }
-            }
-            queue.addLast(c);
-        }
-        while (k-- > 0) {
-            queue.pollLast();
-        }
-        while (!queue.isEmpty() && queue.element() == '0') {
-            queue.pop();
-        }
-        if (queue.isEmpty()) {
-            return "0";
-        }
-        StringBuilder builder = new StringBuilder();
-        while (!queue.isEmpty()) {
-            builder.append(queue.pop());
-        }
-        return builder.toString();
     }
 
     // 503. 下一个更大元素 II

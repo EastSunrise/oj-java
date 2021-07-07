@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
 import java.util.Arrays;
-import wsg.oj.java.leetcode.problems.Solution;
+import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
  * 322. Coin Change (Medium)
