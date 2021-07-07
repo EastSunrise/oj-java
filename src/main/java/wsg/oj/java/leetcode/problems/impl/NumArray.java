@@ -1,13 +1,15 @@
 package wsg.oj.java.leetcode.problems.impl;
 
 import wsg.oj.java.leetcode.problems.Solution301;
+import wsg.oj.java.leetcode.problems.p300.Solution304;
+import wsg.oj.java.leetcode.problems.p300.Solution307;
 
 /**
  * 303. Range Sum Query - Immutable (Easy)
  *
  * @author Kingen
- * @see NumMatrix
- * @see NumArrayMutable
+ * @see Solution304
+ * @see Solution307
  * @see Solution301#maxSubArrayLen(int[], int)
  * @see <a href="https://leetcode-cn.com/problems/range-sum-query-immutable/">Range Sum Query -
  * Immutable</a>
