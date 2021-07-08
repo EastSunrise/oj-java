@@ -8,6 +8,8 @@ package wsg.oj.java.leetcode.problems.base;
  */
 public class Solution {
 
+    protected static final String TO_OPTIMIZE = "To Optimize";
+
     /**
      * @see <a href="https://leetcode-cn.com/tag/backtracking/problemset/">Backtracking</a>
      */

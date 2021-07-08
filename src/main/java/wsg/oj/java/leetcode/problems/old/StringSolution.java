@@ -105,30 +105,6 @@ public class StringSolution {
         return list;
     }
 
-    // 443. 压缩字符串
-    public int compress(char[] chars) {
-        int charIndex = 0, count = 1;
-        for (int i = 1; i < chars.length; i++) {
-            if (chars[i] == chars[i - 1]) {
-                count++;
-            } else {
-                if (count > 1) {
-                    for (char c : String.valueOf(count).toCharArray()) {
-                        chars[++charIndex] = c;
-                    }
-                }
-                count = 1;
-                chars[++charIndex] = chars[i];
-            }
-        }
-        if (count > 1) {
-            for (char c : String.valueOf(count).toCharArray()) {
-                chars[++charIndex] = c;
-            }
-        }
-        return charIndex + 1;
-    }
-
     // 537. 复数乘法
     public String complexNumberMultiply(String a, String b) {
         int[] aInts = getInts(a), bInts = getInts(b);

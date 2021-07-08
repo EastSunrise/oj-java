@@ -38,46 +38,6 @@ public class Solution101 extends Solution {
     }
 
     /**
-     * 102. Binary Tree Level Order Traversal (Medium)
-     *
-     * @see #BFS
-     * @see Solution101#zigzagLevelOrder(TreeNode)
-     * @see Solution101#levelOrderBottom(TreeNode)
-     * @see Solution101#minDepth(TreeNode)
-     * @see Solution301#verticalOrder(TreeNode)
-     * @see Solution601#averageOfLevels(TreeNode)
-     * @see Solution401#levelOrder(int)
-     * @see Solution901#isCousins(TreeNode, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal/">Binary
-     * Tree Level Order Traversal</a>
-     */
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> res = new LinkedList<>();
-        if (root == null) {
-            return res;
-        }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            // traverse a level
-            int size = queue.size();
-            List<Integer> level = new ArrayList<>(size);
-            for (int i = 0; i < size; i++) {
-                TreeNode node = queue.remove();
-                level.add(node.val);
-                if (node.left != null) {
-                    queue.add(node.left);
-                }
-                if (node.right != null) {
-                    queue.add(node.right);
-                }
-            }
-            res.add(level);
-        }
-        return res;
-    }
-
-    /**
      * 103. Binary Tree Zigzag Level Order Traversal (Medium)
      *
      * @see #BFS
@@ -269,20 +229,6 @@ public class Solution101 extends Solution {
             }
         }
         return root;
-    }
-
-    /**
-     * 107. Binary Tree Level Order Traversal II (Medium)
-     *
-     * @see Solution101#levelOrder(TreeNode)
-     * @see Solution601#averageOfLevels(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/">Binary
-     * Tree Level Order Traversal II</a>
-     */
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<Integer>> res = levelOrder(root);
-        Collections.reverse(res);
-        return res;
     }
 
     /**
@@ -997,104 +943,6 @@ public class Solution101 extends Solution {
             left = right.next;
             right = temp;
         }
-    }
-
-    /**
-     * 144. Binary Tree Preorder Traversal (Easy)
-     *
-     * @see Solution1#inorderTraversal(TreeNode)
-     * @see Solution101#postorderTraversal(TreeNode)
-     * @see Solution201#verifyPreorder(int[])
-     * @see Solution501#preorder(Solution501.Node)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-preorder-traversal/">Binary Tree
-     * Preorder Traversal</a>
-     */
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        preorderTraversal(res, root);
-        return res;
-    }
-
-    private void preorderTraversal(List<Integer> res, TreeNode node) {
-        if (node != null) {
-            res.add(node.val);
-            preorderTraversal(res, node.left);
-            preorderTraversal(res, node.right);
-        }
-    }
-
-    /**
-     * 144.2 Binary Tree Preorder Traversal (Easy) (Stack)
-     *
-     * @see Solution1#inorderTraversal2(TreeNode)
-     * @see Solution101#postorderTraversal2(TreeNode)
-     */
-    public List<Integer> preorderTraversal2(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode current = root;
-        while (current != null || !stack.isEmpty()) {
-            while (current != null) {
-                res.add(current.val);
-                stack.push(current);
-                current = current.left;
-            }
-            current = stack.pop().right;
-        }
-        return res;
-    }
-
-    /**
-     * 145. Binary Tree Postorder Traversal (Easy)
-     *
-     * @see Solution1#inorderTraversal(TreeNode)
-     * @see Solution501#postorder(Solution501.Node)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-postorder-traversal/">Binary Tree
-     * Postorder Traversal</a>
-     */
-    public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        postorderTraversal(res, root);
-        return res;
-    }
-
-    private void postorderTraversal(List<Integer> res, TreeNode node) {
-        if (node != null) {
-            postorderTraversal(res, node.left);
-            postorderTraversal(res, node.right);
-            res.add(node.val);
-        }
-    }
-
-    /**
-     * 145.2 Binary Tree Postorder Traversal (Easy) (Stack)
-     * <p>
-     * todo explain
-     *
-     * @see Solution101#preorderTraversal2(TreeNode)
-     * @see Solution1#inorderTraversal2(TreeNode)
-     */
-    public List<Integer> postorderTraversal2(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        TreeNode current = root;
-        TreeNode last = null;
-        Stack<TreeNode> stack = new Stack<>();
-        while (!stack.isEmpty() || current != null) {
-            while (current != null) {
-                stack.push(current);
-                current = current.left;
-            }
-            current = stack.peek();
-            if (current.right == null || current.right == last) {
-                res.add(current.val);
-                stack.pop();
-                last = current;
-                current = null;
-            } else {
-                current = current.right;
-            }
-        }
-        return res;
     }
 
     /**

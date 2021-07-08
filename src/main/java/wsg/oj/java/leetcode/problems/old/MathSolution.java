@@ -24,25 +24,6 @@ public class MathSolution {
         return gIndex;
     }
 
-    // 456. 132模式
-    public boolean find132pattern(int[] nums) {
-        if (nums.length < 3) {
-            return false;
-        }
-        Stack<Integer> stack = new Stack<>();
-        int min = Integer.MIN_VALUE;
-        for (int i = nums.length - 1; i >= 0; i--) {
-            if (nums[i] < min) {
-                return true;
-            }
-            while (!stack.isEmpty() && nums[i] > stack.peek()) {
-                min = stack.pop();
-            }
-            stack.push(nums[i]);
-        }
-        return false;
-    }
-
     // 462. 最少移动次数使数组元素相等 II
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);

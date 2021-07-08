@@ -2467,58 +2467,6 @@ public class Solution1 extends Solution {
     }
 
     /**
-     * 94. Binary Tree Inorder Traversal (Easy)
-     *
-     * @see Solution1#isValidBST(TreeNode)
-     * @see Solution101#preorderTraversal(TreeNode)
-     * @see Solution101#postorderTraversal(TreeNode)
-     * @see BSTIterator
-     * @see Solution201#kthSmallest(TreeNode, int)
-     * @see Solution201#closestKValues(TreeNode, double, int)
-     * @see Solution201#inorderSuccessor(TreeNode, int)
-     * @see Solution401#treeToDoublyList(TreeNode)
-     * @see Solution701#minDiffInBST(TreeNode)
-     * @see <a href="https://leetcode-cn.com/problems/binary-tree-inorder-traversal/">Binary Tree
-     * Inorder Traversal</a>
-     */
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        inorderTraversal(root, result);
-        return result;
-    }
-
-    private void inorderTraversal(TreeNode node, List<Integer> result) {
-        if (node == null) {
-            return;
-        }
-        inorderTraversal(node.left, result);
-        result.add(node.val);
-        inorderTraversal(node.right, result);
-    }
-
-    /**
-     * 94.2 Binary Tree Inorder Traversal (Easy) (Stack)
-     *
-     * @see Solution101#preorderTraversal2(TreeNode)
-     * @see Solution101#postorderTraversal2(TreeNode)
-     */
-    public List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode current = root;
-        while (current != null || !stack.isEmpty()) {
-            while (current != null) {
-                stack.push(current);
-                current = current.left;
-            }
-            current = stack.pop();
-            res.add(current.val);
-            current = current.right;
-        }
-        return res;
-    }
-
-    /**
      * 95. Unique Binary Search Trees II (Medium)
      *
      * @see Solution1#numTrees(int)
