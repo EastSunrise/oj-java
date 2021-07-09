@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * with Smallest Sums</a>
  * @since 2021-07-04
  */
-class Solution373 extends Solution {
+class Solution373 implements Solution {
 
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
         PriorityQueue<List<Integer>> queue = new PriorityQueue<>(

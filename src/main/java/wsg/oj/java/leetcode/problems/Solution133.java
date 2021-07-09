@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @author Kingen
  * @since 2021/6/28
  */
-public class Solution133 extends Solution {
+public class Solution133 implements Solution {
 
     /**
      * 133. Clone Graph (Medium)

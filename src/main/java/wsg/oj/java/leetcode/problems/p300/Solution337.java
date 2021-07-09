@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution213;
  * @see <a href="https://leetcode-cn.com/problems/house-robber-iii/">House Robber III</a>
  * @since 2021-07-04
  */
-public class Solution337 extends Solution {
+public class Solution337 implements Solution {
 
     /**
      * @see #DFS

@@ -9,30 +9,6 @@ import java.util.Set;
  */
 public class ArraySolution {
 
-    // 474. 一和零
-    public int findMaxForm(String[] strs, int m, int n) {
-        return findMaxForm(strs, strs.length - 1, m, n);
-    }
-
-    private int findMaxForm(String[] strs, int end, int m, int n) {
-        if (end < 0) {
-            return 0;
-        }
-        String last = strs[end];
-        int count0 = 0;
-        for (char c : last.toCharArray()) {
-            if (c == '0') {
-                count0++;
-            }
-        }
-        int count1 = last.length() - count0;
-        int noLast = findMaxForm(strs, end - 1, m, n);
-        if (m < count0 || n < count1) {
-            return noLast;
-        }
-        return Math.max(findMaxForm(strs, end - 1, m - count0, n - count1) + 1, noLast);
-    }
-
     // 532. 数组中的K-diff数对
     public int findPairs(int[] nums, int k) {
         Set<Integer> set = new HashSet<>();

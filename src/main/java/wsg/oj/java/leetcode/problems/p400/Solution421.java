@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * XOR of Two Numbers in an Array</a>
  * @since 2021-07-07
  */
-class Solution421 extends Solution {
+class Solution421 implements Solution {
 
     public int findMaximumXOR(int[] nums) {
         int res = 0, mask = 0;

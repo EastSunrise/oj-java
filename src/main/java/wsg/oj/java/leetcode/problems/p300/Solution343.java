@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/integer-break/">Integer Break</a>
  * @since 2021-07-04
  */
-class Solution343 extends Solution {
+class Solution343 implements Solution {
 
     /**
      * @see <a href="https://en.wikipedia.org/wiki/Inequality_of_arithmetic_and_geometric_means">Inequality

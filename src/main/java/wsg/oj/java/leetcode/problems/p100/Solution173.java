@@ -18,7 +18,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * Iterator</a>
  * @since 2021-06-25
  */
-public class Solution173 extends Solution {
+public class Solution173 implements Solution {
 
     static class BSTIterator {
 

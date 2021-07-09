@@ -25,7 +25,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution145;
  * Inorder Traversal</a>
  * @since 2021-07-08
  */
-public class Solution94 extends Solution {
+public class Solution94 implements Solution {
 
     /**
      * Recursion.

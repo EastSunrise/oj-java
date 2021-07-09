@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/reconstruct-itinerary/">Reconstruct Itinerary</a>
  * @since 2021-07-04
  */
-class Solution332 extends Solution {
+class Solution332 implements Solution {
 
     public List<String> findItinerary(List<List<String>> tickets) {
         Map<String, List<String>> edges = new HashMap<>(16);

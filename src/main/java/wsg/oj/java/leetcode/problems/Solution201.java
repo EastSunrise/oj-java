@@ -19,7 +19,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution201 extends Solution {
+public class Solution201 implements Solution {
 
     /**
      * 201. Bitwise AND of Numbers Range (Medium)

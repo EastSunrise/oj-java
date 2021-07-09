@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/find-right-interval/">Find Right Interval</a>
  * @since 2021-07-07
  */
-class Solution436 extends Solution {
+class Solution436 implements Solution {
 
     public int[] findRightInterval(int[][] intervals) {
         int len = intervals.length;

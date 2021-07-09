@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution401 extends Solution {
+public class Solution401 implements Solution {
 
     /**
      * 401. Binary Watch (Easy)

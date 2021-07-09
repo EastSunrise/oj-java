@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * - Immutable</a>
  * @since 2021-06-25
  */
-public class Solution304 extends Solution {
+public class Solution304 implements Solution {
 
     static class NumMatrix {
 

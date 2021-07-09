@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * with Unique Digits</a>
  * @since 2021-07-04
  */
-class Solution357 extends Solution {
+class Solution357 implements Solution {
 
     public int countNumbersWithUniqueDigits(int n) {
         int res = 1, factorial = 1, k = 9;

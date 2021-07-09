@@ -8,7 +8,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @author Kingen
  * @since 2021/6/28
  */
-public class Solution138 extends Solution {
+public class Solution138 implements Solution {
 
     /**
      * 138. Copy List with Random Pointer (Medium)

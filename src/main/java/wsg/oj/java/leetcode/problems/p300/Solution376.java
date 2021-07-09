@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/wiggle-subsequence/">Wiggle Subsequence</a>
  * @since 2021-07-04
  */
-class Solution376 extends Solution {
+class Solution376 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

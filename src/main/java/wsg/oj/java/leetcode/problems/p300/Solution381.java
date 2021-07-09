@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Delete GetRandom O(1) - Duplicates allowed</a>
  * @since 2021-07-06
  */
-class Solution381 extends Solution {
+class Solution381 implements Solution {
 
     private static class Solution {
 

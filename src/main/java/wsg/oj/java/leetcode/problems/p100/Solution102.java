@@ -22,7 +22,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * Level Order Traversal</a>
  * @since 2021-07-08
  */
-class Solution102 extends Solution {
+class Solution102 implements Solution {
 
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();

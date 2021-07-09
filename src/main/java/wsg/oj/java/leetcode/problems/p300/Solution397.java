@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/integer-replacement/">Integer Replacement</a>
  * @since 2021-07-06
  */
-class Solution397 extends Solution {
+class Solution397 implements Solution {
 
     public int integerReplacement(int n) {
         if (n < 4) {

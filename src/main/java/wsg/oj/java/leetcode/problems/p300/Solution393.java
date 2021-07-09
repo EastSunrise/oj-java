@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/utf-8-validation/">UTF-8 Validation</a>
  * @since 2021-07-06
  */
-class Solution393 extends Solution {
+class Solution393 implements Solution {
 
     public boolean validUtf8(int[] data) {
         // left bytes

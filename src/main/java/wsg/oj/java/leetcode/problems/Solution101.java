@@ -18,7 +18,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution101 extends Solution {
+public class Solution101 implements Solution {
 
     /**
      * 101. Symmetric Tree (Easy)

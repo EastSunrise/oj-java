@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/rotate-function/">Rotate Function</a>
  * @since 2021-07-06
  */
-class Solution396 extends Solution {
+class Solution396 implements Solution {
 
     public int maxRotateFunction(int[] nums) {
         int sum = 0, f = 0, n = nums.length;

@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Level Order Traversal</a>
  * @since 2021-07-07
  */
-class Solution429 extends Solution {
+class Solution429 implements Solution {
 
     public List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> res = new ArrayList<>();

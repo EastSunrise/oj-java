@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Board</a>
  * @since 2021-07-07
  */
-class Solution419 extends Solution {
+class Solution419 implements Solution {
 
     public int countBattleships(char[][] board) {
         int m = board.length, n = board[0].length;

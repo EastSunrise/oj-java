@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Water Flow</a>
  * @since 2021-07-07
  */
-class Solution417 extends Solution {
+class Solution417 implements Solution {
 
     /**
      * @see #DFS

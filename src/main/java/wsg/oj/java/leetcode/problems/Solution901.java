@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution901 extends Solution {
+public class Solution901 implements Solution {
 
     /**
      * 905. Sort Array By Parity (Easy)

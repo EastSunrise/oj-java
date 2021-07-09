@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Original Digits from English</a>
  * @since 2021-07-07
  */
-class Solution423 extends Solution {
+class Solution423 implements Solution {
 
     public String originalDigits(String s) {
         int[] letters = new int[26];

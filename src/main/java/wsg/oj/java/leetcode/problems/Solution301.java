@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution301 extends Solution {
+public class Solution301 implements Solution {
 
     /**
      * 306. Additive Number (Medium)

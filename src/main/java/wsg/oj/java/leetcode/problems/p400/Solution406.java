@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Reconstruction by Height</a>
  * @since 2021-07-07
  */
-class Solution406 extends Solution {
+class Solution406 implements Solution {
 
     public int[][] reconstructQueue(int[][] people) {
         Arrays.sort(people, (o1, o2) -> {

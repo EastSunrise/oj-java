@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Frequency</a>
  * @since 2021-07-08
  */
-class Solution451 extends Solution {
+class Solution451 implements Solution {
 
     public String frequencySort(String s) {
         Map<Character, Integer> frequency = new HashMap<>(64);

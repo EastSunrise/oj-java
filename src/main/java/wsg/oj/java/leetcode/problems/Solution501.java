@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution501 extends Solution {
+public class Solution501 implements Solution {
 
     /**
      * 501. Find Mode in Binary Search Tree (Easy)

@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution337;
  * @see <a href="https://leetcode-cn.com/problems/house-robber-ii/">House Robber II</a>
  * @since 2021-07-04
  */
-public class Solution213 extends Solution {
+public class Solution213 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Smallest Element in a Sorted Matrix</a>
  * @since 2021-07-06
  */
-class Solution378 extends Solution {
+class Solution378 implements Solution {
 
     /**
      * Merge sort.

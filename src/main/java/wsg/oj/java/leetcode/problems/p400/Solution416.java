@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Subset Sum</a>
  * @since 2021-07-07
  */
-class Solution416 extends Solution {
+class Solution416 implements Solution {
 
     /**
      * @complexity O(n * target)

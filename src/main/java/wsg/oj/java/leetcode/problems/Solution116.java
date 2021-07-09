@@ -8,7 +8,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @author Kingen
  * @since 2021/6/29
  */
-public class Solution116 extends Solution {
+public class Solution116 implements Solution {
 
     /**
      * 116. Populating Next Right Pointers in Each Node (Medium)

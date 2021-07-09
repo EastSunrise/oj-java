@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/arithmetic-slices/">Arithmetic Slices</a>
  * @since 2021-07-07
  */
-class Solution413 extends Solution {
+class Solution413 implements Solution {
 
     public int numberOfArithmeticSlices(int[] nums) {
         int start = 0, end = nums.length - 1, res = 0;

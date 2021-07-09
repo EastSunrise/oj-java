@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Intervals</a>
  * @since 2021-07-07
  */
-class Solution435 extends Solution {
+class Solution435 implements Solution {
 
     public int eraseOverlapIntervals(int[][] intervals) {
         Arrays.sort(intervals, Comparator.comparing(arr -> arr[0]));

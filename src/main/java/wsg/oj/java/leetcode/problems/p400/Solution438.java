@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * in a String</a>
  * @since 2021-07-07
  */
-class Solution438 extends Solution {
+class Solution438 implements Solution {
 
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();

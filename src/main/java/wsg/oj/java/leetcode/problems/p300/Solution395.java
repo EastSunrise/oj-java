@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Substring with At Least K Repeating Characters</a>
  * @since 2021-07-06
  */
-class Solution395 extends Solution {
+class Solution395 implements Solution {
 
     public int longestSubstring(String s, int k) {
         int[] counts = new int[26];

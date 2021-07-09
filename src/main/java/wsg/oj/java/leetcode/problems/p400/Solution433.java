@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Mutation</a>
  * @since 2021-07-07
  */
-class Solution433 extends Solution {
+class Solution433 implements Solution {
 
     /**
      * @see #BFS

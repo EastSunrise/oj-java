@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution1 extends Solution {
+public class Solution1 implements Solution {
 
     private final char[][] dict = new char[][]{
         {'a', 'b', 'c'},

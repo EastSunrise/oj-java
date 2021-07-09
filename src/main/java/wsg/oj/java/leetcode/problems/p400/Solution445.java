@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/add-two-numbers-ii/">Add Two Numbers II</a>
  * @since 2021-07-08
  */
-class Solution445 extends Solution {
+class Solution445 implements Solution {
 
     /**
      * Stack.

@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/coin-change/">Coin Change</a>
  * @since 2021-07-04
  */
-class Solution322 extends Solution {
+class Solution322 implements Solution {
 
     public int coinChange(int[] coins, int amount) {
         int max = amount + 1;

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/sum-of-two-integers/">Sum of Two Integers</a>
  * @since 2021-07-04
  */
-class Solution371 extends Solution {
+class Solution371 implements Solution {
 
     public int getSum(int a, int b) {
         // sum without carries

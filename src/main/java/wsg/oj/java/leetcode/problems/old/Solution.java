@@ -35,36 +35,6 @@ public class Solution {
         return 0.0;
     }
 
-    // 481.
-    public int magicalString(int n) {
-        if (n <= 0) {
-            return 0;
-        }
-        if (n < 4) {
-            return 1;
-        }
-        int[] nums = new int[n + 1];
-        nums[0] = 1;
-        nums[1] = nums[2] = 2;
-        int countIndex = 2, curIndex = 3;
-        boolean isCurOne = true;
-        do {
-            int count = nums[countIndex++];
-            int curNum = isCurOne ? 1 : 2;
-            for (int i = 0; i < count; i++) {
-                nums[curIndex++] = curNum;
-            }
-            isCurOne = !isCurOne;
-        } while (curIndex < n);
-        int sum1 = 0;
-        for (int i = 0; i < n; i++) {
-            if (nums[i] == 1) {
-                sum1++;
-            }
-        }
-        return sum1;
-    }
-
     // 554.
     public int leastBricks(List<List<Integer>> wall) {
         Map<Integer, Integer> times = new HashMap<>();

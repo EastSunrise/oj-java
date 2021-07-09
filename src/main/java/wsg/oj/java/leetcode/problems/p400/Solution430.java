@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * a Multilevel Doubly Linked List</a>
  * @since 2021-07-07
  */
-class Solution430 extends Solution {
+class Solution430 implements Solution {
 
     public Node flatten(Node head) {
         if (head == null) {

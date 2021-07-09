@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @see <a href="https://leetcode-cn.com/problems/delete-node-in-a-bst/">Delete Node in a BST</a>
  * @since 2021-07-08
  */
-class Solution450 extends Solution {
+class Solution450 implements Solution {
 
     public TreeNode deleteNode(TreeNode root, int key) {
         TreeNode rootParent = new TreeNode(-1, root, null);

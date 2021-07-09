@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/construct-quad-tree/">Construct Quad Tree</a>
  * @since 2021-07-07
  */
-class Solution427 extends Solution {
+class Solution427 implements Solution {
 
     public Node construct(int[][] grid) {
         return construct(grid, 0, 0, grid.length);

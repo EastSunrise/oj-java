@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Duplicates in an Array</a>
  * @since 2021-07-08
  */
-class Solution442 extends Solution {
+class Solution442 implements Solution {
 
     public List<Integer> findDuplicates(int[] nums) {
         int n = nums.length;

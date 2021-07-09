@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Mutable</a>
  * @since 2021/7/3
  */
-public class Solution307 extends Solution {
+public class Solution307 implements Solution {
 
     static class NumArray {
 

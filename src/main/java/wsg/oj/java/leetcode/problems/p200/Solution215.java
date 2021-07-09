@@ -18,7 +18,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution347;
  * Element in an Array</a>
  * @since 2021-07-04
  */
-public class Solution215 extends Solution {
+public class Solution215 implements Solution {
 
     public int findKthLargest(int[] nums, int k) {
         return findKthLargest(nums, nums.length - k, 0, nums.length);

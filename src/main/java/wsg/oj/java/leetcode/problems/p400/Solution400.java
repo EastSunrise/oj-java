@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/nth-digit/">Nth Digit</a>
  * @since 2021-07-06
  */
-class Solution400 extends Solution {
+class Solution400 implements Solution {
 
     public int findNthDigit(int n) {
         long base = 1, count = 9, digits = 9, first = 1;

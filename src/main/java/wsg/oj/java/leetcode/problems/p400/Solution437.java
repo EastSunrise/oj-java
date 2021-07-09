@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @see <a href="https://leetcode-cn.com/problems/path-sum-iii/">Path Sum III</a>
  * @since 2021-07-07
  */
-class Solution437 extends Solution {
+class Solution437 implements Solution {
 
     /**
      * @see #TIME_NN

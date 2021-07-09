@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution601 extends Solution {
+public class Solution601 implements Solution {
 
 
     /**

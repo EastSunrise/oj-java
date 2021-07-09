@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Iterator</a>
  * @since 2021/7/5
  */
-public class Solution341 extends Solution {
+public class Solution341 implements Solution {
 
     /**
      * This is the interface that allows for creating nested lists.

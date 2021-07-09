@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Add and Search Words Data Structure</a>
  * @since 2021-06-25
  */
-class Solution211 extends Solution {
+class Solution211 implements Solution {
 
     static class WordDictionary {
 

@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * (Prefix Tree)</a>
  * @since 2021-06-25
  */
-class Solution208 extends Solution {
+class Solution208 implements Solution {
 
     static class Trie {
 

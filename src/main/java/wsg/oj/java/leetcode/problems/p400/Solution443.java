@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/string-compression/">String Compression</a>
  * @since 2021-07-08
  */
-class Solution443 extends Solution {
+class Solution443 implements Solution {
 
     public int compress(char[] chars) {
         char cur = chars[0];

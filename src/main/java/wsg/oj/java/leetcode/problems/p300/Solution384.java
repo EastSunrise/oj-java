@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/shuffle-an-array/">Shuffle an Array</a>
  * @since 2021-07-06
  */
-class Solution384 extends Solution {
+class Solution384 implements Solution {
 
     private static class Solution {
 

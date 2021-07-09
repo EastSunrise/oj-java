@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/odd-even-linked-list/">Odd Even Linked List</a>
  * @since 2021-07-04
  */
-class Solution328 extends Solution {
+class Solution328 implements Solution {
 
     public ListNode oddEvenList(ListNode head) {
         ListNode odd = new ListNode(0, head);

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Higher or Lower II</a>
  * @since 2021-07-04
  */
-class Solution375 extends Solution {
+class Solution375 implements Solution {
 
     public int getMoneyAmount(int n) {
         int[][] dp = new int[n + 2][n + 1];

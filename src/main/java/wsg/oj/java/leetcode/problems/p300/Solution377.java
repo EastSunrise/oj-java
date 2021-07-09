@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution39;
  * @see <a href="https://leetcode-cn.com/problems/combination-sum-iv/">Combination Sum IV</a>
  * @since 2021-07-04
  */
-public class Solution377 extends Solution {
+public class Solution377 implements Solution {
 
     /**
      * @see Solution322#coinChange(int[], int)

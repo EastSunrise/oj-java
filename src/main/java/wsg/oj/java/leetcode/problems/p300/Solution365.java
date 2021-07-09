@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/water-and-jug-problem/">Water and Jug Problem</a>
  * @since 2021-07-04
  */
-class Solution365 extends Solution {
+class Solution365 implements Solution {
 
     /**
      * The integer solutions of the equation ax+by=c. The equation has integer solutions if and only

@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Repeating Character Replacement</a>
  * @since 2021-07-07
  */
-class Solution424 extends Solution {
+class Solution424 implements Solution {
 
     public int characterReplacement(String s, int k) {
         int[] counts = new int[26];

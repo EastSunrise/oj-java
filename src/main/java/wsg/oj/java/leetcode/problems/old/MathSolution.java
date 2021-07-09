@@ -24,38 +24,6 @@ public class MathSolution {
         return gIndex;
     }
 
-    // 462. 最少移动次数使数组元素相等 II
-    public int minMoves2(int[] nums) {
-        Arrays.sort(nums);
-        int times = 0, mid = nums.length >> 1, median = nums[mid];
-        for (int i = 0; i < mid; i++) {
-            times += median - nums[i];
-        }
-        for (int i = mid + 1; i < nums.length; i++) {
-            times += nums[i] - median;
-        }
-        return times;
-    }
-
-    // 494. 目标和
-    public int findTargetSumWays(int[] nums, int S) {
-        return findTargetSumWays(nums, nums.length, S);
-    }
-
-    private int findTargetSumWays(int[] nums, int length, int target) {
-        if (length == 1) {
-            if (target == 0 && target == nums[0]) {
-                return 2;
-            } else if (target == nums[0] || target + nums[0] == 0) {
-                return 1;
-            } else {
-                return 0;
-            }
-        }
-        return findTargetSumWays(nums, length - 1, target - nums[length - 1])
-            + findTargetSumWays(nums, length - 1, target + nums[length - 1]);
-    }
-
     // 633. 平方数之和
     public boolean judgeSquareSum(int c) {
         int a = 0, b = (int) Math.sqrt(c);

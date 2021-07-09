@@ -18,7 +18,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution94;
  * Preorder Traversal</a>
  * @since 2021-07-08
  */
-public class Solution144 extends Solution {
+public class Solution144 implements Solution {
 
     /**
      * Recursion.

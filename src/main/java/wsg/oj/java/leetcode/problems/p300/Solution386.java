@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Numbers</a>
  * @since 2021-07-06
  */
-class Solution386 extends Solution {
+class Solution386 implements Solution {
 
     /**
      * @see #DFS

@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Path</a>
  * @since 2021-07-06
  */
-class Solution388 extends Solution {
+class Solution388 implements Solution {
 
     public int lengthLongestPath(String input) {
         int res = 0;

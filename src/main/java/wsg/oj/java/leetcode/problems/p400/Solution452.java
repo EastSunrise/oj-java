@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Number of Arrows to Burst Balloons</a>
  * @since 2021-07-08
  */
-class Solution452 extends Solution {
+class Solution452 implements Solution {
 
     public int findMinArrowShots(int[][] points) {
         Arrays.sort(points, Comparator.comparingInt(o -> o[0]));

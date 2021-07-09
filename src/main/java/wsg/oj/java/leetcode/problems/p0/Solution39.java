@@ -19,7 +19,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution377;
  * @see <a href="https://leetcode-cn.com/problems/combination-sum/">Combination Sum</a>
  * @since 2021-07-04
  */
-public class Solution39 extends Solution {
+public class Solution39 implements Solution {
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();

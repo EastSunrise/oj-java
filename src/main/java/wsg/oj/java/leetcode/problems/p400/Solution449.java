@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * Deserialize BST</a>
  * @since 2021-07-08
  */
-class Solution449 extends Solution {
+class Solution449 implements Solution {
 
     /**
      * @see #TO_OPTIMIZE

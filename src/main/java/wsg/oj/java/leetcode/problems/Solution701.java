@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @author Kingen
  * @since 2021/6/25
  */
-public class Solution701 extends Solution {
+public class Solution701 implements Solution {
 
     int[] goods = new int[]{0, 0, 1, -1, -1, 1, 1, -1, 0, 1};
 

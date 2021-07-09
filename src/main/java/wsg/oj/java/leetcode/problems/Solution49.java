@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @author Kingen
  * @since 2021/6/29
  */
-public class Solution49 extends Solution {
+public class Solution49 implements Solution {
 
     /**
      * 49. Group Anagrams (Medium)

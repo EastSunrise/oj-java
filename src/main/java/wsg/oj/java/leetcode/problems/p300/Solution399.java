@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/evaluate-division/">Evaluate Division</a>
  * @since 2021-07-06
  */
-class Solution399 extends Solution {
+class Solution399 implements Solution {
 
     /**
      * @see <a href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd–Warshall

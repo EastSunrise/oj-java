@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/decode-string/">Decode String</a>
  * @since 2021-07-06
  */
-class Solution394 extends Solution {
+class Solution394 implements Solution {
 
     public String decodeString(String s) {
         Stack<Integer> counts = new Stack<>();

@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/random-pick-index/">Random Pick Index</a>
  * @since 2021-07-06
  */
-class Solution398 extends Solution {
+class Solution398 implements Solution {
 
     private static class Solution {
 

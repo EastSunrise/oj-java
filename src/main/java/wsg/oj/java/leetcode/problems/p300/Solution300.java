@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Increasing Subsequence</a>
  * @since 2021-07-04
  */
-class Solution300 extends Solution {
+class Solution300 implements Solution {
 
     public int lengthOfLIS(int[] nums) {
         int len = nums.length;

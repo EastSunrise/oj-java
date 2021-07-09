@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/super-pow/">Super Pow</a>
  * @since 2021-07-04
  */
-class Solution372 extends Solution {
+class Solution372 implements Solution {
 
     /**
      * By extended Euler's theorem:
