@@ -21,6 +21,11 @@ import wsg.oj.java.leetcode.problems.p300.Solution377;
  */
 public class Solution39 implements Solution {
 
+    /**
+     * Sorts the array before backtracking to avoid duplicate results and invalid branches.
+     *
+     * @see #BACKTRACKING
+     */
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(candidates);

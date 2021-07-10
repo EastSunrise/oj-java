@@ -159,7 +159,7 @@ public class Solution201 implements Solution {
     /**
      * 207. Course Schedule (Medium)
      *
-     * @complexity O(| E |)
+     * @complexity T(n)=O(L), L=len(prerequisites)
      * @see #DFS
      * @see Solution201#findOrder(int, int[][])
      * @see Solution201#validTree(int, int[][])
@@ -833,7 +833,7 @@ public class Solution201 implements Solution {
      * 240. Search a 2D Matrix II (Medium)
      *
      * @see Arrays#binarySearch
-     * @see #TIME_M_PLUS_N
+     * @see wsg.oj.java.Complexity#TIME_M_PLUS_N
      * @see Solution1#searchMatrix(int[][], int)
      * @see <a href="https://leetcode-cn.com/problems/search-a-2d-matrix-ii/">Search a 2D Matrix
      * II</a>

@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p400;
 import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution18;
 
 /**
  * 454. 4Sum II (Medium)
@@ -15,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution454 implements Solution {
 
     /**
-     * @see #TIME_NN
+     * @see wsg.oj.java.Complexity#TIME_NN
      */
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         int n = nums1.length;

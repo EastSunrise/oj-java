@@ -11,7 +11,7 @@ import java.util.Stack;
  * @author Kingen
  * @since 2021/6/15
  */
-public class Solution {
+public class OldSolution {
 
     /**
      * 4.

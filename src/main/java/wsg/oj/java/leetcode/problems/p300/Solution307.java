@@ -37,7 +37,7 @@ public class Solution307 implements Solution {
         }
 
         /**
-         * @see #TIME_LOG_N
+         * @see wsg.oj.java.Complexity#TIME_LOG_N
          */
         public void update(int index, int val) {
             update(index, val, 0, 0, len - 1);
@@ -58,7 +58,7 @@ public class Solution307 implements Solution {
         }
 
         /**
-         * @see #TIME_LOG_N
+         * @see wsg.oj.java.Complexity#TIME_LOG_N
          */
         public int sumRange(int left, int right) {
             return sumRange(left, right, 0, 0, len - 1);

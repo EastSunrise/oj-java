@@ -17,8 +17,8 @@ class Solution368 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING
-     * @see #TIME_NN
-     * @see #SPACE_N
+     * @see wsg.oj.java.Complexity#TIME_NN
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public List<Integer> largestDivisibleSubset(int[] nums) {
         Arrays.sort(nums);

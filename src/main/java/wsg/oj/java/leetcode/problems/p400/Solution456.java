@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution456 implements Solution {
 
     /**
-     * @see #TIME_N_LOG_N
+     * @see wsg.oj.java.Complexity#TIME_N_LOG_N
      */
     public boolean find132pattern(int[] nums) {
         int leftMin = nums[0];
@@ -45,7 +45,7 @@ class Solution456 implements Solution {
     /**
      * Monotonic stack.
      *
-     * @see #TIME_N
+     * @see wsg.oj.java.Complexity#TIME_N
      */
     public boolean find132pattern2(int[] nums) {
         int len = nums.length;

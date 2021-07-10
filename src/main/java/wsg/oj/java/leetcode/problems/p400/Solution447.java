@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution447 implements Solution {
 
     /**
-     * @see #TIME_NN
+     * @see wsg.oj.java.Complexity#TIME_NN
      */
     public int numberOfBoomerangs(int[][] points) {
         int res = 0;

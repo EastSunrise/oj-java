@@ -19,7 +19,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
 class Solution437 implements Solution {
 
     /**
-     * @see #TIME_NN
+     * @see wsg.oj.java.Complexity#TIME_NN
      */
     public int pathSum(TreeNode root, int targetSum) {
         if (root == null) {
@@ -45,7 +45,7 @@ class Solution437 implements Solution {
     }
 
     /**
-     * @see #TIME_N
+     * @see wsg.oj.java.Complexity#TIME_N
      */
     public int pathSum2(TreeNode root, int targetSum) {
         Map<Integer, Integer> prefixSums = new HashMap<>(16);

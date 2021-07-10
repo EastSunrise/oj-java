@@ -90,8 +90,8 @@ public class Solution301 implements Solution {
      * 309. Best Time to Buy and Sell Stock with Cooldown (Medium)
      *
      * @see #DYNAMIC_PROGRAMMING
-     * @see #TIME_N
-     * @see #SPACE_N
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      * @see Solution101#maxProfit(int[])
      * @see Solution101#maxProfitII(int[])
      * @see <a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/">Best

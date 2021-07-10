@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution416 implements Solution {
 
     /**
-     * @complexity O(n * target)
+     * @complexity T(n)=O(ns), s=sum/2
      * @see #DYNAMIC_PROGRAMMING
      */
     public boolean canPartition(int[] nums) {

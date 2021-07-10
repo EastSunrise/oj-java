@@ -202,8 +202,8 @@ public class Solution101 implements Solution {
     /**
      * 106.2 Construct Binary Tree from Inorder and Postorder Traversal (Medium) (Inorder)
      *
-     * @see #TIME_N
-     * @see #SPACE_LOG_N
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_LOG_N
      * @see #buildTree2(int[], int[])
      */
     public TreeNode buildTreeII2(int[] inorder, int[] postorder) {
@@ -255,7 +255,7 @@ public class Solution101 implements Solution {
     /**
      * 109. Convert Sorted List to Binary Search Tree (Medium)
      *
-     * @see #TIME_N
+     * @see wsg.oj.java.Complexity#TIME_N
      * @see Solution101#sortedArrayToBST(int[])
      * @see <a href="https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/">Convert
      * Sorted List to Binary Search Tree</a>
@@ -525,8 +525,8 @@ public class Solution101 implements Solution {
      * 120. Triangle (Medium)
      *
      * @see #DYNAMIC_PROGRAMMING
-     * @see #TIME_N
-     * @see #SPACE_LOG_N
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_LOG_N
      * @see <a href="https://leetcode-cn.com/problems/triangle/">Triangle</a>
      */
     public int minimumTotal(List<List<Integer>> triangle) {
@@ -631,8 +631,8 @@ public class Solution101 implements Solution {
     /**
      * 128. Longest Consecutive Sequence (Medium)
      *
-     * @see #TIME_N_LOG_N
-     * @see #SPACE_CONSTANT
+     * @see wsg.oj.java.Complexity#TIME_N_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      * @see Solution201#longestConsecutive(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/longest-consecutive-sequence/">Longest
      * Consecutive Sequence</a>
@@ -883,8 +883,8 @@ public class Solution101 implements Solution {
     /**
      * 142. Linked List Cycle II (Medium)
      *
-     * @see #TIME_N
-     * @see #SPACE_CONSTANT
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      * @see Solution101#hasCycle(ListNode)
      * @see Solution201#findDuplicate(int[])
      * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">Linked List Cycle
@@ -1490,8 +1490,8 @@ public class Solution101 implements Solution {
      * 199. Binary Tree Right Side View (Medium)
      *
      * @see #LEVEL_ORDER
-     * @see #TIME_N
-     * @see #SPACE_LOG_N
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_LOG_N
      * @see Solution116#connect(Node)
      * @see Solution501#boundaryOfBinaryTree(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">Binary Tree

@@ -13,8 +13,8 @@ class Solution376 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING
-     * @see #TIME_N
-     * @see #SPACE_N
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int wiggleMaxLength(int[] nums) {
         int[] dp = new int[nums.length];

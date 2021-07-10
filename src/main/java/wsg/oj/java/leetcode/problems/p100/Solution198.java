@@ -23,8 +23,8 @@ public class Solution198 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING
-     * @see #TIME_N
-     * @see #SPACE_N
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int rob(int[] nums) {
         int len = nums.length;

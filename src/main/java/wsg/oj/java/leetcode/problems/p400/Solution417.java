@@ -16,8 +16,8 @@ class Solution417 implements Solution {
 
     /**
      * @see #DFS
-     * @see #TIME_MN
-     * @see #SPACE_MN
+     * @see wsg.oj.java.Complexity#TIME_MN
+     * @see wsg.oj.java.Complexity#SPACE_MN
      */
     public List<List<Integer>> pacificAtlantic(int[][] heights) {
         int m = heights.length, n = heights[0].length;

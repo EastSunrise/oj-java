@@ -21,8 +21,8 @@ class Solution378 implements Solution {
     /**
      * Merge sort.
      *
-     * @see #TIME_M_LOG_N
-     * @see #SPACE_N
+     * @see wsg.oj.java.Complexity#TIME_M_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int kthSmallest(int[][] matrix, int m) {
         int n = matrix.length;
@@ -44,7 +44,7 @@ class Solution378 implements Solution {
     }
 
     /**
-     * @complexity O(n * log ( max - min))
+     * @complexity T(n)=O(n*log(d)), d=max-min
      * @see #BINARY_SEARCH
      */
     public int kthSmallest2(int[][] matrix, int k) {
@@ -65,7 +65,7 @@ class Solution378 implements Solution {
     /**
      * Counts number of elements less than or equal to the target.
      *
-     * @see #TIME_N
+     * @see wsg.oj.java.Complexity#TIME_N
      */
     private int binarySearchAndCount(int[][] matrix, int target) {
         // from the left-bottom corner
