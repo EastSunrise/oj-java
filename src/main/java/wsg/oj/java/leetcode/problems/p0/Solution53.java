@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/maximum-subarray/">Maximum Subarray</a>
  * @since 2021-07-11
  */
-class Solution53 implements Solution {
+public class Solution53 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution22 implements Solution {
 
     /**
-     * @see #BACKTRACKING
+     * @see #DFS
      * @see wsg.oj.java.Complexity#TIME_2_N
      * @see wsg.oj.java.Complexity#SPACE_2_N
      */

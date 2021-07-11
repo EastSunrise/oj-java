@@ -81,6 +81,27 @@ public interface Solution extends Complexity {
         return dp[m - 1][n - 1];
     }
 
+    /**
+     * Checks whether a character is a letter or a digit.
+     */
+    default boolean isAlphanumeric(char ch) {
+        return isDigit(ch) || isLetter(ch);
+    }
+
+    /**
+     * Checks whether the character is a digit.
+     */
+    default boolean isDigit(char ch) {
+        return '0' <= ch && ch <= '9';
+    }
+
+    /**
+     * Checks whether the character is a letter.
+     */
+    default boolean isLetter(char ch) {
+        return ('A' <= ch && ch <= 'Z') || ('a' <= ch && ch <= 'z');
+    }
+
     interface TriFunction<T, U, V, R> {
 
         R apply(T t, U u, V v);

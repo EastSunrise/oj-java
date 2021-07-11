@@ -31,7 +31,7 @@ class Solution17 implements Solution {
     /**
      * @complexity T=O(n^k), k=the average numbers of characters each digit represents.
      * @complexity S=O(n^k)
-     * @see #BACKTRACKING
+     * @see #DFS
      */
     public List<String> letterCombinations(String digits) {
         List<String> res = new ArrayList<>((int) Math.pow(3, digits.length()));

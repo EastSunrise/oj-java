@@ -1,4 +1,4 @@
-package wsg.oj.java.leetcode.problems;
+package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,19 +7,21 @@ import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
+ * 133. Clone Graph (Medium)
+ *
  * @author Kingen
- * @since 2021/6/28
+ * @see Solution138
+ * @see Solution1485
+ * @see Solution1490
+ * @see <a href="https://leetcode-cn.com/problems/clone-graph/">Clone Graph</a>
+ * @since 2021-07-11
  */
-public class Solution133 implements Solution {
+class Solution133 implements Solution {
 
     /**
-     * 133. Clone Graph (Medium)
-     *
      * @see #DFS
-     * @see Solution138#copyRandomList(Solution138.Node)
-     * @see Solution1401#copyRandomBinaryTree(TreeNode)
-     * @see Solution1401#cloneTree(int)
-     * @see <a href="https://leetcode-cn.com/problems/clone-graph/">Clone Graph</a>
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public Node cloneGraph(Node node) {
         if (node == null) {

@@ -18,11 +18,11 @@ class Solution81 implements Solution {
      * @see wsg.oj.java.Complexity#TIME_LOG_N
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
-    public boolean searchII(int[] nums, int target) {
-        return searchII(nums, 0, nums.length - 1, target);
+    public boolean search(int[] nums, int target) {
+        return search(nums, 0, nums.length - 1, target);
     }
 
-    private boolean searchII(int[] nums, int low, int high, int target) {
+    private boolean search(int[] nums, int low, int high, int target) {
         while (low <= high) {
             int mid = (low + high) >>> 1;
             int midVal = nums[mid];
@@ -38,8 +38,8 @@ class Solution81 implements Solution {
             } else if (midVal == nums[high]) {
                 if (midVal == nums[low]) {
                     // can't determine the order
-                    return searchII(nums, low + 1, mid - 1, target)
-                        || searchII(nums, mid + 1, high - 1, target);
+                    return search(nums, low + 1, mid - 1, target)
+                        || search(nums, mid + 1, high - 1, target);
                 } else {
                     high = mid - 1;
                 }

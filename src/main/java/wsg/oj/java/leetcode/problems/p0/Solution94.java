@@ -1,6 +1,8 @@
 package wsg.oj.java.leetcode.problems.p0;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
@@ -27,11 +29,12 @@ import wsg.oj.java.leetcode.problems.p100.Solution145;
 public class Solution94 extends BinaryTree implements Solution {
 
     /**
-     * @see #inorderTraversal(TreeNode)
-     * @see #inorderTraversalWithStack(TreeNode)
+     * @see #inorderTraversal(TreeNode, Consumer)
+     * @see #inorderTraversalWithStack(TreeNode, Consumer)
      */
-    @Override
     public List<Integer> inorderTraversal(TreeNode root) {
-        return super.inorderTraversal(root);
+        List<Integer> res = new ArrayList<>();
+        inorderTraversal(root, res::add);
+        return res;
     }
 }

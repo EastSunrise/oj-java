@@ -17,7 +17,7 @@ class Solution80 implements Solution {
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
-    public int removeDuplicatesII(int[] nums) {
+    public int removeDuplicates(int[] nums) {
         int res = 0, cur = nums[0], count = 0;
         for (int num : nums) {
             if (num == cur) {

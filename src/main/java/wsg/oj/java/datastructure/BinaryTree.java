@@ -1,8 +1,11 @@
 package wsg.oj.java.datastructure;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
+import java.util.function.Consumer;
 
 /**
  * Operations for binary trees.
@@ -14,28 +17,28 @@ import java.util.Stack;
  */
 public class BinaryTree {
 
-    /**
-     * Inorder traversal with recursion.
-     */
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        inorderTraversal(root, result);
-        return result;
+    public int getHeight(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
     }
 
-    private void inorderTraversal(TreeNode node, List<Integer> result) {
+    /**
+     * Recursive inorder traversal.
+     */
+    public void inorderTraversal(TreeNode node, Consumer<Integer> action) {
         if (node != null) {
-            inorderTraversal(node.left, result);
-            result.add(node.val);
-            inorderTraversal(node.right, result);
+            inorderTraversal(node.left, action);
+            action.accept(node.val);
+            inorderTraversal(node.right, action);
         }
     }
 
     /**
-     * Inorder traversal with a stack.
+     * Iterative inorder traversal.
      */
-    public List<Integer> inorderTraversalWithStack(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
+    public void inorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
         do {
@@ -45,10 +48,57 @@ public class BinaryTree {
             }
             if (!stack.isEmpty()) {
                 current = stack.pop();
-                res.add(current.val);
+                action.accept(current.val);
                 current = current.right;
             }
         } while (current != null || !stack.isEmpty());
-        return res;
+    }
+
+    /**
+     * Traverses levels iteratively.
+     */
+    public void traverseLevels(TreeNode root, Consumer<List<Integer>> levelAction) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            // traverse a level
+            int size = queue.size();
+            List<Integer> level = new ArrayList<>(size);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                level.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            levelAction.accept(level);
+        }
+    }
+
+    /**
+     * Iterative traversal in level order.
+     */
+    public void levelOrderTraversal(TreeNode root, Consumer<Integer> action) {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.remove();
+            action.accept(current.val);
+            if (current.left != null) {
+                queue.add(current.left);
+            }
+            if (current.right != null) {
+                queue.add(current.right);
+            }
+        }
     }
 }
