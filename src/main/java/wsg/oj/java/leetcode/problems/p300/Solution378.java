@@ -44,7 +44,7 @@ class Solution378 implements Solution {
     }
 
     /**
-     * @complexity T(n)=O(n*log(d)), d=max-min
+     * @complexity T=O(n*log(d)), d=max-min
      * @see #BINARY_SEARCH
      */
     public int kthSmallest2(int[][] matrix, int k) {

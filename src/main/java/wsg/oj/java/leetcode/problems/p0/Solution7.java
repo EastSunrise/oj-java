@@ -17,7 +17,7 @@ class Solution7 implements Solution {
      * Handles as a negative number and compares with the two limits when adding the next digit in
      * case that the value goes outside the signed 32-bit integer range.
      *
-     * @complexity T(x)=O(d), d=the number of digits of x
+     * @complexity T=O(d), d=the number of digits of x
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int reverse(int x) {

@@ -1,4 +1,4 @@
-package wsg.oj.java.leetcode.problems.base;
+package wsg.oj.java.datastructure;
 
 import java.util.LinkedList;
 import java.util.Queue;

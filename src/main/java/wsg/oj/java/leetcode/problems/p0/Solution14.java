@@ -15,7 +15,7 @@ class Solution14 implements Solution {
     /**
      * Compares the characters one by one.
      *
-     * @complexity T(n)=O(nL), L=len(longest common prefix)
+     * @complexity T=O(nL), L=len(longest common prefix)
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public String longestCommonPrefix(String[] strs) {

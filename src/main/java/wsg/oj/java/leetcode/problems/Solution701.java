@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
+import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * Solutions to problems No.701-No.800.

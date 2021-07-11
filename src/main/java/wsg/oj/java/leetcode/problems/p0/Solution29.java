@@ -15,7 +15,7 @@ class Solution29 implements Solution {
     /**
      * Divides bit by bit.
      *
-     * @complexity T(n)=O(b), b=31
+     * @complexity T=O(b), b=31
      * @see Complexity#SPACE_CONSTANT
      */
     public int divide(int dividend, int divisor) {

@@ -1,4 +1,4 @@
-package wsg.oj.java.leetcode.problems;
+package wsg.oj.java.leetcode.problems.p0;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,20 +8,24 @@ import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
+ * 49. Group Anagrams (Medium)
+ *
  * @author Kingen
- * @since 2021/6/29
+ * @see Solution242
+ * @see Solution249
+ * @see <a href="https://leetcode-cn.com/problems/group-anagrams/">Group Anagrams</a>
+ * @since 2021-07-11
  */
-public class Solution49 implements Solution {
+class Solution49 implements Solution {
 
     /**
-     * 49. Group Anagrams (Medium)
+     * Uses the frequency of characters of a string as its hash and then group them.
      *
-     * @see Solution201#isAnagram(String, String)
-     * @see Solution201#groupStrings(String[])
-     * @see <a href="https://leetcode-cn.com/problems/group-anagrams/">Group Anagrams</a>
+     * @complexity T=O(L), L=sum(len(str))
+     * @complexity S=O(cn), c=26, count of unique characters
      */
     public List<List<String>> groupAnagrams(String[] strs) {
-        Map<Stat, List<String>> groups = new HashMap<>();
+        Map<Stat, List<String>> groups = new HashMap<>(16);
         for (String str : strs) {
             int[] values = new int[26];
             for (char ch : str.toCharArray()) {

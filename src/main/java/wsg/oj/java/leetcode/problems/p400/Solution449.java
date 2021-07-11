@@ -3,8 +3,8 @@ package wsg.oj.java.leetcode.problems.p400;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 449. Serialize and Deserialize BST (Medium)

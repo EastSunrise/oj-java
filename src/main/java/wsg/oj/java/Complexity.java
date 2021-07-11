@@ -28,6 +28,7 @@ public interface Complexity {
      */
     String SPACE_CONSTANT = "O(1)";
     String SPACE_LOG_N = "O(log_n)";
+    String SPACE_H = "O(h)";
     String SPACE_N = "O(n)";
     String SPACE_M = "O(m)";
     String SPACE_M_PLUS_N = "O(m+n)";

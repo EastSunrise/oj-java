@@ -20,7 +20,7 @@ class Solution12 implements Solution {
     /**
      * Thinks of 1-3, 4, 5-8, 9 separately.
      *
-     * @complexity T(n)=O(d), d=the number of digits of the number
+     * @complexity T=O(d), d=the number of digits of the number
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public String intToRoman(int num) {

@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
+import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * Solutions to problems No.401-No.500.

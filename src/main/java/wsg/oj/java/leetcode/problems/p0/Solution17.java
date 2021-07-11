@@ -29,8 +29,8 @@ class Solution17 implements Solution {
     };
 
     /**
-     * @complexity T(n)=O(n^k), k=the average numbers of characters each digit represents.
-     * @complexity S(n)=O(n^k)
+     * @complexity T=O(n^k), k=the average numbers of characters each digit represents.
+     * @complexity S=O(n^k)
      * @see #BACKTRACKING
      */
     public List<String> letterCombinations(String digits) {

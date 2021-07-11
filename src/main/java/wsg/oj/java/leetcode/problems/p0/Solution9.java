@@ -15,7 +15,7 @@ class Solution9 implements Solution {
     /**
      * Reverses the right half of x and compares with the left half.
      *
-     * @complexity T(x)=O(d), d=the half number of digits of x
+     * @complexity T=O(d), d=the half number of digits of x
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public boolean isPalindrome(int x) {

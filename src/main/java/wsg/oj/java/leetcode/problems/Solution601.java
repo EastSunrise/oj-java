@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
+import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * Solutions to problems No.601-No.700.

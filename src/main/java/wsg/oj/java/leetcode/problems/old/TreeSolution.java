@@ -3,7 +3,7 @@ package wsg.oj.java.leetcode.problems.old;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
+import wsg.oj.java.datastructure.TreeNode;
 
 /**
  * @author Kingen

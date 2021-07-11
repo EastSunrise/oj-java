@@ -1,10 +1,9 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
+import wsg.oj.java.datastructure.BinaryTree;
+import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p100.Solution144;
 import wsg.oj.java.leetcode.problems.p100.Solution145;
 
@@ -25,43 +24,14 @@ import wsg.oj.java.leetcode.problems.p100.Solution145;
  * Inorder Traversal</a>
  * @since 2021-07-08
  */
-public class Solution94 implements Solution {
+public class Solution94 extends BinaryTree implements Solution {
 
     /**
-     * Recursion.
+     * @see #inorderTraversal(TreeNode)
+     * @see #inorderTraversalWithStack(TreeNode)
      */
+    @Override
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> result = new ArrayList<>();
-        inorderTraversal(root, result);
-        return result;
-    }
-
-    private void inorderTraversal(TreeNode node, List<Integer> result) {
-        if (node != null) {
-            inorderTraversal(node.left, result);
-            result.add(node.val);
-            inorderTraversal(node.right, result);
-        }
-    }
-
-    /**
-     * Stack.
-     */
-    public List<Integer> inorderTraversalWithStack(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode current = root;
-        do {
-            while (current != null) {
-                stack.push(current);
-                current = current.left;
-            }
-            if (!stack.isEmpty()) {
-                current = stack.pop();
-                res.add(current.val);
-                current = current.right;
-            }
-        } while (current != null || !stack.isEmpty());
-        return res;
+        return super.inorderTraversal(root);
     }
 }

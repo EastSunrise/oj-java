@@ -21,7 +21,7 @@ class Solution3 implements Solution {
     /**
      * Slides a window and records the indices of chars with a map.
      *
-     * @complexity S(n)=O(L), L=len(set(chars))
+     * @complexity S=O(L), L=len(set(chars))
      * @see wsg.oj.java.Complexity#TIME_N
      */
     public int lengthOfLongestSubstring(String s) {

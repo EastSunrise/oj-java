@@ -23,22 +23,8 @@ class Solution40 implements Solution {
      */
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
-        int current = candidates[0], count = 1, len = 0;
         int[] counts = new int[candidates.length];
-        for (int i = 1; i < candidates.length; i++) {
-            if (candidates[i] == current) {
-                count++;
-            } else {
-                candidates[len] = current;
-                counts[len] = count;
-                current = candidates[i];
-                count = 1;
-                len++;
-            }
-        }
-        candidates[len] = current;
-        counts[len] = count;
-        len++;
+        int len = accumulate(candidates, counts);
         List<List<Integer>> res = new ArrayList<>();
         combinationSum2(candidates, counts, len, res, new ArrayList<>(), target, 0, 0);
         return res;

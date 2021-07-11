@@ -9,10 +9,9 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
-import wsg.oj.java.leetcode.problems.Solution116.Node;
+import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * @author Kingen
@@ -1492,7 +1491,7 @@ public class Solution101 implements Solution {
      * @see #LEVEL_ORDER
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_LOG_N
-     * @see Solution116#connect(Node)
+     * @see Solution116#connect(Solution116.Node)
      * @see Solution501#boundaryOfBinaryTree(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-right-side-view/">Binary Tree
      * Right Side View</a>

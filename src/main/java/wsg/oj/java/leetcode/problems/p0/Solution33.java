@@ -16,8 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution33 implements Solution {
 
     /**
-     * Binary searching.
-     *
+     * @see #BINARY_SEARCH
      * @see Complexity#TIME_LOG_N
      * @see Complexity#SPACE_CONSTANT
      */

@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p400;
 
+import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 450. Delete Node in a BST (Medium)

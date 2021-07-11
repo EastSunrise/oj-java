@@ -2,7 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.Collections;
 import java.util.List;
-import wsg.oj.java.leetcode.problems.base.TreeNode;
+import wsg.oj.java.datastructure.TreeNode;
 
 /**
  * 107. Binary Tree Level Order Traversal II (Medium)
