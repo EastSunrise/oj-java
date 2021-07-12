@@ -97,6 +97,5 @@ class Solution146 implements Solution {
                 this.val = val;
             }
         }
-
     }
 }

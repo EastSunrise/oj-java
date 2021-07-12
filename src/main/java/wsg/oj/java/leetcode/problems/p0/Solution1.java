@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p0;
 import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution167;
 
 /**
  * 1. Two Sum (Easy)
@@ -20,7 +21,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/two-sum/">Two Sum</a>
  * @since 2021-07-10
  */
-class Solution1 implements Solution {
+public class Solution1 implements Solution {
 
     /**
      * Finds the other number with a map.

@@ -8,15 +8,16 @@ import java.util.Stack;
 import java.util.function.Consumer;
 
 /**
- * Operations for binary trees.
+ * An implementation of binary trees.
  *
  * @author Kingen
  * @see <a href="https://eastsunrise.github.io/wiki-kingen/cs/data-structure/binary-tree.html">Binary
  * Tree</a>
  * @since 2021/7/11
  */
-public class BinaryTree {
+public class BinaryTree implements BinaryTreeOpt {
 
+    @Override
     public int getHeight(TreeNode node) {
         if (node == null) {
             return 0;
@@ -24,9 +25,32 @@ public class BinaryTree {
         return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
     }
 
-    /**
-     * Recursive inorder traversal.
-     */
+    @Override
+    public void preorderTraversal(TreeNode node, Consumer<Integer> action) {
+        if (node != null) {
+            action.accept(node.val);
+            preorderTraversal(node.left, action);
+            preorderTraversal(node.right, action);
+        }
+    }
+
+    @Override
+    public void preorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode current = stack.pop();
+            action.accept(current.val);
+            if (current.right != null) {
+                stack.push(current.right);
+            }
+            if (current.left != null) {
+                stack.push(current.left);
+            }
+        }
+    }
+
+    @Override
     public void inorderTraversal(TreeNode node, Consumer<Integer> action) {
         if (node != null) {
             inorderTraversal(node.left, action);
@@ -35,9 +59,7 @@ public class BinaryTree {
         }
     }
 
-    /**
-     * Iterative inorder traversal.
-     */
+    @Override
     public void inorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode current = root;
@@ -54,9 +76,38 @@ public class BinaryTree {
         } while (current != null || !stack.isEmpty());
     }
 
-    /**
-     * Traverses levels iteratively.
-     */
+    @Override
+    public void postorderTraversal(TreeNode node, Consumer<Integer> action) {
+        if (node != null) {
+            inorderTraversal(node.left, action);
+            inorderTraversal(node.right, action);
+            action.accept(node.val);
+        }
+    }
+
+    @Override
+    public void postorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
+        TreeNode current = root;
+        TreeNode last = null;
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || current != null) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            current = stack.peek();
+            if (current.right == null || current.right == last) {
+                action.accept(current.val);
+                stack.pop();
+                last = current;
+                current = null;
+            } else {
+                current = current.right;
+            }
+        }
+    }
+
+    @Override
     public void traverseLevels(TreeNode root, Consumer<List<Integer>> levelAction) {
         if (root == null) {
             return;
@@ -81,9 +132,7 @@ public class BinaryTree {
         }
     }
 
-    /**
-     * Iterative traversal in level order.
-     */
+    @Override
     public void levelOrderTraversal(TreeNode root, Consumer<Integer> action) {
         if (root == null) {
             return;

@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Lists</a>
  * @since 2021-07-10
  */
-class Solution21 implements Solution {
+public class Solution21 implements Solution {
 
     /**
      * Traverses the two lists and merges them.

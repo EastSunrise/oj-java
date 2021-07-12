@@ -1,24 +1,27 @@
-package wsg.oj.java.leetcode.problems;
+package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
+ * 138. Copy List with Random Pointer (Medium)
+ *
  * @author Kingen
- * @since 2021/6/28
+ * @see Solution133
+ * @see Solution1485
+ * @see Solution1490
+ * @see <a href="https://leetcode-cn.com/problems/copy-list-with-random-pointer/">Copy List with
+ * Random Pointer</a>
+ * @since 2021-07-12
  */
-public class Solution138 implements Solution {
+class Solution138 implements Solution {
 
     /**
-     * 138. Copy List with Random Pointer (Medium)
+     * Stores the random nodes with a map.
      *
-     * @see #HASHTABLE
-     * @see Solution133#cloneGraph(Solution133.Node)
-     * @see Solution1401#copyRandomBinaryTree(TreeNode)
-     * @see Solution1401#cloneTree(int)
-     * @see <a href="https://leetcode-cn.com/problems/copy-list-with-random-pointer/">Copy List with
-     * Random Pointer</a>
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public Node copyRandomList(Node head) {
         if (head == null) {

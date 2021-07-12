@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/sort-colors/">Sort Colors</a>
  * @since 2021-07-11
  */
-class Solution75 implements Solution {
+public class Solution75 implements Solution {
 
     /**
      * Selection sort.

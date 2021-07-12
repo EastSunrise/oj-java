@@ -329,7 +329,7 @@ public class Solution201 implements Solution {
      * II</a>
      */
     public boolean containsNearbyDuplicate(int[] nums, int k) {
-        Map<Integer, Integer> num2LastIndexMap = new HashMap<>();
+        Map<Integer, Integer> num2LastIndexMap = new HashMap<>(16);
         for (int i = 0; i < nums.length; i++) {
             Integer oldValue = num2LastIndexMap.put(nums[i], i);
             if (oldValue != null && i - oldValue <= k) {
@@ -636,7 +636,6 @@ public class Solution201 implements Solution {
     /**
      * 230. Kth Smallest Element in a BST (Medium)
      *
-     * @see #INORDER
      * @see Solution1#inorderTraversal(TreeNode)
      * @see Solution601#findSecondMinimumValue(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/">Kth Smallest

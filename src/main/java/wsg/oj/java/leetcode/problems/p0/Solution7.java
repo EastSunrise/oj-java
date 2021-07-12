@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution190;
 
 /**
  * 7. Reverse Integer (Easy)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/reverse-integer/">Reverse Integer</a>
  * @since 2021-07-10
  */
-class Solution7 implements Solution {
+public class Solution7 implements Solution {
 
     /**
      * Handles as a negative number and compares with the two limits when adding the next digit in

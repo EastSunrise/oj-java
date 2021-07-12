@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution189;
 
 /**
  * 61. Rotate List (Medium)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/rotate-list/">Rotate List</a>
  * @since 2021-07-11
  */
-class Solution61 implements Solution {
+public class Solution61 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

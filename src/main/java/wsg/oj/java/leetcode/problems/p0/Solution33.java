@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.Complexity;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution153;
 
 /**
  * 33. Search in Rotated Sorted Array (Medium)
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Sorted Array</a>
  * @since 2021-07-10
  */
-class Solution33 implements Solution {
+public class Solution33 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution53;
  * and Sell Stock</a>
  * @since 2021-07-11
  */
-class Solution121 implements Solution {
+public class Solution121 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

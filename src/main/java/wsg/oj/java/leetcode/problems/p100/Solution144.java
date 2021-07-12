@@ -2,7 +2,8 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
+import java.util.function.Consumer;
+import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution94;
@@ -18,42 +19,15 @@ import wsg.oj.java.leetcode.problems.p0.Solution94;
  * Preorder Traversal</a>
  * @since 2021-07-08
  */
-public class Solution144 implements Solution {
+public class Solution144 extends BinaryTree implements Solution {
 
     /**
-     * Recursion.
+     * @see #preorderTraversal(TreeNode, Consumer)
+     * @see #preorderTraversalWithStack(TreeNode, Consumer)
      */
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        preorderTraversal(res, root);
-        return res;
-    }
-
-    private void preorderTraversal(List<Integer> res, TreeNode node) {
-        if (node != null) {
-            res.add(node.val);
-            preorderTraversal(res, node.left);
-            preorderTraversal(res, node.right);
-        }
-    }
-
-    /**
-     * Stack.
-     */
-    public List<Integer> preorderTraversalWithStack(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode current = stack.pop();
-            res.add(current.val);
-            if (current.right != null) {
-                stack.push(current.right);
-            }
-            if (current.left != null) {
-                stack.push(current.left);
-            }
-        }
+        preorderTraversal(root, res::add);
         return res;
     }
 }

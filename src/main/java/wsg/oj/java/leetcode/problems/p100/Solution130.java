@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution200;
 
 /**
  * 130. Surrounded Regions (Medium)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/surrounded-regions/">Surrounded Regions</a>
  * @since 2021-07-11
  */
-class Solution130 implements Solution {
+public class Solution130 implements Solution {
 
     /**
      * @complexity T=O(lmn), l=average length of consecutive 'O's

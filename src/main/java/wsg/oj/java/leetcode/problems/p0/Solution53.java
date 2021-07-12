@@ -1,6 +1,8 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution121;
+import wsg.oj.java.leetcode.problems.p100.Solution152;
 
 /**
  * 53. Maximum Subarray (Easy)
