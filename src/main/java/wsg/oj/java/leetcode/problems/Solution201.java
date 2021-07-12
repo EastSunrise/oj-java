@@ -3,14 +3,9 @@ package wsg.oj.java.leetcode.problems;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Stack;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
@@ -22,354 +17,8 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution201 implements Solution {
 
     /**
-     * 201. Bitwise AND of Numbers Range (Medium)
-     *
-     * @see <a href="https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/">Bitwise AND of
-     * Numbers Range</a>
-     */
-    public int rangeBitwiseAnd(int left, int right) {
-        // the count of bits after consecutive same bits from the first bit
-        int bits = 0;
-        while (left > 0 && left != right) {
-            left >>>= 1;
-            right >>>= 1;
-            bits++;
-        }
-        return left == right ? left << bits : 0;
-    }
-
-    /**
-     * 202. Happy Number (Easy)
-     *
-     * @see Solution101#hasCycle(ListNode)
-     * @see Solution201#addDigits(int)
-     * @see Solution201#isUgly(int)
-     * @see <a href="https://leetcode-cn.com/problems/happy-number/">Happy Number</a>
-     */
-    public boolean isHappy(int n) {
-        Set<Integer> unhappy = Set.of(2, 4, 16, 37, 58, 89, 145, 42, 20);
-        while (n != 1) {
-            if (unhappy.contains(n)) {
-                return false;
-            }
-            int sum = 0;
-            while (n > 0) {
-                int mod = n % 10;
-                sum += mod * mod;
-                n /= 10;
-            }
-            n = sum;
-        }
-        return true;
-    }
-
-    /**
-     * 203. Remove Linked List Elements (Easy)
-     *
-     * @see Solution1#removeElement(int[], int)
-     * @see Solution201#deleteNode(ListNode)
-     * @see <a href="https://leetcode-cn.com/problems/remove-linked-list-elements/">Remove Linked
-     * List Elements</a>
-     */
-    public ListNode removeElements(ListNode head, int val) {
-        ListNode ret = new ListNode(0);
-        ret.next = head;
-        ListNode cursor = ret;
-        while (cursor.next != null) {
-            if (cursor.next.val == val) {
-                cursor.next = cursor.next.next;
-            } else {
-                cursor = cursor.next;
-            }
-        }
-        return ret.next;
-    }
-
-    /**
-     * 204. Count Primes (Easy)
-     *
-     * @see Solution201#isUgly(int)
-     * @see Solution201#nthUglyNumber(int)
-     * @see Solution201#numSquares(int)
-     * @see <a href="https://en.wikibooks.org/wiki/Discrete_Mathematics/Sieve_of_Eratosthenes">Sieve
-     * of Eratosthenes</a>
-     * @see <a href="https://leetcode-cn.com/problems/count-primes/">Count Primes</a>
-     */
-    public int countPrimes(int n) {
-        boolean[] notPrimes = new boolean[n];
-        int count = 0;
-        for (int i = 2; i < n; i++) {
-            if (!notPrimes[i]) {
-                count++;
-                for (long j = (long) i * i; j < n; j += i) {
-                    notPrimes[(int) j] = true;
-                }
-            }
-        }
-        return count;
-    }
-
-    /**
-     * 205. Isomorphic Strings (Easy)
-     *
-     * @see Solution201#wordPattern(String, String)
-     * @see <a href="https://leetcode-cn.com/problems/isomorphic-strings/">Isomorphic Strings</a>
-     */
-    public boolean isIsomorphic(String s, String t) {
-        int[] s2t = new int[128];
-        int[] t2s = new int[128];
-        char[] schars = s.toCharArray();
-        char[] tchars = t.toCharArray();
-        for (int i = 0, length = schars.length; i < length; i++) {
-            char sc = schars[i];
-            char tc = tchars[i];
-            int tShould = s2t[sc];
-            int sShould = t2s[tc];
-            if (tShould + sShould == 0) {
-                s2t[sc] = tc;
-                t2s[tc] = sc;
-            } else if (tShould * sShould == 0) {
-                return false;
-            } else if (tShould != tc || sShould != sc) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * 206. Reverse Linked List (Easy)
-     *
-     * @see Solution1#reverseBetween(ListNode, int, int)
-     * @see Solution101#upsideDownBinaryTree(TreeNode)
-     * @see Solution201#isPalindrome(ListNode)
-     * @see <a href="https://leetcode-cn.com/problems/reverse-linked-list/">Reverse Linked List</a>
-     */
-    public ListNode reverseList(ListNode head) {
-        ListNode pre = null, cur = head, next;
-        while (cur != null) {
-            next = cur.next;
-            cur.next = pre;
-            pre = cur;
-            cur = next;
-        }
-        return pre;
-    }
-
-    /**
-     * 207. Course Schedule (Medium)
-     *
-     * @complexity T=O(L), L=len(prerequisites)
-     * @see #DFS
-     * @see Solution201#findOrder(int, int[][])
-     * @see Solution201#validTree(int, int[][])
-     * @see Solution301#findMinHeightTrees(int, int[][])
-     * @see Solution601#scheduleCourse(int[][])
-     * @see <a href="https://leetcode-cn.com/problems/course-schedule/">Course Schedule</a>
-     */
-    public boolean canFinish(int numCourses, int[][] prerequisites) {
-        Map<Integer, List<Integer>> edges = Arrays.stream(prerequisites)
-            .collect(Collectors.groupingBy(a -> a[0], Collectors.mapping(a -> a[1],
-                Collectors.toList())));
-        Set<Integer> finished = new HashSet<>(numCourses);
-        for (int end : edges.keySet()) {
-            if (!canFinish(edges, finished, new HashSet<>(), end)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    /**
-     * 209. Minimum Size Subarray Sum (Medium)
-     *
-     * @see Solution1#minWindow(String, String)
-     * @see Solution301#maxSubArrayLen(int[], int)
-     * @see Solution701#findLength(int[], int[])
-     * @see Solution1601#minOperations(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/minimum-size-subarray-sum/">Minimum Size
-     * Subarray Sum</a>
-     */
-    public int minSubArrayLen(int target, int[] nums) {
-        for (int num : nums) {
-            if (num >= target) {
-                return 1;
-            }
-        }
-        // i: the left (inclusive) of the window
-        // j: the right (exclusive) of the window
-        int i = 0, j = 0, len = nums.length;
-        int sum = 0, res = Integer.MAX_VALUE;
-        while (j < len) {
-            // move the the right side
-            sum += nums[j++];
-            if (sum >= target) {
-                // find one subarray
-                res = Math.min(res, j - i);
-                do {
-                    // move the left side
-                    sum -= nums[i++];
-                } while (sum >= target);
-                res = Math.min(res, j - i + 1);
-            }
-        }
-        return res == Integer.MAX_VALUE ? 0 : res;
-    }
-
-    /**
-     * 210. Course Schedule II (Medium)
-     *
-     * @see Solution201#canFinish(int, int[][])
-     * @see Solution201#alienOrder(String[])
-     * @see Solution301#findMinHeightTrees(int, int[][])
-     * @see Solution401#sequenceReconstruction(int[], int[][])
-     * @see Solution601#scheduleCourse(int[][])
-     * @see Solution1101#minimumSemesters(int, int[][])
-     * @see <a href="https://leetcode-cn.com/problems/course-schedule-ii/">Course Schedule II</a>
-     */
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        Map<Integer, List<Integer>> edges = Arrays.stream(prerequisites)
-            .collect(Collectors.groupingBy(a -> a[0], Collectors.mapping(a -> a[1],
-                Collectors.toList())));
-        Set<Integer> finished = new LinkedHashSet<>(numCourses);
-        for (int i = 0; i < numCourses; i++) {
-            if (!canFinish(edges, finished, new HashSet<>(), i)) {
-                return new int[0];
-            }
-        }
-        int[] res = new int[numCourses];
-        int i = 0;
-        for (int course : finished) {
-            res[i++] = course;
-        }
-        return res;
-    }
-
-    /**
-     * Finishes the target.
-     *
-     * @param edges     all edges in the graph
-     * @param finished  courses that have been finished
-     * @param finishing the courses being finished
-     * @param target    the course to be finished
-     */
-    private boolean canFinish(Map<Integer, List<Integer>> edges, Set<Integer> finished,
-        Set<Integer> finishing, int target) {
-        if (finishing.contains(target)) {
-            return false;
-        }
-        List<Integer> starts = edges.get(target);
-        if (starts != null) {
-            finishing.add(target);
-            for (int start : starts) {
-                if (!finished.contains(start) && !canFinish(edges, finished, finishing, start)) {
-                    return false;
-                }
-            }
-            finishing.remove(target);
-        }
-        finished.add(target);
-        return true;
-    }
-
-    /**
-     * 216. Combination Sum III (Medium)
-     *
-     * @see #BACKTRACKING
-     * @see Solution1#combinationSum(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/combination-sum-iii/">Combination Sum III</a>
-     */
-    public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> res = new ArrayList<>();
-        if (n < k * (k + 1) / 2 || n > (19 - k) * k / 2) {
-            return res;
-        }
-        combinationSum3(res, new ArrayList<>(k), k, n, 1);
-        return res;
-    }
-
-    void combinationSum3(List<List<Integer>> res, List<Integer> temp, int k, int n, int start) {
-        if (k == 0 || n <= 0) {
-            if (k == 0 && n == 0) {
-                res.add(new ArrayList<>(temp));
-            }
-            return;
-        }
-        k--;
-        for (int i = start; i < 10; i++) {
-            temp.add(i);
-            combinationSum3(res, temp, k, n - i, i + 1);
-            temp.remove(temp.size() - 1);
-        }
-    }
-
-    /**
-     * 217. Contains Duplicate (Easy)
-     *
-     * @see Solution201#containsNearbyDuplicate(int[], int)
-     * @see Solution201#containsNearbyAlmostDuplicate(int[], int, int)
-     * @see <a href="https://leetcode-cn.com/problems/contains-duplicate/">Contains Duplicate</a>
-     */
-    public boolean containsDuplicate(int[] nums) {
-        Set<Integer> unique = new HashSet<>();
-        for (int num : nums) {
-            if (!unique.add(num)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * 219. Contains Duplicate II (Easy)
-     *
-     * @see Solution201#containsDuplicate(int[])
-     * @see Solution201#containsNearbyAlmostDuplicate(int[], int, int)
-     * @see <a href="https://leetcode-cn.com/problems/contains-duplicate-ii/">Contains Duplicate
-     * II</a>
-     */
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
-        Map<Integer, Integer> num2LastIndexMap = new HashMap<>(16);
-        for (int i = 0; i < nums.length; i++) {
-            Integer oldValue = num2LastIndexMap.put(nums[i], i);
-            if (oldValue != null && i - oldValue <= k) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
-     * 220. Contains Duplicate III (Medium)
-     *
-     * @see Solution201#containsDuplicate(int[])
-     * @see Solution201#containsNearbyDuplicate(int[], int)
-     * @see <a href="https://leetcode-cn.com/problems/contains-duplicate-iii/">Contains Duplicate
-     * III</a>
-     */
-    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-        int len = nums.length;
-        TreeSet<Long> window = new TreeSet<>();
-        // slide the window
-        // j: the right (inclusive) index of the window
-        for (int j = 0; j < len; j++) {
-            Long ceiling = window.ceiling(((long) nums[j] - t));
-            if (ceiling != null && ceiling - nums[j] <= t) {
-                return true;
-            }
-            window.add((long) nums[j]);
-            if (window.size() == k + 1) {
-                window.remove((long) nums[j - k]);
-            }
-        }
-        return false;
-    }
-
-    /**
      * 221. Maximal Square (Medium)
      *
-     * @see Solution1#maximalRectangle(char[][])
-     * @see Solution701#orderOfLargestPlusSign(int, int[][])
      * @see <a href="https://leetcode-cn.com/problems/maximal-square/">Maximal Square</a>
      */
     public int maximalSquare(char[][] matrix) {
@@ -402,7 +51,6 @@ public class Solution201 implements Solution {
     /**
      * 222. Count Complete Tree Nodes (Medium)
      *
-     * @see Solution201#closestValue(TreeNode, double)
      * @see <a href="https://leetcode-cn.com/problems/count-complete-tree-nodes/">Count Complete
      * Tree Nodes</a>
      */
@@ -488,9 +136,6 @@ public class Solution201 implements Solution {
     /**
      * 227. Basic Calculator II (Medium)
      *
-     * @see Solution201#calculate(String)
-     * @see Solution201#addOperators(String, int)
-     * @see Solution701#calculate(String)
      * @see <a href="https://leetcode-cn.com/problems/basic-calculator-ii/">Basic Calculator II</a>
      */
     public int calculateII(String s) {
@@ -541,8 +186,6 @@ public class Solution201 implements Solution {
     /**
      * 228. Summary Ranges (Easy)
      *
-     * @see Solution101#findMissingRanges(int[], int, int)
-     * @see SummaryRanges
      * @see <a href="https://leetcode-cn.com/problems/summary-ranges/">Summary Ranges</a>
      */
     public List<String> summaryRanges(int[] nums) {
@@ -570,8 +213,6 @@ public class Solution201 implements Solution {
      * If a is a majority that appears more than [n/3] times, it's still a majority after removing
      * three different elements from the array.
      *
-     * @see Solution101#majorityElement(int[])
-     * @see Solution1101#isMajorityElement(int[], int)
      * @see <a href="https://leetcode-cn.com/problems/majority-element-ii/">Majority Element II</a>
      */
     public List<Integer> majorityElement(int[] nums) {
@@ -636,7 +277,6 @@ public class Solution201 implements Solution {
     /**
      * 230. Kth Smallest Element in a BST (Medium)
      *
-     * @see Solution1#inorderTraversal(TreeNode)
      * @see Solution601#findSecondMinimumValue(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/">Kth Smallest
      * Element in a BST</a>
@@ -665,7 +305,6 @@ public class Solution201 implements Solution {
     /**
      * 231. Power of Two (Easy)
      *
-     * @see Solution101#hammingWeight(int)
      * @see Solution301#isPowerOfThree(int)
      * @see Solution301#isPowerOfFour(int)
      * @see <a href="https://leetcode-cn.com/problems/power-of-two/">Power of Two</a>
@@ -691,44 +330,9 @@ public class Solution201 implements Solution {
     }
 
     /**
-     * 234. Palindrome Linked List (Easy)
-     *
-     * @see Solution1#isPalindrome(int)
-     * @see Solution101#isPalindrome(String)
-     * @see Solution201#reverseList(ListNode)
-     * @see <a href="https://leetcode-cn.com/problems/palindrome-linked-list/">Palindrome Linked
-     * List</a>
-     */
-    public boolean isPalindrome(ListNode head) {
-        ListNode slow = head, fast = head;
-        while (fast != null) {
-            slow = slow.next;
-            if (fast.next != null) {
-                fast = fast.next.next;
-            } else {
-                break;
-            }
-        }
-        ListNode tail = reverseList(slow);
-        while (tail != null && head != null) {
-            if (tail.val != head.val) {
-                return false;
-            } else {
-                tail = tail.next;
-                head = head.next;
-            }
-        }
-        return true;
-    }
-
-    /**
      * 235. Lowest Common Ancestor of a Binary Search Tree (Easy)
      *
      * @see Solution201#lowestCommonAncestorII(TreeNode, TreeNode, TreeNode)
-     * @see Solution1201#findSmallestRegion(String[][], String, String)
-     * @see Solution1601#lowestCommonAncestor(TreeNode, int, int)
-     * @see Solution1601#lowestCommonAncestor(int[], int, int)
-     * @see Solution1601#lowestCommonAncestor(TreeNode, int[])
      * @see <a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">Lowest
      * Common Ancestor of a Binary Search Tree</a>
      */
@@ -754,10 +358,6 @@ public class Solution201 implements Solution {
      * todo Tarjan Algorithm
      *
      * @see Solution201#lowestCommonAncestor(TreeNode, TreeNode, TreeNode)
-     * @see Solution1201#findSmallestRegion(String[][], String, String)
-     * @see Solution1601#lowestCommonAncestor(TreeNode, int, int)
-     * @see Solution1601#lowestCommonAncestor(int[], int, int)
-     * @see Solution1601#lowestCommonAncestor(TreeNode, int[])
      * @see <a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">Lowest
      * Common Ancestor of a Binary Tree</a>
      */
@@ -792,7 +392,6 @@ public class Solution201 implements Solution {
     /**
      * 237. Delete Node in a Linked List (Easy)
      *
-     * @see Solution201#removeElements(ListNode, int)
      * @see <a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/">Delete Node in
      * a Linked List</a>
      */
@@ -805,9 +404,6 @@ public class Solution201 implements Solution {
      * 238. Product of Array Except Self (Medium)
      *
      * @see #DYNAMIC_PROGRAMMING
-     * @see Solution1#trap(int[])
-     * @see Solution101#maxProduct(int[])
-     * @see Solution201#minCostII(int[][])
      * @see <a href="https://leetcode-cn.com/problems/product-of-array-except-self/">Product of
      * Array Except Self</a>
      */
@@ -833,7 +429,6 @@ public class Solution201 implements Solution {
      *
      * @see Arrays#binarySearch
      * @see wsg.oj.java.Complexity#TIME_M_PLUS_N
-     * @see Solution1#searchMatrix(int[][], int)
      * @see <a href="https://leetcode-cn.com/problems/search-a-2d-matrix-ii/">Search a 2D Matrix
      * II</a>
      */
@@ -858,8 +453,6 @@ public class Solution201 implements Solution {
     /**
      * 242. Valid Anagram (Easy)
      *
-     * @see Solution201#canPermutePalindrome(String)
-     * @see Solution401#findAnagrams(String, String)
      * @see <a href="https://leetcode-cn.com/problems/valid-anagram/">Valid Anagram</a>
      */
     public boolean isAnagram(String s, String t) {
@@ -883,8 +476,6 @@ public class Solution201 implements Solution {
     /**
      * 257. Binary Tree Paths (Easy)
      *
-     * @see Solution101#pathSum(TreeNode, int)
-     * @see Solution901#smallestFromLeaf(TreeNode)
      * @see <a href="https://leetcode-cn.com/problems/binary-tree-paths/">Binary Tree Paths</a>
      */
     public List<String> binaryTreePaths(TreeNode root) {
@@ -915,8 +506,6 @@ public class Solution201 implements Solution {
      * is <i>99a + 9b</i> which is a multiple of 9, So the final result is the original number mod 9
      * or 9 if the original number is a multiple of 9.
      *
-     * @see Solution201#isHappy(int)
-     * @see Solution1001#sumOfDigits(int[])
      * @see <a href="https://leetcode-cn.com/problems/add-digits/">Add Digits</a>
      */
     public int addDigits(int num) {
@@ -926,8 +515,6 @@ public class Solution201 implements Solution {
     /**
      * 260. Single Number III (Medium)
      *
-     * @see Solution101#singleNumber(int[])
-     * @see Solution101#singleNumberII(int[])
      * @see <a href="https://leetcode-cn.com/problems/single-number-iii/">Single Number III</a>
      */
     public int[] singleNumber(int[] nums) {
@@ -961,8 +548,6 @@ public class Solution201 implements Solution {
     /**
      * 263. Ugly Number (Easy)
      *
-     * @see Solution201#isHappy(int)
-     * @see Solution201#countPrimes(int)
      * @see Solution201#nthUglyNumber(int)
      * @see <a href="https://leetcode-cn.com/problems/ugly-number/">Ugly Number</a>
      */
@@ -986,12 +571,9 @@ public class Solution201 implements Solution {
      * 264. Ugly Number II (Medium)
      *
      * @see #DYNAMIC_PROGRAMMING
-     * @see Solution1#mergeKLists(ListNode[])
-     * @see Solution201#countPrimes(int)
      * @see Solution201#isUgly(int)
      * @see Solution201#numSquares(int)
      * @see Solution301#nthSuperUglyNumber(int, int[])
-     * @see Solution1201#nthUglyNumber(int, int, int, int)
      * @see <a href="https://leetcode-cn.com/problems/ugly-number-ii/">Ugly Number II</a>
      */
     public int nthUglyNumber(int n) {
@@ -1019,10 +601,7 @@ public class Solution201 implements Solution {
     /**
      * 268. Missing Number (Easy)
      *
-     * @see Solution1#firstMissingPositive(int[])
-     * @see Solution101#singleNumber(int[])
      * @see Solution201#findDuplicate(int[])
-     * @see Solution701#minSwapsCouples(int[])
      * @see <a href="https://leetcode-cn.com/problems/missing-number/">Missing Number</a>
      */
     public int missingNumber(int[] nums) {
@@ -1077,8 +656,6 @@ public class Solution201 implements Solution {
     /**
      * 278. First Bad Version (Easy)
      *
-     * @see Solution1#searchRange(int[], int)
-     * @see Solution1#searchInsert(int[], int)
      * @see Solution301#guessNumber(int)
      * @see <a href="https://leetcode-cn.com/problems/first-bad-version/">First Bad Version</a>
      */
@@ -1104,7 +681,6 @@ public class Solution201 implements Solution {
      * 279. Perfect Squares (Medium)
      *
      * @see #DYNAMIC_PROGRAMMING
-     * @see Solution201#countPrimes(int)
      * @see Solution201#nthUglyNumber(int)
      * @see <a href="https://leetcode-cn.com/problems/perfect-squares/">Perfect Squares</a>
      */
@@ -1164,7 +740,6 @@ public class Solution201 implements Solution {
     /**
      * 283. Move Zeroes (Easy)
      *
-     * @see Solution1#removeElement(int[], int)
      * @see <a href="https://leetcode-cn.com/problems/move-zeroes/">Move Zeroes</a>
      */
     public void moveZeroes(int[] nums) {
@@ -1182,9 +757,6 @@ public class Solution201 implements Solution {
     /**
      * 287. Find the Duplicate Number (Medium)
      *
-     * @see Solution1#firstMissingPositive(int[])
-     * @see Solution101#singleNumber(int[])
-     * @see Solution101#detectCycle(ListNode)
      * @see Solution201#missingNumber(int[])
      * @see Solution601#findErrorNums(int[])
      * @see <a href="https://leetcode-cn.com/problems/find-the-duplicate-number/">Find the Duplicate
@@ -1207,7 +779,6 @@ public class Solution201 implements Solution {
     /**
      * 289. Game of Life (Medium)
      *
-     * @see Solution1#setZeroes(int[][])
      * @see <a href="https://leetcode-cn.com/problems/game-of-life/">Game of Life</a>
      */
     public void gameOfLife(int[][] board) {
@@ -1255,8 +826,6 @@ public class Solution201 implements Solution {
     /**
      * 290. Word Pattern (Easy)
      *
-     * @see Solution201#isIsomorphic(String, String)
-     * @see Solution201#wordPatternMatch(String, String)
      * @see <a href="https://leetcode-cn.com/problems/word-pattern/">Word Pattern</a>
      */
     public boolean wordPattern(String pattern, String s) {
@@ -1287,7 +856,6 @@ public class Solution201 implements Solution {
      * last turn wins.
      * <i>If (m+1)|n, the person who takes the first turn will certainly win. Otherwise fail.</i>
      *
-     * @see Solution201#canWin(String)
      * @see <a href="https://leetcode-cn.com/problems/nim-game/">Nim Game</a>
      */
     public boolean canWinNim(int n) {

@@ -20,11 +20,17 @@ import wsg.oj.java.leetcode.problems.p300.Solution347;
  */
 public class Solution215 implements Solution {
 
+    /**
+     * Quick selection.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_LOG_N
+     */
     public int findKthLargest(int[] nums, int k) {
-        return findKthLargest(nums, nums.length - k, 0, nums.length);
+        return findKthSmallest(nums, nums.length - k, 0, nums.length);
     }
 
-    private int findKthLargest(int[] nums, int k, int fromIn, int toEx) {
+    protected int findKthSmallest(int[] nums, int k, int fromIn, int toEx) {
         int left = fromIn, right = toEx - 1;
         int target = nums[new Random().nextInt(toEx - fromIn) + fromIn];
         while (left <= right) {
@@ -52,10 +58,10 @@ public class Solution215 implements Solution {
             }
         }
         if (k <= right) {
-            return findKthLargest(nums, k, fromIn, mid);
+            return findKthSmallest(nums, k, fromIn, mid);
         }
         if (k >= left) {
-            return findKthLargest(nums, k, left, toEx);
+            return findKthSmallest(nums, k, left, toEx);
         }
         return target;
     }

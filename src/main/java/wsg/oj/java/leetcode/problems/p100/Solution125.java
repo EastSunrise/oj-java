@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/valid-palindrome/">Valid Palindrome</a>
  * @since 2021-07-11
  */
-class Solution125 implements Solution {
+public class Solution125 implements Solution {
 
     /**
      * Uses two pointers from two sides.

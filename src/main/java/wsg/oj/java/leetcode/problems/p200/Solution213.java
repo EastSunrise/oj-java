@@ -47,5 +47,4 @@ public class Solution213 implements Solution {
         }
         return Math.max(dp0[len - 2], dpn[len - 1]);
     }
-
 }

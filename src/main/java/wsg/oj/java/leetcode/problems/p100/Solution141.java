@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle/">Linked List Cycle</a>
  * @since 2021-07-12
  */
-class Solution141 implements Solution {
+public class Solution141 implements Solution {
 
     /**
      * Uses a faster pointer and a slower pointer.

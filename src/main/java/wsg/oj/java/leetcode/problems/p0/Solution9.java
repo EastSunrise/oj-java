@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/palindrome-number/">Palindrome Number</a>
  * @since 2021-07-10
  */
-class Solution9 implements Solution {
+public class Solution9 implements Solution {
 
     /**
      * Reverses the right half of x and compares with the left half.

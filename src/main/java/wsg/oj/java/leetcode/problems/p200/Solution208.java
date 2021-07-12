@@ -19,7 +19,7 @@ class Solution208 implements Solution {
 
     static class Trie {
 
-        private final TrieNode root;
+        final TrieNode root;
 
         /**
          * Initialize your data structure here.
@@ -73,7 +73,7 @@ class Solution208 implements Solution {
             return true;
         }
 
-        private static class TrieNode {
+        static class TrieNode {
 
             boolean end = false;
             TrieNode[] next = new TrieNode[26];

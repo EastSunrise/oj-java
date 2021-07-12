@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/remove-element/">Remove Element</a>
  * @since 2021-07-10
  */
-class Solution27 implements Solution {
+public class Solution27 implements Solution {
 
     /**
      * It's similar to {@link Solution26}. Use two pointers to copy different numbers in-place.

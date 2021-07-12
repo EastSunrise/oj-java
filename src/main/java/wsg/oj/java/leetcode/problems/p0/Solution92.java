@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * II</a>
  * @since 2021-07-11
  */
-class Solution92 implements Solution {
+public class Solution92 implements Solution {
 
     /**
      * Uses a stack to store the sublist to be reversed.

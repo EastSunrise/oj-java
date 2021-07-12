@@ -12,42 +12,33 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Add and Search Words Data Structure</a>
  * @since 2021-06-25
  */
-class Solution211 implements Solution {
+class Solution211 extends Solution208 implements Solution {
 
-    static class WordDictionary {
-
-        private final Node root;
+    static class WordDictionary extends Trie {
 
         /**
          * Initialize your data structure here.
          */
         public WordDictionary() {
-            this.root = new Node();
+            super();
         }
 
         public void addWord(String word) {
-            Node node = this.root;
-            for (char ch : word.toCharArray()) {
-                int i = ch - 'a';
-                if (node.next[i] == null) {
-                    node.next[i] = new Node();
-                }
-                node = node.next[i];
-            }
-            node.end = true;
+            insert(word);
         }
 
+        @Override
         public boolean search(String word) {
             return search(this.root, word.toCharArray(), 0);
         }
 
-        private boolean search(Node node, char[] chars, int i) {
+        private boolean search(TrieNode node, char[] chars, int i) {
             if (i == chars.length) {
                 return node.end;
             }
             char ch = chars[i++];
             if (ch == '.') {
-                for (Node child : node.next) {
+                for (TrieNode child : node.next) {
                     if (child != null && search(child, chars, i)) {
                         return true;
                     }
@@ -56,12 +47,6 @@ class Solution211 implements Solution {
             }
             int idx = ch - 'a';
             return node.next[idx] != null && search(node.next[idx], chars, i);
-        }
-
-        static class Node {
-
-            boolean end = false;
-            Node[] next = new Node[26];
         }
     }
 }
