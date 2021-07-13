@@ -15,6 +15,8 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution399 implements Solution {
 
     /**
+     * @see wsg.oj.java.Complexity#TIME_NNN
+     * @see wsg.oj.java.Complexity#SPACE_NN
      * @see <a href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd–Warshall
      * algorithm</a>
      */
@@ -22,6 +24,7 @@ class Solution399 implements Solution {
         List<List<String>> queries) {
         Map<String, Integer> indices = new HashMap<>(16);
         int size = 0;
+        // use an index to represent a string
         for (List<String> equation : equations) {
             for (String str : equation) {
                 if (!indices.containsKey(str)) {
@@ -30,6 +33,7 @@ class Solution399 implements Solution {
             }
         }
 
+        // dp[i][j]: the value of vi/vj
         double[][] dp = new double[size][size];
         for (int i = 0; i < size; i++) {
             dp[i][i] = 1.0;

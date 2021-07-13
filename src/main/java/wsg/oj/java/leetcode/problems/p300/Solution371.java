@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution2;
 
 /**
  * 371. Sum of Two Integers (Medium)
@@ -10,8 +11,11 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/sum-of-two-integers/">Sum of Two Integers</a>
  * @since 2021-07-04
  */
-class Solution371 implements Solution {
+public class Solution371 implements Solution {
 
+    /**
+     * Adds each bit without carries first and then add the carry at once.
+     */
     public int getSum(int a, int b) {
         // sum without carries
         int sum = a ^ b;

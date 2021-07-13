@@ -7,7 +7,7 @@ import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
- * 449. Serialize and Deserialize BST (Medium)
+ * todo 449. Serialize and Deserialize BST (Medium)
  *
  * @author Kingen
  * @see Solution297
@@ -19,9 +19,6 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution449 implements Solution {
 
-    /**
-     * @see #TO_OPTIMIZE
-     */
     static class Codec {
 
         /**

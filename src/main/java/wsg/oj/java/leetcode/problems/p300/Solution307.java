@@ -14,6 +14,9 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Solution307 implements Solution {
 
+    /**
+     * Segment Tree
+     */
     static class NumArray {
 
         private final int len;

@@ -13,6 +13,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution328 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public ListNode oddEvenList(ListNode head) {
         ListNode odd = new ListNode(0, head);
         ListNode even = new ListNode(0);

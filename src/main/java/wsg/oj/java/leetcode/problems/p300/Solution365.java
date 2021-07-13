@@ -14,6 +14,9 @@ class Solution365 implements Solution {
     /**
      * The integer solutions of the equation ax+by=c. The equation has integer solutions if and only
      * if gcd(a,b)|c.
+     *
+     * @see wsg.oj.java.Complexity#TIME_CONSTANT
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public boolean canMeasureWater(int jug1Capacity, int jug2Capacity, int targetCapacity) {
         if (targetCapacity > jug1Capacity + jug2Capacity) {

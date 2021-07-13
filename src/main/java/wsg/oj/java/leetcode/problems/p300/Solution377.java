@@ -14,7 +14,9 @@ import wsg.oj.java.leetcode.problems.p0.Solution39;
 public class Solution377 implements Solution {
 
     /**
-     * @see Solution322#coinChange(int[], int)
+     * @complexity T=O(nk), k=the target
+     * @complexity S=O(k)
+     * @see #DYNAMIC_PROGRAMMING
      */
     public int combinationSum4(int[] nums, int target) {
         int[] dp = new int[target + 1];

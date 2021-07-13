@@ -18,6 +18,11 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution300 implements Solution {
 
+    /**
+     * @see #DYNAMIC_PROGRAMMING
+     * @see wsg.oj.java.Complexity#TIME_NN
+     * @see wsg.oj.java.Complexity#SPACE_N
+     */
     public int lengthOfLIS(int[] nums) {
         int len = nums.length;
         // dp[i]: the longest increasing subsequence that ends with nums[i]
@@ -25,7 +30,6 @@ class Solution300 implements Solution {
         dp[0] = 1;
         int max = 1;
         for (int i = 1; i < len; i++) {
-            dp[i] = 0;
             for (int j = 0; j < i; j++) {
                 if (nums[j] < nums[i]) {
                     dp[i] = Math.max(dp[i], dp[j]);

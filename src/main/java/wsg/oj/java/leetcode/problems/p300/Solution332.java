@@ -15,6 +15,13 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution332 implements Solution {
 
+    /**
+     * The Euler paths of the graph.
+     *
+     * @complexity T=O(m*log m), m=|E|
+     * @complexity S=O(|V|+m)
+     * @see #DFS
+     */
     public List<String> findItinerary(List<List<String>> tickets) {
         Map<String, List<String>> edges = new HashMap<>(16);
         for (List<String> ticket : tickets) {

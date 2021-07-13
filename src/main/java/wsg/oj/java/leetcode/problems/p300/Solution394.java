@@ -15,6 +15,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution394 implements Solution {
 
+    /**
+     * @complexity T=O(n)
+     * @complexity S=O(L), L=len(result)
+     */
     public String decodeString(String s) {
         Stack<Integer> counts = new Stack<>();
         Stack<StringBuilder> words = new Stack<>();

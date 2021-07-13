@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
- * 373. Find K Pairs with Smallest Sums (Medium)
+ * todo 373. Find K Pairs with Smallest Sums (Medium)
  *
  * @author Kingen
  * @see Solution378
@@ -18,6 +18,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution373 implements Solution {
 
+    /**
+     * @complexity T=O(mn*log(mn))
+     * @complexity S=O(mn)
+     */
     public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
         PriorityQueue<List<Integer>> queue = new PriorityQueue<>(
             Comparator.comparing(list -> list.get(0) + list.get(1)));

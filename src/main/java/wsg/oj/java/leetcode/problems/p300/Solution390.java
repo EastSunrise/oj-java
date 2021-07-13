@@ -11,6 +11,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution390 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_LOG_N
+     */
     public int lastRemaining(int n) {
         return left2right(n);
     }

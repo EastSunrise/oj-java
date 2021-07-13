@@ -16,7 +16,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution375 implements Solution {
 
+    /**
+     * @see #TIME_NNN
+     * @see #SPACE_NN
+     */
     public int getMoneyAmount(int n) {
+        // dp[i][j]: the minimal cost to guess right number from [i,j]
         int[][] dp = new int[n + 2][n + 1];
         for (int i = n; i > 0; i--) {
             for (int j = i; j <= n; j++) {

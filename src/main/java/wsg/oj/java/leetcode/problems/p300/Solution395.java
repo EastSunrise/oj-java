@@ -12,6 +12,11 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution395 implements Solution {
 
+    /**
+     * @complexity T=O(26*n)
+     * @complexity S=O(26*26)
+     * @see #DIVIDE_AND_CONQUER
+     */
     public int longestSubstring(String s, int k) {
         int[] counts = new int[26];
         for (char ch : s.toCharArray()) {
@@ -27,19 +32,19 @@ class Solution395 implements Solution {
         if (ch == 0) {
             return s.length();
         }
-        int res = 0, fromIndex = 0;
+        int res = 0, fromIdx = 0;
         while (true) {
-            int i = s.indexOf(ch, fromIndex);
+            int i = s.indexOf(ch, fromIdx);
             if (i >= 0) {
                 // a substring between the chars
-                if (i > fromIndex) {
-                    res = Math.max(res, longestSubstring(s.substring(fromIndex, i), k));
+                if (i > fromIdx) {
+                    res = Math.max(res, longestSubstring(s.substring(fromIdx, i), k));
                 }
-                fromIndex = i + 1;
+                fromIdx = i + 1;
             } else {
                 // last substring
-                if (fromIndex < s.length()) {
-                    res = Math.max(res, longestSubstring(s.substring(fromIndex), k));
+                if (fromIdx < s.length()) {
+                    res = Math.max(res, longestSubstring(s.substring(fromIdx), k));
                 }
                 break;
             }

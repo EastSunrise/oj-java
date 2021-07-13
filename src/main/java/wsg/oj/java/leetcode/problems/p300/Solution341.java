@@ -21,9 +21,6 @@ public class Solution341 implements Solution {
 
     /**
      * This is the interface that allows for creating nested lists.
-     *
-     * @author Kingen
-     * @since 2021/6/25
      */
     public interface NestedInteger {
 

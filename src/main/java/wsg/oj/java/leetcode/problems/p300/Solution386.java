@@ -17,6 +17,7 @@ class Solution386 implements Solution {
     /**
      * @see #DFS
      * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public List<Integer> lexicalOrder(int n) {
         List<Integer> res = new ArrayList<>(n);

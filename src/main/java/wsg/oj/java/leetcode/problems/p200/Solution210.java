@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution310;
 
 /**
  * 210. Course Schedule II (Medium)
@@ -22,7 +23,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/course-schedule-ii/">Course Schedule II</a>
  * @since 2021-07-12
  */
-class Solution210 extends Solution207 implements Solution {
+public class Solution210 extends Solution207 implements Solution {
 
     /**
      * @complexity T=O(|E|)

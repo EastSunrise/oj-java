@@ -12,6 +12,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution357 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int countNumbersWithUniqueDigits(int n) {
         int res = 1, factorial = 1, k = 9;
         for (int i = 1; i <= n; i++) {

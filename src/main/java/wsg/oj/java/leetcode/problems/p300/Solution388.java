@@ -13,6 +13,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution388 implements Solution {
 
+    /**
+     * @complexity T=O(n)
+     * @complexity S=O(L), L=largest level of directories
+     */
     public int lengthLongestPath(String input) {
         int res = 0;
         boolean isDir = true;

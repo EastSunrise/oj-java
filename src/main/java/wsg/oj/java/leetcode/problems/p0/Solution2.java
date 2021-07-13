@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution371;
 
 /**
  * 2. Add Two Numbers (Medium)
@@ -17,7 +18,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/add-two-numbers/">Add Two Numbers</a>
  * @since 2021-07-10
  */
-class Solution2 implements Solution {
+public class Solution2 implements Solution {
 
     /**
      * Traverses the two lists with a carry.

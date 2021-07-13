@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution310;
 
 /**
  * 207. Course Schedule (Medium)
@@ -19,7 +20,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/course-schedule/">Course Schedule</a>
  * @since 2021-07-12
  */
-class Solution207 implements Solution {
+public class Solution207 implements Solution {
 
     /**
      * Checks whether the graph has a cycle.

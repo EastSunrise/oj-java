@@ -11,6 +11,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution397 implements Solution {
 
+    /**
+     * Thinks of the last two bits of the number.
+     *
+     * @see wsg.oj.java.Complexity#TIME_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_LOG_N
+     */
     public int integerReplacement(int n) {
         if (n < 4) {
             return n - 1;

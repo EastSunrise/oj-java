@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution347;
+import wsg.oj.java.leetcode.problems.p300.Solution387;
 
 /**
  * 451. Sort Characters By Frequency (Medium)
@@ -17,7 +19,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Frequency</a>
  * @since 2021-07-08
  */
-class Solution451 implements Solution {
+public class Solution451 implements Solution {
 
     public String frequencySort(String s) {
         Map<Character, Integer> frequency = new HashMap<>(64);

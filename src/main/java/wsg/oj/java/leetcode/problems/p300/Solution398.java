@@ -8,7 +8,7 @@ import java.util.Random;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
- * 398. Random Pick Index (Medium)
+ * todo 398. Random Pick Index (Medium)
  *
  * @author Kingen
  * @see Solution382

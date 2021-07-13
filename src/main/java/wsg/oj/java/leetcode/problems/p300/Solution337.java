@@ -19,7 +19,7 @@ public class Solution337 implements Solution {
     /**
      * @see #DFS
      * @see wsg.oj.java.Complexity#TIME_N
-     * @see wsg.oj.java.Complexity#SPACE_N
+     * @see wsg.oj.java.Complexity#SPACE_H
      */
     public int rob(TreeNode root) {
         return robSubTree(root)[1];

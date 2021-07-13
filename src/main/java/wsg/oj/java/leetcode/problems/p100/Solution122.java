@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution309;
 
 /**
  * 122. Best Time to Buy and Sell Stock II (Easy)
@@ -15,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Buy and Sell Stock II</a>
  * @since 2021-07-11
  */
-class Solution122 implements Solution {
+public class Solution122 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

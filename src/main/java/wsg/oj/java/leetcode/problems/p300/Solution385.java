@@ -16,6 +16,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution385 implements Solution {
 
+    /**
+     * Uses a stack to stores outer {@link NestedInteger}.
+     *
+     * @complexity T=O(n)
+     * @complexity S=O(h), h=the nested levels
+     */
     public NestedInteger deserialize(String s) {
         StringBuilder digits = new StringBuilder();
         Stack<NestedInteger> stack = new Stack<>();

@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/ugly-number-ii/">Ugly Number II</a>
  * @since 2021-07-13
  */
-class Solution264 implements Solution {
+public class Solution264 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

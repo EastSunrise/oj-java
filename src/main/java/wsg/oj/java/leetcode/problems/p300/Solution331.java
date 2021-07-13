@@ -13,10 +13,16 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution331 implements Solution {
 
+    /**
+     * @see #PREORDER
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_H
+     */
     public boolean isValidSerialization(String preorder) {
         int len = preorder.length();
         boolean left = true;
         int i = 0;
+        // record that current node is the left node or right one
         Stack<Boolean> stack = new Stack<>();
         while (i < len) {
             char ch = preorder.charAt(i);

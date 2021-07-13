@@ -7,15 +7,16 @@ import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
- * 381. Insert Delete GetRandom O(1) - Duplicates allowed (Hard)
+ * 382. Linked List Random Node (Medium)
  *
  * @author Kingen
- * @see Solution380
- * @see <a href="https://leetcode-cn.com/problems/insert-delete-getrandom-o1-duplicates-allowed/">Insert
- * Delete GetRandom O(1) - Duplicates allowed</a>
- * @since 2021-07-06
+ * @see Solution398
+ * @see <a href="https://leetcode-cn.com/problems/linked-list-random-node/">Linked List Random
+ * Node</a>
+ * @since 2021-07-13
  */
-class Solution381 implements Solution {
+class Solution382 implements Solution {
+
 
     private static class Solution {
 

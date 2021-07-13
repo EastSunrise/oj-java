@@ -11,6 +11,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution396 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int maxRotateFunction(int[] nums) {
         int sum = 0, f = 0, n = nums.length;
         for (int i = 0; i < n; i++) {

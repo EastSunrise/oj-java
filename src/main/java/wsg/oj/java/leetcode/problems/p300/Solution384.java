@@ -13,6 +13,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution384 implements Solution {
 
+    /**
+     * @see <a href="https://eastsunrise.github.io/wiki-kingen/cs/algorithms/others/knuth-shuffle-algorithm.html">Knuth
+     * Shuffle Algorithm</a>
+     */
     private static class Solution {
 
         private final int[] nums;

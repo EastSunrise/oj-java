@@ -13,6 +13,11 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution322 implements Solution {
 
+    /**
+     * @complexity T=O(nk), k=the amount
+     * @complexity S=O(k)
+     * @see #DYNAMIC_PROGRAMMING
+     */
     public int coinChange(int[] coins, int amount) {
         int max = amount + 1;
         int[] dp = new int[max];

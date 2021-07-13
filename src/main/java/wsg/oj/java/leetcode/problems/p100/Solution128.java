@@ -4,7 +4,7 @@ import java.util.Arrays;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
- * 128. Longest Consecutive Sequence (Medium)
+ * todo 128. Longest Consecutive Sequence (Medium)
  *
  * @author Kingen
  * @see Solution298
@@ -17,7 +17,6 @@ class Solution128 implements Solution {
     /**
      * Sorts and finds.
      *
-     * @see #TO_OPTIMIZE
      * @see wsg.oj.java.Complexity#TIME_N_LOG_N
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */

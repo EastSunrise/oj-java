@@ -11,8 +11,6 @@ import wsg.oj.java.Complexity;
  */
 public interface Solution extends Complexity {
 
-    String TO_OPTIMIZE = "To Optimize";
-
     /**
      * @see <a href="https://leetcode-cn.com/tag/backtracking/problemset/">Backtracking</a>
      */

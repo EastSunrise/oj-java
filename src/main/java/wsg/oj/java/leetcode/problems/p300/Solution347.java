@@ -21,6 +21,10 @@ import wsg.oj.java.leetcode.problems.p200.Solution215;
  */
 public class Solution347 extends Solution215 {
 
+    /**
+     * @complexity T=O(n+k)
+     * @complexity S=O(u), u=the number of distinct numbers
+     */
     public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> frequency = new HashMap<>(16);
         for (int num : nums) {
