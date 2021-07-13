@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution229;
 
 /**
  * 169. Majority Element (Easy)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/majority-element/">Majority Element</a>
  * @since 2021-07-12
  */
-class Solution169 implements Solution {
+public class Solution169 implements Solution {
 
     /**
      * Boyer–Moore majority vote algorithm: delete/nullify two different numbers from the array

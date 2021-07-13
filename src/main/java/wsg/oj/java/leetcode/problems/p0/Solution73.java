@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution289;
 
 /**
  * 73. Set Matrix Zeroes (Medium)
@@ -10,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/set-matrix-zeroes/">Set Matrix Zeroes</a>
  * @since 2021-07-11
  */
-class Solution73 implements Solution {
+public class Solution73 implements Solution {
 
     /**
      * Uses two sides to records whether the row or column will be set to zero.

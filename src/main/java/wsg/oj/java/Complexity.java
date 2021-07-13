@@ -13,6 +13,7 @@ public interface Complexity {
      */
     String TIME_CONSTANT = "O(1)";
     String TIME_LOG_N = "O(log_n)";
+    String TIME_H = "O(h)";
     String TIME_N = "O(n)";
     String TIME_M_PLUS_N = "O(m+n)";
     String TIME_N_LOG_N = "O(n*log_n)";

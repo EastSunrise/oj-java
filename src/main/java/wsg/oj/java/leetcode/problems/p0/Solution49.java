@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution242;
 
 /**
  * 49. Group Anagrams (Medium)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/group-anagrams/">Group Anagrams</a>
  * @since 2021-07-11
  */
-class Solution49 implements Solution {
+public class Solution49 implements Solution {
 
     /**
      * Uses the frequency of characters of a string as its hash and then group them.

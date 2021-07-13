@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution241;
 
 /**
  * 95. Unique Binary Search Trees II (Medium)
@@ -15,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Search Trees II</a>
  * @since 2021-07-11
  */
-class Solution95 implements Solution {
+public class Solution95 implements Solution {
 
     /**
      * Catalan number G(n).

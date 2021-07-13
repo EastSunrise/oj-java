@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p0;
 import java.util.Arrays;
 import wsg.oj.java.Complexity;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution278;
 
 /**
  * 35. Search Insert Position (Easy)
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Position</a>
  * @since 2021-07-10
  */
-class Solution35 implements Solution {
+public class Solution35 implements Solution {
 
     /**
      * @see Arrays#binarySearch(int[], int)

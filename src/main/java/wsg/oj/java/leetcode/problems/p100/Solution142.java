@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution287;
 
 /**
  * 142. Linked List Cycle II (Medium)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/linked-list-cycle-ii/">Linked List Cycle II</a>
  * @since 2021-07-12
  */
-class Solution142 implements Solution {
+public class Solution142 implements Solution {
 
     /**
      * Uses a faster pointer and a slower pointer.

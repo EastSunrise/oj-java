@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution231;
 
 /**
  * 191. Number of 1 Bits (Easy)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/number-of-1-bits/">Number of 1 Bits</a>
  * @since 2021-07-12
  */
-class Solution191 implements Solution {
+public class Solution191 implements Solution {
 
     /**
      * @complexity T=O(32)

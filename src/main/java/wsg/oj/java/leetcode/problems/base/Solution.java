@@ -19,6 +19,7 @@ public interface Solution extends Complexity {
     String BACKTRACKING = "Backtracking";
     String DYNAMIC_PROGRAMMING = "Dynamic Programming";
     String DFS = "Depth-First Search";
+    String DIVIDE_AND_CONQUER = "Divide and Conquer";
     String BFS = "Breadth-First Search";
     String BINARY_SEARCH = "Binary Search";
     String PREORDER = "Preorder";
@@ -100,6 +101,26 @@ public interface Solution extends Complexity {
      */
     default boolean isLetter(char ch) {
         return ('A' <= ch && ch <= 'Z') || ('a' <= ch && ch <= 'z');
+    }
+
+    default int calculate(char operator, int operand1, int operand2) {
+        switch (operator) {
+            case '+':
+                return operand1 + operand2;
+            case '*':
+                return operand1 * operand2;
+            case '-':
+                return operand1 - operand2;
+            case '/':
+                return operand1 / operand2;
+            default:
+                throw new IllegalArgumentException("Unknown operator: " + operator);
+        }
+    }
+
+    default boolean isSquare(int num) {
+        int sqrt = (int) Math.sqrt(num);
+        return sqrt * sqrt == num;
     }
 
     interface TriFunction<T, U, V, R> {

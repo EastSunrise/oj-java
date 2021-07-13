@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.Complexity;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution278;
 
 /**
  * 34. Find First and Last Position of Element in Sorted Array (Medium)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * First and Last Position of Element in Sorted Array</a>
  * @since 2021-07-10
  */
-class Solution34 implements Solution {
+public class Solution34 implements Solution {
 
     /**
      * Finds the left bound and the right bound successively with binary searching.

@@ -1,6 +1,7 @@
 package wsg.oj.java.datastructure;
 
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 
 /**
@@ -70,6 +71,16 @@ public class TreeNode {
             }
         }
         return root;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return this == o;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(val);
     }
 
     @Override

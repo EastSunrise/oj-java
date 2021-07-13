@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import java.util.Arrays;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution240;
 
 /**
  * 74. Search a 2D Matrix (Medium)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/search-a-2d-matrix/">Search a 2D Matrix</a>
  * @since 2021-07-11
  */
-class Solution74 implements Solution {
+public class Solution74 implements Solution {
 
     /**
      * Searches from the bottom-left corner.
