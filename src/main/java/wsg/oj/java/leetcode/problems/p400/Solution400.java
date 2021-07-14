@@ -11,6 +11,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution400 implements Solution {
 
+    /**
+     * @complexity T=O(lgn)
+     * @complexity S=O(1)
+     */
     public int findNthDigit(int n) {
         long base = 1, count = 9, digits = 9, first = 1;
         while (n > digits) {

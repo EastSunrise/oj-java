@@ -13,6 +13,8 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution494 implements Solution {
 
     /**
+     * @complexity T=O(n)
+     * @complexity S=O(s), s=(sum+target)/2
      * @see #DYNAMIC_PROGRAMMING
      */
     public int findTargetSumWays(int[] nums, int target) {

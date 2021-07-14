@@ -22,7 +22,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/merge-intervals/">Merge Intervals</a>
  * @since 2021-07-11
  */
-class Solution56 implements Solution {
+public class Solution56 implements Solution {
 
     /**
      * Sorts the array by start and then merge it.

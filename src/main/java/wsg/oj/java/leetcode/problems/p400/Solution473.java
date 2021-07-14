@@ -13,6 +13,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution473 implements Solution {
 
     /**
+     * Divides the array into four parts whose sums are equal to each other.
+     *
+     * @complexity T=O(4^n)
+     * @complexity S=O(n)
      * @see #BACKTRACKING
      */
     public boolean makesquare(int[] matchsticks) {

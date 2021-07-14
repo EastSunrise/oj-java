@@ -14,6 +14,13 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution424 implements Solution {
 
+    /**
+     * Slides a window where the count of other numbers (except the most one) is never larger than
+     * k.
+     *
+     * @complexity T=O(n)
+     * @complexity S=O(26)
+     */
     public int characterReplacement(String s, int k) {
         int[] counts = new int[26];
         int left = 0, maxCount = 0, len = s.length();

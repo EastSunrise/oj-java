@@ -19,6 +19,9 @@ class Solution462 extends Solution215 {
      * <p>
      * If the length is even and the two medians are x and y, any integer between x and y are
      * optional.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int minMoves2(int[] nums) {
         int median = findKthLargest(nums, (nums.length + 1) / 2);

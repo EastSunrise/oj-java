@@ -14,6 +14,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution436 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_N
+     */
     public int[] findRightInterval(int[][] intervals) {
         int len = intervals.length;
         TreeMap<Integer, Integer> starts = new TreeMap<>();

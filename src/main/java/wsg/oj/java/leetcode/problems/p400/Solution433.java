@@ -17,6 +17,9 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution433 implements Solution {
 
     /**
+     * Changes a character at once to get possible next vertexes in the path from start to end.
+     *
+     * @complexity T=O(4*8*L), L=the length of the path
      * @see #BFS
      */
     public int minMutation(String start, String end, String[] bank) {

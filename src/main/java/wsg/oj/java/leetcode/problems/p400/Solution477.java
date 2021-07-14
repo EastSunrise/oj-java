@@ -13,6 +13,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution477 implements Solution {
 
+    /**
+     * Counts ones and zeros bit by bit.
+     *
+     * @complexity T=O(32*n)
+     * @complexity S=O(1)
+     */
     public int totalHammingDistance(int[] nums) {
         int len = nums.length, count = 0;
         for (int i = 0; i < 31; i++) {

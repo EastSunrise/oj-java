@@ -13,7 +13,8 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution474 implements Solution {
 
     /**
-     * @complexity T=O(lmn)
+     * @complexity T=O(lmn+L), l=the length of the array, L=sum(len(str))
+     * @complexity S=O(mn)
      */
     public int findMaxForm(String[] strs, int m, int n) {
         // dp[j][k]: the size of the largest subset of strs[0,i] with at most j 0's and k 1's.

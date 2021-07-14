@@ -12,7 +12,11 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution457 implements Solution {
 
     /**
-     * Two pointers.
+     * Uses a faster pointer and a slower pointer to find the cycle. Return true if the cycle
+     * satisfies the requirements or set all to zeros.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public boolean circularArrayLoop(int[] nums) {
         int len = nums.length;

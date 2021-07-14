@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution464;
 
 /**
  * 375. Guess Number Higher or Lower II (Medium)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Higher or Lower II</a>
  * @since 2021-07-04
  */
-class Solution375 implements Solution {
+public class Solution375 implements Solution {
 
     /**
      * @see #TIME_NNN

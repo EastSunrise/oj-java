@@ -15,6 +15,7 @@ class Solution416 implements Solution {
 
     /**
      * @complexity T=O(ns), s=sum/2
+     * @complexity S=O(s)
      * @see #DYNAMIC_PROGRAMMING
      */
     public boolean canPartition(int[] nums) {

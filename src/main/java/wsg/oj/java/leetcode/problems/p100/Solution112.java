@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution437;
 
 /**
  * 112. Path Sum (Easy)
@@ -15,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/path-sum/">Path Sum</a>
  * @since 2021-07-11
  */
-class Solution112 implements Solution {
+public class Solution112 implements Solution {
 
     /**
      * @see #PREORDER

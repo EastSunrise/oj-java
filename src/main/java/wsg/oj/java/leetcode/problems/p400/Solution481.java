@@ -11,6 +11,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution481 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
+     */
     public int magicalString(int n) {
         char ch = '1';
         int dx = 1, ones = 1;

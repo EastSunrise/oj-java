@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p400;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution38;
 
 /**
  * 443. String Compression (Medium)
@@ -13,8 +14,14 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/string-compression/">String Compression</a>
  * @since 2021-07-08
  */
-class Solution443 implements Solution {
+public class Solution443 implements Solution {
 
+    /**
+     * Counts the consecutive characters.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int compress(char[] chars) {
         char cur = chars[0];
         int j = 1, count = 1;

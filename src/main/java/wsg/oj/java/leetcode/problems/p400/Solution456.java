@@ -15,6 +15,7 @@ class Solution456 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean find132pattern(int[] nums) {
         int leftMin = nums[0];
@@ -43,24 +44,26 @@ class Solution456 implements Solution {
     }
 
     /**
-     * Monotonic stack.
+     * Uses a monotonically decreasing stack to store the candidates of the middle one.
      *
      * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean find132pattern2(int[] nums) {
         int len = nums.length;
-        // store the candidates of j
+        // store the candidates of the middle one
         Stack<Integer> stack = new Stack<>();
         stack.push(nums[len - 1]);
-        int k = Integer.MIN_VALUE;
+        // the right one
+        int right = Integer.MIN_VALUE;
         for (int i = len - 2; i >= 0; i--) {
-            if (nums[i] < k) {
+            if (nums[i] < right) {
                 return true;
             }
             while (!stack.isEmpty() && nums[i] > stack.peek()) {
-                k = stack.pop();
+                right = stack.pop();
             }
-            if (nums[i] > k) {
+            if (nums[i] > right) {
                 stack.push(nums[i]);
             }
         }

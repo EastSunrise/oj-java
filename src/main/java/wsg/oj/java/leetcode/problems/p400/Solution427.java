@@ -11,11 +11,14 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution427 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_NN
+     */
     public Node construct(int[][] grid) {
         return construct(grid, 0, 0, grid.length);
     }
 
-    public Node construct(int[][] grid, int top, int left, int len) {
+    private Node construct(int[][] grid, int top, int left, int len) {
         if (len == 1) {
             return new Node(grid[top][left] == 1, true);
         }

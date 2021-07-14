@@ -7,6 +7,8 @@ import java.util.function.Consumer;
  * Operations of binary trees.
  *
  * @author Kingen
+ * @see <a href="https://eastsunrise.github.io/wiki-kingen/cs/data-structure/binary-tree.html">Binary
+ * Tree</a>
  * @since 2021/7/12
  */
 public interface BinaryTreeOpt {

@@ -15,6 +15,13 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution435 implements Solution {
 
+    /**
+     * Sorts the array, traverses from left to right and removes the interval with larger right
+     * bound if overlapping.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int eraseOverlapIntervals(int[][] intervals) {
         Arrays.sort(intervals, Comparator.comparing(arr -> arr[0]));
         int right = intervals[0][1], count = 0;

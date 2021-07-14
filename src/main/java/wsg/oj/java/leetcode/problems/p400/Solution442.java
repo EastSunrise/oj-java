@@ -15,6 +15,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution442 implements Solution {
 
+    /**
+     * Swaps numbers to make the number at the index i equal to i: num[i]=i.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public List<Integer> findDuplicates(int[] nums) {
         int n = nums.length;
         for (int i = 0; i < n; i++) {

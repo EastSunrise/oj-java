@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p100;
 import java.util.Stack;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution430;
 
 /**
  * 114. Flatten Binary Tree to Linked List (Medium)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Binary Tree to Linked List</a>
  * @since 2021-07-11
  */
-class Solution114 implements Solution {
+public class Solution114 implements Solution {
 
     /**
      * Traverses the tree in RVL order.

@@ -12,6 +12,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution419 implements Solution {
 
+    /**
+     * Counts only if it's the head of a battleship.
+     *
+     * @see wsg.oj.java.Complexity#TIME_MN
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int countBattleships(char[][] board) {
         int m = board.length, n = board[0].length;
         // only count the head of a battleship

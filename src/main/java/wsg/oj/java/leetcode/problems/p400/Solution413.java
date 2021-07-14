@@ -13,17 +13,20 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution413 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int numberOfArithmeticSlices(int[] nums) {
-        int start = 0, end = nums.length - 1, res = 0;
-        while (end - start > 1) {
+        int start = 0, len = nums.length - 2, res = 0;
+        while (start < len) {
             int dif = nums[start + 1] - nums[start];
-            int i = start + 1;
-            while (i < end && nums[i + 1] - nums[i] == dif) {
-                i++;
+            int end = start + 1;
+            while (end <= len && nums[end + 1] - nums[end] == dif) {
+                end++;
             }
-            int len = i - start + 1;
-            res += (len - 1) * (len - 2) / 2;
-            start = i;
+            res += (end - start) * (end - start - 1) / 2;
+            start = end;
         }
         return res;
     }

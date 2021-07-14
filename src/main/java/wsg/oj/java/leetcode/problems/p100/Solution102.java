@@ -22,7 +22,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Level Order Traversal</a>
  * @since 2021-07-08
  */
-class Solution102 extends BinaryTree implements Solution {
+public class Solution102 extends BinaryTree implements Solution {
 
     /**
      * @see #traverseLevels(TreeNode, Consumer)

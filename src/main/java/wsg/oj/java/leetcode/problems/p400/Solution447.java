@@ -16,6 +16,7 @@ class Solution447 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int numberOfBoomerangs(int[][] points) {
         int res = 0;

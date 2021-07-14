@@ -28,6 +28,7 @@ class Solution478 implements Solution {
         }
 
         public double[] randPoint() {
+            // the random of rho must be in the range from 0 to r^2
             double rho = Math.sqrt(random.nextDouble() * radius * radius);
             double theta = random.nextDouble() * 2 * Math.PI;
             return new double[]{

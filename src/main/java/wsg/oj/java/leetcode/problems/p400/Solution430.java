@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p400;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution114;
 
 /**
  * 430. Flatten a Multilevel Doubly Linked List (Medium)
@@ -12,8 +13,13 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * a Multilevel Doubly Linked List</a>
  * @since 2021-07-07
  */
-class Solution430 implements Solution {
+public class Solution430 implements Solution {
 
+    /**
+     * @see #DFS
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_H
+     */
     public Node flatten(Node head) {
         if (head == null) {
             return null;

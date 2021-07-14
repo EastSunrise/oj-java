@@ -12,6 +12,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution475 implements Solution {
 
+    /**
+     * @complexity T=O(m*log{m}+n*log{n})
+     * @complexity S=O(1)
+     */
     public int findRadius(int[] houses, int[] heaters) {
         Arrays.sort(houses);
         Arrays.sort(heaters);

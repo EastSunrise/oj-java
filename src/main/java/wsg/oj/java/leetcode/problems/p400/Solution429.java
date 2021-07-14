@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution102;
 
 /**
  * 429. N-ary Tree Level Order Traversal (Medium)
@@ -19,6 +20,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution429 implements Solution {
 
+    /**
+     * @complexity T=O(N), N=the number of nodes
+     * @complexity S=O(L), L=the number of nodes in a level
+     */
     public List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) {

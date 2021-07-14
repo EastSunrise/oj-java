@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p0;
 import java.util.ArrayList;
 import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution401;
 
 /**
  * 17. Letter Combinations of a Phone Number (Medium)
@@ -15,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Combinations of a Phone Number</a>
  * @since 2021-07-10
  */
-class Solution17 implements Solution {
+public class Solution17 implements Solution {
 
     char[][] dict = new char[][]{
         {'a', 'b', 'c'},

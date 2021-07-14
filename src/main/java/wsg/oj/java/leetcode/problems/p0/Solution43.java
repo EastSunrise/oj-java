@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.Complexity;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution415;
 
 /**
  * 43. Multiply Strings (Medium)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/multiply-strings/">Multiply Strings</a>
  * @since 2021-07-10
  */
-class Solution43 implements Solution {
+public class Solution43 implements Solution {
 
     /**
      * Multiplies every pair of digits with a carry.

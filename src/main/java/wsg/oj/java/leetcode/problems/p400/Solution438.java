@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution242;
 
 /**
  * 438. Find All Anagrams in a String (Medium)
@@ -17,6 +18,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution438 implements Solution {
 
+    /**
+     * Keeps a window of the same length of p.
+     *
+     * @complexity T=O(26*n)
+     * @complexity S=O(26)
+     */
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
         int pLen = p.length(), sLen = s.length();

@@ -46,7 +46,7 @@ class Solution382 implements Solution {
     /**
      * @see <a href="https://en.wikipedia.org/wiki/Reservoir_sampling>Reservoir sampling</a>
      */
-    static class Solution2 {
+    private static class Solution2 {
 
         private final ListNode head;
 

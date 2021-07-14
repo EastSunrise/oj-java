@@ -16,6 +16,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution402 implements Solution {
 
+    /**
+     * Builds a monotonic queue.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
+     */
     public String removeKdigits(String num, int k) {
         if (k >= num.length()) {
             return "0";

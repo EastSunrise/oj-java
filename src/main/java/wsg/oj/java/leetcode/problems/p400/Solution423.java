@@ -12,6 +12,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution423 implements Solution {
 
+    /**
+     * @complexity T=O(n+10)
+     * @complexity S=O(26+10)
+     */
     public String originalDigits(String s) {
         int[] letters = new int[26];
         for (char ch : s.toCharArray()) {

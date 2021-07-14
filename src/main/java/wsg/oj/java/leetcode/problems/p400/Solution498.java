@@ -11,6 +11,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution498 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_MN
+     * @see wsg.oj.java.Complexity#SPACE_MN
+     */
     public int[] findDiagonalOrder(int[][] mat) {
         int m = mat.length, n = mat[0].length, mn = m * n;
         int[] res = new int[mn], dx = new int[]{-1, 1};

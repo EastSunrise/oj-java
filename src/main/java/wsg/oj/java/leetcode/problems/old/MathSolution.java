@@ -10,20 +10,6 @@ import java.util.Stack;
  */
 public class MathSolution {
 
-    // 455. 分发饼干
-    public int findContentChildren(int[] g, int[] s) {
-        Arrays.sort(g);
-        Arrays.sort(s);
-        int gIndex = 0, sIndex = 0;
-        while (gIndex < g.length && sIndex < s.length) {
-            if (g[gIndex] <= s[sIndex]) {
-                gIndex++;
-            }
-            sIndex++;
-        }
-        return gIndex;
-    }
-
     // 633. 平方数之和
     public boolean judgeSquareSum(int c) {
         int a = 0, b = (int) Math.sqrt(c);

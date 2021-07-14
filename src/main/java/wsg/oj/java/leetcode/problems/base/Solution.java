@@ -121,6 +121,22 @@ public interface Solution extends Complexity {
         return sqrt * sqrt == num;
     }
 
+    default String toNRadix(int num, int shift, int mask) {
+        if (num == 0) {
+            return "0";
+        }
+        // 0 < shift < 5
+        char[] digits = new char[]{
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+        };
+        StringBuilder builder = new StringBuilder(32 / shift);
+        while (num != 0) {
+            builder.insert(0, digits[num & mask]);
+            num >>>= shift;
+        }
+        return builder.toString();
+    }
+
     interface TriFunction<T, U, V, R> {
 
         R apply(T t, U u, V v);

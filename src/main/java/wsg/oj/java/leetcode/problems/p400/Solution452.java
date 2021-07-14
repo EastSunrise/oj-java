@@ -16,6 +16,13 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution452 implements Solution {
 
+    /**
+     * Sorts the array, travers from left to right and picks the smaller right bound if
+     * overlapping.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N_LOG_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int findMinArrowShots(int[][] points) {
         Arrays.sort(points, Comparator.comparingInt(o -> o[0]));
         int end = points[0][1], count = 1;

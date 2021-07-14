@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.algorithm.PatternSearching;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution459;
 
 /**
  * 28. Implement strStr() (Easy)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/implement-strstr/">Implement strStr()</a>
  * @since 2021-07-10
  */
-class Solution28 extends PatternSearching implements Solution {
+public class Solution28 extends PatternSearching implements Solution {
 
     /**
      * @see String#indexOf(String)

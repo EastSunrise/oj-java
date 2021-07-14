@@ -12,12 +12,17 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution467 implements Solution {
 
+    /**
+     * @complexity T=O(n)
+     * @complexity S=O(26)
+     */
     public int findSubstringInWraproundString(String p) {
         int start = 0, n = p.length();
         // len[i]: the maximum length of the substrings of p
         // which start with i+'a' and are present in s.
         int[] lens = new int[26];
         while (start < n) {
+            // find a substring of consecutive characters
             int end = start + 1;
             while (end < n && (p.charAt(end) - p.charAt(end - 1) + 26) % 26 == 1) {
                 end++;

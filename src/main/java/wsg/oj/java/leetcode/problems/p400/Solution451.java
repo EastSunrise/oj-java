@@ -21,6 +21,10 @@ import wsg.oj.java.leetcode.problems.p300.Solution387;
  */
 public class Solution451 implements Solution {
 
+    /**
+     * @complexity T=O(n+s), s=the size of the character set
+     * @complexity S=O(s)
+     */
     public String frequencySort(String s) {
         Map<Character, Integer> frequency = new HashMap<>(64);
         for (char ch : s.toCharArray()) {

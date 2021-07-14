@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p400;
 import java.util.Stack;
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution2;
 
 /**
  * 445. Add Two Numbers II (Medium)
@@ -16,7 +17,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution445 implements Solution {
 
     /**
-     * Stack.
+     * Uses two stacks to store the values of the two lists.
+     *
+     * @see wsg.oj.java.Complexity#TIME_M_PLUS_N
+     * @see wsg.oj.java.Complexity#SPACE_M_PLUS_N
      */
     public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         Stack<Integer> stack1 = new Stack<>();
@@ -48,7 +52,10 @@ class Solution445 implements Solution {
     }
 
     /**
-     * Recursion.
+     * Traverses the two list recursively and adds from the tail with a carry.
+     *
+     * @see wsg.oj.java.Complexity#TIME_M_PLUS_N
+     * @see wsg.oj.java.Complexity#SPACE_M_PLUS_N
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode node1 = l1.next, node2 = l2.next;

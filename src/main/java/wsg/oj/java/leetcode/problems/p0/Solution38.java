@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.Complexity;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution443;
 
 /**
  * 38. Count and Say (Medium)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/count-and-say/">Count and Say</a>
  * @since 2021-07-10
  */
-class Solution38 implements Solution {
+public class Solution38 implements Solution {
 
     /**
      * @see Complexity#TIME_2_N

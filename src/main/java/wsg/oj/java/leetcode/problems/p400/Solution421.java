@@ -15,6 +15,13 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution421 implements Solution {
 
+    /**
+     * Predetermines the maximum bit by bit and finds whether there are two prefixes whose XOR is
+     * the target.
+     *
+     * @complexity T=O(32*n)
+     * @complexity S=O(n)
+     */
     public int findMaximumXOR(int[] nums) {
         int res = 0, mask = 0;
         for (int bit = 30; bit >= 0; bit--) {

@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p100.Solution112;
+import wsg.oj.java.leetcode.problems.p100.Solution113;
 
 /**
  * 437. Path Sum III (Medium)
@@ -16,9 +18,11 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/path-sum-iii/">Path Sum III</a>
  * @since 2021-07-07
  */
-class Solution437 implements Solution {
+public class Solution437 implements Solution {
 
     /**
+     * Finds the paths from the root and except the root respectively.
+     *
      * @see wsg.oj.java.Complexity#TIME_NN
      */
     public int pathSum(TreeNode root, int targetSum) {
@@ -45,7 +49,10 @@ class Solution437 implements Solution {
     }
 
     /**
+     * Uses a map to store the prefix sums from the root node.
+     *
      * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int pathSum2(TreeNode root, int targetSum) {
         Map<Integer, Integer> prefixSums = new HashMap<>(16);

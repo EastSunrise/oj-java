@@ -17,6 +17,7 @@ class Solution454 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN
+     * @see wsg.oj.java.Complexity#TIME_NN
      */
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
         int n = nums1.length;

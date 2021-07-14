@@ -12,6 +12,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution468 implements Solution {
 
+    /**
+     * @complexity T=O(n)
+     * @complexity S=O(3) if IPv4, S=O(4) if IPv6
+     */
     public String validIPAddress(String IP) {
         if (IP.indexOf('.') >= 0) {
             return validIPv4(IP) ? "IPv4" : "Neither";
