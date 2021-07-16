@@ -11,55 +11,6 @@ import java.util.Map;
  */
 public class StringSolution {
 
-    // 10. 正则表达式匹配
-    public boolean isMatch(String s, String p) {
-        if ("".equals(p)) {
-            return "".equals(s);
-        }
-        char[] ss = s.toCharArray();
-        char[] ps = p.toCharArray();
-        return isMatch(ss, ps, ss.length, ps.length);
-    }
-
-    private boolean isMatch(char[] ss, char[] ps, int sl, int pl) {
-        if (pl == 0) {
-            return sl == 0;
-        }
-        char pLast = ps[pl - 1];
-        if (pl == 1) {
-            return pLast != '*' && (pl == sl && (pLast == '.' || (ss[sl - 1] == pLast)));
-        }
-        switch (pLast) {
-            case '.':
-                return sl > 0 && isMatch(ss, ps, sl - 1, pl - 1);
-            case '*':
-                pLast = ps[pl - 2];
-                switch (pLast) {
-                    case '*':
-                        return isMatch(ss, ps, sl, sl - 1);
-                    case '.':
-                        for (int i = 0; i < sl; i++) {
-                            if (isMatch(ss, ps, sl - i, pl - 2)) {
-                                return true;
-                            }
-                        }
-                        return isMatch(ss, ps, 0, pl - 2);
-                    default:
-                        for (int i = 0; i < sl; i++) {
-                            if (isMatch(ss, ps, sl - i, pl - 2)) {
-                                return true;
-                            }
-                            if (ss[sl - i - 1] != pLast) {
-                                return false;
-                            }
-                        }
-                        return isMatch(ss, ps, 0, pl - 2);
-                }
-            default:
-                return sl > 0 && ss[sl - 1] == pLast && isMatch(ss, ps, sl - 1, pl - 1);
-        }
-    }
-
     // 65. 有效数字
     public boolean isNumber(String s) {
         s = s.replaceAll(" ", "");

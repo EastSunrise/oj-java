@@ -13,28 +13,6 @@ import java.util.Stack;
  */
 public class OldSolution {
 
-    /**
-     * 4.
-     *
-     * @see <a href="https://leetcode-cn.com/problems/median-of-two-sorted-arrays/">4.
-     * 寻找两个正序数组的中位数</a>
-     */
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int len1 = nums1.length, len2 = nums2.length;
-        if (len1 * len2 == 0) {
-            int[] nums = len1 == 0 ? nums2 : nums1;
-            int len = nums.length;
-            if (len % 2 == 0) {
-                return (nums[len / 2 - 1] + nums[len / 2]) / 2.0;
-            } else {
-                return nums[len / 2];
-            }
-        }
-
-        int left1 = 0, left2 = 0;
-        return 0.0;
-    }
-
     // 554.
     public int leastBricks(List<List<Integer>> wall) {
         Map<Integer, Integer> times = new HashMap<>();
