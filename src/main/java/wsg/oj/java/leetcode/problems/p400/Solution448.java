@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p400;
 import java.util.ArrayList;
 import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution41;
 
 /**
  * 448. Find All Numbers Disappeared in an Array (Easy)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * All Numbers Disappeared in an Array</a>
  * @since 2021-07-14
  */
-class Solution448 implements Solution {
+public class Solution448 implements Solution {
 
     /**
      * Rearranges numbers to satisfy that num[i]=i+1.

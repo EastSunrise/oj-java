@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution42;
 import wsg.oj.java.leetcode.problems.p100.Solution152;
 
 /**
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution152;
  * Except Self</a>
  * @since 2021-07-13
  */
-class Solution238 implements Solution {
+public class Solution238 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N
