@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution85;
 
 /**
  * 221. Maximal Square (Medium)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/maximal-square/">Maximal Square</a>
  * @since 2021-07-13
  */
-class Solution221 implements Solution {
+public class Solution221 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

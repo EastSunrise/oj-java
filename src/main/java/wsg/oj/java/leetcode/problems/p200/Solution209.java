@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution76;
 
 /**
  * 209. Minimum Size Subarray Sum (Medium)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Sum</a>
  * @since 2021-07-12
  */
-class Solution209 implements Solution {
+public class Solution209 implements Solution {
 
     /**
      * Slides a window.
