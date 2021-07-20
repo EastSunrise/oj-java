@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution541;
 
 /**
  * 344. Reverse String (Easy)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/reverse-string/">Reverse String</a>
  * @since 2021-07-13
  */
-class Solution344 implements Solution {
+public class Solution344 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

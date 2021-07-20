@@ -10,20 +10,6 @@ import java.util.Stack;
  */
 public class StackSolution {
 
-    // 32. 最长有效括号
-    public int longestValidParentheses(String s) {
-        char[] chars = s.toCharArray();
-        Stack<Character> stack = new Stack<>();
-        int count = 0, max = 0;
-        for (char c : chars) {
-            if (c == '(') {
-                stack.push(c);
-            }
-
-        }
-        return 0;
-    }
-
     // 503. 下一个更大元素 II
     public int[] nextGreaterElements(int[] nums) {
         int len = nums.length;

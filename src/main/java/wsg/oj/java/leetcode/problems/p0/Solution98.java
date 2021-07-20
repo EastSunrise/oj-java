@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p0;
 import wsg.oj.java.datastructure.BinarySearchTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution501;
 
 /**
  * 98. Validate Binary Search Tree (Medium)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Search Tree</a>
  * @since 2021-07-11
  */
-class Solution98 extends BinarySearchTree implements Solution {
+public class Solution98 extends BinarySearchTree implements Solution {
 
     /**
      * @see #DFS

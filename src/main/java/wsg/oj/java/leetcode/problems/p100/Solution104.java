@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p100;
 import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution559;
 
 /**
  * 104. Maximum Depth of Binary Tree (Easy)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Binary Tree</a>
  * @since 2021-07-11
  */
-class Solution104 extends BinaryTree implements Solution {
+public class Solution104 extends BinaryTree implements Solution {
 
     /**
      * @see #getHeight(TreeNode)

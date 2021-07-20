@@ -19,6 +19,11 @@ public interface BinaryTreeOpt {
     int getHeight(TreeNode node);
 
     /**
+     * Checks whether the two trees have the same structure and node values.
+     */
+    boolean equals(TreeNode p, TreeNode q);
+
+    /**
      * Recursive preorder traversal.
      */
     void preorderTraversal(TreeNode node, Consumer<Integer> action);

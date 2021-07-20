@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution599;
 
 /**
  * 160. Intersection of Two Linked Lists (Easy)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Two Linked Lists</a>
  * @since 2021-07-12
  */
-class Solution160 implements Solution {
+public class Solution160 implements Solution {
 
     /**
      * Concatenates the head of one list with the tail of the other list to find a cycle.

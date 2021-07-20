@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution509;
 
 /**
  * 70. Climbing Stairs (Easy)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/climbing-stairs/">Climbing Stairs</a>
  * @since 2021-07-11
  */
-class Solution70 implements Solution {
+public class Solution70 implements Solution {
 
     /**
      * Fibonacci sequence.

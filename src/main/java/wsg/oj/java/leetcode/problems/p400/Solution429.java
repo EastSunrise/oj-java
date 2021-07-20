@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Queue;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p100.Solution102;
+import wsg.oj.java.leetcode.problems.p500.Solution589;
+import wsg.oj.java.leetcode.problems.p500.Solution590;
 
 /**
  * 429. N-ary Tree Level Order Traversal (Medium)
@@ -18,7 +20,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution102;
  * Level Order Traversal</a>
  * @since 2021-07-07
  */
-class Solution429 implements Solution {
+public class Solution429 implements Solution {
 
     /**
      * @complexity T=O(N), N=the number of nodes

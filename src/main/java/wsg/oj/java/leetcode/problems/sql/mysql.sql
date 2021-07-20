@@ -246,7 +246,11 @@ Create table If Not Exists World
     population int,
     gdp        int
 );
-# solution todo
+# solution
+select name, area, population
+from World
+where area > 3000000
+   or population > 25000000;
 
 
 # 596. Classes More Than 5 Students (Easy)
@@ -256,7 +260,11 @@ Create table If Not Exists courses
     student varchar(255),
     class   varchar(255)
 );
-# solution todo
+# solution
+select class
+from courses
+group by class
+having count(distinct student) >= 5;
 
 
 # 601. Human Traffic of Stadium (Hard)

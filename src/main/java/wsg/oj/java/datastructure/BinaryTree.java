@@ -24,6 +24,15 @@ public class BinaryTree implements BinaryTreeOpt {
     }
 
     @Override
+    public boolean equals(TreeNode p, TreeNode q) {
+        if (p == null) {
+            return q == null;
+        }
+        return q != null && p.val == q.val
+            && equals(p.left, q.left) && equals(p.right, q.right);
+    }
+
+    @Override
     public void preorderTraversal(TreeNode node, Consumer<Integer> action) {
         if (node != null) {
             action.accept(node.val);
