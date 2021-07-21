@@ -1,5 +1,6 @@
 package wsg.oj.java.leetcode.problems.base;
 
+import java.util.List;
 import java.util.function.BiFunction;
 import wsg.oj.java.Complexity;
 
@@ -135,6 +136,15 @@ public interface Solution extends Complexity {
             num >>>= shift;
         }
         return builder.toString();
+    }
+
+    default int[] toArray(List<Integer> list) {
+        int[] res = new int[list.size()];
+        int i = 0;
+        for (int val : list) {
+            res[i++] = val;
+        }
+        return res;
     }
 
     interface TriFunction<T, U, V, R> {

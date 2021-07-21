@@ -1,7 +1,8 @@
 package wsg.oj.java.datastructure;
 
-import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Operations of binary trees.
@@ -55,8 +56,12 @@ public interface BinaryTreeOpt {
 
     /**
      * Traverses levels iteratively.
+     *
+     * @param constructor initialize the level, accepting the size of the level
+     * @param action      consume each value in the level
      */
-    void traverseLevels(TreeNode root, Consumer<List<Integer>> levelAction);
+    <T> void traverseLevels(TreeNode root, Function<Integer, T> constructor,
+        BiConsumer<T, Integer> action);
 
     /**
      * Iterative level-order traversal.

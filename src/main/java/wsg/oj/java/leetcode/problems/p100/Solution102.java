@@ -2,10 +2,12 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p400.Solution429;
 
 /**
  * 102. Binary Tree Level Order Traversal (Medium)
@@ -25,11 +27,15 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution102 extends BinaryTree implements Solution {
 
     /**
-     * @see #traverseLevels(TreeNode, Consumer)
+     * @see #traverseLevels(TreeNode, Function, BiConsumer)
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-        traverseLevels(root, res::add);
+        traverseLevels(root, size -> {
+            List<Integer> level = new ArrayList<>(size);
+            res.add(level);
+            return level;
+        }, List::add);
         return res;
     }
 }

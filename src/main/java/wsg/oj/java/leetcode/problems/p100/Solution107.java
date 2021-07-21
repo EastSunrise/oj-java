@@ -1,9 +1,10 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
@@ -21,12 +22,15 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution107 extends BinaryTree implements Solution {
 
     /**
-     * @see #traverseLevels(TreeNode, Consumer)
+     * @see #traverseLevels(TreeNode, Function, BiConsumer)
      */
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<>();
-        traverseLevels(root, res::add);
-        Collections.reverse(res);
+        LinkedList<List<Integer>> res = new LinkedList<>();
+        traverseLevels(root, size -> {
+            List<Integer> level = new ArrayList<>(size);
+            res.addFirst(level);
+            return level;
+        }, List::add);
         return res;
     }
 }

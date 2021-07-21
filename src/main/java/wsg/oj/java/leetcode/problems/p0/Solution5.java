@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution516;
 
 /**
  * 5. Longest Palindromic Substring (Medium)
@@ -15,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Palindromic Substring</a>
  * @since 2021-07-10
  */
-class Solution5 implements Solution {
+public class Solution5 implements Solution {
 
     /**
      * Manacher Algorithm.

@@ -1,9 +1,10 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
@@ -20,17 +21,25 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 class Solution103 extends BinaryTree implements Solution {
 
     /**
-     * @see #traverseLevels(TreeNode, Consumer)
+     * @see #traverseLevels(TreeNode, Function, BiConsumer)
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_N
      */
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
-        boolean[] inverted = new boolean[1];
-        traverseLevels(root, level -> {
-            if (inverted[0]) {
-                Collections.reverse(level);
+        boolean[] sequential = new boolean[1];
+        traverseLevels(root, size -> {
+            LinkedList<Integer> level = new LinkedList<>();
+            res.add(level);
+            sequential[0] = !sequential[0];
+            return level;
+        }, (level, val) -> {
+            if (sequential[0]) {
+                level.addLast(val);
+            } else {
+                level.addFirst(val);
             }
             res.add(level);
-            inverted[0] = !inverted[0];
         });
         return res;
     }

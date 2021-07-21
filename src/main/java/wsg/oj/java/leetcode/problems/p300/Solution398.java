@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution528;
 
 /**
  * todo 398. Random Pick Index (Medium)
@@ -17,7 +18,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/random-pick-index/">Random Pick Index</a>
  * @since 2021-07-06
  */
-class Solution398 implements Solution {
+public class Solution398 implements Solution {
 
     private static class Solution {
 

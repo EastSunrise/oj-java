@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution503;
 
 /**
  * 496. Next Greater Element I (Easy)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * I</a>
  * @since 2021-07-14
  */
-class Solution496 implements Solution {
+public class Solution496 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_M_PLUS_N

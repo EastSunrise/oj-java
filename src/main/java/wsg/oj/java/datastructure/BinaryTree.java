@@ -1,11 +1,11 @@
 package wsg.oj.java.datastructure;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * An implementation of binary trees.
@@ -115,7 +115,8 @@ public class BinaryTree implements BinaryTreeOpt {
     }
 
     @Override
-    public void traverseLevels(TreeNode root, Consumer<List<Integer>> levelAction) {
+    public <T> void traverseLevels(TreeNode root, Function<Integer, T> constructor,
+        BiConsumer<T, Integer> action) {
         if (root == null) {
             return;
         }
@@ -124,10 +125,10 @@ public class BinaryTree implements BinaryTreeOpt {
         while (!queue.isEmpty()) {
             // traverse a level
             int size = queue.size();
-            List<Integer> level = new ArrayList<>(size);
+            T level = constructor.apply(size);
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.remove();
-                level.add(node.val);
+                action.accept(level, node.val);
                 if (node.left != null) {
                     queue.add(node.left);
                 }
@@ -135,7 +136,6 @@ public class BinaryTree implements BinaryTreeOpt {
                     queue.add(node.right);
                 }
             }
-            levelAction.accept(level);
         }
     }
 

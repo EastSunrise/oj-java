@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p400;
 import java.util.Arrays;
 import java.util.Random;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution528;
 
 /**
  * 497. Random Point in Non-overlapping Rectangles (Medium)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Point in Non-overlapping Rectangles</a>
  * @since 2021-07-09
  */
-class Solution497 implements Solution {
+public class Solution497 implements Solution {
 
     static class Solution {
 
