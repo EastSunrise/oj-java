@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p500.Solution583;
 
 /**
  * 72. Edit Distance (HARD)
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/edit-distance/">Edit Distance</a>
  * @since 2021-07-19
  */
-class Solution72 implements Solution {
+public class Solution72 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

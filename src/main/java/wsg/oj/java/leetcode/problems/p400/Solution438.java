@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p200.Solution242;
+import wsg.oj.java.leetcode.problems.p500.Solution567;
 
 /**
  * 438. Find All Anagrams in a String (Medium)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution242;
  * in a String</a>
  * @since 2021-07-07
  */
-class Solution438 implements Solution {
+public class Solution438 implements Solution {
 
     /**
      * Keeps a window of the same length of p.
