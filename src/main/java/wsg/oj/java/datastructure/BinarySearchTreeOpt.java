@@ -16,7 +16,12 @@ public interface BinarySearchTreeOpt extends BinaryTreeOpt {
     boolean isValidBST(TreeNode root);
 
     /**
-     * Deletes the node of the specified target.
+     * Deletes the node with the specified target.
      */
     TreeNode deleteValue(TreeNode root, int target);
+
+    /**
+     * Returns the node with the specified target.
+     */
+    TreeNode find(TreeNode root, int target);
 }

@@ -10,44 +10,6 @@ import java.util.Stack;
  */
 public class StackSolution {
 
-    // 503. 下一个更大元素 II
-    public int[] nextGreaterElements(int[] nums) {
-        int len = nums.length;
-        if (len < 1) {
-            return new int[0];
-        }
-        int[] temp = new int[len * 2], ret = new int[len];
-        Arrays.fill(ret, -1);
-        System.arraycopy(nums, 0, temp, 0, len);
-        System.arraycopy(nums, 0, temp, len, len);
-        for (int i = len; i < len * 2; i++) {
-            if (temp[i] > temp[len - 1]) {
-                ret[len - 1] = i;
-                break;
-            }
-        }
-        for (int i = len - 2; i >= 0; i--) {
-            if (temp[i] == temp[i + 1]) {
-                ret[i] = ret[i + 1];
-            } else if (temp[i] < temp[i + 1]) {
-                ret[i] = i + 1;
-            } else {
-                for (int j = ret[i + 1]; j < i + len; j++) {
-                    if (temp[j] > temp[i]) {
-                        ret[i] = j;
-                        break;
-                    }
-                }
-            }
-        }
-        for (int i = 0; i < len; i++) {
-            if (ret[i] > -1) {
-                ret[i] = nums[ret[i] % len];
-            }
-        }
-        return ret;
-    }
-
     // 636. 函数的独占时间
     public int[] exclusiveTime(int n, List<String> logs) {
         Stack<Integer> ids = new Stack<>();

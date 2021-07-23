@@ -8,6 +8,7 @@ import java.util.function.Function;
 import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution637;
 
 /**
  * 107. Binary Tree Level Order Traversal II (Medium)
@@ -19,7 +20,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Level Order Traversal II</a>
  * @since 2021-07-08
  */
-class Solution107 extends BinaryTree implements Solution {
+public class Solution107 extends BinaryTree implements Solution {
 
     /**
      * @see #traverseLevels(TreeNode, Function, BiConsumer)

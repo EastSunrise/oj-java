@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p400;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution56;
+import wsg.oj.java.leetcode.problems.p600.Solution605;
 
 /**
  * 495. Teemo Attacking (Easy)
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution56;
  * @see <a href="https://leetcode-cn.com/problems/teemo-attacking/">Teemo Attacking</a>
  * @since 2021-07-14
  */
-class Solution495 implements Solution {
+public class Solution495 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

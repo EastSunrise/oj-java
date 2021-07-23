@@ -287,7 +287,12 @@ Create table If Not Exists cinema
     description varchar(255),
     rating      float(2, 1)
 );
-# solution todo
+# solution
+select id, movie, description, rating
+from cinema
+where description <> 'boring'
+  and id & 1
+order by rating desc;
 
 
 # 626. Exchange Seats (Medium)
@@ -309,7 +314,9 @@ create table if not exists salary
     sex    char(1),
     salary int
 );
-# solution todo
+# solution
+update salary
+set sex=if(sex = 'f', 'm', 'f');
 
 
 # 1179. Reformat Department Table (Easy)

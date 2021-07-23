@@ -8,20 +8,6 @@ import java.util.List;
  */
 public class StringSolution {
 
-    // 537. 复数乘法
-    public String complexNumberMultiply(String a, String b) {
-        int[] aInts = getInts(a), bInts = getInts(b);
-        return "" + (aInts[0] * bInts[0] - aInts[1] * bInts[1])
-            + "+" + (aInts[0] * bInts[1] + aInts[1] * bInts[0]) + "i";
-    }
-
-    private int[] getInts(String s) {
-        String[] ss = s.substring(0, s.length() - 1).split("\\+");
-        return new int[]{
-            Integer.parseInt(ss[0]), Integer.parseInt(ss[1])
-        };
-    }
-
     // 816. 模糊坐标
     public List<String> ambiguousCoordinates(String S) {
         S = S.substring(1, S.length() - 1);
@@ -51,16 +37,5 @@ public class StringSolution {
             }
         }
         return list;
-    }
-
-    static class GroupValue {
-
-        int groupId;
-        double value;
-
-        GroupValue(int groupId, double value) {
-            this.groupId = groupId;
-            this.value = value;
-        }
     }
 }

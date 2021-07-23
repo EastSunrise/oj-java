@@ -5,6 +5,7 @@ import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution94;
+import wsg.oj.java.leetcode.problems.p600.Solution671;
 
 /**
  * 230. Kth Smallest Element in a BST (Medium)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution94;
  * Element in a BST</a>
  * @since 2021-07-13
  */
-class Solution230 extends BinaryTree implements Solution {
+public class Solution230 extends BinaryTree implements Solution {
 
     /**
      * @complexity T=O(k)

@@ -10,28 +10,6 @@ import wsg.oj.java.datastructure.TreeNode;
  */
 public class TreeSolution {
 
-    // 513. 找树左下角的值
-    public int findBottomLeftValue(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        int res = 0;
-        while (!queue.isEmpty()) {
-            res = queue.element().val;
-            Queue<TreeNode> cur = new LinkedList<>();
-            while (!queue.isEmpty()) {
-                TreeNode node = queue.poll();
-                if (node.left != null) {
-                    cur.add(node.left);
-                }
-                if (node.right != null) {
-                    cur.add(node.right);
-                }
-            }
-            queue = cur;
-        }
-        return res;
-    }
-
     // 662. 二叉树最大宽度
     public int widthOfBinaryTree(TreeNode root) {
         if (root == null) {

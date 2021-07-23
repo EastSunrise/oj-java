@@ -1,8 +1,5 @@
 package wsg.oj.java.leetcode.problems.old;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Stack;
 
 /**
@@ -12,65 +9,6 @@ import java.util.Stack;
  * @since 2021/6/15
  */
 public class OldSolution {
-
-    // 554.
-    public int leastBricks(List<List<Integer>> wall) {
-        Map<Integer, Integer> times = new HashMap<>();
-        for (List<Integer> list : wall) {
-            int size = list.size();
-            if (size > 1) {
-                int sum = list.get(0);
-                if (times.containsKey(sum)) {
-                    times.put(sum, times.get(sum) + 1);
-                } else {
-                    times.put(sum, 1);
-                }
-                for (int i = 1; i < size - 1; i++) {
-                    sum += list.get(i);
-                    if (times.containsKey(sum)) {
-                        times.put(sum, times.get(sum) + 1);
-                    } else {
-                        times.put(sum, 1);
-                    }
-                }
-            }
-        }
-        int max = 0;
-        for (Integer value : times.values()) {
-            if (value > max) {
-                max = value;
-            }
-        }
-
-        return wall.size() - max;
-    }
-
-    // 593.
-    public boolean validSquare(int[] p1, int[] p2, int[] p3, int[] p4) {
-        int len12 = getDistance(p1, p2);
-        int len13 = getDistance(p1, p3);
-        int len14 = getDistance(p1, p4);
-        if (len13 > len12) {
-            return isValidSquare(p1, p2, p3, p4, len13, len12, len14);
-        }
-        if (len14 > len12) {
-            return isValidSquare(p1, p2, p4, p3, len14, len12, len13);
-        }
-        if (len12 > 0) {
-            return isValidSquare(p1, p3, p2, p4, len12, len13, len14);
-        }
-        return false;
-    }
-
-    private boolean isValidSquare(int[] p1, int[] p2, int[] p3, int[] p4, int len13, int len12,
-        int len14) {
-        return (p1[0] + p3[0]) == (p2[0] + p4[0]) && (p1[1] + p3[1]) == (p2[1] + p4[1])
-            && len13 == getDistance(p2, p4) && len12 == len14;
-    }
-
-    private int getDistance(int[] p1, int[] p2) {
-        return (p1[0] - p2[0]) * (p1[0] - p2[0]) + (p1[1] - p2[1]) * (p1[1] - p2[1]);
-    }
 
     // 880.
     public String decodeAtIndex(String S, int K) {

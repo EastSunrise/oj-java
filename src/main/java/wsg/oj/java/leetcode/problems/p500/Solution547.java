@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p500;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution657;
 
 /**
  * 547. Number of Provinces (MEDIUM)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/number-of-provinces/">Number of Provinces</a>
  * @since 2021-07-20
  */
-class Solution547 implements Solution {
+public class Solution547 implements Solution {
 
     /**
      * @see #DFS

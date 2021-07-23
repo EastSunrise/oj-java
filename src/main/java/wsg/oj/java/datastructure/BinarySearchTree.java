@@ -96,4 +96,18 @@ public class BinarySearchTree extends BinaryTree implements BinarySearchTreeOpt 
         }
         return rootParent.left;
     }
+
+    @Override
+    public TreeNode find(TreeNode root, int target) {
+        if (root == null) {
+            return null;
+        }
+        if (root.val == target) {
+            return root;
+        }
+        if (root.val > target) {
+            return find(root.left, target);
+        }
+        return find(root.right, target);
+    }
 }
