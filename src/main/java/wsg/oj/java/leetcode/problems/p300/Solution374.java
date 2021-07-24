@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p300;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p200.Solution278;
+import wsg.oj.java.leetcode.problems.p600.Solution658;
 
 /**
  * 374. Guess Number Higher or Lower (Easy)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution278;
  * or Lower</a>
  * @since 2021-07-13
  */
-class Solution374 implements Solution {
+public class Solution374 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

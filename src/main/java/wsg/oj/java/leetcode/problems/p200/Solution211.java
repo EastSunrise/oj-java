@@ -1,5 +1,9 @@
 package wsg.oj.java.leetcode.problems.p200;
 
+import java.util.ArrayList;
+import java.util.function.Function;
+import wsg.oj.java.datastructure.TrieNode;
+import wsg.oj.java.datastructure.TrieOpt;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -14,20 +18,23 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 class Solution211 extends Solution208 implements Solution {
 
-    static class WordDictionary extends Trie {
+    public static class WordDictionary {
+
+        private final int size = 26;
+        private final Function<Character, Integer> keyExtractor = ch -> ch - 'a';
+        private final TrieNode root;
 
         /**
          * Initialize your data structure here.
          */
         public WordDictionary() {
-            super();
+            this.root = TrieOpt.create(new ArrayList<>(), keyExtractor, size);
         }
 
         public void addWord(String word) {
-            insert(word);
+            TrieOpt.insert(root, word, keyExtractor, size);
         }
 
-        @Override
         public boolean search(String word) {
             return search(this.root, word.toCharArray(), 0);
         }

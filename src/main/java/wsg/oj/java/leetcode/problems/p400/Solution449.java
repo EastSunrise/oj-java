@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Stack;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution652;
 
 /**
  * todo 449. Serialize and Deserialize BST (Medium)
@@ -17,7 +18,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Deserialize BST</a>
  * @since 2021-07-08
  */
-class Solution449 implements Solution {
+public class Solution449 implements Solution {
 
     static class Codec {
 

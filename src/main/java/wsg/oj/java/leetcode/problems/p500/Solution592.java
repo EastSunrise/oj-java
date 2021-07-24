@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p500;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution640;
 
 /**
  * 592. Fraction Addition and Subtraction (MEDIUM)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Addition and Subtraction</a>
  * @since 2021-07-20
  */
-class Solution592 implements Solution {
+public class Solution592 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

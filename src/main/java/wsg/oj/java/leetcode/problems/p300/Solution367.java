@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p300;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution69;
+import wsg.oj.java.leetcode.problems.p600.Solution633;
 
 /**
  * 367. Valid Perfect Square (Easy)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution69;
  * @see <a href="https://leetcode-cn.com/problems/valid-perfect-square/">Valid Perfect Square</a>
  * @since 2021-07-13
  */
-class Solution367 implements Solution {
+public class Solution367 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_LOG_N

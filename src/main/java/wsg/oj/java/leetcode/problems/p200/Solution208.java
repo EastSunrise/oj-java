@@ -1,6 +1,11 @@
 package wsg.oj.java.leetcode.problems.p200;
 
+import java.util.ArrayList;
+import java.util.function.Function;
+import wsg.oj.java.datastructure.TrieNode;
+import wsg.oj.java.datastructure.TrieOpt;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution648;
 
 /**
  * 208. Implement Trie (Prefix Tree) (Medium)
@@ -15,68 +20,40 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * (Prefix Tree)</a>
  * @since 2021-06-25
  */
-class Solution208 implements Solution {
+public class Solution208 implements Solution {
 
-    static class Trie {
+    public static class Trie {
 
-        final TrieNode root;
+        private final int size = 26;
+        private final Function<Character, Integer> keyExtractor = ch -> ch - 'a';
+        private final TrieNode root;
 
         /**
          * Initialize your data structure here.
          */
         public Trie() {
-            this.root = new TrieNode();
+            this.root = TrieOpt.create(new ArrayList<>(), keyExtractor, size);
         }
 
         /**
          * Inserts a word into the trie.
          */
         public void insert(String word) {
-            TrieNode node = this.root;
-            for (char ch : word.toCharArray()) {
-                int i = ch - 'a';
-                if (node.next[i] == null) {
-                    node.next[i] = new TrieNode();
-                }
-                node = node.next[i];
-            }
-            node.end = true;
+            TrieOpt.insert(root, word, keyExtractor, size);
         }
 
         /**
          * Returns if the word is in the trie.
          */
         public boolean search(String word) {
-            TrieNode node = root;
-            for (char ch : word.toCharArray()) {
-                int i = ch - 'a';
-                if (node.next[i] == null) {
-                    return false;
-                }
-                node = node.next[i];
-            }
-            return node.end;
+            return TrieOpt.search(root, word, keyExtractor);
         }
 
         /**
          * Returns if there is any word in the trie that starts with the given prefix.
          */
         public boolean startsWith(String prefix) {
-            TrieNode node = root;
-            for (char ch : prefix.toCharArray()) {
-                int i = ch - 'a';
-                if (node.next[i] == null) {
-                    return false;
-                }
-                node = node.next[i];
-            }
-            return true;
-        }
-
-        static class TrieNode {
-
-            boolean end = false;
-            TrieNode[] next = new TrieNode[26];
+            return TrieOpt.startsWith(root, prefix, keyExtractor);
         }
     }
 }

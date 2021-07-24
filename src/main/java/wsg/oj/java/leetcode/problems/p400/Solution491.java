@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p400;
 import java.util.ArrayList;
 import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution646;
 
 /**
  * 491. Increasing Subsequences (Medium)
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Subsequences</a>
  * @since 2021-07-09
  */
-class Solution491 implements Solution {
+public class Solution491 implements Solution {
 
     /**
      * @complexity T=O(n*2^n)

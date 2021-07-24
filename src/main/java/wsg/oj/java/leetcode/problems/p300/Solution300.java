@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution646;
 
 /**
  * 300. Longest Increasing Subsequence (Medium)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Increasing Subsequence</a>
  * @since 2021-07-04
  */
-class Solution300 implements Solution {
+public class Solution300 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

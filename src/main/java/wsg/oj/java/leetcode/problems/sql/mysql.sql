@@ -302,7 +302,14 @@ Create table If Not Exists seat
     id      int,
     student varchar(255)
 );
-# solution todo
+# solution
+select (case
+            when id & 1 and (select count(*) from seat) = id then id
+            when id & 1 then id + 1
+            else id - 1 end) as id,
+       student
+from seat
+order by id;
 
 
 # 627. Swap Salary (Easy)
