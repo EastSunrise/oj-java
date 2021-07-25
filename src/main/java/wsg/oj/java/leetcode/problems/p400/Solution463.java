@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p400;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution695;
 
 /**
  * 463. Island Perimeter (Easy)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/island-perimeter/">Island Perimeter</a>
  * @since 2021-07-14
  */
-class Solution463 implements Solution {
+public class Solution463 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_MN

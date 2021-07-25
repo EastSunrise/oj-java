@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p400;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution698;
 
 /**
  * 416. Partition Equal Subset Sum (Medium)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Subset Sum</a>
  * @since 2021-07-07
  */
-class Solution416 implements Solution {
+public class Solution416 implements Solution {
 
     /**
      * @complexity T=O(ns), s=sum/2

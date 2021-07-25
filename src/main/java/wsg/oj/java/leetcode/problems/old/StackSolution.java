@@ -2,37 +2,11 @@ package wsg.oj.java.leetcode.problems.old;
 
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
 
 /**
  * @author Kingen
  */
 public class StackSolution {
-
-    // 636. 函数的独占时间
-    public int[] exclusiveTime(int n, List<String> logs) {
-        Stack<Integer> ids = new Stack<>();
-        int[] ret = new int[n];
-        int lastTime = 0;
-        for (String log : logs) {
-            String[] parts = log.split(":");
-            int id = Integer.parseInt(parts[0]);
-            int time = Integer.parseInt(parts[2]);
-            if ("start".equals(parts[1])) {
-                if (!ids.empty()) {
-                    ret[ids.peek()] += time - lastTime;
-                }
-                ids.push(id);
-                lastTime = time;
-            } else {
-                time++;
-                ret[ids.pop()] += time - lastTime;
-                lastTime = time;
-            }
-        }
-        return ret;
-    }
 
     // 739. 每日温度
     public int[] dailyTemperatures(int[] T) {

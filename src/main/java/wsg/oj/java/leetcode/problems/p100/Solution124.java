@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution687;
 
 /**
  * 124. Binary Tree Maximum Path Sum (HARD)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Path Sum</a>
  * @since 2021-07-19
  */
-class Solution124 implements Solution {
+public class Solution124 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

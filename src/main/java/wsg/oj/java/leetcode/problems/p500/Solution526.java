@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution667;
 
 /**
  * 526. Beautiful Arrangement (MEDIUM)
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/beautiful-arrangement/">Beautiful Arrangement</a>
  * @since 2021-07-20
  */
-class Solution526 implements Solution {
+public class Solution526 implements Solution {
 
     /**
      * @see #DFS

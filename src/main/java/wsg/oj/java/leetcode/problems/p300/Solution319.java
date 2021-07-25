@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p300;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution672;
 
 /**
  * 319. Bulb Switcher (Medium)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/bulb-switcher/">Bulb Switcher</a>
  * @since 2021-07-13
  */
-class Solution319 implements Solution {
+public class Solution319 implements Solution {
 
     /**
      * The number of switching ith bulb is represented as the count of factors of the number i

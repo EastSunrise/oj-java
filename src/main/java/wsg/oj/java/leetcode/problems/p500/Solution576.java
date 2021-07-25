@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p500;
 
 import java.util.Arrays;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution688;
 
 /**
  * 576. Out of Boundary Paths (MEDIUM)
@@ -11,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/out-of-boundary-paths/">Out of Boundary Paths</a>
  * @since 2021-07-20
  */
-class Solution576 implements Solution {
+public class Solution576 implements Solution {
 
     long mod = 1_000_000_007;
 

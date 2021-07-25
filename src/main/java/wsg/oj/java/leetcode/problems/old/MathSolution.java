@@ -10,22 +10,6 @@ import java.util.Stack;
  */
 public class MathSolution {
 
-    // 633. 平方数之和
-    public boolean judgeSquareSum(int c) {
-        int a = 0, b = (int) Math.sqrt(c);
-        while (a <= b) {
-            int sum = a * a + b * b;
-            if (sum < c) {
-                a++;
-            } else if (sum > c) {
-                b--;
-            } else {
-                return true;
-            }
-        }
-        return false;
-    }
-
     // wsg 735. 行星碰撞
     public int[] asteroidCollision(int[] asteroids) {
         Stack<Integer> stack = new Stack<>();
