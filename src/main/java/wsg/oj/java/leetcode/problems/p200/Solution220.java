@@ -18,7 +18,7 @@ class Solution220 implements Solution {
     /**
      * Slides a window and builds a {@link TreeSet} to keep the numbers within the window.
      *
-     * @complexity T=O(nlog_m), m=min(n,k)
+     * @complexity T=O(nlog{m}), m=min(n,k)
      * @complexity S=O(m)
      */
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {

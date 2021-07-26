@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution300;
  * of Longest Increasing Subsequence</a>
  * @since 2021-07-23
  */
-class Solution673 implements Solution {
+public class Solution673 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN

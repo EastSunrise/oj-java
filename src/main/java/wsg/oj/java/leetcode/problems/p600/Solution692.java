@@ -23,7 +23,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution347;
 class Solution692 implements Solution {
 
     /**
-     * @complexity T=O(n+n*log_{k})
+     * @complexity T=O(n+n*log{k})
      * @complexity S=O(n+k)
      */
     public List<String> topKFrequent(String[] words, int k) {
