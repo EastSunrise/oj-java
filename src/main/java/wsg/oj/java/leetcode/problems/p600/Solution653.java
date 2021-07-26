@@ -22,7 +22,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution167;
  * a BST</a>
  * @since 2021-07-23
  */
-class Solution653 extends BinaryTree implements Solution {
+public class Solution653 extends BinaryTree implements Solution {
 
     /**
      * @see #PREORDER

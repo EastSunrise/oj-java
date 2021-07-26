@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/print-binary-tree/">Print Binary Tree</a>
  * @since 2021-07-23
  */
-class Solution655 extends BinaryTree implements Solution {
+public class Solution655 extends BinaryTree implements Solution {
 
     /**
      * @complexity T=O(h*2^h), h=the height of the tree

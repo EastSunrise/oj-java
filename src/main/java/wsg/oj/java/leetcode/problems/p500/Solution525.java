@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/contiguous-array/">Contiguous Array</a>
  * @since 2021-07-20
  */
-class Solution525 implements Solution {
+public class Solution525 implements Solution {
 
     /**
      * If nums[i,j] has the same count of 0's and 1's, nums[0,i-1] and nums[0,j] have the same

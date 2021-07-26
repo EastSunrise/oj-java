@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution191;
  * @see <a href="https://leetcode-cn.com/problems/counting-bits/">Counting Bits</a>
  * @since 2021-07-13
  */
-class Solution338 implements Solution {
+public class Solution338 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

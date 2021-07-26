@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Number At Least Twice of Others</a>
  * @since 2021-07-26
  */
-class Solution747 implements Solution {
+public class Solution747 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/partition-list/">Partition List</a>
  * @since 2021-07-11
  */
-class Solution86 implements Solution {
+public class Solution86 implements Solution {
 
     /**
      * Partitions it node by node.

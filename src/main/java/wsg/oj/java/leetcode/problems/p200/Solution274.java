@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/h-index/">H-Index</a>
  * @since 2021-07-13
  */
-class Solution274 implements Solution {
+public class Solution274 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N_LOG_N

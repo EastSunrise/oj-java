@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Sorted List to Binary Search Tree</a>
  * @since 2021-07-11
  */
-class Solution109 implements Solution {
+public class Solution109 implements Solution {
 
     /**
      * @see #PREORDER

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * OR of Two Binary Grids Represented as Quad-Trees</a>
  * @since 2021-07-20
  */
-class Solution558 implements Solution {
+public class Solution558 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN

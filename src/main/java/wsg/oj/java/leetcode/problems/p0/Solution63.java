@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/unique-paths-ii/">Unique Paths II</a>
  * @since 2021-07-11
  */
-class Solution63 implements Solution {
+public class Solution63 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

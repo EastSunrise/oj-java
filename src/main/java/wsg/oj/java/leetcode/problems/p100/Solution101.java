@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/symmetric-tree/">Symmetric Tree</a>
  * @since 2021-07-11
  */
-class Solution101 implements Solution {
+public class Solution101 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/integer-break/">Integer Break</a>
  * @since 2021-07-04
  */
-class Solution343 implements Solution {
+public class Solution343 implements Solution {
 
     /**
      * Suppose that n=a[1]+...+a[k], p=a[1]*...*a[k].

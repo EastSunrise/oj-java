@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Immutable</a>
  * @since 2021-07-13
  */
-class Solution303 implements Solution {
+public class Solution303 implements Solution {
 
     static class NumArray {
 

@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/ugly-number/">Ugly Number</a>
  * @since 2021-07-13
  */
-class Solution263 implements Solution {
+public class Solution263 implements Solution {
 
     /**
      * @complexity T=O(ijk), n=2^i*3^j*5^k*p

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution173;
  * @see <a href="https://leetcode-cn.com/problems/peeking-iterator/">Peeking Iterator</a>
  * @since 2021/7/2
  */
-class Solution284 implements Solution {
+public class Solution284 implements Solution {
 
     static class PeekingIterator implements Iterator<Integer> {
 

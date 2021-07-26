@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution75;
  * @see <a href="https://leetcode-cn.com/problems/sort-list/">Sort List</a>
  * @since 2021-07-12
  */
-class Solution148 implements Solution {
+public class Solution148 implements Solution {
 
     /**
      * Quick sorting.

@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/task-scheduler/">Task Scheduler</a>
  * @since 2021-07-23
  */
-class Solution621 implements Solution {
+public class Solution621 implements Solution {
 
     /**
      * Supposes that tasks=A,A,A,B,B,B,C,D,.., which has three for A,B and one for each other

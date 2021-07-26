@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Binary Tree from Preorder and Inorder Traversal</a>
  * @since 2021-07-11
  */
-class Solution105 implements Solution {
+public class Solution105 implements Solution {
 
     /**
      * Builds the tree recursively.

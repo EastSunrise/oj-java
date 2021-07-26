@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/design-hashset/">Design HashSet</a>
  * @since 2021-07-26
  */
-class Solution705 implements Solution {
+public class Solution705 implements Solution {
 
     static class MyHashSet {
 

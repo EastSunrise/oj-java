@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Zeroes</a>
  * @since 2021-07-12
  */
-class Solution172 implements Solution {
+public class Solution172 implements Solution {
 
     /**
      * n!=2^i*5^j*p^k, i>=j, gcd(5,p)=1, so the number of zeros is the number of factor 5.

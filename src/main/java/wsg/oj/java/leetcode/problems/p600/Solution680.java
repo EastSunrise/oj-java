@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution125;
  * @see <a href="https://leetcode-cn.com/problems/valid-palindrome-ii/">Valid Palindrome II</a>
  * @since 2021-07-23
  */
-class Solution680 implements Solution {
+public class Solution680 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

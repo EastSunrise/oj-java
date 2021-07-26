@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Numbers Range</a>
  * @since 2021-07-12
  */
-class Solution201 implements Solution {
+public class Solution201 implements Solution {
 
     /**
      * Changes all bits after consecutive same bits from the first bit to zeros.

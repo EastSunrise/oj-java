@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Two Arrays II</a>
  * @since 2021-07-13
  */
-class Solution350 implements Solution {
+public class Solution350 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_M_PLUS_N

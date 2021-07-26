@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/132-pattern/">132 Pattern</a>
  * @since 2021-07-08
  */
-class Solution456 implements Solution {
+public class Solution456 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N_LOG_N

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution141;
  * @see <a href="https://leetcode-cn.com/problems/happy-number/">Happy Number</a>
  * @since 2021-07-12
  */
-class Solution202 implements Solution {
+public class Solution202 implements Solution {
 
     /**
      * Assumes that n=a1a2...ak and the sum of squares of each digit is S. Then

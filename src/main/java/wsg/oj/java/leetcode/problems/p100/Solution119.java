@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/pascals-triangle-ii/">Pascal's Triangle II</a>
  * @since 2021-07-11
  */
-class Solution119 implements Solution {
+public class Solution119 implements Solution {
 
     /**
      * Each row is a group of binomial coefficients: C(n,0),C(n,1),...,C(n,n).

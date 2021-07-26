@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/permutations-ii/">Permutations II</a>
  * @since 2021-07-11
  */
-class Solution47 implements Solution {
+public class Solution47 implements Solution {
 
     /**
      * Chooses a number different from the last one every time.

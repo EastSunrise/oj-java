@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p500.Solution583;
+import wsg.oj.java.leetcode.problems.p700.Solution712;
 
 /**
  * 72. Edit Distance (HARD)

@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/diagonal-traverse/">Diagonal Traverse</a>
  * @since 2021-07-09
  */
-class Solution498 implements Solution {
+public class Solution498 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_MN

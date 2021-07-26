@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/predict-the-winner/">Predict the Winner</a>
  * @since 2021-07-14
  */
-class Solution486 implements Solution {
+public class Solution486 implements Solution {
 
     public boolean PredictTheWinner(int[] nums) {
         return false;

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p500.Solution530;
  * Distance Between BST Nodes</a>
  * @since 2021-07-26
  */
-class Solution783 implements Solution {
+public class Solution783 implements Solution {
 
     /**
      * Same as {@link Solution530#getMinimumDifference(TreeNode)}.

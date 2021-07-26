@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/summary-ranges/">Summary Ranges</a>
  * @since 2021-07-13
  */
-class Solution228 implements Solution {
+public class Solution228 implements Solution {
 
     /**
      * @complexity S=O(L), L=the numbers of not-overlapping ranges

@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/clone-graph/">Clone Graph</a>
  * @since 2021-07-11
  */
-class Solution133 implements Solution {
+public class Solution133 implements Solution {
 
     /**
      * @see #DFS

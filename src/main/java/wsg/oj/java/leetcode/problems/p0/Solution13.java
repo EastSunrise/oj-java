@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/roman-to-integer/">Roman to Integer</a>
  * @since 2021-07-10
  */
-class Solution13 implements Solution {
+public class Solution13 implements Solution {
 
     Map<Character, Integer> symbols = Map.of(
         'I', 1,

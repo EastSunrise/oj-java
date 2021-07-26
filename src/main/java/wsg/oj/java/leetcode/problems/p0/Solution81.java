@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Rotated Sorted Array II</a>
  * @since 2021-07-11
  */
-class Solution81 implements Solution {
+public class Solution81 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

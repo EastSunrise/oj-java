@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/pascals-triangle/">Pascal's Triangle</a>
  * @since 2021-07-11
  */
-class Solution118 implements Solution {
+public class Solution118 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN

@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Duplicates from Sorted Array II</a>
  * @since 2021-07-11
  */
-class Solution80 implements Solution {
+public class Solution80 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

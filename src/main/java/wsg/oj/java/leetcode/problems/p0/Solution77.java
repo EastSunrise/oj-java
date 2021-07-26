@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/combinations/">Combinations</a>
  * @since 2021-07-11
  */
-class Solution77 implements Solution {
+public class Solution77 implements Solution {
 
     /**
      * @complexity S=O(kC(n,k))

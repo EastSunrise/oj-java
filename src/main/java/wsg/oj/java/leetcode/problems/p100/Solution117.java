@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Next Right Pointers in Each Node II</a>
  * @since 2021-07-11
  */
-class Solution117 extends Solution116 implements Solution {
+public class Solution117 extends Solution116 implements Solution {
 
     /**
      * @see #PREORDER

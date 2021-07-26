@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Smallest Letter Greater Than Target</a>
  * @since 2021-07-26
  */
-class Solution744 implements Solution {
+public class Solution744 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

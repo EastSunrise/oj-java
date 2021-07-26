@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/decode-string/">Decode String</a>
  * @since 2021-07-06
  */
-class Solution394 implements Solution {
+public class Solution394 implements Solution {
 
     /**
      * @complexity T=O(n)

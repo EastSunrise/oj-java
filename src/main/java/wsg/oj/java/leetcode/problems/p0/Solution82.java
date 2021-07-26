@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Duplicates from Sorted List II</a>
  * @since 2021-07-11
  */
-class Solution82 implements Solution {
+public class Solution82 implements Solution {
 
     /**
      * Deletes node by node.

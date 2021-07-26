@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/3sum/">3Sum</a>
  * @since 2021-07-10
  */
-class Solution15 implements Solution {
+public class Solution15 implements Solution {
 
     /**
      * Sorts the array first, chooses a and then finds b&c using binary searching. Use pruning if

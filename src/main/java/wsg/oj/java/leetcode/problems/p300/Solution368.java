@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Subset</a>
  * @since 2021-07-04
  */
-class Solution368 implements Solution {
+public class Solution368 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/rectangle-area/">Rectangle Area</a>
  * @since 2021-07-13
  */
-class Solution223 implements Solution {
+public class Solution223 implements Solution {
 
     /**
      * Deletes the common area if overlapping.

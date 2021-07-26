@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/contains-duplicate/">Contains Duplicate</a>
  * @since 2021-07-12
  */
-class Solution217 implements Solution {
+public class Solution217 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

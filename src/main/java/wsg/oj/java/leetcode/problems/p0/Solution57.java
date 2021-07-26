@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/insert-interval/">Insert Interval</a>
  * @since 2021-07-11
  */
-class Solution57 implements Solution {
+public class Solution57 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

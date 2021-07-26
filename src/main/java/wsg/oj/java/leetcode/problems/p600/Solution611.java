@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/valid-triangle-number/">Valid Triangle Number</a>
  * @since 2021-07-23
  */
-class Solution611 implements Solution {
+public class Solution611 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN

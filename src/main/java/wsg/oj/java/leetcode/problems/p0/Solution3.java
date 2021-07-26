@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Substring Without Repeating Characters</a>
  * @since 2021-07-10
  */
-class Solution3 implements Solution {
+public class Solution3 implements Solution {
 
     /**
      * Slides a window and records the indices of chars with a map.

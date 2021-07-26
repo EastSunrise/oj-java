@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution341;
  * @see <a href="https://leetcode-cn.com/problems/array-nesting/">Array Nesting</a>
  * @since 2021-07-20
  */
-class Solution565 implements Solution {
+public class Solution565 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

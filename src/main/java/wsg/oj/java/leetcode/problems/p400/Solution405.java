@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * to Hexadecimal</a>
  * @since 2021-07-14
  */
-class Solution405 implements Solution {
+public class Solution405 implements Solution {
 
     /**
      * @complexity T=O(b/4), b=bits of the value

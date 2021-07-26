@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Sequence</a>
  * @since 2021-07-11
  */
-class Solution128 implements Solution {
+public class Solution128 implements Solution {
 
     /**
      * Sorts and finds.

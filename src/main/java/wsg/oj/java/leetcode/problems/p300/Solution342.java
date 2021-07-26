@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution231;
  * @see <a href="https://leetcode-cn.com/problems/power-of-four/">Power of Four</a>
  * @since 2021-07-13
  */
-class Solution342 implements Solution {
+public class Solution342 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_CONSTANT

@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Matching</a>
  * @since 2021-07-16
  */
-class Solution10 implements Solution {
+public class Solution10 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

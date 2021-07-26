@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p400.Solution459;
  * @see <a href="https://leetcode-cn.com/problems/repeated-string-match/">Repeated String Match</a>
  * @since 2021-07-23
  */
-class Solution686 implements Solution {
+public class Solution686 implements Solution {
 
     public int repeatedStringMatch(String a, String b) {
         StringBuilder builder = new StringBuilder(a);

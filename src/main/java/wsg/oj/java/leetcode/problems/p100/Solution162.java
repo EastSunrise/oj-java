@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/find-peak-element/">Find Peak Element</a>
  * @since 2021-07-12
  */
-class Solution162 implements Solution {
+public class Solution162 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

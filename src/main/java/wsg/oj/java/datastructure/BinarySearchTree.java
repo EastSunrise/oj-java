@@ -33,6 +33,30 @@ public class BinarySearchTree extends BinaryTree implements BinarySearchTreeOpt 
 
     /**
      * @see wsg.oj.java.Complexity#TIME_H
+     * @see wsg.oj.java.Complexity#SPACE_H
+     */
+    @Override
+    public TreeNode insertValue(TreeNode root, int target) {
+        return insert(root, target);
+    }
+
+    private TreeNode insert(TreeNode node, int target) {
+        if (node == null) {
+            return new TreeNode(target);
+        }
+        if (node.val == target) {
+            return node;
+        }
+        if (node.val > target) {
+            node.left = insert(node.left, target);
+        } else {
+            node.right = insert(node.right, target);
+        }
+        return node;
+    }
+
+    /**
+     * @see wsg.oj.java.Complexity#TIME_H
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     @Override

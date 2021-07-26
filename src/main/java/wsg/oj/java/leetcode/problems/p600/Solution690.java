@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/employee-importance/">Employee Importance</a>
  * @since 2021-07-23
  */
-class Solution690 implements Solution {
+public class Solution690 implements Solution {
 
     /**
      * @complexity T=O(N) N=the number of subordinates of the employee

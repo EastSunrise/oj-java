@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * III</a>
  * @since 2021-07-12
  */
-class Solution220 implements Solution {
+public class Solution220 implements Solution {
 
     /**
      * Slides a window and builds a {@link TreeSet} to keep the numbers within the window.

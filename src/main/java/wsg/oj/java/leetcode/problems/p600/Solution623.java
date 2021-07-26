@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/add-one-row-to-tree/">Add One Row to Tree</a>
  * @since 2021-07-23
  */
-class Solution623 implements Solution {
+public class Solution623 implements Solution {
 
     /**
      * @complexity T=O(2^d)

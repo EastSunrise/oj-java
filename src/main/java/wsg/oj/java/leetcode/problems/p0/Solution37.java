@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/sudoku-solver/">Sudoku Solver</a>
  * @since 2021-07-18
  */
-class Solution37 implements Solution {
+public class Solution37 implements Solution {
 
     public void solveSudoku(char[][] board) {
         boolean[][] rows = new boolean[9][9];

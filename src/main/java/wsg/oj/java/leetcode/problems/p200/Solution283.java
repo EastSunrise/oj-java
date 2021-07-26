@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution27;
  * @see <a href="https://leetcode-cn.com/problems/move-zeroes/">Move Zeroes</a>
  * @since 2021-07-13
  */
-class Solution283 implements Solution {
+public class Solution283 implements Solution {
 
     /**
      * Similar to insertion sorting.

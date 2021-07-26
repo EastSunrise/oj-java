@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p400.Solution495;
  * @see <a href="https://leetcode-cn.com/problems/dota2-senate/">Dota2 Senate</a>
  * @since 2021-07-23
  */
-class Solution649 implements Solution {
+public class Solution649 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

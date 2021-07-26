@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/heaters/">Heaters</a>
  * @since 2021-07-09
  */
-class Solution475 implements Solution {
+public class Solution475 implements Solution {
 
     /**
      * @complexity T=O(m*log{m}+n*log{n})

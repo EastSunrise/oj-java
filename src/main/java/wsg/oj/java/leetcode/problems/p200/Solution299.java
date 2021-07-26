@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/bulls-and-cows/">Bulls and Cows</a>
  * @since 2021-07-13
  */
-class Solution299 implements Solution {
+public class Solution299 implements Solution {
 
     /**
      * @complexity S=O(10)

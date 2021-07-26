@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution18;
  * @see <a href="https://leetcode-cn.com/problems/4sum-ii/">4Sum II</a>
  * @since 2021-07-08
  */
-class Solution454 implements Solution {
+public class Solution454 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN

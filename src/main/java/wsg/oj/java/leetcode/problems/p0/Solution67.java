@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/add-binary/">Add Binary</a>
  * @since 2021-07-11
  */
-class Solution67 implements Solution {
+public class Solution67 implements Solution {
 
     /**
      * Adds the two numbers bit by bit with a carry.

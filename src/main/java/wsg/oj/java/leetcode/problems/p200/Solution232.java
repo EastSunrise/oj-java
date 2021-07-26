@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * using Stacks</a>
  * @since 2021-07-13
  */
-class Solution232 implements Solution {
+public class Solution232 implements Solution {
 
     static class MyQueue {
 

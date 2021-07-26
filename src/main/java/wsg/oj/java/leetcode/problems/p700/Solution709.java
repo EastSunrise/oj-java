@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/to-lower-case/">To Lower Case</a>
  * @since 2021-07-26
  */
-class Solution709 implements Solution {
+public class Solution709 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

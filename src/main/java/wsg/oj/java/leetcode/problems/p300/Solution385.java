@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/mini-parser/">Mini Parser</a>
  * @since 2021-07-06
  */
-class Solution385 implements Solution {
+public class Solution385 implements Solution {
 
     /**
      * Uses a stack to stores outer {@link NestedInteger}.

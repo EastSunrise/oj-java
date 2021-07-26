@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/number-of-boomerangs/">Number of Boomerangs</a>
  * @since 2021-07-08
  */
-class Solution447 implements Solution {
+public class Solution447 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NN

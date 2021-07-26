@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution39;
  * @see <a href="https://leetcode-cn.com/problems/combination-sum-iii/">Combination Sum III</a>
  * @since 2021-07-12
  */
-class Solution216 implements Solution {
+public class Solution216 implements Solution {
 
     /**
      * @complexity T=(kC), C=C(9,k)

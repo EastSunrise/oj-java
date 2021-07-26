@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Functions</a>
  * @since 2021-07-23
  */
-class Solution636 implements Solution {
+public class Solution636 implements Solution {
 
     /**
      * @complexity T=O(s), s=the size of logs

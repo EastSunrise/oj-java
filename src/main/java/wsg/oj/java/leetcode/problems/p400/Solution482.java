@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Formatting</a>
  * @since 2021-07-14
  */
-class Solution482 implements Solution {
+public class Solution482 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/longest-palindrome/">Longest Palindrome</a>
  * @since 2021-07-14
  */
-class Solution409 implements Solution {
+public class Solution409 implements Solution {
 
     /**
      * @complexity T=O(n+58), 58='z'-'A'+1

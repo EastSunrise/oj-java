@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/simplify-path/">Simplify Path</a>
  * @since 2021-07-11
  */
-class Solution71 implements Solution {
+public class Solution71 implements Solution {
 
     /**
      * Uses a stack to return back.

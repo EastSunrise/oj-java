@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/image-smoother/">Image Smoother</a>
  * @since 2021-07-23
  */
-class Solution661 implements Solution {
+public class Solution661 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_MN

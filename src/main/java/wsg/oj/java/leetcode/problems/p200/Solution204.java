@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/count-primes/">Count Primes</a>
  * @since 2021-07-12
  */
-class Solution204 implements Solution {
+public class Solution204 implements Solution {
 
     /**
      * Sieve of Eratosthenes.

@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/combination-sum-ii/">Combination Sum II</a>
  * @since 2021-07-10
  */
-class Solution40 implements Solution {
+public class Solution40 implements Solution {
 
     /**
      * Sort the array to avoid duplicate results and invalid branches. Count every distinct number

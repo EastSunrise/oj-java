@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/sum-of-left-leaves/">Sum of Left Leaves</a>
  * @since 2021-07-14
  */
-class Solution404 implements Solution {
+public class Solution404 implements Solution {
 
     /**
      * @see #PREORDER

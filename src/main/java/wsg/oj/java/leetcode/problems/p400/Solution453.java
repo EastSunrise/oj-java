@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Moves to Equal Array Elements</a>
  * @since 2021-07-14
  */
-class Solution453 implements Solution {
+public class Solution453 implements Solution {
 
     /**
      * It means decrementing one element of the array by 1 in one move.

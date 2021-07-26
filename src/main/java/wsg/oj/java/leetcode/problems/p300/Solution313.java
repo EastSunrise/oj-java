@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution264;
  * @see <a href="https://leetcode-cn.com/problems/super-ugly-number/">Super Ugly Number</a>
  * @since 2021-07-13
  */
-class Solution313 implements Solution {
+public class Solution313 implements Solution {
 
     /**
      * @complexity T=O(nk), k=len(primes)

@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Operations to Make a Subsequence</a>
  * @since 2021-07-26
  */
-class Solution1713 implements Solution {
+public class Solution1713 implements Solution {
 
     /**
      * @complexity T=O(m+n*log{n})

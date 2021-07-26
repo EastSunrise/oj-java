@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Letters</a>
  * @since 2021-07-13
  */
-class Solution316 implements Solution {
+public class Solution316 implements Solution {
 
     /**
      * Uses a stack to store the chars in lexicographical order.

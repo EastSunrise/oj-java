@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution27;
  * Elements</a>
  * @since 2021-07-12
  */
-class Solution203 implements Solution {
+public class Solution203 implements Solution {
 
     /**
      * Deletes the targets node by node.

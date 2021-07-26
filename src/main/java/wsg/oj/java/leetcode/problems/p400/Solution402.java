@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/remove-k-digits/">Remove K Digits</a>
  * @since 2021-07-06
  */
-class Solution402 implements Solution {
+public class Solution402 implements Solution {
 
     /**
      * Builds a monotonic queue.

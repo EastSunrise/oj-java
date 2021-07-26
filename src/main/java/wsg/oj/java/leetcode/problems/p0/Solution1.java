@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p100.Solution167;
+import wsg.oj.java.leetcode.problems.p500.Solution560;
+import wsg.oj.java.leetcode.problems.p600.Solution653;
 
 /**
  * 1. Two Sum (Easy)

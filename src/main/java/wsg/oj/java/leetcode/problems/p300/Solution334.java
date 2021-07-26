@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Triplet Subsequence</a>
  * @since 2021-07-04
  */
-class Solution334 implements Solution {
+public class Solution334 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

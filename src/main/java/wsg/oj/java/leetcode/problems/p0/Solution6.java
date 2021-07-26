@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/zigzag-conversion/">ZigZag Conversion</a>
  * @since 2021-07-10
  */
-class Solution6 implements Solution {
+public class Solution6 implements Solution {
 
     /**
      * Finds the regular pattern of indices of each row.

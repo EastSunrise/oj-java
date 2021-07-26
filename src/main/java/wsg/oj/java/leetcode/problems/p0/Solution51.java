@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/n-queens/">N-Queens</a>
  * @since 2021-07-18
  */
-class Solution51 implements Solution {
+public class Solution51 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_NF

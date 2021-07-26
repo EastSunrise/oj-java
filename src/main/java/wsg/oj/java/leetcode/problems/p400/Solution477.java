@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Distance</a>
  * @since 2021-07-09
  */
-class Solution477 implements Solution {
+public class Solution477 implements Solution {
 
     /**
      * Counts ones and zeros bit by bit.

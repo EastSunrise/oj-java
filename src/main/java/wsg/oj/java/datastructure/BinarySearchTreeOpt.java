@@ -16,6 +16,11 @@ public interface BinarySearchTreeOpt extends BinaryTreeOpt {
     boolean isValidBST(TreeNode root);
 
     /**
+     * Inserts a value into the tree if it is not already present in the tree.
+     */
+    TreeNode insertValue(TreeNode root, int target);
+
+    /**
      * Deletes the node with the specified target.
      */
     TreeNode deleteValue(TreeNode root, int target);

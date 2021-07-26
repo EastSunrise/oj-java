@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/word-search/">Word Search</a>
  * @since 2021-07-11
  */
-class Solution79 implements Solution {
+public class Solution79 implements Solution {
 
     /**
      * @complexity T=O(mnl), l=len(word)

@@ -20,7 +20,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution347;
  * @see <a href="https://leetcode-cn.com/problems/top-k-frequent-words/">Top K Frequent Words</a>
  * @since 2021-07-23
  */
-class Solution692 implements Solution {
+public class Solution692 implements Solution {
 
     /**
      * @complexity T=O(n+n*log{k})

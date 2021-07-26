@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/add-digits/">Add Digits</a>
  * @since 2021-07-13
  */
-class Solution258 implements Solution {
+public class Solution258 implements Solution {
 
     /**
      * Assumes that <i>num = 100a + 10b + c</i>, then sum of digits <i>s = a + b + c</i>. The

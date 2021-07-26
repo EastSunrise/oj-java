@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Word</a>
  * @since 2021-07-26
  */
-class Solution748 implements Solution {
+public class Solution748 implements Solution {
 
     /**
      * @complexity T=O(m+L), m=len(licensePlate), L=the total length of words

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/basic-calculator-ii/">Basic Calculator II</a>
  * @since 2021-07-13
  */
-class Solution227 implements Solution {
+public class Solution227 implements Solution {
 
     Map<Character, Integer> priorities = Map.of(
         '+', 2,

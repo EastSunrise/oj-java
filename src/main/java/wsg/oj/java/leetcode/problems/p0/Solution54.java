@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/spiral-matrix/">Spiral Matrix</a>
  * @since 2021-07-11
  */
-class Solution54 implements Solution {
+public class Solution54 implements Solution {
 
     /**
      * Changes the length of numbers to be traversed each turn.

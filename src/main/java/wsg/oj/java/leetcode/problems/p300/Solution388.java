@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Path</a>
  * @since 2021-07-06
  */
-class Solution388 implements Solution {
+public class Solution388 implements Solution {
 
     /**
      * @complexity T=O(n)

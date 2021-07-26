@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * String</a>
  * @since 2021-07-13
  */
-class Solution345 implements Solution {
+public class Solution345 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

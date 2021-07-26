@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Water</a>
  * @since 2021-07-10
  */
-class Solution11 implements Solution {
+public class Solution11 implements Solution {
 
     /**
      * Uses two pointers from both sides to find a possible area.

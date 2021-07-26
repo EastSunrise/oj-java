@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Arrays</a>
  * @since 2021-07-16
  */
-class Solution4 implements Solution {
+public class Solution4 implements Solution {
 
     /**
      * @complexity T=O(k), k=log{min(m,n)}

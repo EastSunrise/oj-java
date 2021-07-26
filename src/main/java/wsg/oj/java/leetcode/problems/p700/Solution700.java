@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Binary Search Tree</a>
  * @since 2021-07-23
  */
-class Solution700 extends BinarySearchTree implements Solution {
+public class Solution700 extends BinarySearchTree implements Solution {
 
     /**
      * @see BinarySearchTreeOpt#find(TreeNode, int)

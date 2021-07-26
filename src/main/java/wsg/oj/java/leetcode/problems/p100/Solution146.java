@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/lru-cache/">LRU Cache</a>
  * @since 2021-06-25
  */
-class Solution146 implements Solution {
+public class Solution146 implements Solution {
 
     static class LRUCache {
 

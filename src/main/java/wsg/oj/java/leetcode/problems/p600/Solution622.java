@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/design-circular-queue/">Design Circular Queue</a>
  * @since 2021-07-23
  */
-class Solution622 implements Solution {
+public class Solution622 implements Solution {
 
     static class MyCircularQueue {
 

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Mutation</a>
  * @since 2021-07-07
  */
-class Solution433 implements Solution {
+public class Solution433 implements Solution {
 
     /**
      * Changes a character at once to get possible next vertexes in the path from start to end.

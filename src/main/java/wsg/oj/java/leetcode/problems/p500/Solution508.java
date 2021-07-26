@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Sum</a>
  * @since 2021-07-20
  */
-class Solution508 implements Solution {
+public class Solution508 implements Solution {
 
     /**
      * @see #POSTORDER

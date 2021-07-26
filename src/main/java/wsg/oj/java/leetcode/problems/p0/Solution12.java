@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/integer-to-roman/">Integer to Roman</a>
  * @since 2021-07-10
  */
-class Solution12 implements Solution {
+public class Solution12 implements Solution {
 
     char[] dict = new char[]{
         'I', 'V', 'X', 'L', 'C', 'D', 'M'

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Substrings in Wraparound String</a>
  * @since 2021-07-09
  */
-class Solution467 implements Solution {
+public class Solution467 implements Solution {
 
     /**
      * @complexity T=O(n)

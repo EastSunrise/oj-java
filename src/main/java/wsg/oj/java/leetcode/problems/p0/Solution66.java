@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/plus-one/">Plus One</a>
  * @since 2021-07-11
  */
-class Solution66 implements Solution {
+public class Solution66 implements Solution {
 
     /**
      * Pluses bit by bit with a carry.

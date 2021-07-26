@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/rotate-image/">Rotate Image</a>
  * @since 2021-07-11
  */
-class Solution48 implements Solution {
+public class Solution48 implements Solution {
 
     /**
      * Divides the matrix into four parts.

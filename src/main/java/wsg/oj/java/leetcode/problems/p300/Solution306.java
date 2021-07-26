@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/additive-number/">Additive Number</a>
  * @since 2021-07-13
  */
-class Solution306 implements Solution {
+public class Solution306 implements Solution {
 
     /**
      * Prunes when the left chars are not enough.

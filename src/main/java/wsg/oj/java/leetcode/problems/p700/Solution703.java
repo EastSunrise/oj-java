@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution215;
  * Element in a Stream</a>
  * @since 2021-07-26
  */
-class Solution703 implements Solution {
+public class Solution703 implements Solution {
 
     static class KthLargest {
 

@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution287;
  * @see <a href="https://leetcode-cn.com/problems/set-mismatch/">Set Mismatch</a>
  * @since 2021-07-23
  */
-class Solution645 implements Solution {
+public class Solution645 implements Solution {
 
     /**
      * Bit calculation.

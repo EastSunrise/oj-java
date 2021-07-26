@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution125;
  * List</a>
  * @since 2021-07-12
  */
-class Solution234 extends Solution206 implements Solution {
+public class Solution234 extends Solution206 implements Solution {
 
     /**
      * Reverses the right half list and compares it with the left half.

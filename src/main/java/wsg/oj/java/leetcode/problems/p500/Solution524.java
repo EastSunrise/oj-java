@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Word in Dictionary through Deleting</a>
  * @since 2021-07-20
  */
-class Solution524 extends Solution522 implements Solution {
+public class Solution524 extends Solution522 implements Solution {
 
     public String findLongestWord(String s, String[] dictionary) {
         Arrays.sort(dictionary, (s1, s2) -> {

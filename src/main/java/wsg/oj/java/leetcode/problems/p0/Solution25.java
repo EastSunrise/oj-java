@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * k-Group</a>
  * @since 2021-07-17
  */
-class Solution25 implements Solution {
+public class Solution25 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

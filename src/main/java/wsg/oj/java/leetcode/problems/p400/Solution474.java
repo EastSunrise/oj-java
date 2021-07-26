@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/ones-and-zeroes/">Ones and Zeroes</a>
  * @since 2021-07-09
  */
-class Solution474 implements Solution {
+public class Solution474 implements Solution {
 
     /**
      * @complexity T=O(lmn+L), l=the length of the array, L=sum(len(str))

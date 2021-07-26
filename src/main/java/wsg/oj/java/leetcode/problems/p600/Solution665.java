@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/non-decreasing-array/">Non-decreasing Array</a>
  * @since 2021-07-23
  */
-class Solution665 implements Solution {
+public class Solution665 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

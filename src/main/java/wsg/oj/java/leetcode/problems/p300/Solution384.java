@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/shuffle-an-array/">Shuffle an Array</a>
  * @since 2021-07-06
  */
-class Solution384 implements Solution {
+public class Solution384 implements Solution {
 
     /**
      * @see <a href="https://eastsunrise.github.io/wiki-kingen/cs/algorithms/others/knuth-shuffle-algorithm.html">Knuth

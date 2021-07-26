@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution215;
  * Moves to Equal Array Elements II</a>
  * @since 2021-07-09
  */
-class Solution462 extends Solution215 {
+public class Solution462 extends Solution215 {
 
     /**
      * Finds the median.

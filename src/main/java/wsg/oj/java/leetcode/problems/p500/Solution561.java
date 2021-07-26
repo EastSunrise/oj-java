@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/array-partition-i/">Array Partition I</a>
  * @since 2021-07-20
  */
-class Solution561 implements Solution {
+public class Solution561 implements Solution {
 
     /**
      * Supposes that min[i] is the ith smallest number. If min[0] and min[1] are not in the same

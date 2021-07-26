@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/design-circular-deque/">Design Circular Deque</a>
  * @since 2021-07-23
  */
-class Solution641 implements Solution {
+public class Solution641 implements Solution {
 
     static class MyCircularDeque {
 

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Partitioning</a>
  * @since 2021-07-11
  */
-class Solution131 implements Solution {
+public class Solution131 implements Solution {
 
     /**
      * @complexity T=O(n*2^n)

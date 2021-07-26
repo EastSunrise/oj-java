@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/jump-game/">Jump Game</a>
  * @since 2021-07-11
  */
-class Solution55 implements Solution {
+public class Solution55 implements Solution {
 
     /**
      * Traverses the array and update the rightmost bound that can be reached.

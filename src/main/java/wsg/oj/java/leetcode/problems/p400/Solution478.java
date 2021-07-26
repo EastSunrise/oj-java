@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Random Point in a Circle</a>
  * @since 2021-07-09
  */
-class Solution478 implements Solution {
+public class Solution478 implements Solution {
 
     static class Solution {
 

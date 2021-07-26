@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/fizz-buzz/">Fizz Buzz</a>
  * @since 2021-07-14
  */
-class Solution412 implements Solution {
+public class Solution412 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Reconstruction by Height</a>
  * @since 2021-07-07
  */
-class Solution406 implements Solution {
+public class Solution406 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N_LOG_N

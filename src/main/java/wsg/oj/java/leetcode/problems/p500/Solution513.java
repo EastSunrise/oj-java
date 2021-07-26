@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Tree Value</a>
  * @since 2021-07-20
  */
-class Solution513 implements Solution {
+public class Solution513 implements Solution {
 
     /**
      * @see #POSTORDER

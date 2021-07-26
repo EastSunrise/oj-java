@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/matchsticks-to-square/">Matchsticks to Square</a>
  * @since 2021-07-09
  */
-class Solution473 implements Solution {
+public class Solution473 implements Solution {
 
     /**
      * Divides the array into four parts whose sums are equal to each other.

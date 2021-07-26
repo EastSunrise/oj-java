@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Unsorted Continuous Subarray</a>
  * @since 2021-07-20
  */
-class Solution581 implements Solution {
+public class Solution581 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution191;
  * @see <a href="https://leetcode-cn.com/problems/hamming-distance/">Hamming Distance</a>
  * @since 2021-07-14
  */
-class Solution461 implements Solution {
+public class Solution461 implements Solution {
 
     /**
      * @complexity T=O(32)

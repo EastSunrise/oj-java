@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/merge-sorted-array/">Merge Sorted Array</a>
  * @since 2021-07-11
  */
-class Solution88 implements Solution {
+public class Solution88 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_M_PLUS_N

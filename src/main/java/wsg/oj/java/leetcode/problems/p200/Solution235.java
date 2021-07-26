@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Common Ancestor of a Binary Search Tree</a>
  * @since 2021-07-13
  */
-class Solution235 implements Solution {
+public class Solution235 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution191;
  * Number of Set Bits in Binary Representation</a>
  * @since 2021-07-26
  */
-class Solution762 implements Solution {
+public class Solution762 implements Solution {
 
     /**
      * @complexity T=O(r-l)

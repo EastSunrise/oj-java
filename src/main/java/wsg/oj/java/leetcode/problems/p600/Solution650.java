@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/2-keys-keyboard/">2 Keys Keyboard</a>
  * @since 2021-07-23
  */
-class Solution650 implements Solution {
+public class Solution650 implements Solution {
 
     public int minSteps(int n) {
         int steps = 0, p = 2;

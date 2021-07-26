@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/unique-paths/">Unique Paths</a>
  * @since 2021-07-11
  */
-class Solution62 implements Solution {
+public class Solution62 implements Solution {
 
     /**
      * C(m+n-2,m-1).

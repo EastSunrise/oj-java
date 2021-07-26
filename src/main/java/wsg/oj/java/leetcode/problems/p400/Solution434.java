@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Segments in a String</a>
  * @since 2021-07-14
  */
-class Solution434 implements Solution {
+public class Solution434 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution231;
  * @see <a href="https://leetcode-cn.com/problems/power-of-three/">Power of Three</a>
  * @since 2021-07-13
  */
-class Solution326 implements Solution {
+public class Solution326 implements Solution {
 
     /**
      * @complexity T=O(log_{3}{n})

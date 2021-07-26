@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution191;
  * Number with Alternating Bits</a>
  * @since 2021-07-23
  */
-class Solution693 implements Solution {
+public class Solution693 implements Solution {
 
     /**
      * @complexity T=(32)

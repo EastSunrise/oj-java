@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * String III</a>
  * @since 2021-07-20
  */
-class Solution557 implements Solution {
+public class Solution557 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

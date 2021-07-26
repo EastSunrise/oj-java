@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * String from Binary Tree</a>
  * @since 2021-07-23
  */
-class Solution606 implements Solution {
+public class Solution606 implements Solution {
 
     /**
      * @see #PREORDER

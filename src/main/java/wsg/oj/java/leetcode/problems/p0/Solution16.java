@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/3sum-closest/">3Sum Closest</a>
  * @since 2021-07-10
  */
-class Solution16 implements Solution {
+public class Solution16 implements Solution {
 
     /**
      * It's similar to {@link Solution15}. Sort the array first, choose a and then find b&c using

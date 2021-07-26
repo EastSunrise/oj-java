@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * XOR of Two Numbers in an Array</a>
  * @since 2021-07-07
  */
-class Solution421 implements Solution {
+public class Solution421 implements Solution {
 
     /**
      * Predetermines the maximum bit by bit and finds whether there are two prefixes whose XOR is

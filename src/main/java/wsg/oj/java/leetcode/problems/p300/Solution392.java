@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/is-subsequence/">Is Subsequence</a>
  * @since 2021-07-13
  */
-class Solution392 implements Solution {
+public class Solution392 implements Solution {
 
     /**
      * @complexity T=O(l), l=len(t)

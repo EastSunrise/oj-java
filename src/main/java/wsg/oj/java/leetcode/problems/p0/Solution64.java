@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/minimum-path-sum/">Minimum Path Sum</a>
  * @since 2021-07-11
  */
-class Solution64 implements Solution {
+public class Solution64 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

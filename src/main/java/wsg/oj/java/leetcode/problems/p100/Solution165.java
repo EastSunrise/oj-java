@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Numbers</a>
  * @since 2021-07-12
  */
-class Solution165 implements Solution {
+public class Solution165 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_M_PLUS_N

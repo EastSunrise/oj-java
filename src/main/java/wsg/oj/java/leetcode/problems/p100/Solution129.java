@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Numbers</a>
  * @since 2021-07-11
  */
-class Solution129 implements Solution {
+public class Solution129 implements Solution {
 
     /**
      * @see #DFS

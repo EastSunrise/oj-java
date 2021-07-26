@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/maximum-swap/">Maximum Swap</a>
  * @since 2021-07-23
  */
-class Solution670 implements Solution {
+public class Solution670 implements Solution {
 
     /**
      * @complexity T=(32*log32)

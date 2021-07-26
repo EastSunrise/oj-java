@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * with Concatenation of All Words</a>
  * @since 2021-07-17
  */
-class Solution30 implements Solution {
+public class Solution30 implements Solution {
 
     /**
      * @complexity T=O(2m-nl), m=len(s), n=len(words), l=len(word[i])

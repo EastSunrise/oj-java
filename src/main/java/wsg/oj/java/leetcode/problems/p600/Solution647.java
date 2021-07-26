@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p500.Solution516;
  * Substrings</a>
  * @since 2021-07-23
  */
-class Solution647 implements Solution {
+public class Solution647 implements Solution {
 
     /**
      * todo Manacher Algorithm

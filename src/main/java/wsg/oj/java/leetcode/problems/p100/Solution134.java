@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/gas-station/">Gas Station</a>
  * @since 2021-07-12
  */
-class Solution134 implements Solution {
+public class Solution134 implements Solution {
 
     /**
      * Assume that the left gas is G(s,t) when traveling from station s to station t:

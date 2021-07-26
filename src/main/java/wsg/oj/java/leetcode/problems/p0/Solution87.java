@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/scramble-string/">Scramble String</a>
  * @since 2021-07-19
  */
-class Solution87 implements Solution {
+public class Solution87 implements Solution {
 
     /**
      * @complexity T=O(n^4)

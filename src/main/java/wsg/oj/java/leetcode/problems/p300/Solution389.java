@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution136;
  * @see <a href="https://leetcode-cn.com/problems/find-the-difference/">Find the Difference</a>
  * @since 2021-07-13
  */
-class Solution389 implements Solution {
+public class Solution389 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

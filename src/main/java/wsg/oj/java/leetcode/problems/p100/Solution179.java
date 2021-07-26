@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/largest-number/">Largest Number</a>
  * @since 2021-07-12
  */
-class Solution179 implements Solution {
+public class Solution179 implements Solution {
 
     /**
      * Sorts the numbers in lexicographical order: max(str(num1)+str(num2), str(num2)+str(num1)).

@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution264;
  * @see <a href="https://leetcode-cn.com/problems/merge-k-sorted-lists/">Merge k Sorted Lists</a>
  * @since 2021-07-16
  */
-class Solution23 implements Solution {
+public class Solution23 implements Solution {
 
     /**
      * @complexity T=O(L*log{n}), n=len(lists), l=the total length of all lists

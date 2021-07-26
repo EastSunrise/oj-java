@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/shopping-offers/">Shopping Offers</a>
  * @since 2021-07-23
  */
-class Solution638 implements Solution {
+public class Solution638 implements Solution {
 
     /**
      * @see #DFS

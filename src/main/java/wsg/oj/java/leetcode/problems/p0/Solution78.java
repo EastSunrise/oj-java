@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/subsets/">Subsets</a>
  * @since 2021-07-11
  */
-class Solution78 implements Solution {
+public class Solution78 implements Solution {
 
     /**
      * @see #BACKTRACKING

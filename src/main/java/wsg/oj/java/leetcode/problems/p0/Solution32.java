@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Parentheses</a>
  * @since 2021-07-17
  */
-class Solution32 implements Solution {
+public class Solution32 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

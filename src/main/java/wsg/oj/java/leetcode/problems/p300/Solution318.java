@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * of Word Lengths</a>
  * @since 2021-07-13
  */
-class Solution318 implements Solution {
+public class Solution318 implements Solution {
 
     /**
      * Uses a 26-bits integer as a word's hash.

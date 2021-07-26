@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Title</a>
  * @since 2021-07-12
  */
-class Solution168 implements Solution {
+public class Solution168 implements Solution {
 
     /**
      * 26-ary.

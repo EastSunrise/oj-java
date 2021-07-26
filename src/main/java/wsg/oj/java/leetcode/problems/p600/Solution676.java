@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution208;
  * Dictionary</a>
  * @since 2021-07-23
  */
-class Solution676 implements Solution {
+public class Solution676 implements Solution {
 
     static class MagicDictionary extends TrieOpt {
 

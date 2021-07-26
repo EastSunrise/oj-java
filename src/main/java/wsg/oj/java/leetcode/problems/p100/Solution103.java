@@ -18,7 +18,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Tree Zigzag Level Order Traversal</a>
  * @since 2021-07-11
  */
-class Solution103 extends BinaryTree implements Solution {
+public class Solution103 extends BinaryTree implements Solution {
 
     /**
      * @see #traverseLevels(TreeNode, Function, BiConsumer)

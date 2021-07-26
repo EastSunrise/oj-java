@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Common Ancestor of a Binary Tree</a>
  * @since 2021-07-13
  */
-class Solution236 implements Solution {
+public class Solution236 implements Solution {
 
     /**
      * @return {@literal null} if the node is null, p or q if this node is the ancestor of p or q,

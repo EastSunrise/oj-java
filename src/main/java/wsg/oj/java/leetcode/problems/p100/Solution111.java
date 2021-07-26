@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Binary Tree</a>
  * @since 2021-07-11
  */
-class Solution111 implements Solution {
+public class Solution111 implements Solution {
 
     /**
      * @see #POSTORDER

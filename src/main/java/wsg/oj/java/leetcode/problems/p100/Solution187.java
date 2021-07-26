@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Sequences</a>
  * @since 2021-07-12
  */
-class Solution187 implements Solution {
+public class Solution187 implements Solution {
 
     /**
      * Converts a sequence of 8 bits to a 32-bit integer.

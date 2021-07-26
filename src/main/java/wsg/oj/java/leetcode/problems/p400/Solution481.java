@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/magical-string/">Magical String</a>
  * @since 2021-07-09
  */
-class Solution481 implements Solution {
+public class Solution481 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

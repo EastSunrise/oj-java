@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/contains-duplicate-ii/">Contains Duplicate II</a>
  * @since 2021-07-12
  */
-class Solution219 implements Solution {
+public class Solution219 implements Solution {
 
     /**
      * Builds the map of a number to its last index in the array.

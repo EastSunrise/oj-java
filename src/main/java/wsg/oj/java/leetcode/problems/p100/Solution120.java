@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/triangle/">Triangle</a>
  * @since 2021-07-11
  */
-class Solution120 implements Solution {
+public class Solution120 implements Solution {
 
     /**
      * Traverses the triangle level by level from bottom to top.

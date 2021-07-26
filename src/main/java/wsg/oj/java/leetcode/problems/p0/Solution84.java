@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * in Histogram</a>
  * @since 2021-07-19
  */
-class Solution84 implements Solution {
+public class Solution84 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

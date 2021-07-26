@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/brick-wall/">Brick Wall</a>
  * @since 2021-07-20
  */
-class Solution554 implements Solution {
+public class Solution554 implements Solution {
 
     public int leastBricks(List<List<Integer>> wall) {
         Map<Integer, Integer> prefixSums = new HashMap<>();

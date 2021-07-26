@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Rectangle</a>
  * @since 2021-07-14
  */
-class Solution492 implements Solution {
+public class Solution492 implements Solution {
 
     public int[] constructRectangle(int area) {
         int W = (int) Math.sqrt(area);

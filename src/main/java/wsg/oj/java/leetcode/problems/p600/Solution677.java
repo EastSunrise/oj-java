@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/map-sum-pairs/">Map Sum Pairs</a>
  * @since 2021-07-23
  */
-class Solution677 implements Solution {
+public class Solution677 implements Solution {
 
     static class MapSum {
 

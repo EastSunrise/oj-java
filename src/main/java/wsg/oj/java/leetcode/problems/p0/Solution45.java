@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/jump-game-ii/">Jump Game II</a>
  * @since 2021-07-10
  */
-class Solution45 implements Solution {
+public class Solution45 implements Solution {
 
     /**
      * Records the rightmost position that can be reached after a step.

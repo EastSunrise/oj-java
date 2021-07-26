@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/text-justification/">Text Justification</a>
  * @since 2021-07-19
  */
-class Solution68 implements Solution {
+public class Solution68 implements Solution {
 
     public List<String> fullJustify(String[] words, int maxWidth) {
         int len = words.length;

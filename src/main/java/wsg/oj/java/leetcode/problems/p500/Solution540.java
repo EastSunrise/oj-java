@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * in a Sorted Array</a>
  * @since 2021-07-20
  */
-class Solution540 implements Solution {
+public class Solution540 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

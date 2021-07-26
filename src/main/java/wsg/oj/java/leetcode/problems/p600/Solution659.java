@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution347;
  * Array into Consecutive Subsequences</a>
  * @since 2021-07-23
  */
-class Solution659 implements Solution {
+public class Solution659 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

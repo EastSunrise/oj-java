@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Side View</a>
  * @since 2021-07-12
  */
-class Solution199 implements Solution {
+public class Solution199 implements Solution {
 
     /**
      * @see #LEVEL_ORDER

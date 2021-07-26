@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/design-hashmap/">Design HashMap</a>
  * @since 2021-07-26
  */
-class Solution706 implements Solution {
+public class Solution706 implements Solution {
 
     static class MyHashMap {
 

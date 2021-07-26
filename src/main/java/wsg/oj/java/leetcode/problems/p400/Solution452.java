@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Number of Arrows to Burst Balloons</a>
  * @since 2021-07-08
  */
-class Solution452 implements Solution {
+public class Solution452 implements Solution {
 
     /**
      * Sorts the array, travers from left to right and picks the smaller right bound if

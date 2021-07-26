@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/elimination-game/">Elimination Game</a>
  * @since 2021-07-06
  */
-class Solution390 implements Solution {
+public class Solution390 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_LOG_N

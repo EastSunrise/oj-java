@@ -9,7 +9,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/reshape-the-matrix/">Reshape the Matrix</a>
  * @since 2021-07-20
  */
-class Solution566 implements Solution {
+public class Solution566 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_MN

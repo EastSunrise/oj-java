@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p200.Solution215;
  * @see <a href="https://leetcode-cn.com/problems/third-maximum-number/">Third Maximum Number</a>
  * @since 2021-07-14
  */
-class Solution414 implements Solution {
+public class Solution414 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

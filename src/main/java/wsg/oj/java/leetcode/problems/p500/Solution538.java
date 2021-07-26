@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Greater Tree</a>
  * @since 2021-07-20
  */
-class Solution538 implements Solution {
+public class Solution538 implements Solution {
 
     /**
      * Traverses in RVL order.

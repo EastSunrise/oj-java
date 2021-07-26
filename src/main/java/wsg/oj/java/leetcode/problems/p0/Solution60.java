@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/permutation-sequence/">Permutation Sequence</a>
  * @since 2021-07-18
  */
-class Solution60 implements Solution {
+public class Solution60 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

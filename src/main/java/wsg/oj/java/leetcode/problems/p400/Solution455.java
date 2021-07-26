@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/assign-cookies/">Assign Cookies</a>
  * @since 2021-07-14
  */
-class Solution455 implements Solution {
+public class Solution455 implements Solution {
 
     /**
      * @complexity T=O(n*log{n}+m*log{m})

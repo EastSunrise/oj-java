@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Harmonious Subsequence</a>
  * @since 2021-07-20
  */
-class Solution594 implements Solution {
+public class Solution594 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

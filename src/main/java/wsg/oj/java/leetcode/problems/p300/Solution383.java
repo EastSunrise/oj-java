@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/ransom-note/">Ransom Note</a>
  * @since 2021-07-13
  */
-class Solution383 implements Solution {
+public class Solution383 implements Solution {
 
     /**
      * @complexity T=O(m+n)

@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.p400.Solution463;
  * @see <a href="https://leetcode-cn.com/problems/flood-fill/">Flood Fill</a>
  * @since 2021-07-26
  */
-class Solution733 implements Solution {
+public class Solution733 implements Solution {
 
     /**
      * @see #DFS

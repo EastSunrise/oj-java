@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Add and Search Words Data Structure</a>
  * @since 2021-06-25
  */
-class Solution211 extends Solution208 implements Solution {
+public class Solution211 extends Solution208 implements Solution {
 
     public static class WordDictionary {
 

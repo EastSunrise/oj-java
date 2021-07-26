@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Node</a>
  * @since 2021-07-13
  */
-class Solution382 implements Solution {
+public class Solution382 implements Solution {
 
 
     private static class Solution {

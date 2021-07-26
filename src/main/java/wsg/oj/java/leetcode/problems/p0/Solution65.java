@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/valid-number/">Valid Number</a>
  * @since 2021-07-19
  */
-class Solution65 implements Solution {
+public class Solution65 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

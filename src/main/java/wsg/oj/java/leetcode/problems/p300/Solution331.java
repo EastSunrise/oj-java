@@ -11,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Preorder Serialization of a Binary Tree</a>
  * @since 2021-07-04
  */
-class Solution331 implements Solution {
+public class Solution331 implements Solution {
 
     /**
      * @see #PREORDER

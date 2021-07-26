@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Substring with At Least K Repeating Characters</a>
  * @since 2021-07-06
  */
-class Solution395 implements Solution {
+public class Solution395 implements Solution {
 
     /**
      * @complexity T=O(26*n)

@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/longest-common-prefix/">Longest Common Prefix</a>
  * @since 2021-07-10
  */
-class Solution14 implements Solution {
+public class Solution14 implements Solution {
 
     /**
      * Compares the characters one by one.

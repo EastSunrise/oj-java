@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution70;
  * Stairs</a>
  * @since 2021-07-26
  */
-class Solution746 implements Solution {
+public class Solution746 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING

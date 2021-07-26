@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution2;
  * @see <a href="https://leetcode-cn.com/problems/add-two-numbers-ii/">Add Two Numbers II</a>
  * @since 2021-07-08
  */
-class Solution445 implements Solution {
+public class Solution445 implements Solution {
 
     /**
      * Uses two stacks to store the values of the two lists.
