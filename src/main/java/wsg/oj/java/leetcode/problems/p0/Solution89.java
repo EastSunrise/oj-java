@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p0;
 import java.util.ArrayList;
 import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p700.Solution717;
 
 /**
  * 89. Gray Code (Medium)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/gray-code/">Gray Code</a>
  * @since 2021-07-11
  */
-class Solution89 implements Solution {
+public class Solution89 implements Solution {
 
     /**
      * G(n+1) = G(n) + (Reverse(G(n)) + 2^n)

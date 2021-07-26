@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution1;
+import wsg.oj.java.leetcode.problems.p700.Solution724;
 
 /**
  * 560. Subarray Sum Equals K (MEDIUM)
@@ -18,7 +19,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution1;
  * @see <a href="https://leetcode-cn.com/problems/subarray-sum-equals-k/">Subarray Sum Equals K</a>
  * @since 2021-07-20
  */
-class Solution560 implements Solution {
+public class Solution560 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

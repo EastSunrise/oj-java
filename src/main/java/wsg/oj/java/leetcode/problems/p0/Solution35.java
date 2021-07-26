@@ -22,19 +22,7 @@ public class Solution35 implements Solution {
      * @see Complexity#SPACE_CONSTANT
      */
     public int searchInsert(int[] nums, int target) {
-        int low = 0;
-        int high = nums.length - 1;
-        while (low <= high) {
-            int mid = (low + high) >>> 1;
-            int midVal = nums[mid];
-            if (midVal < target) {
-                low = mid + 1;
-            } else if (midVal > target) {
-                high = mid - 1;
-            } else {
-                return mid;
-            }
-        }
-        return low;
+        int i = binarySearch(nums, target);
+        return i < 0 ? -i - 1 : i;
     }
 }

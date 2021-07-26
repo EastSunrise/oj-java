@@ -27,6 +27,22 @@ public interface Solution extends Complexity {
     String LEVEL_ORDER = "Level Order";
     String HASHTABLE = "Hash Table";
 
+    default int binarySearch(int[] nums, int target) {
+        int low = 0, high = nums.length - 1;
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            int midVal = nums[mid];
+            if (midVal < target) {
+                low = mid + 1;
+            } else if (midVal > target) {
+                high = mid - 1;
+            } else {
+                return mid;
+            }
+        }
+        return -(low + 1);
+    }
+
     default int gcd(int a, int b) {
         return a == 0 ? b : gcd(b % a, a);
     }

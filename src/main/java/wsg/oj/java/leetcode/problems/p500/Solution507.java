@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p500;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p700.Solution728;
 
 /**
  * 507. Perfect Number (EASY)
@@ -10,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/perfect-number/">Perfect Number</a>
  * @since 2021-07-20
  */
-class Solution507 implements Solution {
+public class Solution507 implements Solution {
 
     /**
      * @see #BINARY_SEARCH

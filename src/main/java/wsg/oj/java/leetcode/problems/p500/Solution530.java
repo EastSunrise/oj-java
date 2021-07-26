@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Absolute Difference in BST</a>
  * @since 2021-07-20
  */
-class Solution530 extends BinaryTree implements Solution {
+public class Solution530 extends BinaryTree implements Solution {
 
     /**
      * @see #INORDER
