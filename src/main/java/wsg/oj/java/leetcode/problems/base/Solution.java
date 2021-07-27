@@ -163,6 +163,12 @@ public interface Solution extends Complexity {
         return res;
     }
 
+    default void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+
     interface TriFunction<T, U, V, R> {
 
         R apply(T t, U u, V v);
