@@ -1,7 +1,9 @@
 package wsg.oj.java.leetcode.problems.p100;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution239;
 
 /**
  * 155. Min Stack (Easy)
@@ -16,14 +18,14 @@ public class Solution155 implements Solution {
 
     static class MinStack {
 
-        private final Stack<Integer> delegate;
+        private final Deque<Integer> delegate;
         private Integer min;
 
         /**
          * initialize your data structure here.
          */
         public MinStack() {
-            delegate = new Stack<>();
+            delegate = new LinkedList<>();
         }
 
         public void push(int val) {
@@ -46,7 +48,7 @@ public class Solution155 implements Solution {
         }
 
         public int top() {
-            return delegate.peek();
+            return delegate.element();
         }
 
         public int getMin() {

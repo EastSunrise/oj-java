@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution53;
  * @see <a href="https://leetcode-cn.com/problems/degree-of-an-array/">Degree of an Array</a>
  * @since 2021-07-23
  */
-class Solution697 implements Solution {
+public class Solution697 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

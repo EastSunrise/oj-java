@@ -394,41 +394,6 @@ public class Solution901 implements Solution {
         return 0;
     }
 
-    /**
-     * 977. Squares of a Sorted Array (Easy)
-     *
-     * @see Solution1#merge(int[], int, int[], int)
-     * @see Solution301#sortTransformedArray(int[], int, int, int)
-     * @see <a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/">Squares of a
-     * Sorted Array</a>
-     */
-    public int[] sortedSquares(int[] nums) {
-        int i = 0, len = nums.length;
-        while (i < len && nums[i] < 0) {
-            nums[i] = -nums[i];
-            i++;
-        }
-        int[] res = new int[len];
-        int j = i - 1, r = 0;
-        while (j >= 0 && i < len) {
-            if (nums[i] < nums[j]) {
-                res[r] = nums[i] * nums[i];
-                i++;
-            } else {
-                res[r] = nums[j] * nums[j];
-                j--;
-            }
-            r++;
-        }
-        while (i < len) {
-            res[r++] = nums[i] * nums[i++];
-        }
-        while (j >= 0) {
-            res[r++] = nums[j] * nums[j--];
-        }
-        return res;
-    }
-
 
     /**
      * 985. Sum of Even Numbers After Queries (Easy)

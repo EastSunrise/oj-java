@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -23,7 +24,7 @@ class Solution20 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new LinkedList<>();
         for (char ch : s.toCharArray()) {
             if ('(' == ch || '[' == ch || '{' == ch) {
                 stack.push(ch);

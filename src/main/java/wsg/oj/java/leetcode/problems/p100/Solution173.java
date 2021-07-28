@@ -1,10 +1,11 @@
 package wsg.oj.java.leetcode.problems.p100;
 
-import java.util.Stack;
-import java.util.function.Consumer;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution94;
+import wsg.oj.java.leetcode.problems.p200.Solution284;
 
 /**
  * 173. Binary Search Tree Iterator (Medium)
@@ -23,11 +24,11 @@ import wsg.oj.java.leetcode.problems.p0.Solution94;
 public class Solution173 implements Solution {
 
     /**
-     * @see wsg.oj.java.datastructure.BinaryTreeOpt#preorderTraversalWithStack(TreeNode, Consumer)
+     * @see #PREORDER
      */
     static class BSTIterator {
 
-        private final Stack<TreeNode> stack = new Stack<>();
+        private final Deque<TreeNode> stack = new LinkedList<>();
 
         public BSTIterator(TreeNode root) {
             do {

@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution1;
+import wsg.oj.java.leetcode.problems.p600.Solution653;
 
 /**
  * 167. Two Sum II - Input array is sorted (Easy)
@@ -17,7 +18,6 @@ import wsg.oj.java.leetcode.problems.p0.Solution1;
 public class Solution167 implements Solution {
 
     /**
-     * @see #BINARY_SEARCH
      * @see wsg.oj.java.Complexity#TIME_LOG_N
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */

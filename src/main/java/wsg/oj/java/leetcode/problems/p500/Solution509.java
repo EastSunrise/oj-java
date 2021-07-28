@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p500;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution70;
+import wsg.oj.java.leetcode.problems.p1100.Solution1137;
 
 /**
  * 509. Fibonacci Number (EASY)
@@ -19,18 +20,18 @@ public class Solution509 implements Solution {
     /**
      * @see #DYNAMIC_PROGRAMMING
      * @see wsg.oj.java.Complexity#TIME_N
-     * @see wsg.oj.java.Complexity#SPACE_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int fib(int n) {
         if (n < 2) {
             return n;
         }
-        int[] nums = new int[n + 1];
-        nums[0] = 0;
-        nums[1] = 1;
+        int prev = 0, cur = 1;
         for (int i = 2; i <= n; i++) {
-            nums[i] = nums[i - 2] + nums[i - 1];
+            cur = prev + cur;
+            prev = cur - prev;
+            cur %= 10_0000_0007;
         }
-        return nums[n];
+        return cur;
     }
 }

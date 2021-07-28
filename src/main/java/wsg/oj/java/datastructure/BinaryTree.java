@@ -1,8 +1,8 @@
 package wsg.oj.java.datastructure;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -43,7 +43,7 @@ public class BinaryTree implements BinaryTreeOpt {
 
     @Override
     public void preorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode current = stack.pop();
@@ -68,7 +68,7 @@ public class BinaryTree implements BinaryTreeOpt {
 
     @Override
     public void inorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         TreeNode current = root;
         do {
             while (current != null) {
@@ -96,13 +96,13 @@ public class BinaryTree implements BinaryTreeOpt {
     public void postorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
         TreeNode current = root;
         TreeNode last = null;
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         while (!stack.isEmpty() || current != null) {
             while (current != null) {
                 stack.push(current);
                 current = current.left;
             }
-            current = stack.peek();
+            current = stack.element();
             if (current.right == null || current.right == last) {
                 action.accept(current.val);
                 stack.pop();

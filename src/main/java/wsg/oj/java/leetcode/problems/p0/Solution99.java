@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
@@ -22,7 +23,7 @@ class Solution99 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_H
      */
     public void recoverTree(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         TreeNode current = root, prev = new TreeNode(Integer.MIN_VALUE);
         while (current != null || !stack.isEmpty()) {
             while (current != null) {
@@ -40,7 +41,7 @@ class Solution99 implements Solution {
         }
         TreeNode next = new TreeNode(Integer.MAX_VALUE);
         current = root;
-        stack = new Stack<>();
+        stack = new LinkedList<>();
         while (current != null || !stack.isEmpty()) {
             while (current != null) {
                 stack.push(current);

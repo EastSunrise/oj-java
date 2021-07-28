@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -22,7 +23,7 @@ public class Solution84 implements Solution {
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         // heights[indices[i-1]] < heights[indices[i]]
-        Stack<Integer> indices = new Stack<>();
+        Deque<Integer> indices = new LinkedList<>();
         int max = 0;
         for (int i = 0; i < n; i++) {
             while (!indices.isEmpty() && heights[indices.peek()] >= heights[i]) {

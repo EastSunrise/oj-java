@@ -1,58 +1,35 @@
 package wsg.oj.java.hanoi;
 
 /**
- * 汉诺塔
+ * Hanoi Tower.
  *
  * @author Kingen
  */
 public class HanoiTower {
 
-    private ASCStack<Integer> a;
-    private ASCStack<Integer> b;
-    private ASCStack<Integer> c;
-
-    public HanoiTower(int number) {
-        a = new ASCStack<>();
-        b = new ASCStack<>();
-        c = new ASCStack<>();
-        for (int i = 0; i < number; i++) {
-            try {
-                a.push(i);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+    public long hanoi(int n) {
+        if (n < 1) {
+            throw new IllegalArgumentException("At least one plate");
         }
+        AscendingStack a = new AscendingStack();
+        AscendingStack b = new AscendingStack();
+        AscendingStack c = new AscendingStack();
+        for (int i = 1; i < n; i++) {
+            a.push(i);
+        }
+        return move(a, b, c, a.size());
     }
 
-    public long hanoi() throws Exception {
-        return hanoi(a, b, c, a.size());
-    }
-
-    private long hanoi(ASCStack<Integer> a, ASCStack<Integer> b, ASCStack<Integer> c, int size) throws Exception {
+    private long move(AscendingStack src, AscendingStack tmp, AscendingStack dest, int size) {
         if (size == 1) {
-            c.push(a.pop());
+            dest.push(src.pop());
             return 1;
-        } else if (size > 1) {
-            long step = 0;
-            step += hanoi(a, c, b, size - 1);
-            c.push(a.pop());
-            step += 1;
-            step += hanoi(b, a, c, size - 1);
-            return step;
         }
-        return 0;
-    }
-
-    public static void main(String[] args) {
-        for (int i = 1; i < 64; i++) {
-            HanoiTower hanoiTower = new HanoiTower(i);
-            try {
-                long start = System.currentTimeMillis();
-                long step = hanoiTower.hanoi();
-                System.out.println(i + ": " + step + ", " + (System.currentTimeMillis() - start));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+        long step = 0;
+        step += move(src, dest, tmp, size - 1);
+        dest.push(src.pop());
+        step += 1;
+        step += move(tmp, src, dest, size - 1);
+        return step;
     }
 }

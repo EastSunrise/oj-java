@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p200.Solution206;
@@ -29,13 +30,13 @@ public class Solution92 implements Solution {
             pre = pre.next;
             right--;
         }
-        Stack<ListNode> stack = new Stack<>();
+        Deque<ListNode> stack = new LinkedList<>();
         ListNode cur = pre.next;
         while (right-- > 0) {
             stack.push(cur);
             cur = cur.next;
         }
-        while (!stack.empty()) {
+        while (!stack.isEmpty()) {
             ListNode top = stack.pop();
             // cut to prevent a circle
             top.next = null;

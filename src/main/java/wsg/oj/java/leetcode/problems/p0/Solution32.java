@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -20,7 +21,7 @@ public class Solution32 implements Solution {
      */
     public int longestValidParentheses(String s) {
         int max = 0;
-        Stack<Integer> lefts = new Stack<>();
+        Deque<Integer> lefts = new LinkedList<>();
         // store the last unmatched index
         lefts.push(-1);
         for (int i = 0; i < s.length(); i++) {

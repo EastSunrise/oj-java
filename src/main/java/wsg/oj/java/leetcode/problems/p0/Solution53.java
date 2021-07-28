@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p0;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p100.Solution121;
 import wsg.oj.java.leetcode.problems.p100.Solution152;
+import wsg.oj.java.leetcode.problems.p600.Solution697;
 
 /**
  * 53. Maximum Subarray (Easy)
@@ -20,20 +21,16 @@ import wsg.oj.java.leetcode.problems.p100.Solution152;
 public class Solution53 implements Solution {
 
     /**
-     * @see #DYNAMIC_PROGRAMMING
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int maxSubArray(int[] nums) {
-        int sum = nums[0], res = nums[0], len = nums.length;
-        for (int i = 1; i < len; i++) {
-            if (sum < 0) {
-                sum = nums[i];
-            } else {
-                sum += nums[i];
-            }
-            res = Math.max(res, sum);
+        // dp: the max subarray ends with nums[i]
+        int dp = 0, max = nums[0];
+        for (int num : nums) {
+            dp = Math.max(dp, dp + num);
+            max = Math.max(max, dp);
         }
-        return res;
+        return max;
     }
 }

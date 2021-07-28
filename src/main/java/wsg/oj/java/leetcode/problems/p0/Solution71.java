@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -19,7 +20,7 @@ public class Solution71 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public String simplifyPath(String path) {
-        Stack<String> stack = new Stack<>();
+        Deque<String> stack = new LinkedList<>();
         StringBuilder temp = new StringBuilder();
         for (char ch : (path + "/").toCharArray()) {
             if (ch == '/') {
@@ -38,7 +39,7 @@ public class Solution71 implements Solution {
                 temp.append(ch);
             }
         }
-        if (stack.empty()) {
+        if (stack.isEmpty()) {
             return "/";
         }
         StringBuilder res = new StringBuilder();

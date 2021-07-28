@@ -1,5 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
@@ -16,13 +18,13 @@ public class Solution232 implements Solution {
 
     static class MyQueue {
 
-        private final Stack<Integer> stack;
+        private final Deque<Integer> stack;
 
         /**
          * Initialize your data structure here.
          */
         public MyQueue() {
-            stack = new Stack<>();
+            stack = new LinkedList<>();
         }
 
         /**
@@ -50,7 +52,7 @@ public class Solution232 implements Solution {
          * Get the front element.
          */
         public int peek() {
-            return stack.peek();
+            return stack.element();
         }
 
         /**
