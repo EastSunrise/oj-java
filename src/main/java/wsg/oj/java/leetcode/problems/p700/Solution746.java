@@ -20,9 +20,8 @@ public class Solution746 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int minCostClimbingStairs(int[] cost) {
-        int len = cost.length;
         int prev = cost[0], cur = cost[1];
-        for (int i = 2; i < len; i++) {
+        for (int i = 2; i < cost.length; i++) {
             int next = Math.min(prev + cost[i], cur + cost[i]);
             prev = cur;
             cur = next;

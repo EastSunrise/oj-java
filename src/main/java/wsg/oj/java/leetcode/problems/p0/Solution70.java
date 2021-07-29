@@ -1,7 +1,9 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p1100.Solution1137;
 import wsg.oj.java.leetcode.problems.p500.Solution509;
+import wsg.oj.java.leetcode.problems.p700.Solution746;
 
 /**
  * 70. Climbing Stairs (Easy)
@@ -23,17 +25,14 @@ public class Solution70 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int climbStairs(int n) {
-        if (n == 1) {
-            return 1;
+        if (n < 3) {
+            return n;
         }
-        if (n == 2) {
-            return 2;
-        }
-        int lastLast = 1, last = 2;
+        int prev = 1, cur = 2;
         for (int i = 3; i <= n; i++) {
-            last = lastLast + last;
-            lastLast = last - lastLast;
+            cur = prev + cur;
+            prev = cur - prev;
         }
-        return last;
+        return cur;
     }
 }

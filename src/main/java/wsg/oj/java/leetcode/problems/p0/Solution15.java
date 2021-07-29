@@ -26,14 +26,14 @@ public class Solution15 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public List<List<Integer>> threeSum(int[] nums) {
-        int len = nums.length;
-        if (len < 3) {
+        int n = nums.length;
+        if (n < 3) {
             return new ArrayList<>();
         }
         Arrays.sort(nums);
         int av = nums[0] - 1;
         List<List<Integer>> res = new ArrayList<>();
-        for (int ai = 0, aLen = len - 2; ai < aLen; ai++) {
+        for (int ai = 0, aLen = n - 2; ai < aLen; ai++) {
             if (av == nums[ai]) {
                 continue;
             }
@@ -42,11 +42,11 @@ public class Solution15 implements Solution {
                 continue;
             }
             // if always smaller than the target
-            if (nums[ai] + nums[len - 2] + nums[len - 1] < 0) {
+            if (nums[ai] + nums[n - 2] + nums[n - 1] < 0) {
                 continue;
             }
             av = nums[ai];
-            int bi = ai + 1, ci = len - 1;
+            int bi = ai + 1, ci = n - 1;
             while (bi < ci) {
                 int sum = av + nums[bi] + nums[ci];
                 if (sum < 0) {
@@ -57,12 +57,12 @@ public class Solution15 implements Solution {
                     int bv = nums[bi], cv = nums[ci];
                     res.add(Arrays.asList(av, bv, cv));
                     // find different ones
-                    do {
+                    while (bi < ci && nums[bi] == bv) {
                         bi++;
-                    } while (bi < ci && nums[bi] == bv);
-                    do {
+                    }
+                    while (bi < ci && nums[ci] == cv) {
                         ci--;
-                    } while (bi < ci && nums[ci] == cv);
+                    }
                 }
             }
         }

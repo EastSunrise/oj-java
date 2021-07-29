@@ -17,8 +17,6 @@ public class Solution65 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean isNumber(String s) {
-        char[] chars = s.toCharArray();
-        int len = chars.length;
         int e = s.indexOf('e');
         if (e < 0) {
             e = s.indexOf('E');
@@ -27,7 +25,7 @@ public class Solution65 implements Solution {
             // xxx
             return isDecimal(s);
         }
-        if (e == 0 || e == len - 1) {
+        if (e == 0 || e == s.length() - 1) {
             // Exx or xxxE
             return false;
         }

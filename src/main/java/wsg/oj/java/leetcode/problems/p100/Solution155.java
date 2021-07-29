@@ -18,41 +18,35 @@ public class Solution155 implements Solution {
 
     static class MinStack {
 
-        private final Deque<Integer> delegate;
-        private Integer min;
+        private final Deque<Integer> stack;
 
         /**
          * initialize your data structure here.
          */
         public MinStack() {
-            delegate = new LinkedList<>();
+            stack = new LinkedList<>();
         }
 
         public void push(int val) {
-            delegate.push(val);
-            if (min == null || val < min) {
-                min = val;
-            }
+            int min = stack.isEmpty() ? val : Math.min(val, stack.element());
+            stack.push(val);
+            stack.push(min);
         }
 
         public void pop() {
-            int top = delegate.pop();
-            if (top == min) {
-                min = null;
-                for (int val : delegate) {
-                    if (min == null || val < min) {
-                        min = val;
-                    }
-                }
-            }
+            stack.pop();
+            stack.pop();
         }
 
         public int top() {
-            return delegate.element();
+            int min = stack.pop();
+            int top = stack.element();
+            stack.push(min);
+            return top;
         }
 
         public int getMin() {
-            return min;
+            return stack.element();
         }
     }
 }
