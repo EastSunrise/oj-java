@@ -23,25 +23,19 @@ public class Solution350 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_M_PLUS_N
      */
     public int[] intersect(int[] nums1, int[] nums2) {
-        Map<Integer, Integer> counts1 = new HashMap<>(16);
-        for (int num1 : nums1) {
-            counts1.put(num1, counts1.getOrDefault(num1, 0) + 1);
+        if (nums1.length > nums2.length) {
+            return intersect(nums2, nums1);
         }
-        Map<Integer, Integer> counts2 = new HashMap<>(16);
-        for (int num2 : nums2) {
-            counts2.put(num2, counts2.getOrDefault(num2, 0) + 1);
+        Map<Integer, Integer> counts = new HashMap<>(16);
+        for (int num1 : nums1) {
+            counts.put(num1, counts.getOrDefault(num1, 0) + 1);
         }
         List<Integer> res = new ArrayList<>();
-        if (counts1.size() > counts2.size()) {
-            Map<Integer, Integer> tmp = counts1;
-            counts1 = counts2;
-            counts2 = tmp;
-        }
-        for (Map.Entry<Integer, Integer> entry : counts1.entrySet()) {
-            int key = entry.getKey();
-            int count = Math.min(counts2.getOrDefault(key, 0), entry.getValue());
-            for (int i = 0; i < count; i++) {
-                res.add(key);
+        for (int num2 : nums2) {
+            int count = counts.getOrDefault(num2, 0);
+            if (count > 0) {
+                res.add(num2);
+                counts.put(num2, count - 1);
             }
         }
         int[] arr = new int[res.size()];

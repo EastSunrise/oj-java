@@ -19,23 +19,21 @@ public class Solution557 implements Solution {
      */
     public String reverseWords(String s) {
         char[] chars = s.toCharArray();
-        int len = chars.length;
+        int n = chars.length;
         int start = 0;
-        do {
+        while (start < n) {
             int end = start + 1;
-            while (end < len && chars[end] != ' ') {
+            while (end < n && chars[end] != ' ') {
                 end++;
             }
             int left = start, right = end - 1;
             while (left < right) {
                 char temp = chars[left];
-                chars[left] = chars[right];
-                chars[right] = temp;
-                left++;
-                right--;
+                chars[left++] = chars[right];
+                chars[right--] = temp;
             }
             start = end + 1;
-        } while (start < len);
+        }
         return new String(chars);
     }
 }

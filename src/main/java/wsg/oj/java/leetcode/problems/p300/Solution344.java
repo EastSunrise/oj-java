@@ -15,15 +15,15 @@ import wsg.oj.java.leetcode.problems.p500.Solution541;
 public class Solution344 implements Solution {
 
     /**
-     * @see #BINARY_SEARCH
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public void reverseString(char[] s) {
-        for (int left = 0, right = s.length - 1; left < right; left++, right--) {
+        int left = 0, right = s.length - 1;
+        while (left < right) {
             char temp = s[left];
-            s[left] = s[right];
-            s[right] = temp;
+            s[left++] = s[right];
+            s[right--] = temp;
         }
     }
 }

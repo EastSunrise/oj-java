@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p100;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p200.Solution213;
 import wsg.oj.java.leetcode.problems.p300.Solution337;
+import wsg.oj.java.leetcode.problems.p700.Solution740;
 
 /**
  * 198. House Robber (Medium)
@@ -27,17 +28,19 @@ public class Solution198 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int rob(int[] nums) {
-        int len = nums.length;
-        if (len == 1) {
-            return nums[0];
+        return rob(nums, 0, nums.length - 1);
+    }
+
+    protected int rob(int[] nums, int fromIn, int toIn) {
+        if (fromIn == toIn) {
+            return nums[fromIn];
         }
-        // dp[i]: the maximum amount robbed from nums[0,i]
-        int[] dp = new int[len];
-        dp[0] = nums[0];
-        dp[1] = Math.max(nums[0], nums[1]);
-        for (int i = 2; i < len; i++) {
-            dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+        int prev = 0, cur = nums[fromIn], next;
+        for (int i = fromIn + 1; i <= toIn; i++) {
+            next = Math.max(prev + nums[i], cur);
+            prev = cur;
+            cur = next;
         }
-        return dp[len - 1];
+        return cur;
     }
 }
