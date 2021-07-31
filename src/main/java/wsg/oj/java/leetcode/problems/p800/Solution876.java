@@ -13,6 +13,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Solution876 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public ListNode middleNode(ListNode head) {
         ListNode fast = head, slow = head;
         while (fast != null && fast.next != null) {
