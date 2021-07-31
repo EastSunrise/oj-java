@@ -28,7 +28,7 @@ public class Solution53 implements Solution {
         // dp: the max subarray ends with nums[i]
         int dp = 0, max = nums[0];
         for (int num : nums) {
-            dp = Math.max(dp, dp + num);
+            dp = Math.max(num, dp + num);
             max = Math.max(max, dp);
         }
         return max;

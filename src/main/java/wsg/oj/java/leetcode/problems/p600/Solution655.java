@@ -2,7 +2,6 @@ package wsg.oj.java.leetcode.problems.p600;
 
 import java.util.ArrayList;
 import java.util.List;
-import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
@@ -13,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/print-binary-tree/">Print Binary Tree</a>
  * @since 2021-07-23
  */
-public class Solution655 extends BinaryTree implements Solution {
+public class Solution655 implements Solution {
 
     /**
      * @complexity T=O(h*2^h), h=the height of the tree
@@ -30,6 +29,13 @@ public class Solution655 extends BinaryTree implements Solution {
             }
         }
         return res;
+    }
+
+    private int getHeight(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
     }
 
     private void print(List<List<String>> res, TreeNode node, int depth, int left, int right) {

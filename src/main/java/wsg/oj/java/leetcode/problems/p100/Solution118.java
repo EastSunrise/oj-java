@@ -19,19 +19,19 @@ public class Solution118 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_NN
      */
     public List<List<Integer>> generate(int numRows) {
-        List<List<Integer>> listList = new ArrayList<>(numRows);
-        List<Integer> last = List.of(1);
-        listList.add(last);
+        List<List<Integer>> res = new ArrayList<>(numRows);
+        List<Integer> prev = List.of(1);
+        res.add(prev);
         for (int i = 1; i < numRows; i++) {
-            List<Integer> current = new ArrayList<>(last.size() + 1);
+            List<Integer> current = new ArrayList<>(prev.size() + 1);
             current.add(1);
-            for (int j = 1, lastSize = last.size(); j < lastSize; j++) {
-                current.add(last.get(j - 1) + last.get(j));
+            for (int j = 1, lastSize = prev.size(); j < lastSize; j++) {
+                current.add(prev.get(j - 1) + prev.get(j));
             }
             current.add(1);
-            listList.add(current);
-            last = current;
+            res.add(current);
+            prev = current;
         }
-        return listList;
+        return res;
     }
 }

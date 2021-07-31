@@ -23,14 +23,14 @@ public class Solution45 implements Solution {
      * @see Complexity#SPACE_CONSTANT
      */
     public int jump(int[] nums) {
-        int len = nums.length;
-        if (len == 1) {
+        int n = nums.length;
+        if (n == 1) {
             return 0;
         }
         // rm: the rightmost position that can be reached after 'step' steps
         // nrm: the next 'rm'
-        int step = 0, rm = 0, nrm = nums[0], target = len - 1;
-        for (int i = 1; i < len; i++) {
+        int step = 0, rm = 0, nrm = nums[0], target = n - 1;
+        for (int i = 1; i < n; i++) {
             if (nrm >= target) {
                 return step + 1;
             }

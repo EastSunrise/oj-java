@@ -21,11 +21,11 @@ public class Solution55 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public boolean canJump(int[] nums) {
-        int rm = nums[0], i = 1;
-        while (i <= rm && i < nums.length) {
+        int rm = nums[0], i = 1, n = nums.length;
+        while (i <= rm && i < n) {
             rm = Math.max(rm, i + nums[i]);
             i++;
         }
-        return rm >= nums.length - 1;
+        return rm >= n - 1;
     }
 }
