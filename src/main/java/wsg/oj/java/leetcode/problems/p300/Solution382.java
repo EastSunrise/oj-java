@@ -46,7 +46,7 @@ public class Solution382 implements Solution {
     /**
      * @see <a href="https://en.wikipedia.org/wiki/Reservoir_sampling>Reservoir sampling</a>
      */
-    private static class Solution2 {
+    private static class SolutionII {
 
         private final ListNode head;
 
@@ -54,7 +54,7 @@ public class Solution382 implements Solution {
          * @param head The linked list's head. Note that the head is guaranteed to be not null, so
          *             it contains at least one node.
          */
-        public Solution2(ListNode head) {
+        public SolutionII(ListNode head) {
             this.head = head;
         }
 
