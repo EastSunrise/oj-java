@@ -3,11 +3,9 @@ package wsg.oj.java.leetcode.problems.p100;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-import wsg.oj.java.datastructure.BinaryTree;
-import wsg.oj.java.datastructure.TreeNode;
+import java.util.Queue;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p600.Solution637;
 
 /**
@@ -20,18 +18,34 @@ import wsg.oj.java.leetcode.problems.p600.Solution637;
  * Level Order Traversal II</a>
  * @since 2021-07-08
  */
-public class Solution107 extends BinaryTree implements Solution {
+public class Solution107 implements Solution {
 
     /**
-     * @see #traverseLevels(TreeNode, Function, BiConsumer)
+     * @see #LEVEL_ORDER
      */
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         LinkedList<List<Integer>> res = new LinkedList<>();
-        traverseLevels(root, size -> {
-            List<Integer> level = new ArrayList<>(size);
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            // traverse a level
+            int size = queue.size();
+            List<Integer> level = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                level.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
             res.addFirst(level);
-            return level;
-        }, List::add);
+        }
         return res;
     }
 }

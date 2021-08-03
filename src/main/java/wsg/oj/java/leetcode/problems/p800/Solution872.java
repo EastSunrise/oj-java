@@ -2,8 +2,8 @@ package wsg.oj.java.leetcode.problems.p800;
 
 import java.util.ArrayList;
 import java.util.List;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 872. Leaf-Similar Trees (EASY)

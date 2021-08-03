@@ -2,10 +2,11 @@ package wsg.oj.java.leetcode.problems.p400;
 
 import java.util.HashMap;
 import java.util.Map;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p100.Solution112;
 import wsg.oj.java.leetcode.problems.p100.Solution113;
+import wsg.oj.java.leetcode.problems.p600.Solution687;
 
 /**
  * 437. Path Sum III (Medium)

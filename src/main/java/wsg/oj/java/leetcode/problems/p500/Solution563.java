@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p500;
 
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 563. Binary Tree Tilt (EASY)

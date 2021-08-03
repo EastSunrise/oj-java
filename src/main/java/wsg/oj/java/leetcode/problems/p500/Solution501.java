@@ -2,9 +2,8 @@ package wsg.oj.java.leetcode.problems.p500;
 
 import java.util.ArrayList;
 import java.util.List;
-import wsg.oj.java.datastructure.BinaryTree;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p0.Solution98;
 
 /**
@@ -16,7 +15,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution98;
  * Binary Search Tree</a>
  * @since 2021-07-20
  */
-public class Solution501 extends BinaryTree implements Solution {
+public class Solution501 implements Solution {
 
     /**
      * @see #INORDER
@@ -24,29 +23,31 @@ public class Solution501 extends BinaryTree implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_H
      */
     public int[] findMode(TreeNode root) {
-        // temp: current number, count of current number, count of each mode
-        int[] temp = new int[3];
+        // tmp: current number, count of current number, count of each mode
+        int[] tmp = new int[3];
         List<Integer> modes = new ArrayList<>();
-        inorderTraversal(root, val -> {
-            if (val == temp[0]) {
-                temp[1]++;
-            } else {
-                temp[0] = val;
-                temp[1] = 1;
-            }
-            if (temp[1] > temp[2]) {
-                modes.clear();
-                modes.add(temp[0]);
-                temp[2] = temp[1];
-            } else if (temp[1] == temp[2]) {
-                modes.add(temp[0]);
-            }
-        });
-        int[] res = new int[modes.size()];
-        int i = 0;
-        for (int mode : modes) {
-            res[i++] = mode;
+        inorderTraversal(modes, root, tmp);
+        return toArray(modes);
+    }
+
+    private void inorderTraversal(List<Integer> modes, TreeNode node, int[] tmp) {
+        if (node == null) {
+            return;
         }
-        return res;
+        inorderTraversal(modes, node, tmp);
+        if (node.val == tmp[0]) {
+            tmp[1]++;
+        } else {
+            tmp[0] = node.val;
+            tmp[1] = 1;
+        }
+        if (tmp[1] > tmp[2]) {
+            modes.clear();
+            modes.add(tmp[0]);
+            tmp[2] = tmp[1];
+        } else if (tmp[1] == tmp[2]) {
+            modes.add(tmp[0]);
+        }
+        inorderTraversal(modes, node, tmp);
     }
 }

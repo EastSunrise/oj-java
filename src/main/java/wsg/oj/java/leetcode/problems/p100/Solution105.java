@@ -1,8 +1,8 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.Stack;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)

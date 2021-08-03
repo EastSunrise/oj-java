@@ -2,9 +2,8 @@ package wsg.oj.java.leetcode.problems.p200;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import wsg.oj.java.datastructure.BinaryTree;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p0.Solution94;
 import wsg.oj.java.leetcode.problems.p600.Solution671;
 
@@ -18,7 +17,7 @@ import wsg.oj.java.leetcode.problems.p600.Solution671;
  * Element in a BST</a>
  * @since 2021-07-13
  */
-public class Solution230 extends BinaryTree implements Solution {
+public class Solution230 implements Solution {
 
     /**
      * @complexity T=O(k)

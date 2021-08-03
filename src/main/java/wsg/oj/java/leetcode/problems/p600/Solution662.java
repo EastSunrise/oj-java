@@ -2,8 +2,8 @@ package wsg.oj.java.leetcode.problems.p600;
 
 import java.util.ArrayList;
 import java.util.List;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 662. Maximum Width of Binary Tree (MEDIUM)

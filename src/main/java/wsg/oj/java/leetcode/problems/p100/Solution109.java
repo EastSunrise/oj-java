@@ -1,8 +1,8 @@
 package wsg.oj.java.leetcode.problems.p100;
 
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 109. Convert Sorted List to Binary Search Tree (Medium)

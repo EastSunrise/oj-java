@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 236. Lowest Common Ancestor of a Binary Tree (Medium)

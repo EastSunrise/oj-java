@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Queue;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p100.Solution102;
 import wsg.oj.java.leetcode.problems.p100.Solution107;
 
@@ -24,7 +24,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution107;
 public class Solution637 implements Solution {
 
     /**
-     * @see wsg.oj.java.datastructure.BinaryTreeOpt#traverseLevels(TreeNode, Function, BiConsumer)
+     * @see wsg.oj.java.datastructure.BinaryTreeOpt#traverseLevels(Function, BiConsumer)
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_H
      */

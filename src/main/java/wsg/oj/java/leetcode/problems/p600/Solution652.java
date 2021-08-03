@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import wsg.oj.java.datastructure.BinaryTree;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
+import wsg.oj.java.leetcode.problems.p200.Solution297;
 import wsg.oj.java.leetcode.problems.p400.Solution449;
 
 /**
@@ -20,7 +20,7 @@ import wsg.oj.java.leetcode.problems.p400.Solution449;
  * Subtrees</a>
  * @since 2021-07-23
  */
-public class Solution652 extends BinaryTree implements Solution {
+public class Solution652 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

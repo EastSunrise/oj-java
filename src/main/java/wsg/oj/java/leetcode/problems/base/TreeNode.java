@@ -1,4 +1,4 @@
-package wsg.oj.java.datastructure;
+package wsg.oj.java.leetcode.problems.base;
 
 import java.util.LinkedList;
 import java.util.Objects;

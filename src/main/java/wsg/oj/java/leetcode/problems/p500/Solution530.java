@@ -1,8 +1,7 @@
 package wsg.oj.java.leetcode.problems.p500;
 
-import wsg.oj.java.datastructure.BinaryTree;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 530. Minimum Absolute Difference in BST (EASY)
@@ -13,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Absolute Difference in BST</a>
  * @since 2021-07-20
  */
-public class Solution530 extends BinaryTree implements Solution {
+public class Solution530 implements Solution {
 
     /**
      * @see #INORDER
@@ -23,10 +22,17 @@ public class Solution530 extends BinaryTree implements Solution {
     public int getMinimumDifference(TreeNode root) {
         // the previous value, the minimal difference
         int[] tmp = new int[]{-1_000_000, Integer.MAX_VALUE};
-        inorderTraversal(root, val -> {
-            tmp[1] = Math.min(tmp[1], val - tmp[0]);
-            tmp[0] = val;
-        });
+        inorderTraversal(root, tmp);
         return tmp[1];
+    }
+
+    private void inorderTraversal(TreeNode node, int[] tmp) {
+        if (node == null) {
+            return;
+        }
+        inorderTraversal(node, tmp);
+        tmp[1] = Math.min(tmp[1], node.val - tmp[0]);
+        tmp[0] = node.val;
+        inorderTraversal(node, tmp);
     }
 }

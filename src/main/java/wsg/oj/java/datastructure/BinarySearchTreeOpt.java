@@ -8,25 +8,40 @@ package wsg.oj.java.datastructure;
  * Search Tree</a>
  * @since 2021/7/14
  */
-public interface BinarySearchTreeOpt extends BinaryTreeOpt {
+public interface BinarySearchTreeOpt<T extends Comparable<T>> extends BinaryTreeOpt<T> {
 
     /**
-     * Checks whether the given binary tree is a valid BST.
+     * Returns the minimal value within this tree.
      */
-    boolean isValidBST(TreeNode root);
+    T getMin();
 
     /**
-     * Inserts a value into the tree if it is not already present in the tree.
+     * Returns the maximal value within this tree.
      */
-    TreeNode insertValue(TreeNode root, int target);
+    T getMax();
 
     /**
-     * Deletes the node with the specified target.
+     * Finds the node with the specified value from this tree.
+     *
+     * @return the node with the specified value, or {@literal null} if not found
+     * @throws NullPointerException if the specified value is null
      */
-    TreeNode deleteValue(TreeNode root, int target);
+    @Override
+    BinarySearchTree<T> find(T t);
 
     /**
-     * Returns the node with the specified target.
+     * Inserts the specified value into this tree if it is not already present.
+     *
+     * @return {@code true} if this tree did not already contain the specified value
+     * @throws NullPointerException if the specified value is null
      */
-    TreeNode find(TreeNode root, int target);
+    boolean insert(T t);
+
+    /**
+     * Removes the specified value from this tree if it is present.
+     *
+     * @return the left tree after removing the specified value
+     * @throws NullPointerException if the specified element is null
+     */
+    BinarySearchTree<T> remove(T t);
 }

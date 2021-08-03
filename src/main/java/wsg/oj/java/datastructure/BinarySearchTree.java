@@ -1,137 +1,110 @@
 package wsg.oj.java.datastructure;
 
+import java.util.Objects;
+
 /**
  * An implementation of binary search trees.
  *
  * @author Kingen
  * @since 2021/7/11
  */
-public class BinarySearchTree extends BinaryTree implements BinarySearchTreeOpt {
+public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> implements
+    BinarySearchTreeOpt<T> {
 
-    /**
-     * @see wsg.oj.java.Complexity#TIME_N
-     */
-    @Override
-    public boolean isValidBST(TreeNode root) {
-        return isValidBST(root, null, null);
+    public BinarySearchTree(T value) {
+        super(value);
     }
 
-    /**
-     * All values of the tree should be in the range (min, max), both exclusive.
-     */
-    private boolean isValidBST(TreeNode node, Integer min, Integer max) {
-        int val = node.val;
-        if (min != null && val <= min) {
+    public BinarySearchTree(T value, BinarySearchTree<T> left, BinarySearchTree<T> right) {
+        super(value);
+        if (left != null && value.compareTo(left.getMax()) <= 0) {
+            throw new IllegalArgumentException("Not a valid BST");
+        }
+        if (right != null && value.compareTo(right.getMin()) >= 0) {
+            throw new IllegalArgumentException("Not a valid BST");
+        }
+    }
+
+    @Override
+    public BinarySearchTree<T> find(T t) {
+        Objects.requireNonNull(t);
+        int comp = t.compareTo(value);
+        if (comp == 0) {
+            return this;
+        }
+        if (comp < 0) {
+            return left == null ? null : (BinarySearchTree<T>) left.find(t);
+        }
+        return right == null ? null : (BinarySearchTree<T>) right.find(t);
+    }
+
+    @Override
+    public T getMin() {
+        BinaryTree<T> current = this;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.value;
+    }
+
+    @Override
+    public T getMax() {
+        BinaryTree<T> current = this;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.value;
+    }
+
+    @Override
+    public boolean insert(T t) {
+        Objects.requireNonNull(t);
+        int comp = t.compareTo(value);
+        if (comp == 0) {
             return false;
         }
-        if (max != null && val >= max) {
-            return false;
-        }
-        return (node.left == null || isValidBST(node.left, min, val))
-            && (node.right == null || isValidBST(node.right, val, max));
-    }
-
-    /**
-     * @see wsg.oj.java.Complexity#TIME_H
-     * @see wsg.oj.java.Complexity#SPACE_H
-     */
-    @Override
-    public TreeNode insertValue(TreeNode root, int target) {
-        return insert(root, target);
-    }
-
-    private TreeNode insert(TreeNode node, int target) {
-        if (node == null) {
-            return new TreeNode(target);
-        }
-        if (node.val == target) {
-            return node;
-        }
-        if (node.val > target) {
-            node.left = insert(node.left, target);
-        } else {
-            node.right = insert(node.right, target);
-        }
-        return node;
-    }
-
-    /**
-     * @see wsg.oj.java.Complexity#TIME_H
-     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
-     */
-    @Override
-    public TreeNode deleteValue(TreeNode root, int target) {
-        TreeNode rootParent = new TreeNode(-1, root, null);
-        TreeNode node = root, parent = rootParent;
-        boolean isLeft = true;
-        while (node != null) {
-            if (node.val < target) {
-                parent = node;
-                node = node.right;
-                isLeft = false;
-            } else if (node.val > target) {
-                parent = node;
-                node = node.left;
-                isLeft = true;
-            } else {
-                // find the key
-                break;
+        if (comp < 0) {
+            if (left == null) {
+                left = new BinarySearchTree<>(t);
+                return true;
             }
+            return ((BinarySearchTree<T>) left).insert(t);
         }
-        if (node == null) {
-            // not found
-            return root;
+        if (right == null) {
+            right = new BinarySearchTree<>(t);
+            return true;
         }
-
-        // delete the node
-        // if without left subtree, replace the node with its right subtree
-        if (node.left == null) {
-            if (isLeft) {
-                parent.left = node.right;
-            } else {
-                parent.right = node.right;
-            }
-            return rootParent.left;
-        }
-        // if without right subtree, replace the node with its left subtree
-        if (node.right == null) {
-            if (isLeft) {
-                parent.left = node.left;
-            } else {
-                parent.right = node.left;
-            }
-            return rootParent.left;
-        }
-
-        // if with both left and right subtrees
-        // replace the target with its precursor
-        TreeNode precursor = node.left;
-        if (precursor.right == null) {
-            node.val = precursor.val;
-            node.left = precursor.left;
-        } else {
-            do {
-                parent = precursor;
-                precursor = precursor.right;
-            } while (precursor.right != null);
-            node.val = precursor.val;
-            // then delete the precursor
-            parent.right = precursor.left;
-        }
-        return rootParent.left;
+        return ((BinarySearchTree<T>) right).insert(t);
     }
 
     @Override
-    public TreeNode find(TreeNode root, int target) {
-        if (root == null) {
-            return null;
+    public BinarySearchTree<T> remove(T t) {
+        Objects.requireNonNull(t);
+        int comp = t.compareTo(value);
+        if (comp < 0) {
+            if (left != null) {
+                left = ((BinarySearchTree<T>) left).remove(t);
+            }
+            return this;
         }
-        if (root.val == target) {
-            return root;
+        if (comp > 0) {
+            if (right != null) {
+                right = ((BinarySearchTree<T>) right).remove(t);
+            }
+            return this;
         }
-        if (root.val > target) {
-            return find(root.left, target);
+        if (left == null) {
+            return (BinarySearchTree<T>) right;
         }
-        return find(root.right, target);
+        if (right == null) {
+            return (BinarySearchTree<T>) left;
+        }
+        BinarySearchTree<T> tmp = (BinarySearchTree<T>) this.right;
+        while (tmp.left != null) {
+            tmp = (BinarySearchTree<T>) tmp.left;
+        }
+        this.value = tmp.value;
+        right = ((BinarySearchTree<T>) right).remove(value);
+        return this;
     }
 }

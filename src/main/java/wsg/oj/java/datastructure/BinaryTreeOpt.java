@@ -1,5 +1,6 @@
 package wsg.oj.java.datastructure;
 
+import java.util.Comparator;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -12,47 +13,67 @@ import java.util.function.Function;
  * Tree</a>
  * @since 2021/7/12
  */
-public interface BinaryTreeOpt {
+public interface BinaryTreeOpt<T> {
 
     /**
-     * Returns the height of the tree.
+     * Returns the height of this tree.
      */
-    int getHeight(TreeNode node);
+    int getHeight();
 
     /**
-     * Checks whether the two trees have the same structure and node values.
+     * Returns {@code true} if this tree contains the specified value.
+     *
+     * @throws NullPointerException if the specified value is null
      */
-    boolean equals(TreeNode p, TreeNode q);
+    boolean contains(T t);
+
+    /**
+     * Finds the node with the specified value from this tree.
+     *
+     * @return the first node with the specified value, or {@literal null} if not found
+     * @throws NullPointerException if the specified value is null
+     */
+    BinaryTree<T> find(T t);
+
+    /**
+     * Checks whether this tree is a valid BST.
+     */
+    boolean isBST(Comparator<T> comp);
 
     /**
      * Recursive preorder traversal.
      */
-    void preorderTraversal(TreeNode node, Consumer<Integer> action);
+    void preorderTraversal(Consumer<T> action);
 
     /**
      * Iterative preorder traversal.
      */
-    void preorderTraversalWithStack(TreeNode root, Consumer<Integer> action);
+    void preorderTraversalIteratively(Consumer<T> action);
 
     /**
      * Recursive inorder traversal.
      */
-    void inorderTraversal(TreeNode node, Consumer<Integer> action);
+    void inorderTraversal(Consumer<T> action);
 
     /**
      * Iterative inorder traversal.
      */
-    void inorderTraversalWithStack(TreeNode root, Consumer<Integer> action);
+    void inorderTraversalIteratively(Consumer<T> action);
 
     /**
      * Recursive postorder traversal.
      */
-    void postorderTraversal(TreeNode node, Consumer<Integer> action);
+    void postorderTraversal(Consumer<T> action);
 
     /**
      * Iterative postorder traversal.
      */
-    void postorderTraversalWithStack(TreeNode root, Consumer<Integer> action);
+    void postorderTraversalIteratively(Consumer<T> action);
+
+    /**
+     * Iterative level-order traversal.
+     */
+    void levelOrderTraversal(Consumer<T> action);
 
     /**
      * Traverses levels iteratively.
@@ -60,11 +81,5 @@ public interface BinaryTreeOpt {
      * @param constructor initialize the level, accepting the size of the level
      * @param action      consume each value in the level
      */
-    <T> void traverseLevels(TreeNode root, Function<Integer, T> constructor,
-        BiConsumer<T, Integer> action);
-
-    /**
-     * Iterative level-order traversal.
-     */
-    void levelOrderTraversal(TreeNode root, Consumer<Integer> action);
+    <L> void traverseLevels(Function<Integer, L> constructor, BiConsumer<L, T> action);
 }

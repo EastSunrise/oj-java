@@ -6,9 +6,8 @@ import java.util.List;
 import java.util.Queue;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
-import wsg.oj.java.datastructure.BinaryTree;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 515. Find Largest Value in Each Tree Row (MEDIUM)
@@ -18,10 +17,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Value in Each Tree Row</a>
  * @since 2021-07-20
  */
-class Solution515 extends BinaryTree implements Solution {
+class Solution515 implements Solution {
 
     /**
-     * @see #traverseLevels(TreeNode, Function, BiConsumer)
+     * @see wsg.oj.java.datastructure.BinaryTreeOpt#traverseLevels(Function, BiConsumer)
      */
     public List<Integer> largestValues(TreeNode root) {
         List<Integer> res = new ArrayList<>();

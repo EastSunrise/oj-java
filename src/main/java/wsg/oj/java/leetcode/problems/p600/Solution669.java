@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p600;
 
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 669. Trim a Binary Search Tree (MEDIUM)

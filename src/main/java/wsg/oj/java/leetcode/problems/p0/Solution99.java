@@ -2,8 +2,8 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import java.util.Deque;
 import java.util.LinkedList;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 99. Recover Binary Search Tree (Medium)

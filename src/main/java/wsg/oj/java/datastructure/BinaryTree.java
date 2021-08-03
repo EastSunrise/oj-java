@@ -1,7 +1,9 @@
 package wsg.oj.java.datastructure;
 
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
@@ -13,41 +15,104 @@ import java.util.function.Function;
  * @author Kingen
  * @since 2021/7/11
  */
-public class BinaryTree implements BinaryTreeOpt {
+public class BinaryTree<T> implements BinaryTreeOpt<T> {
 
-    @Override
-    public int getHeight(TreeNode node) {
-        if (node == null) {
-            return 0;
-        }
-        return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+    protected T value;
+    protected BinaryTree<T> left;
+    protected BinaryTree<T> right;
+
+    public BinaryTree(T value) {
+        this.value = Objects.requireNonNull(value);
+    }
+
+    public BinaryTree(T value, BinaryTree<T> left, BinaryTree<T> right) {
+        this.value = Objects.requireNonNull(value);
+        this.left = left;
+        this.right = right;
     }
 
     @Override
-    public boolean equals(TreeNode p, TreeNode q) {
-        if (p == null) {
-            return q == null;
-        }
-        return q != null && p.val == q.val
-            && equals(p.left, q.left) && equals(p.right, q.right);
+    public int getHeight() {
+        int lh = left == null ? 0 : left.getHeight();
+        int rh = right == null ? 0 : right.getHeight();
+        return Math.max(lh, rh) + 1;
     }
 
     @Override
-    public void preorderTraversal(TreeNode node, Consumer<Integer> action) {
-        if (node != null) {
-            action.accept(node.val);
-            preorderTraversal(node.left, action);
-            preorderTraversal(node.right, action);
+    public boolean contains(T t) {
+        return find(t) != null;
+    }
+
+    @Override
+    public BinaryTree<T> find(T t) {
+        Objects.requireNonNull(t);
+        if (value.equals(t)) {
+            return this;
+        }
+        if (left != null) {
+            BinaryTree<T> res = left.find(t);
+            if (res != null) {
+                return res;
+            }
+        }
+        if (right != null) {
+            return right.find(t);
+        }
+        return null;
+    }
+
+    @Override
+    public boolean isBST(Comparator<T> comp) {
+        return within(comp, null, null);
+    }
+
+    private boolean within(Comparator<T> comp, T min, T max) {
+        if (min != null && comp.compare(value, min) <= 0) {
+            return false;
+        }
+        if (max != null && comp.compare(value, max) >= 0) {
+            return false;
+        }
+        return (left == null || left.within(comp, min, value))
+            && (right == null || right.within(comp, value, max));
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        if (other == null || getClass() != other.getClass()) {
+            return false;
+        }
+        BinaryTree<?> that = (BinaryTree<?>) other;
+        return Objects.equals(value, that.value) && Objects.equals(left, that.left)
+            && Objects.equals(right, that.right);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value, left, right);
+    }
+
+    @Override
+    public void preorderTraversal(Consumer<T> action) {
+        action.accept(value);
+        if (left != null) {
+            left.preorderTraversal(action);
+        }
+        if (right != null) {
+            right.preorderTraversal(action);
         }
     }
 
     @Override
-    public void preorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
-        Deque<TreeNode> stack = new LinkedList<>();
-        stack.push(root);
+    public void preorderTraversalIteratively(Consumer<T> action) {
+        Deque<BinaryTree<T>> stack = new LinkedList<>();
+        stack.push(this);
         while (!stack.isEmpty()) {
-            TreeNode current = stack.pop();
-            action.accept(current.val);
+            BinaryTree<T> current = stack.pop();
+            action.accept(current.value);
             if (current.right != null) {
                 stack.push(current.right);
             }
@@ -58,45 +123,49 @@ public class BinaryTree implements BinaryTreeOpt {
     }
 
     @Override
-    public void inorderTraversal(TreeNode node, Consumer<Integer> action) {
-        if (node != null) {
-            inorderTraversal(node.left, action);
-            action.accept(node.val);
-            inorderTraversal(node.right, action);
+    public void inorderTraversal(Consumer<T> action) {
+        if (left != null) {
+            left.inorderTraversal(action);
+        }
+        action.accept(value);
+        if (right != null) {
+            right.inorderTraversal(action);
         }
     }
 
     @Override
-    public void inorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
-        Deque<TreeNode> stack = new LinkedList<>();
-        TreeNode current = root;
-        do {
+    public void inorderTraversalIteratively(Consumer<T> action) {
+        Deque<BinaryTree<T>> stack = new LinkedList<>();
+        BinaryTree<T> current = this;
+        while (current != null || !stack.isEmpty()) {
             while (current != null) {
                 stack.push(current);
                 current = current.left;
             }
             if (!stack.isEmpty()) {
                 current = stack.pop();
-                action.accept(current.val);
+                action.accept(value);
                 current = current.right;
             }
-        } while (current != null || !stack.isEmpty());
-    }
-
-    @Override
-    public void postorderTraversal(TreeNode node, Consumer<Integer> action) {
-        if (node != null) {
-            inorderTraversal(node.left, action);
-            inorderTraversal(node.right, action);
-            action.accept(node.val);
         }
     }
 
     @Override
-    public void postorderTraversalWithStack(TreeNode root, Consumer<Integer> action) {
-        TreeNode current = root;
-        TreeNode last = null;
-        Deque<TreeNode> stack = new LinkedList<>();
+    public void postorderTraversal(Consumer<T> action) {
+        if (left != null) {
+            left.postorderTraversal(action);
+        }
+        if (right != null) {
+            right.postorderTraversal(action);
+        }
+        action.accept(value);
+    }
+
+    @Override
+    public void postorderTraversalIteratively(Consumer<T> action) {
+        BinaryTree<T> current = this;
+        BinaryTree<T> last = null;
+        Deque<BinaryTree<T>> stack = new LinkedList<>();
         while (!stack.isEmpty() || current != null) {
             while (current != null) {
                 stack.push(current);
@@ -104,7 +173,7 @@ public class BinaryTree implements BinaryTreeOpt {
             }
             current = stack.element();
             if (current.right == null || current.right == last) {
-                action.accept(current.val);
+                action.accept(current.value);
                 stack.pop();
                 last = current;
                 current = null;
@@ -115,45 +184,38 @@ public class BinaryTree implements BinaryTreeOpt {
     }
 
     @Override
-    public <T> void traverseLevels(TreeNode root, Function<Integer, T> constructor,
-        BiConsumer<T, Integer> action) {
-        if (root == null) {
-            return;
+    public void levelOrderTraversal(Consumer<T> action) {
+        Queue<BinaryTree<T>> queue = new LinkedList<>();
+        queue.add(this);
+        while (!queue.isEmpty()) {
+            BinaryTree<T> current = queue.remove();
+            action.accept(current.value);
+            if (current.left != null) {
+                queue.add(current.left);
+            }
+            if (current.right != null) {
+                queue.add(current.right);
+            }
         }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
+    }
+
+    @Override
+    public <L> void traverseLevels(Function<Integer, L> constructor, BiConsumer<L, T> action) {
+        Queue<BinaryTree<T>> queue = new LinkedList<>();
+        queue.add(this);
         while (!queue.isEmpty()) {
             // traverse a level
             int size = queue.size();
-            T level = constructor.apply(size);
+            L level = constructor.apply(size);
             for (int i = 0; i < size; i++) {
-                TreeNode node = queue.remove();
-                action.accept(level, node.val);
+                BinaryTree<T> node = queue.remove();
+                action.accept(level, node.value);
                 if (node.left != null) {
                     queue.add(node.left);
                 }
                 if (node.right != null) {
                     queue.add(node.right);
                 }
-            }
-        }
-    }
-
-    @Override
-    public void levelOrderTraversal(TreeNode root, Consumer<Integer> action) {
-        if (root == null) {
-            return;
-        }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode current = queue.remove();
-            action.accept(current.val);
-            if (current.left != null) {
-                queue.add(current.left);
-            }
-            if (current.right != null) {
-                queue.add(current.right);
             }
         }
     }

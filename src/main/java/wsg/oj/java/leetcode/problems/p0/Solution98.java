@@ -1,8 +1,8 @@
 package wsg.oj.java.leetcode.problems.p0;
 
-import wsg.oj.java.datastructure.BinarySearchTree;
-import wsg.oj.java.datastructure.TreeNode;
+import java.util.Comparator;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p500.Solution501;
 
 /**
@@ -15,13 +15,12 @@ import wsg.oj.java.leetcode.problems.p500.Solution501;
  * Search Tree</a>
  * @since 2021-07-11
  */
-public class Solution98 extends BinarySearchTree implements Solution {
+public class Solution98 implements Solution {
 
     /**
-     * @see #DFS
+     * @see wsg.oj.java.datastructure.BinaryTreeOpt#isBST(Comparator)
      */
-    @Override
     public boolean isValidBST(TreeNode root) {
-        return super.isValidBST(root);
+        return false;
     }
 }

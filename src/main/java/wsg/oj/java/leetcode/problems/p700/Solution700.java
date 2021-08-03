@@ -1,9 +1,8 @@
 package wsg.oj.java.leetcode.problems.p700;
 
-import wsg.oj.java.datastructure.BinarySearchTree;
 import wsg.oj.java.datastructure.BinarySearchTreeOpt;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 700. Search in a Binary Search Tree (EASY)
@@ -15,12 +14,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Binary Search Tree</a>
  * @since 2021-07-23
  */
-public class Solution700 extends BinarySearchTree implements Solution {
+public class Solution700 implements Solution {
 
     /**
-     * @see BinarySearchTreeOpt#find(TreeNode, int)
+     * @see BinarySearchTreeOpt#find(Comparable)
      */
     public TreeNode searchBST(TreeNode root, int val) {
-        return find(root, val);
+        return root;
     }
 }

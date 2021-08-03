@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import wsg.oj.java.datastructure.BinaryTree;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p0.Solution1;
 import wsg.oj.java.leetcode.problems.p100.Solution167;
 
@@ -22,7 +21,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution167;
  * a BST</a>
  * @since 2021-07-23
  */
-public class Solution653 extends BinaryTree implements Solution {
+public class Solution653 implements Solution {
 
     /**
      * @see #PREORDER

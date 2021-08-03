@@ -1,9 +1,8 @@
 package wsg.oj.java.leetcode.problems.p700;
 
-import wsg.oj.java.datastructure.BinarySearchTree;
 import wsg.oj.java.datastructure.BinarySearchTreeOpt;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 701. Insert into a Binary Search Tree (MEDIUM)
@@ -14,12 +13,12 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Binary Search Tree</a>
  * @since 2021-07-26
  */
-public class Solution701 extends BinarySearchTree implements Solution {
+public class Solution701 implements Solution {
 
     /**
-     * @see BinarySearchTreeOpt#insertValue(TreeNode, int)
+     * @see BinarySearchTreeOpt#insert(Comparable)
      */
     public TreeNode insertIntoBST(TreeNode root, int val) {
-        return insertValue(root, val);
+        return root;
     }
 }

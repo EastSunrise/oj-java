@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p900;
 
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 
 /**
  * 951. Flip Equivalent Binary Trees (MEDIUM)

@@ -2,8 +2,8 @@ package wsg.oj.java.leetcode.problems.p200;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p400.Solution449;
 import wsg.oj.java.leetcode.problems.p600.Solution652;
 
