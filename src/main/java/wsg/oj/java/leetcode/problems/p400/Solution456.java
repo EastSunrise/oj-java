@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p400;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.TreeMap;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
@@ -50,13 +51,13 @@ public class Solution456 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean find132pattern2(int[] nums) {
-        int len = nums.length;
+        int n = nums.length;
         // store the candidates of the middle one
-        Stack<Integer> stack = new Stack<>();
-        stack.push(nums[len - 1]);
+        Deque<Integer> stack = new LinkedList<>();
+        stack.push(nums[n - 1]);
         // the right one
         int right = Integer.MIN_VALUE;
-        for (int i = len - 2; i >= 0; i--) {
+        for (int i = n - 2; i >= 0; i--) {
             if (nums[i] < right) {
                 return true;
             }

@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.p400.Solution496;
  * III</a>
  * @since 2021-07-20
  */
-class Solution556 implements Solution {
+public class Solution556 implements Solution {
 
     public int nextGreaterElement(int n) {
         Deque<Integer> deque = new LinkedList<>();

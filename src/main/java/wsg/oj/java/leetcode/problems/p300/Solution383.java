@@ -21,12 +21,10 @@ public class Solution383 implements Solution {
             return false;
         }
         int[] counts = new int[26];
-        char[] ms = magazine.toCharArray();
-        for (char ch : ms) {
+        for (char ch : magazine.toCharArray()) {
             counts[ch - 'a']++;
         }
-        char[] rs = ransomNote.toCharArray();
-        for (char ch : rs) {
+        for (char ch : ransomNote.toCharArray()) {
             if (counts[ch - 'a'] == 0) {
                 return false;
             } else {

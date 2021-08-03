@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p200;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution49;
+import wsg.oj.java.leetcode.problems.p400.Solution438;
 
 /**
  * 242. Valid Anagram (Easy)
@@ -16,8 +17,8 @@ import wsg.oj.java.leetcode.problems.p0.Solution49;
 public class Solution242 implements Solution {
 
     /**
-     * @complexity S=T(26)
-     * @see wsg.oj.java.Complexity#TIME_M_PLUS_N
+     * @complexity T=O(m+n)
+     * @complexity S=O(26)
      */
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
@@ -28,11 +29,10 @@ public class Solution242 implements Solution {
             count[ch - 'a']++;
         }
         for (char ch : t.toCharArray()) {
-            int i = ch - 'a';
-            if (count[i] == 0) {
+            if (count[ch - 'a'] == 0) {
                 return false;
             }
-            count[i]--;
+            count[ch - 'a']--;
         }
         return true;
     }

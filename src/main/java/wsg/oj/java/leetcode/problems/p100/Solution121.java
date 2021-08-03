@@ -25,14 +25,12 @@ public class Solution121 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int maxProfit(int[] prices) {
-        int maxProfit = 0, min = prices[0];
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] <= min) {
-                min = prices[i];
-            } else {
-                maxProfit = Math.max(maxProfit, prices[i] - min);
-            }
+        // min: the min price within prices[0,i-1]
+        int min = prices[0], max = 0, n = prices.length;
+        for (int i = 1; i < n; i++) {
+            max = Math.max(max, prices[i] - min);
+            min = Math.min(min, prices[i]);
         }
-        return maxProfit;
+        return max;
     }
 }

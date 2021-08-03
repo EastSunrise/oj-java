@@ -25,13 +25,13 @@ public class Solution3 implements Solution {
      * @see wsg.oj.java.Complexity#TIME_N
      */
     public int lengthOfLongestSubstring(String s) {
-        int len = s.length();
-        if (len == 0) {
+        int n = s.length();
+        if (n == 0) {
             return 0;
         }
         int start = 0, max = 0;
-        Map<Character, Integer> indices = new HashMap<>(16);
-        for (int i = 0; i < len; i++) {
+        Map<Character, Integer> indices = new HashMap<>(64);
+        for (int i = 0; i < n; i++) {
             char ch = s.charAt(i);
             Integer idx = indices.get(ch);
             if (idx != null) {
@@ -42,7 +42,7 @@ public class Solution3 implements Solution {
             }
             indices.put(ch, i);
         }
-        max = Math.max(max, len - start);
+        max = Math.max(max, n - start);
         return max;
     }
 }

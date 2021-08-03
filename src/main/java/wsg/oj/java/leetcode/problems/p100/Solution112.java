@@ -19,7 +19,7 @@ import wsg.oj.java.leetcode.problems.p400.Solution437;
 public class Solution112 implements Solution {
 
     /**
-     * @see #PREORDER
+     * @see #DFS
      */
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) {

@@ -19,20 +19,20 @@ public class Solution387 implements Solution {
      * @complexity S=O(26)
      */
     public int firstUniqChar(String s) {
-        char[] chars = s.toCharArray();
+        int n = s.length();
         // [i][0]: count of char i+'a', [i][1]: first index of char i+'a'
         int[][] counts = new int[26][2];
-        for (int i = chars.length - 1; i >= 0; i--) {
-            int ch = chars[i] - 'a';
-            counts[ch][0]++;
-            counts[ch][1] = i;
+        for (int i = 0; i < n; i++) {
+            int idx = s.charAt(i) - 'a';
+            counts[idx][0]++;
+            counts[idx][1] = i;
         }
-        int first = chars.length;
+        int first = n;
         for (int[] count : counts) {
             if (count[0] == 1 && count[1] < first) {
                 first = count[1];
             }
         }
-        return first == chars.length ? -1 : first;
+        return first == n ? -1 : first;
     }
 }

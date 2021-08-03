@@ -24,12 +24,12 @@ public class Solution203 implements Solution {
      */
     public ListNode removeElements(ListNode head, int val) {
         ListNode res = new ListNode(0, head);
-        ListNode cursor = res;
-        while (cursor.next != null) {
-            if (cursor.next.val == val) {
-                cursor.next = cursor.next.next;
+        ListNode cur = res;
+        while (cur.next != null) {
+            if (cur.next.val == val) {
+                cur.next = cur.next.next;
             } else {
-                cursor = cursor.next;
+                cur = cur.next;
             }
         }
         return res.next;

@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.datastructure.TreeNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
@@ -22,15 +23,15 @@ public class Solution230 extends BinaryTree implements Solution {
     /**
      * @complexity T=O(k)
      * @complexity S=O(h), h=height of the subtrees of the first k node.
-     * @see #PREORDER
+     * @see #INORDER
      */
     public int kthSmallest(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         TreeNode left = root;
-        do {
+        while (left != null) {
             stack.push(left);
             left = left.left;
-        } while (left != null);
+        }
         while (!stack.isEmpty()) {
             TreeNode node = stack.pop();
             if (--k == 0) {

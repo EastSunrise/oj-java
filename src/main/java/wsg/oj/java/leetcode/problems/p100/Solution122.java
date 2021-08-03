@@ -24,17 +24,15 @@ public class Solution122 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int maxProfit(int[] prices) {
-        if (prices.length <= 1) {
-            return 0;
+        int n = prices.length;
+        // held: the max profit when holding a stock after trading
+        // sold: the max profit when selling a stock after trading
+        int held = -prices[0], sold = 0, tmp;
+        for (int i = 1; i < n; i++) {
+            tmp = held;
+            held = Math.max(held, sold - prices[i]);
+            sold = Math.max(sold, tmp + prices[i]);
         }
-        int profit = 0, min = prices[0];
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] < prices[i - 1]) {
-                profit += prices[i - 1] - min;
-                min = prices[i];
-            }
-        }
-        profit += prices[prices.length - 1] - min;
-        return profit;
+        return sold;
     }
 }

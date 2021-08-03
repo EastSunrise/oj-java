@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.p100.Solution152;
  * of Three Numbers</a>
  * @since 2021-07-23
  */
-class Solution628 implements Solution {
+public class Solution628 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N
