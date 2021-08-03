@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p100;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
+import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p400.Solution429;
@@ -27,7 +28,7 @@ import wsg.oj.java.leetcode.problems.p900.Solution993;
 public class Solution102 implements Solution {
 
     /**
-     * @see wsg.oj.java.datastructure.BinaryTreeOpt#traverseLevels(Function, BiConsumer)
+     * @see BinaryTree#traverseLevels(Function, BiConsumer)
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
         return null;

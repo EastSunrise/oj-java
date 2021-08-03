@@ -1,5 +1,6 @@
 package wsg.oj.java.leetcode.problems.p400;
 
+import wsg.oj.java.datastructure.BinarySearchTree;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 
@@ -14,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
 class Solution450 implements Solution {
 
     /**
-     * @see wsg.oj.java.datastructure.BinarySearchTreeOpt#remove(Comparable)
+     * @see BinarySearchTree#remove(Comparable)
      */
     public TreeNode deleteNode(TreeNode root, int key) {
         return root;

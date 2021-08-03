@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
+import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 
@@ -20,7 +21,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
 class Solution515 implements Solution {
 
     /**
-     * @see wsg.oj.java.datastructure.BinaryTreeOpt#traverseLevels(Function, BiConsumer)
+     * @see BinaryTree#traverseLevels(Function, BiConsumer)
      */
     public List<Integer> largestValues(TreeNode root) {
         List<Integer> res = new ArrayList<>();

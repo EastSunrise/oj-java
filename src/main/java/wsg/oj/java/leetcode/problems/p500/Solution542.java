@@ -1,5 +1,8 @@
 package wsg.oj.java.leetcode.problems.p500;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -11,6 +14,9 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @since 2021-07-20
  */
 class Solution542 implements Solution {
+
+    static int[] dr = {-1, 0, 1, 0};
+    static int[] dc = {0, -1, 0, 1};
 
     /**
      * @see #DYNAMIC_PROGRAMMING
@@ -48,5 +54,42 @@ class Solution542 implements Solution {
             }
         }
         return dp;
+    }
+
+    /**
+     * @see #BFS
+     * @see wsg.oj.java.Complexity#TIME_MN
+     * @see wsg.oj.java.Complexity#SPACE_MN
+     */
+    public int[][] updateMatrix2(int[][] mat) {
+        int m = mat.length, n = mat[0].length;
+        int[][] res = new int[m][n];
+        for (int[] row : res) {
+            Arrays.fill(row, -1);
+        }
+        Queue<Integer> queue = new LinkedList<>();
+        int bits = 16, mask = 0xffff;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (mat[i][j] == 0) {
+                    res[i][j] = 0;
+                    queue.offer((i << bits) + j);
+                }
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            int cell = queue.poll();
+            int r0 = cell >> bits, c0 = mask & cell;
+            for (int i = 0; i < 4; i++) {
+                int r = r0 + dr[i], c = c0 + dc[i];
+                if (r >= 0 && r < m && c >= 0 && c < n && res[r][c] < 0) {
+                    res[r][c] = res[r0][c0] + 1;
+                    queue.offer((r << bits) + c);
+                }
+            }
+        }
+
+        return res;
     }
 }

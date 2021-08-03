@@ -2,7 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.List;
 import java.util.function.Consumer;
-import wsg.oj.java.datastructure.BinaryTreeOpt;
+import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p0.Solution94;
@@ -22,8 +22,8 @@ import wsg.oj.java.leetcode.problems.p500.Solution589;
 public class Solution144 implements Solution {
 
     /**
-     * @see BinaryTreeOpt#preorderTraversal(Consumer)
-     * @see BinaryTreeOpt#preorderTraversalIteratively(Consumer)
+     * @see BinaryTree#preorderTraversal(Consumer)
+     * @see BinaryTree#preorderTraversalIteratively(Consumer)
      */
     public List<Integer> preorderTraversal(TreeNode root) {
         return null;

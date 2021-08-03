@@ -1,6 +1,6 @@
 package wsg.oj.java.leetcode.problems.p700;
 
-import wsg.oj.java.datastructure.BinarySearchTreeOpt;
+import wsg.oj.java.datastructure.BinarySearchTree;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 
@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
 public class Solution700 implements Solution {
 
     /**
-     * @see BinarySearchTreeOpt#find(Comparable)
+     * @see BinarySearchTree#find(Comparable)
      */
     public TreeNode searchBST(TreeNode root, int val) {
         return root;

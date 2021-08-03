@@ -22,22 +22,22 @@ public class Solution309 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int maxProfit(int[] prices) {
-        int len = prices.length;
-        if (len <= 1) {
+        int n = prices.length;
+        if (n <= 1) {
             return 0;
         }
-        // be holding a stock after i days
-        int[] holding = new int[len];
-        // be cooldown after i days
-        int[] cooldown = new int[len];
-        // not hold a stock and not cooldown after i days
-        int[] free = new int[len];
-        holding[0] = -prices[0];
-        for (int i = 1; i < len; i++) {
-            holding[i] = Math.max(holding[i - 1], free[i - 1] - prices[i]);
-            cooldown[i] = holding[i - 1] + prices[i];
+        // held[i]: the max profit when holding a stock after i days
+        int[] held = new int[n];
+        // cooldown[i]: the max profit when in cooldown after i days
+        int[] cooldown = new int[n];
+        // free[i]: the max profit when free to trade after i days
+        int[] free = new int[n];
+        held[0] = -prices[0];
+        for (int i = 1; i < n; i++) {
+            held[i] = Math.max(held[i - 1], free[i - 1] - prices[i]);
+            cooldown[i] = held[i - 1] + prices[i];
             free[i] = Math.max(free[i - 1], cooldown[i - 1]);
         }
-        return Math.max(cooldown[len - 1], free[len - 1]);
+        return Math.max(cooldown[n - 1], free[n - 1]);
     }
 }

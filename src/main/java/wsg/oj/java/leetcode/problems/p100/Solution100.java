@@ -1,5 +1,6 @@
 package wsg.oj.java.leetcode.problems.p100;
 
+import wsg.oj.java.datastructure.BinaryTreeImpl;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
 public class Solution100 implements Solution {
 
     /**
-     * @see wsg.oj.java.datastructure.BinaryTree#equals(Object)
+     * @see BinaryTreeImpl#equals(Object)
      */
     public boolean isSameTree(TreeNode p, TreeNode q) {
         return false;

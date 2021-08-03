@@ -25,15 +25,14 @@ public class Solution83 implements Solution {
         if (head == null) {
             return null;
         }
-        ListNode last = head;
-        ListNode cursor = head.next;
-        while (cursor != null) {
-            if (cursor.val == last.val) {
-                last.next = cursor.next;
+        ListNode prev = head, cur = head.next;
+        while (cur != null) {
+            if (cur.val == prev.val) {
+                prev.next = cur.next;
             } else {
-                last = cursor;
+                prev = cur;
             }
-            cursor = cursor.next;
+            cur = cur.next;
         }
         return head;
     }

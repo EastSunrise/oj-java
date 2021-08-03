@@ -1,6 +1,6 @@
 package wsg.oj.java.leetcode.problems.p100;
 
-import wsg.oj.java.datastructure.BinaryTreeOpt;
+import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p500.Solution559;
@@ -20,7 +20,7 @@ import wsg.oj.java.leetcode.problems.p500.Solution559;
 public class Solution104 implements Solution {
 
     /**
-     * @see BinaryTreeOpt#getHeight(TreeNode)
+     * @see BinaryTree#getHeight(TreeNode)
      */
     public int maxDepth(TreeNode root) {
         return 0;

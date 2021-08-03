@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import java.util.Comparator;
+import wsg.oj.java.datastructure.BinaryTree;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.base.TreeNode;
 import wsg.oj.java.leetcode.problems.p500.Solution501;
@@ -18,7 +19,7 @@ import wsg.oj.java.leetcode.problems.p500.Solution501;
 public class Solution98 implements Solution {
 
     /**
-     * @see wsg.oj.java.datastructure.BinaryTreeOpt#isBST(Comparator)
+     * @see BinaryTree#isBST(Comparator)
      */
     public boolean isValidBST(TreeNode root) {
         return false;
