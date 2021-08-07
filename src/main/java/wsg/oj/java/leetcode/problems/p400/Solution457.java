@@ -19,22 +19,22 @@ class Solution457 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public boolean circularArrayLoop(int[] nums) {
-        int len = nums.length;
-        for (int i = 0; i < len; i++) {
+        int n = nums.length;
+        for (int i = 0; i < n; i++) {
             if (nums[i] == 0) {
                 continue;
             }
             int slow = i, fast = i;
             do {
-                slow = ((slow + nums[slow]) % len + len) % len;
-                fast = ((fast + nums[fast]) % len + len) % len;
-                fast = ((fast + nums[fast]) % len + len) % len;
+                slow = ((slow + nums[slow]) % n + n) % n;
+                fast = ((fast + nums[fast]) % n + n) % n;
+                fast = ((fast + nums[fast]) % n + n) % n;
             } while (slow != fast);
             // the length of the cycle is greater than 1
-            if (((fast + nums[fast]) % len + len) % len != fast) {
+            if (((fast + nums[fast]) % n + n) % n != fast) {
                 boolean positive = nums[fast] > 0;
                 do {
-                    fast = ((fast + nums[fast]) % len + len) % len;
+                    fast = ((fast + nums[fast]) % n + n) % n;
                 } while (nums[fast] > 0 == positive && fast != slow);
                 if (fast == slow) {
                     return true;
@@ -42,7 +42,7 @@ class Solution457 implements Solution {
             }
             slow = i;
             while (nums[slow] != 0) {
-                fast = ((slow + nums[slow]) % len + len) % len;
+                fast = ((slow + nums[slow]) % n + n) % n;
                 nums[slow] = 0;
                 slow = fast;
             }

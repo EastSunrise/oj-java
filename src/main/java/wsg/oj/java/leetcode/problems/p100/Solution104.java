@@ -20,9 +20,9 @@ import wsg.oj.java.leetcode.problems.p500.Solution559;
 public class Solution104 implements Solution {
 
     /**
-     * @see BinaryTree#getHeight(TreeNode)
+     * @see BinaryTree#getHeight()
      */
     public int maxDepth(TreeNode root) {
-        return 0;
+        return root == null ? 0 : Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 }

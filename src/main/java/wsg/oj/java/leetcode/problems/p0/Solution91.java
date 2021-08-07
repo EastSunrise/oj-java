@@ -19,10 +19,11 @@ class Solution91 implements Solution {
      */
     public int numDecodings(String s) {
         char[] chars = s.toCharArray();
-        int len = chars.length;
-        int[] dp = new int[len];
+        int n = chars.length;
+        // dp[i]: the number of decodes of s[0,i]
+        int[] dp = new int[n];
         dp[0] = chars[0] == '0' ? 0 : 1;
-        if (len == 1) {
+        if (n == 1) {
             return dp[0];
         }
 
@@ -32,7 +33,7 @@ class Solution91 implements Solution {
         if (chars[0] == '1' || (chars[0] == '2' && chars[1] <= '6')) {
             dp[1] += 1;
         }
-        for (int i = 2; i < len; i++) {
+        for (int i = 2; i < n; i++) {
             if (chars[i] > '0') {
                 dp[i] += dp[i - 1];
             }
@@ -40,6 +41,6 @@ class Solution91 implements Solution {
                 dp[i] += dp[i - 2];
             }
         }
-        return dp[len - 1];
+        return dp[n - 1];
     }
 }

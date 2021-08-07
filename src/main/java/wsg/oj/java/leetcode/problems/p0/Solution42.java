@@ -16,34 +16,24 @@ import wsg.oj.java.leetcode.problems.p200.Solution238;
  */
 public class Solution42 implements Solution {
 
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
     public int trap(int[] height) {
-        int left = 0, n = height.length - 1;
-        while (left < n && height[left] <= height[left + 1]) {
-            left++;
+        int left = 0, right = height.length - 1;
+        int leftMax = 0, rightMax = 0, water = 0;
+        while (left < right) {
+            leftMax = Math.max(leftMax, height[left]);
+            rightMax = Math.max(rightMax, height[right]);
+            if (height[left] < height[right]) {
+                water += leftMax - height[left];
+                left++;
+            } else {
+                water += rightMax - height[right];
+                right--;
+            }
         }
-        int water = 0;
-        while (true) {
-            int bot = left + 1;
-            while (bot < n && height[bot] >= height[bot + 1]) {
-                bot++;
-            }
-            if (bot >= n) {
-                break;
-            }
-            int right = bot + 1;
-            while (right < n && height[right] <= height[right + 1]) {
-                right++;
-            }
-            int h = Math.min(height[left], height[right]);
-            for (int i = left + 1; i < right; i++) {
-                if (height[i] < h) {
-                    water += h - height[i];
-                    height[i] = h;
-                }
-            }
-            left = right;
-        }
-        // keep raining
-        return water > 0 ? water + trap(height) : water;
+        return water;
     }
 }

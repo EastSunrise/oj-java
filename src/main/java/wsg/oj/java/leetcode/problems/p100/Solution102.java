@@ -1,6 +1,9 @@
 package wsg.oj.java.leetcode.problems.p100;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import wsg.oj.java.datastructure.BinaryTree;
@@ -31,6 +34,28 @@ public class Solution102 implements Solution {
      * @see BinaryTree#traverseLevels(Function, BiConsumer)
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
-        return null;
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            // traverse a level
+            int size = queue.size();
+            List<Integer> level = new ArrayList<>(size);
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.remove();
+                level.add(node.val);
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            res.add(level);
+        }
+        return res;
     }
 }

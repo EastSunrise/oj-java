@@ -1,5 +1,8 @@
 package wsg.oj.java.leetcode.problems.p0;
 
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Consumer;
 import wsg.oj.java.datastructure.BinaryTree;
@@ -35,6 +38,23 @@ public class Solution94 implements Solution {
      * @see BinaryTree#inorderTraversalIteratively(Consumer)
      */
     public List<Integer> inorderTraversal(TreeNode root) {
-        return null;
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode current = root;
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            if (!stack.isEmpty()) {
+                current = stack.pop();
+                res.add(current.val);
+                current = current.right;
+            }
+        }
+        return res;
     }
 }

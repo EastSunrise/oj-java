@@ -1,10 +1,11 @@
 package wsg.oj.java.leetcode.problems.p500;
 
-import java.util.Arrays;
+import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p700.Solution720;
 
 /**
- * todo 524. Longest Word in Dictionary through Deleting (MEDIUM)
+ * 524. Longest Word in Dictionary through Deleting (MEDIUM)
  *
  * @author Kingen
  * @see Solution720
@@ -14,18 +15,20 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Solution524 extends Solution522 implements Solution {
 
-    public String findLongestWord(String s, String[] dictionary) {
-        Arrays.sort(dictionary, (s1, s2) -> {
-            if (s1.length() == s2.length()) {
-                return s1.compareTo(s2);
-            }
-            return s2.length() - s1.length();
-        });
-        for (String word : dictionary) {
-            if (isSubsequence(word, s)) {
-                return word;
+    /**
+     * @complexity T=O(L), L=total length of words in the dictionary
+     * @complexity S=O(n), n=the length of s
+     */
+    public String findLongestWord(String s, List<String> dictionary) {
+        String res = "";
+        for (String w : dictionary) {
+            if (isSubsequence(w, s)) {
+                if (w.length() > res.length()
+                    || (w.length() == res.length() && w.compareTo(res) < 0)) {
+                    res = w;
+                }
             }
         }
-        return "";
+        return res;
     }
 }

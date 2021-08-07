@@ -1,5 +1,8 @@
 package wsg.oj.java.leetcode.problems.p100;
 
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Consumer;
 import wsg.oj.java.datastructure.BinaryTree;
@@ -26,6 +29,22 @@ public class Solution144 implements Solution {
      * @see BinaryTree#preorderTraversalIteratively(Consumer)
      */
     public List<Integer> preorderTraversal(TreeNode root) {
-        return null;
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode current = stack.pop();
+            res.add(current.val);
+            if (current.right != null) {
+                stack.push(current.right);
+            }
+            if (current.left != null) {
+                stack.push(current.left);
+            }
+        }
+        return res;
     }
 }

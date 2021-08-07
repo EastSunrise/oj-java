@@ -21,12 +21,12 @@ class Solution139 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean wordBreak(String s, List<String> wordDict) {
-        int len = s.length();
+        int n = s.length();
         Set<String> dict = new HashSet<>(wordDict);
         // dp[i]: whether the substring s[0,i) can be broken to dict
-        boolean[] dp = new boolean[len + 1];
+        boolean[] dp = new boolean[n + 1];
         dp[0] = true;
-        for (int i = 0; i <= len; i++) {
+        for (int i = 0; i <= n; i++) {
             // split s[0,i) into s[0,j)+s[j,i)
             for (int j = i - 1; j >= 0; j--) {
                 if (dp[j] && dict.contains(s.substring(j, i))) {
@@ -35,6 +35,6 @@ class Solution139 implements Solution {
                 }
             }
         }
-        return dp[len];
+        return dp[n];
     }
 }

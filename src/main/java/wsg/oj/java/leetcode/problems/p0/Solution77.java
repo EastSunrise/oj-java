@@ -16,9 +16,9 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution77 implements Solution {
 
     /**
-     * @complexity S=O(kC(n,k))
-     * @see #BACKTRACKING
-     * @see wsg.oj.java.Complexity#TIME_2_N
+     * @complexity T=O(k*C(n,k))
+     * @complexity S=O(n)
+     * @see #DFS
      */
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();

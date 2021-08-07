@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p300.Solution309;
+import wsg.oj.java.leetcode.problems.p700.Solution714;
 
 /**
  * 122. Best Time to Buy and Sell Stock II (Easy)
@@ -34,5 +35,19 @@ public class Solution122 implements Solution {
             sold = Math.max(sold, tmp + prices[i]);
         }
         return sold;
+    }
+
+    /**
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     */
+    public int maxProfit2(int[] prices) {
+        int profit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1]) {
+                profit += prices[i] - prices[i - 1];
+            }
+        }
+        return profit;
     }
 }
