@@ -36,8 +36,9 @@ public class BinaryTreeImpl<T> implements BinaryTree<T> {
         return value;
     }
 
-    protected void setValue(T value) {
-        this.value = value;
+    @Override
+    public void setValue(T value) {
+        this.value = Objects.requireNonNull(value);
     }
 
     @Override
@@ -50,7 +51,8 @@ public class BinaryTreeImpl<T> implements BinaryTree<T> {
         return left;
     }
 
-    protected void setLeft(BinaryTree<T> left) {
+    @Override
+    public void setLeft(BinaryTree<T> left) {
         this.left = left;
     }
 
@@ -64,14 +66,15 @@ public class BinaryTreeImpl<T> implements BinaryTree<T> {
         return right;
     }
 
-    protected void setRight(BinaryTree<T> right) {
+    @Override
+    public void setRight(BinaryTree<T> right) {
         this.right = right;
     }
 
     @Override
     public int getHeight() {
-        int lh = left == null ? 0 : left.getHeight();
-        int rh = right == null ? 0 : right.getHeight();
+        int lh = hasLeft() ? left.getHeight() : 0;
+        int rh = hasRight() ? right.getHeight() : 0;
         return Math.max(lh, rh) + 1;
     }
 

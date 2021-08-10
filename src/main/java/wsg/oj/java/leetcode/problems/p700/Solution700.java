@@ -20,6 +20,12 @@ public class Solution700 implements Solution {
      * @see BinarySearchTree#find(Comparable)
      */
     public TreeNode searchBST(TreeNode root, int val) {
-        return root;
+        if (val == root.val) {
+            return root;
+        }
+        if (val < root.val) {
+            return root.left == null ? null : searchBST(root.left, val);
+        }
+        return root.right == null ? null : searchBST(root.right, val);
     }
 }

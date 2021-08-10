@@ -16,7 +16,7 @@ public class BinarySearchTreeImpl<T extends Comparable<T>>
     }
 
     public BinarySearchTreeImpl(T value, BinarySearchTree<T> left, BinarySearchTree<T> right) {
-        super(value);
+        super(value, left, right);
         if (left != null && value.compareTo(left.getMax()) <= 0) {
             throw new IllegalArgumentException("Not a valid BST");
         }
@@ -26,13 +26,46 @@ public class BinarySearchTreeImpl<T extends Comparable<T>>
     }
 
     @Override
+    public void setValue(T value) {
+        if (hasLeft() && value.compareTo(getLeft().getMax()) <= 0) {
+            throw new IllegalArgumentException("The value is too small");
+        }
+        if (hasRight() && value.compareTo(getRight().getMin()) >= 0) {
+            throw new IllegalArgumentException("The value is too large");
+        }
+        super.setValue(value);
+    }
+
+    @Override
     public BinarySearchTree<T> getLeft() {
         return (BinarySearchTree<T>) super.getLeft();
     }
 
     @Override
+    public void setLeft(BinaryTree<T> left) {
+        if (left != null && !(left instanceof BinarySearchTree)) {
+            throw new ClassCastException("Not a BST");
+        }
+        if (left != null && getValue().compareTo(((BinarySearchTree<T>) left).getMax()) <= 0) {
+            throw new IllegalArgumentException("The left subtree is too large");
+        }
+        super.setLeft(left);
+    }
+
+    @Override
     public BinarySearchTree<T> getRight() {
         return (BinarySearchTree<T>) super.getRight();
+    }
+
+    @Override
+    public void setRight(BinaryTree<T> right) {
+        if (right != null && !(right instanceof BinarySearchTree)) {
+            throw new ClassCastException("Not a BST");
+        }
+        if (right != null && getValue().compareTo(((BinarySearchTree<T>) right).getMin()) >= 0) {
+            throw new IllegalArgumentException("The right subtree is too small");
+        }
+        super.setRight(right);
     }
 
     @Override

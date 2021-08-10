@@ -50,11 +50,11 @@ public class Solution653 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean findTarget2(TreeNode root, int k) {
-        List<Integer> list = new ArrayList<>();
-        inorderTraversal(root, list);
-        int left = 0, right = list.size() - 1;
+        List<Integer> values = new ArrayList<>();
+        inorderTraversal(root, values);
+        int left = 0, right = values.size() - 1;
         while (left < right) {
-            int sum = list.get(left) + list.get(right);
+            int sum = values.get(left) + values.get(right);
             if (sum < k) {
                 left++;
             } else if (sum > k) {

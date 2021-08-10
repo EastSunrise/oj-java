@@ -10,11 +10,42 @@ package wsg.oj.java.datastructure;
  */
 public interface BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
 
+    /**
+     * Sets the value of the root node of this tree.
+     *
+     * @throws IllegalArgumentException if the tree turns invalid BST after setting the value
+     * @throws NullPointerException     if the specified value is null
+     */
+    @Override
+    void setValue(T value);
+
     @Override
     BinarySearchTree<T> getLeft();
 
+    /**
+     * Sets the left subtree of this tree.
+     *
+     * @param left may be null
+     * @throws ClassCastException       if the specified left subtree is not a BST
+     * @throws IllegalArgumentException if the tree turns invalid BST after setting the left
+     *                                  subtree.
+     */
+    @Override
+    void setLeft(BinaryTree<T> left);
+
     @Override
     BinarySearchTree<T> getRight();
+
+    /**
+     * Sets the right subtree of this tree.
+     *
+     * @param right may be null
+     * @throws ClassCastException       if the specified right subtree is not a BST
+     * @throws IllegalArgumentException if the tree turns invalid BST after setting the right
+     *                                  subtree.
+     */
+    @Override
+    void setRight(BinaryTree<T> right);
 
     /**
      * Returns the minimal value within this tree.

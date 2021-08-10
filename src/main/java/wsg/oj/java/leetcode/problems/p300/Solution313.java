@@ -1,5 +1,8 @@
 package wsg.oj.java.leetcode.problems.p300;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p200.Solution264;
 
@@ -14,28 +17,32 @@ import wsg.oj.java.leetcode.problems.p200.Solution264;
 public class Solution313 implements Solution {
 
     /**
-     * @complexity T=O(nk), k=len(primes)
+     * @complexity T=O(n*log{k})
      * @complexity S=O(n+k)
      * @see #DYNAMIC_PROGRAMMING
      */
     public int nthSuperUglyNumber(int n, int[] primes) {
+        int k = primes.length;
+        // candidates of next super ugly number
+        // a candidate: the index of the previous one, the prime, the value of the candidate
+        Queue<int[]> candidates = new PriorityQueue<>(k, Comparator.comparingInt(o -> o[2]));
+        for (int prime : primes) {
+            candidates.offer(new int[]{0, prime, prime});
+        }
+        // the first n super ugly numbers
         int[] dp = new int[n];
-        int[] indices = new int[primes.length];
         dp[0] = 1;
-        for (int i = 1; i < n; i++) {
-            dp[i] = primes[0] * dp[indices[0]];
-            int idx = 0;
-            for (int p = 1; p < indices.length; p++) {
-                int next = primes[p] * dp[indices[p]];
-                if (next < dp[i]) {
-                    dp[i] = next;
-                    idx = p;
-                }
+        for (int i = 1; i < n; ) {
+            // choose the minimal candidate as the ith super ugly number
+            // if it is larger than the previous one
+            int[] min = candidates.remove();
+            if (min[2] > dp[i - 1]) {
+                dp[i++] = min[2];
             }
-            indices[idx]++;
-            if (dp[i] == dp[i - 1]) {
-                i--;
-            }
+            // update the minimal candidate
+            min[0]++;
+            min[2] = dp[min[0]] * min[1];
+            candidates.offer(min);
         }
         return dp[n - 1];
     }

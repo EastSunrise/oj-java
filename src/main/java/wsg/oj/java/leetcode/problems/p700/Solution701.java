@@ -19,6 +19,14 @@ public class Solution701 implements Solution {
      * @see BinarySearchTree#insert(Comparable)
      */
     public TreeNode insertIntoBST(TreeNode root, int val) {
+        if (root == null) {
+            return new TreeNode(val);
+        }
+        if (val < root.val) {
+            root.left = insertIntoBST(root.left, val);
+        } else {
+            root.right = insertIntoBST(root.right, val);
+        }
         return root;
     }
 }

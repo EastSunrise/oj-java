@@ -22,6 +22,17 @@ public class Solution98 implements Solution {
      * @see BinaryTree#isBST(Comparator)
      */
     public boolean isValidBST(TreeNode root) {
-        return false;
+        return within(root, null, null);
+    }
+
+    private boolean within(TreeNode node, Integer min, Integer max) {
+        if (min != null && node.val <= min) {
+            return false;
+        }
+        if (max != null && node.val >= max) {
+            return false;
+        }
+        return (node.left == null || within(node.left, min, node.val))
+            && (node.right == null || within(node.right, node.val, max));
     }
 }

@@ -17,8 +17,8 @@ public class Solution304 implements Solution {
     static class NumMatrix {
 
         /**
-         * sums[i][j]: the sum of the rectangle whose upper left corner and lower right corner are
-         * (0,0) and (i,j) respectively.
+         * sums[i][j]: the sum of the rectangle defined by its upper left corner (0,0) and lower
+         * right corner (i,j).
          */
         private final int[][] sums;
 

@@ -22,18 +22,18 @@ public class Solution74 implements Solution {
      */
     public boolean searchMatrix(int[][] matrix, int target) {
         int m = matrix.length;
-        int left = 0, right = m - 1;
-        while (left <= right) {
-            int mid = (left + right) >>> 1;
+        int top = 0, bot = m - 1;
+        while (top <= bot) {
+            int mid = (top + bot) >>> 1;
             int midVal = matrix[mid][0];
             if (midVal < target) {
-                left = mid + 1;
+                top = mid + 1;
             } else if (midVal > target) {
-                right = mid - 1;
+                bot = mid - 1;
             } else {
                 return true;
             }
         }
-        return right >= 0 && Arrays.binarySearch(matrix[right], target) >= 0;
+        return bot >= 0 && Arrays.binarySearch(matrix[bot], target) >= 0;
     }
 }

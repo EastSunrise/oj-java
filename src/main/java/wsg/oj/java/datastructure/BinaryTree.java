@@ -21,6 +21,13 @@ public interface BinaryTree<T> {
     T getValue();
 
     /**
+     * Sets the value of the root node of this tree.
+     *
+     * @throws NullPointerException if the specified value is null
+     */
+    void setValue(T value);
+
+    /**
      * Returns {@code true} if this tree has the left subtree.
      */
     boolean hasLeft();
@@ -31,6 +38,13 @@ public interface BinaryTree<T> {
     BinaryTree<T> getLeft();
 
     /**
+     * Sets the left subtree of this tree.
+     *
+     * @param left may be null
+     */
+    void setLeft(BinaryTree<T> left);
+
+    /**
      * Returns {@code true} if this tree has the right subtree.
      */
     boolean hasRight();
@@ -39,6 +53,13 @@ public interface BinaryTree<T> {
      * Returns the right subtree of this tree.
      */
     BinaryTree<T> getRight();
+
+    /**
+     * Sets the right subtree of this tree.
+     *
+     * @param right may be null
+     */
+    void setRight(BinaryTree<T> right);
 
     /**
      * Returns the height of this tree.
