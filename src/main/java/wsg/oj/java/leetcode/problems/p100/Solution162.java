@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p800.Solution852;
 
 /**
  * 162. Find Peak Element (Medium)
@@ -19,8 +20,8 @@ public class Solution162 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int findPeakElement(int[] nums) {
-        int len = nums.length;
-        if (len == 1) {
+        int n = nums.length;
+        if (n == 1) {
             return 0;
         }
         int left = 0, right = nums.length - 1;
