@@ -30,10 +30,8 @@ public class Solution75 implements Solution {
             } else if (nums[right] != 0) {
                 right--;
             } else {
-                nums[right] = nums[left];
-                nums[left] = 0;
-                left++;
-                right--;
+                nums[right--] = nums[left];
+                nums[left++] = 0;
             }
         }
         right = nums.length - 1;
@@ -43,10 +41,8 @@ public class Solution75 implements Solution {
             } else if (nums[right] == 2) {
                 right--;
             } else {
-                nums[left] = 1;
-                nums[right] = 2;
-                left++;
-                right--;
+                nums[left++] = 1;
+                nums[right--] = 2;
             }
         }
     }
