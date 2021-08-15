@@ -14,20 +14,21 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution392 implements Solution {
 
     /**
-     * @complexity T=O(l), l=len(t)
-     * @complexity S=O(1)
+     * @see wsg.oj.java.Complexity#TIME_M_PLUS_N
+     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public boolean isSubsequence(String s, String t) {
-        int si = s.length() - 1, ti = t.length() - 1;
-        if (si > ti) {
+        int m = s.length(), n = t.length();
+        if (m > n) {
             return false;
         }
-        while (si >= 0 && ti >= 0) {
+        int si = 0, ti = 0;
+        while (si < m && ti < n) {
             if (s.charAt(si) == t.charAt(ti)) {
-                si--;
+                si++;
             }
-            ti--;
+            ti++;
         }
-        return si < 0;
+        return si == m;
     }
 }

@@ -23,9 +23,10 @@ class Solution435 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int eraseOverlapIntervals(int[][] intervals) {
+        int n = intervals.length;
         Arrays.sort(intervals, Comparator.comparing(arr -> arr[0]));
         int right = intervals[0][1], count = 0;
-        for (int i = 1; i < intervals.length; i++) {
+        for (int i = 1; i < n; i++) {
             int[] interval = intervals[i];
             if (interval[0] < right) {
                 count++;

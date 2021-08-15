@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p500.Solution516;
+import wsg.oj.java.leetcode.problems.p600.Solution647;
 
 /**
  * 5. Longest Palindromic Substring (Medium)
@@ -27,10 +28,10 @@ public class Solution5 implements Solution {
      * for LPS</a>
      */
     public String longestPalindrome(String s) {
-        int len = s.length();
-        int length = len * 2 + 1;
+        int n = s.length();
+        int length = n * 2 + 1;
         char[] arr = new char[length];
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < n; i++) {
             arr[2 * i] = '#';
             arr[2 * i + 1] = s.charAt(i);
         }

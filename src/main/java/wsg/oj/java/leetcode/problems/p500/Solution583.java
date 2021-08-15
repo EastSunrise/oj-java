@@ -2,6 +2,8 @@ package wsg.oj.java.leetcode.problems.p500;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution72;
+import wsg.oj.java.leetcode.problems.p1100.Solution1143;
+import wsg.oj.java.leetcode.problems.p700.Solution712;
 
 /**
  * 583. Delete Operation for Two Strings (MEDIUM)

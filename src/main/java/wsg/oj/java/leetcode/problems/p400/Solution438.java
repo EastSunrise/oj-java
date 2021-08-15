@@ -26,30 +26,37 @@ public class Solution438 implements Solution {
      * @complexity S=O(26)
      */
     public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> res = new ArrayList<>();
-        int pLen = p.length(), sLen = s.length();
-        if (sLen < pLen) {
-            return res;
+        int m = s.length(), n = p.length();
+        if (m < n) {
+            return new ArrayList<>();
         }
-        int[] pCounts = new int[26];
+        int[] counts = new int[26];
         for (char ch : p.toCharArray()) {
-            pCounts[ch - 'a']++;
+            counts[ch - 'a']++;
         }
-        int[] sCounts = new int[26];
-        for (int i = 0; i < pLen; i++) {
-            sCounts[s.charAt(i) - 'a']++;
+        int[] window = new int[26];
+        int i = 0;
+        while (i < n) {
+            window[s.charAt(i++) - 'a']++;
         }
-        int index = 0;
+
+        int base = hash(counts);
+        int hash = hash(window);
+        List<Integer> res = new ArrayList<>();
         while (true) {
-            if (Arrays.equals(pCounts, sCounts)) {
-                res.add(index);
+            if (hash == base && Arrays.equals(counts, window)) {
+                res.add(i - n);
             }
-            if (index + pLen >= s.length()) {
+            if (i == m) {
                 break;
             }
-            sCounts[s.charAt(index) - 'a']--;
-            sCounts[s.charAt(index + pLen) - 'a']++;
-            index++;
+            int idx = s.charAt(i) - 'a';
+            hash += idx;
+            window[idx]++;
+            idx = s.charAt(i - n) - 'a';
+            hash -= idx;
+            window[idx]--;
+            i++;
         }
         return res;
     }

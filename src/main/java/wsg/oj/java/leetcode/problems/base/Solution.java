@@ -27,6 +27,14 @@ public interface Solution extends Complexity {
     String LEVEL_ORDER = "Level Order";
     String HASHTABLE = "Hash Table";
 
+    default int hash(int[] counts) {
+        int hash = 0;
+        for (int i = 0; i < 26; i++) {
+            hash += i * counts[i];
+        }
+        return hash;
+    }
+
     default int binarySearch(int[] nums, int target) {
         int low = 0, high = nums.length - 1;
         while (low <= high) {

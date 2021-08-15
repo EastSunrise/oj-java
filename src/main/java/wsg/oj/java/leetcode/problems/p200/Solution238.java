@@ -22,16 +22,16 @@ public class Solution238 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int[] productExceptSelf(int[] nums) {
-        int len = nums.length;
-        int[] res = new int[len];
+        int n = nums.length;
+        int[] res = new int[n];
         // calculate the product of nums[0,i-1]
         res[0] = 1;
-        for (int i = 1; i < len; i++) {
+        for (int i = 1; i < n; i++) {
             res[i] = res[i - 1] * nums[i - 1];
         }
-        // calculate the product of nums[i+1,len)
+        // calculate the product of nums[i+1,n)
         int product = 1;
-        for (int i = len - 2; i >= 0; i--) {
+        for (int i = n - 2; i >= 0; i--) {
             product *= nums[i + 1];
             res[i] *= product;
         }

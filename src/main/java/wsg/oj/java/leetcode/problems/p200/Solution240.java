@@ -20,15 +20,15 @@ public class Solution240 implements Solution {
      */
     public boolean searchMatrix(int[][] matrix, int target) {
         int m = matrix.length, n = matrix[0].length;
-        int bottom = m - 1, left = 0;
-        while (bottom >= 0 && left < n) {
-            int bl = matrix[bottom][left];
-            if (bl < target) {
+        int row = m - 1, col = 0;
+        while (row >= 0 && col < n) {
+            int val = matrix[row][col];
+            if (val < target) {
                 // next columns
-                left++;
-            } else if (bl > target) {
+                col++;
+            } else if (val > target) {
                 // previous rows
-                bottom--;
+                row--;
             } else {
                 return true;
             }

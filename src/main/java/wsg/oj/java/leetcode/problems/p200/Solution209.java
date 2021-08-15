@@ -26,19 +26,17 @@ public class Solution209 implements Solution {
     public int minSubArrayLen(int target, int[] nums) {
         // i: the left (inclusive) of the window
         // j: the right (exclusive) of the window
-        int i = 0, j = 0, len = nums.length;
+        int i = 0, j = 0, n = nums.length;
         int sum = 0, res = Integer.MAX_VALUE;
-        while (j < len) {
-            // move the the right side
-            sum += nums[j++];
-            if (sum >= target) {
-                // find one subarray
+        while (true) {
+            if (sum < target) {
+                if (j == n) {
+                    break;
+                }
+                sum += nums[j++];
+            } else {
                 res = Math.min(res, j - i);
-                do {
-                    // move the left side
-                    sum -= nums[i++];
-                } while (sum >= target);
-                res = Math.min(res, j - i + 1);
+                sum -= nums[i++];
             }
         }
         return res == Integer.MAX_VALUE ? 0 : res;

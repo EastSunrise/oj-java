@@ -30,6 +30,7 @@ public class Solution567 implements Solution {
             counts[ch - 'a']++;
         }
         int base = hash(counts);
+
         int[] window = new int[26];
         for (int i = 0; i < m - 1; i++) {
             window[s2.charAt(i) - 'a']++;
@@ -47,13 +48,5 @@ public class Solution567 implements Solution {
             window[idx]--;
         }
         return false;
-    }
-
-    private int hash(int[] counts) {
-        int hash = 0;
-        for (int i = 0; i < 26; i++) {
-            hash += i * counts[i];
-        }
-        return hash;
     }
 }

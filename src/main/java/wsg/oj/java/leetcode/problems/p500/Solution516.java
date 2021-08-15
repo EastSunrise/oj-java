@@ -2,6 +2,8 @@ package wsg.oj.java.leetcode.problems.p500;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution5;
+import wsg.oj.java.leetcode.problems.p1100.Solution1143;
+import wsg.oj.java.leetcode.problems.p600.Solution647;
 
 /**
  * 516. Longest Palindromic Subsequence (MEDIUM)
