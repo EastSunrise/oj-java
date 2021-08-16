@@ -17,16 +17,16 @@ public class Solution409 implements Solution {
      * @complexity S=O(58)
      */
     public int longestPalindrome(String s) {
-        boolean[] single = new boolean[58];
+        boolean[] chars = new boolean[58];
+        int len = 0;
         for (char ch : s.toCharArray()) {
-            single[ch - 'A'] = !single[ch - 'A'];
-        }
-        int singles = 0;
-        for (boolean flag : single) {
-            if (flag) {
-                singles++;
+            if (chars[ch - 'A']) {
+                len += 2;
+                chars[ch - 'A'] = false;
+            } else {
+                chars[ch - 'A'] = true;
             }
         }
-        return s.length() - singles + (singles > 0 ? 1 : 0);
+        return s.length() > len ? len + 1 : len;
     }
 }

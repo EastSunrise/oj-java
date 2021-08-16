@@ -15,7 +15,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Random Pointer</a>
  * @since 2021-07-12
  */
-class Solution138 implements Solution {
+public class Solution138 implements Solution {
 
     /**
      * Stores the random nodes with a map.
