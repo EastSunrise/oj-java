@@ -14,7 +14,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution39;
 public class Solution377 implements Solution {
 
     /**
-     * @complexity T=O(nk), k=the target
+     * @complexity T=O(nk), k=target
      * @complexity S=O(k)
      * @see #DYNAMIC_PROGRAMMING
      */

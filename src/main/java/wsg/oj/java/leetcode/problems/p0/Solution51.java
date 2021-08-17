@@ -26,9 +26,10 @@ public class Solution51 implements Solution {
             Arrays.fill(row, '.');
         }
         boolean[] cols = new boolean[n];
-        boolean[] tl2br = new boolean[2 * n - 1], tr2bl = new boolean[2 * n - 1];
+        // upper-left corner to lower-right corner and upper-right corner to lower-left corner
+        boolean[] ul2lr = new boolean[2 * n - 1], ur2ll = new boolean[2 * n - 1];
         List<List<String>> res = new ArrayList<>();
-        place(res, n, 0, board, cols, tl2br, tr2bl);
+        place(res, n, 0, board, cols, ul2lr, ur2ll);
         return res;
     }
 
@@ -38,7 +39,7 @@ public class Solution51 implements Solution {
      * @param row the row where the queen will be placed
      */
     private void place(List<List<String>> res, int n, int row, char[][] board,
-        boolean[] cols, boolean[] tl2br, boolean[] tr2bl) {
+        boolean[] cols, boolean[] ul2lr, boolean[] ur2ll) {
         if (row == n) {
             List<String> list = new ArrayList<>(n);
             for (char[] chars : board) {
@@ -53,17 +54,17 @@ public class Solution51 implements Solution {
             }
             int tl = row + n - 1 - col;
             int tr = row + col;
-            if (tl2br[tl] || tr2bl[tr]) {
+            if (ul2lr[tl] || ur2ll[tr]) {
                 continue;
             }
             // place a queen at [row,col]
             board[row][col] = 'Q';
-            cols[col] = tl2br[tl] = tr2bl[tr] = true;
+            cols[col] = ul2lr[tl] = ur2ll[tr] = true;
             // place a queen at next row
-            place(res, n, row + 1, board, cols, tl2br, tr2bl);
+            place(res, n, row + 1, board, cols, ul2lr, ur2ll);
             // roll back
             board[row][col] = '.';
-            cols[col] = tl2br[tl] = tr2bl[tr] = false;
+            cols[col] = ul2lr[tl] = ur2ll[tr] = false;
         }
     }
 }

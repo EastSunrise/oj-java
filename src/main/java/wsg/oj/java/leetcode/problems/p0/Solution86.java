@@ -19,23 +19,20 @@ public class Solution86 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public ListNode partition(ListNode head, int x) {
-        ListNode leftHead = new ListNode(0), rightHead = new ListNode(0);
-        ListNode left = leftHead, right = rightHead;
-        while (head != null) {
-            if (head.val < x) {
-                left.next = head;
-                left = head;
+        ListNode smaller = new ListNode(0), larger = new ListNode(0);
+        ListNode p = head, sp = smaller, lp = larger;
+        while (p != null) {
+            if (p.val < x) {
+                sp.next = p;
+                sp = sp.next;
             } else {
-                right.next = head;
-                right = head;
+                lp.next = p;
+                lp = lp.next;
             }
-            head = head.next;
+            p = p.next;
         }
-        right.next = null;
-        if (leftHead.next == null) {
-            return rightHead.next;
-        }
-        left.next = rightHead.next;
-        return leftHead.next;
+        lp.next = null;
+        sp.next = larger.next;
+        return smaller.next;
     }
 }

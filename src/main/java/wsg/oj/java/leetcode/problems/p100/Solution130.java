@@ -21,27 +21,24 @@ public class Solution130 implements Solution {
      */
     public void solve(char[][] board) {
         int m = board.length, n = board[0].length;
-        // the first and last columns
+        // the first column
         for (int i = 0; i < m; i++) {
             flip(board, i, 0);
         }
-        if (n > 1) {
-            int j = n - 1;
-            for (int i = 0; i < m; i++) {
-                flip(board, i, j);
-            }
+        // the last column
+        for (int i = 0; i < m; i++) {
+            flip(board, i, n - 1);
         }
-        // the first and last rows
+        // the first row
         for (int j = 0; j < n; j++) {
             flip(board, 0, j);
         }
-        if (m > 1) {
-            int i = m - 1;
-            for (int j = 0; j < n; j++) {
-                flip(board, i, j);
-            }
+        // the last row
+        for (int j = 0; j < n; j++) {
+            flip(board, m - 1, j);
         }
-        // flip all left 'O's
+
+        // flip all inner 'O's
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 if (board[i][j] == 'O') {

@@ -58,21 +58,20 @@ public class Solution437 implements Solution {
     public int pathSum2(TreeNode root, int targetSum) {
         Map<Integer, Integer> prefixSums = new HashMap<>(16);
         prefixSums.put(0, 1);
-        return traverse(root, prefixSums, targetSum, 0);
+        return traverse(root, prefixSums, 0, targetSum);
     }
 
-    private int traverse(TreeNode node, Map<Integer, Integer> prefixSums, int sum, int prefixSum) {
+    private int traverse(TreeNode node, Map<Integer, Integer> prefixSums, int sum, int target) {
         if (node == null) {
             return 0;
         }
-        int count = 0;
-        prefixSum += node.val;
+        sum += node.val;
         // find paths which end with current node
-        count += prefixSums.getOrDefault(prefixSum - sum, 0);
-        prefixSums.put(prefixSum, prefixSums.getOrDefault(prefixSum, 0) + 1);
-        count += traverse(node.left, prefixSums, sum, prefixSum);
-        count += traverse(node.right, prefixSums, sum, prefixSum);
-        prefixSums.put(prefixSum, prefixSums.get(prefixSum) - 1);
+        int count = prefixSums.getOrDefault(sum - target, 0);
+        prefixSums.put(sum, prefixSums.getOrDefault(sum, 0) + 1);
+        count += traverse(node.left, prefixSums, sum, target);
+        count += traverse(node.right, prefixSums, sum, target);
+        prefixSums.put(sum, prefixSums.get(sum) - 1);
         return count;
     }
 }

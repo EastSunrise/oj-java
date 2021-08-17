@@ -30,18 +30,18 @@ public class Solution113 implements Solution {
         return res;
     }
 
-    private void pathSum(List<List<Integer>> res, TreeNode node, List<Integer> temp, int target) {
+    private void pathSum(List<List<Integer>> res, TreeNode node, List<Integer> tmp, int target) {
         if (node == null) {
             return;
         }
-        temp.add(node.val);
+        tmp.add(node.val);
         target -= node.val;
         if (node.left == null && node.right == null && target == 0) {
             // find a path
-            res.add(new ArrayList<>(temp));
+            res.add(new ArrayList<>(tmp));
         }
-        pathSum(res, node.left, temp, target);
-        pathSum(res, node.right, temp, target);
-        temp.remove(temp.size() - 1);
+        pathSum(res, node.left, tmp, target);
+        pathSum(res, node.right, tmp, target);
+        tmp.remove(tmp.size() - 1);
     }
 }

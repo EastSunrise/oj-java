@@ -22,20 +22,21 @@ class Solution290 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public boolean wordPattern(String pattern, String s) {
-        Map<Character, String> p2s = new HashMap<>(26);
-        Map<String, Character> s2p = new HashMap<>(26);
-        char[] chars = pattern.toCharArray();
+        int n = pattern.length();
         String[] words = s.split(" ");
-        if (chars.length != words.length) {
+        if (n != words.length) {
             return false;
         }
-        for (int i = 0; i < chars.length; i++) {
-            String origin = p2s.put(chars[i], words[i]);
-            Character c = s2p.put(words[i], chars[i]);
-            if (origin != null && !origin.equals(words[i])) {
+        Map<Character, String> p2s = new HashMap<>(26);
+        Map<String, Character> s2p = new HashMap<>(26);
+        for (int i = 0; i < n; i++) {
+            char ch = pattern.charAt(i);
+            String word = p2s.put(ch, words[i]);
+            if (word != null && !word.equals(words[i])) {
                 return false;
             }
-            if (c != null && !c.equals(chars[i])) {
+            Character prev = s2p.put(words[i], ch);
+            if (prev != null && !prev.equals(ch)) {
                 return false;
             }
         }
