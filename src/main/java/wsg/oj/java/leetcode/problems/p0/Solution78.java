@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p0;
 import java.util.ArrayList;
 import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p700.Solution784;
 
 /**
  * 78. Subsets (Medium)
@@ -28,17 +29,17 @@ public class Solution78 implements Solution {
     }
 
     /**
-     * @param temp chosen numbers from [i+1,length)
-     * @param i    the index of the number to be chosen or not
+     * @param tmp chosen numbers from [i+1,length)
+     * @param i   the index of the number to be chosen or not
      */
-    private void subsets(List<List<Integer>> res, int[] nums, List<Integer> temp, int i) {
+    private void subsets(List<List<Integer>> res, int[] nums, List<Integer> tmp, int i) {
         if (i < 0) {
-            res.add(new ArrayList<>(temp));
+            res.add(new ArrayList<>(tmp));
             return;
         }
-        subsets(res, nums, temp, i - 1);
-        temp.add(nums[i]);
-        subsets(res, nums, temp, i - 1);
-        temp.remove(temp.size() - 1);
+        subsets(res, nums, tmp, i - 1);
+        tmp.add(nums[i]);
+        subsets(res, nums, tmp, i - 1);
+        tmp.remove(tmp.size() - 1);
     }
 }

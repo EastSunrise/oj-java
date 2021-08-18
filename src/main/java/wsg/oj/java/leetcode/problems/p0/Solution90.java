@@ -29,12 +29,12 @@ class Solution90 implements Solution {
     }
 
     /**
-     * @param temp chosen numbers from [i+1,length)
-     * @param i    the first index of a distinct number to be chosen or not
+     * @param tmp chosen numbers from [i+1,length)
+     * @param i   the first index of next distinct number to be chosen or not
      */
-    private void subsetsWithDup(List<List<Integer>> res, int[] nums, List<Integer> temp, int i) {
+    private void subsetsWithDup(List<List<Integer>> res, int[] nums, List<Integer> tmp, int i) {
         if (i == nums.length) {
-            res.add(new ArrayList<>(temp));
+            res.add(new ArrayList<>(tmp));
             return;
         }
         int j = i + 1, val = nums[i];
@@ -42,15 +42,15 @@ class Solution90 implements Solution {
             j++;
         }
         // without this value
-        subsetsWithDup(res, nums, temp, j);
+        subsetsWithDup(res, nums, tmp, j);
         for (int k = i; k < j; k++) {
-            // with this value of k-i+1 numbers
-            temp.add(val);
-            subsetsWithDup(res, nums, temp, j);
+            // choose this value of k-i+1 numbers
+            tmp.add(val);
+            subsetsWithDup(res, nums, tmp, j);
         }
         // restore
         for (int k = i; k < j; k++) {
-            temp.remove(temp.size() - 1);
+            tmp.remove(tmp.size() - 1);
         }
     }
 }

@@ -31,11 +31,10 @@ public class Solution34 implements Solution {
                 right = mid - 1;
             }
         }
-        int[] res = new int[]{-1, -1};
         if (left == nums.length || nums[left] != target) {
-            return res;
+            return new int[]{-1, -1};
         }
-        res[0] = left;
+        int start = left;
         right = nums.length - 1;
         while (left <= right) {
             int mid = (left + right) >>> 1;
@@ -45,7 +44,6 @@ public class Solution34 implements Solution {
                 right = mid - 1;
             }
         }
-        res[1] = right;
-        return res;
+        return new int[]{start, right};
     }
 }
