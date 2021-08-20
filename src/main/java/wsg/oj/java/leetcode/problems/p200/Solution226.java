@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * @see <a href="https://leetcode-cn.com/problems/invert-binary-tree/">Invert Binary Tree</a>
  * @since 2021-07-13
  */
-class Solution226 implements Solution {
+public class Solution226 implements Solution {
 
     /**
      * @see #POSTORDER
@@ -19,9 +19,9 @@ class Solution226 implements Solution {
      */
     public TreeNode invertTree(TreeNode root) {
         if (root != null) {
-            TreeNode temp = root.left;
+            TreeNode tmp = root.left;
             root.left = invertTree(root.right);
-            root.right = invertTree(temp);
+            root.right = invertTree(tmp);
         }
         return root;
     }

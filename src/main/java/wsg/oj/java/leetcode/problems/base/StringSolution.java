@@ -9,7 +9,7 @@ import java.util.Map;
  * @author Kingen
  * @since 2021/8/16
  */
-public interface StringSolution {
+public interface StringSolution extends Solution {
 
     /**
      * Stats the frequency of characters in a string.

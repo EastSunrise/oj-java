@@ -21,8 +21,8 @@ public class Solution187 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public List<String> findRepeatedDnaSequences(String s) {
-        int len = s.length();
-        if (len <= 10) {
+        int n = s.length();
+        if (n <= 10) {
             return new ArrayList<>();
         }
         int value = 0;
@@ -30,19 +30,17 @@ public class Solution187 implements Solution {
         for (int i = 0; i < 9; i++) {
             value = (value << 2) + charToQuaternary(s.charAt(i));
         }
-        // key: the quaternary value of the 10-letter-long sequence
-        // value: count of same values
-        byte[] counts = new byte[1 << 20];
+        // counts[i]: the count of i which is the quaternary value of the 10-letter-long sequence
+        int[] counts = new int[1 << 20];
         List<String> res = new ArrayList<>();
         // (1<<(c*2-1))-1
         int mask = 0x3ffff;
-        // start: the start index of the 10-letter-long sequence
-        for (int start = 0, sLen = len - 10; start <= sLen; start++) {
-            value = (value << 2) + charToQuaternary(s.charAt(start + 9));
+        for (int i = 9; i < n; i++) {
+            value = (value << 2) + charToQuaternary(s.charAt(i));
             counts[value]++;
             if (counts[value] == 2) {
                 // more than one
-                res.add(s.substring(start, start + 10));
+                res.add(s.substring(i - 9, i + 1));
             }
             // remove the first digit
             value = value & mask;

@@ -43,7 +43,7 @@ public class Solution655 implements Solution {
             res.add(new ArrayList<>());
         }
         List<String> level = res.get(depth);
-        int mid = (left + right) >>> 1;
+        int mid = left + (right - left) / 2;
         for (int i = level.size(); i < mid; i++) {
             level.add("");
         }

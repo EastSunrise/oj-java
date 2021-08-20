@@ -22,11 +22,11 @@ public class Solution160 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode cursorA = headA, cursorB = headB;
-        while (cursorA != cursorB) {
-            cursorA = cursorA == null ? headB : cursorA.next;
-            cursorB = cursorB == null ? headA : cursorB.next;
+        ListNode pa = headA, pb = headB;
+        while (pa != pb) {
+            pa = pa == null ? headB : pa.next;
+            pb = pb == null ? headA : pb.next;
         }
-        return cursorA;
+        return pa;
     }
 }

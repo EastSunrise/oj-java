@@ -22,17 +22,17 @@ class Solution22 implements Solution {
      */
     public List<String> generateParenthesis(int n) {
         List<String> res = new ArrayList<>();
-        generateParenthesis(res, new StringBuilder(2 * n), n, 0, 0);
+        StringBuilder tmp = new StringBuilder(" ".repeat(2 * n));
+        dfs(res, tmp, n, 0, 0);
         return res;
     }
 
     /**
      * @param tmp   current parentheses
-     * @param left  the count of '(' in p
-     * @param right the count of ')' in p
+     * @param left  the count of '(' in tmp
+     * @param right the count of ')' in tmp
      */
-    private void generateParenthesis(List<String> res, StringBuilder tmp,
-        int n, int left, int right) {
+    private void dfs(List<String> res, StringBuilder tmp, int n, int left, int right) {
         if (left < right || left > n) {
             return;
         }
@@ -40,10 +40,10 @@ class Solution22 implements Solution {
             res.add(tmp.toString());
             return;
         }
-        tmp.append('(');
-        generateParenthesis(res, tmp, n, left + 1, right);
-        tmp.setCharAt(tmp.length() - 1, ')');
-        generateParenthesis(res, tmp, n, left, right + 1);
-        tmp.deleteCharAt(tmp.length() - 1);
+        int i = left + right;
+        tmp.setCharAt(i, '(');
+        dfs(res, tmp, n, left + 1, right);
+        tmp.setCharAt(i, ')');
+        dfs(res, tmp, n, left, right + 1);
     }
 }

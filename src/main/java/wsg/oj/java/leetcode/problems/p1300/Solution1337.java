@@ -26,7 +26,7 @@ public class Solution1337 implements Solution {
         for (int i = 0; i < m; i++) {
             int left = 0, right = n - 1;
             while (left <= right) {
-                int mid = (left + right) >>> 1;
+                int mid = left + (right - left) / 2;
                 if (mat[i][mid] == 1) {
                     left = mid + 1;
                 } else {

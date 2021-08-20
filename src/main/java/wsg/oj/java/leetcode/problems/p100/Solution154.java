@@ -1,19 +1,17 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
-import wsg.oj.java.leetcode.problems.p0.Solution33;
 
 /**
- * 153. Find Minimum in Rotated Sorted Array (Medium)
+ * 154. Find Minimum in Rotated Sorted Array II (HARD)
  *
  * @author Kingen
- * @see Solution33
- * @see Solution154
- * @see <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/">Find
- * Minimum in Rotated Sorted Array</a>
- * @since 2021-07-12
+ * @see Solution153
+ * @see <a href="https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/">Find
+ * Minimum in Rotated Sorted Array II</a>
+ * @since 2021-07-27
  */
-public class Solution153 implements Solution {
+public class Solution154 implements Solution {
 
     /**
      * @see #BINARY_SEARCH
@@ -29,7 +27,7 @@ public class Solution153 implements Solution {
             } else if (nums[mid] < nums[left]) {
                 right = mid;
             } else {
-                return nums[left];
+                right--;
             }
         }
         return nums[left];

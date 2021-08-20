@@ -23,20 +23,20 @@ public class Solution82 implements Solution {
      */
     public ListNode deleteDuplicates(ListNode head) {
         ListNode res = new ListNode(0, head);
-        ListNode cur = head, pre = res;
+        ListNode cur = head, prev = res;
         while (cur != null) {
-            ListNode next = cur.next;
             // count of duplicate numbers
             int count = 1, val = cur.val;
+            ListNode next = cur.next;
             while (next != null && next.val == val) {
                 next = next.next;
                 count++;
             }
             if (count > 1) {
                 // remove all duplicate nodes
-                pre.next = next;
+                prev.next = next;
             } else {
-                pre = cur;
+                prev = cur;
             }
             cur = next;
         }

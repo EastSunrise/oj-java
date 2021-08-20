@@ -29,7 +29,7 @@ public class Solution103 implements Solution {
             return res;
         }
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
+        queue.offer(root);
         boolean inverted = false;
         while (!queue.isEmpty()) {
             // traverse a level
@@ -43,10 +43,10 @@ public class Solution103 implements Solution {
                     level.addLast(node.val);
                 }
                 if (node.left != null) {
-                    queue.add(node.left);
+                    queue.offer(node.left);
                 }
                 if (node.right != null) {
-                    queue.add(node.right);
+                    queue.offer(node.right);
                 }
             }
             res.add(level);

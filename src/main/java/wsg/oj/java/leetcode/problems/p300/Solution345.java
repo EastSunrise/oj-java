@@ -1,5 +1,6 @@
 package wsg.oj.java.leetcode.problems.p300;
 
+import java.util.Set;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -14,32 +15,29 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Solution345 implements Solution {
 
+    Set<Character> vowels = Set.of(
+        'A', 'E', 'I', 'O', 'U',
+        'a', 'e', 'i', 'o', 'u'
+    );
+
     /**
-     * @see #BINARY_SEARCH
-     * @see wsg.oj.java.Complexity#TIME_N
-     * @see wsg.oj.java.Complexity#SPACE_CONSTANT
+     * @complexity T=O(n)
+     * @complexity S=O(K), K=the number of vowels
      */
     public String reverseVowels(String s) {
         char[] chars = s.toCharArray();
-        int left = 0, right = chars.length - 1;
+        int left = 0, right = s.length() - 1;
         while (left < right) {
-            while (left < right && notVowel(chars[left])) {
+            if (!vowels.contains(chars[left])) {
                 left++;
-            }
-            while (left < right && notVowel(chars[right])) {
+            } else if (!vowels.contains(chars[right])) {
                 right--;
+            } else {
+                char tmp = chars[left];
+                chars[left++] = chars[right];
+                chars[right--] = tmp;
             }
-            char temp = chars[left];
-            chars[left++] = chars[right];
-            chars[right--] = temp;
         }
         return new String(chars);
-    }
-
-    private boolean notVowel(char ch) {
-        if (ch > 'U') {
-            ch -= 32;
-        }
-        return ch != 'A' && ch != 'E' && ch != 'I' && ch != 'O' && ch != 'U';
     }
 }

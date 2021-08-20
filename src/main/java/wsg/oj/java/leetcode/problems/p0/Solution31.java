@@ -42,7 +42,7 @@ class Solution31 implements Solution {
             // and then swap the two numbers
             int left = i, right = len - 1, target = nums[i - 1];
             while (left <= right) {
-                int mid = (left + right) >>> 1;
+                int mid = left + (right - left) / 2;
                 if (nums[mid] <= target) {
                     left = mid + 1;
                 } else {

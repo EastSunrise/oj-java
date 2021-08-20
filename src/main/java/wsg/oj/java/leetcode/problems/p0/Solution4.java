@@ -23,7 +23,7 @@ public class Solution4 implements Solution {
         }
         int left = 0, right = m - 1, mid = (m + n - 1) / 2;
         while (left <= right) {
-            int mid1 = (left + right) >>> 1;
+            int mid1 = left + (right - left) / 2;
             int mid2 = mid - mid1;
             if (mid2 < 0) {
                 right = mid1 - 1;

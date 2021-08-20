@@ -5,6 +5,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p300.Solution371;
 import wsg.oj.java.leetcode.problems.p400.Solution415;
 import wsg.oj.java.leetcode.problems.p400.Solution445;
+import wsg.oj.java.leetcode.problems.p900.Solution989;
 
 /**
  * 2. Add Two Numbers (Medium)
@@ -29,16 +30,15 @@ public class Solution2 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_M_PLUS_N
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode res = new ListNode(0);
+        ListNode res = new ListNode(0), p = res;
         int carry = 0;
-        ListNode added = res;
         while (l1 != null && l2 != null) {
             int sum = l1.val + l2.val + carry;
             l1 = l1.next;
             l2 = l2.next;
             carry = sum / 10;
-            added.next = new ListNode(sum % 10);
-            added = added.next;
+            p.next = new ListNode(sum % 10);
+            p = p.next;
         }
         if (l1 == null) {
             l1 = l2;
@@ -47,11 +47,11 @@ public class Solution2 implements Solution {
             int sum = l1.val + +carry;
             l1 = l1.next;
             carry = sum / 10;
-            added.next = new ListNode(sum % 10);
-            added = added.next;
+            p.next = new ListNode(sum % 10);
+            p = p.next;
         }
         if (carry == 1) {
-            added.next = new ListNode(1);
+            p.next = new ListNode(1);
         }
         return res.next;
     }

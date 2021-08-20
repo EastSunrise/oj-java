@@ -35,25 +35,24 @@ public class Solution17 implements Solution {
      * @see #DFS
      */
     public List<String> letterCombinations(String digits) {
-        List<String> res = new ArrayList<>((int) Math.pow(3, digits.length()));
-        if (digits.length() == 0) {
-            return res;
+        int n = digits.length();
+        if (n == 0) {
+            return new ArrayList<>();
         }
-        letterCombinations(res, digits, new StringBuilder(digits.length()), 0);
+        List<String> res = new ArrayList<>((int) Math.pow(3, n));
+        dfs(res, digits, new StringBuilder(n), 0);
         return res;
     }
 
-    private void letterCombinations(List<String> res, String digits, StringBuilder tmp, int idx) {
-        if (idx == digits.length()) {
+    private void dfs(List<String> res, String digits, StringBuilder tmp, int i) {
+        if (i == digits.length()) {
             res.add(tmp.toString());
             return;
         }
-        char[] chars = dict[digits.charAt(idx) - '2'];
-        for (char ch : chars) {
+        for (char ch : dict[digits.charAt(i) - '2']) {
             tmp.append(ch);
-            letterCombinations(res, digits, tmp, idx + 1);
+            dfs(res, digits, tmp, i + 1);
             tmp.deleteCharAt(tmp.length() - 1);
         }
     }
-
 }

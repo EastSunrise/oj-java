@@ -19,14 +19,14 @@ public class Solution541 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public String reverseStr(String s, int k) {
+        int n = s.length();
         char[] chars = s.toCharArray();
-        int len = chars.length;
-        for (int start = 0; start < len; start += 2 * k) {
-            int left = start, right = Math.min(start + k, len) - 1;
+        for (int start = 0; start < n; start += 2 * k) {
+            int left = start, right = Math.min(start + k, n) - 1;
             while (left < right) {
-                char temp = chars[left];
+                char tmp = chars[left];
                 chars[left] = chars[right];
-                chars[right] = temp;
+                chars[right] = tmp;
                 left++;
                 right--;
             }

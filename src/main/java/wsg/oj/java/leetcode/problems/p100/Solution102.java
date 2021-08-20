@@ -48,10 +48,10 @@ public class Solution102 implements Solution {
                 TreeNode node = queue.remove();
                 level.add(node.val);
                 if (node.left != null) {
-                    queue.add(node.left);
+                    queue.offer(node.left);
                 }
                 if (node.right != null) {
-                    queue.add(node.right);
+                    queue.offer(node.right);
                 }
             }
             res.add(level);

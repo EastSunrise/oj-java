@@ -26,33 +26,37 @@ public class Solution47 implements Solution {
      * @see Complexity#SPACE_NF
      */
     public List<List<Integer>> permuteUnique(int[] nums) {
+        int n = nums.length;
         Arrays.sort(nums);
-        int[] counts = new int[nums.length];
+        int[] counts = new int[n];
         int len = accumulate(nums, counts);
         List<List<Integer>> res = new ArrayList<>();
-        permuteUnique(res, nums, nums.length, counts, len, new ArrayList<>(nums.length), 11);
+        List<Integer> tmp = new ArrayList<>(n);
+        for (int num : nums) {
+            tmp.add(num);
+        }
+        permuteUnique(res, nums, counts, len, tmp, Integer.MAX_VALUE, 0);
         return res;
     }
 
-    private void permuteUnique(List<List<Integer>> res, int[] nums, int total,
-        int[] unused, int len, List<Integer> tmp, int last) {
-        if (tmp.size() == total) {
+    private void permuteUnique(List<List<Integer>> res, int[] nums, int[] unused, int len,
+        List<Integer> tmp, int prevVal, int cur) {
+        if (cur == tmp.size()) {
             res.add(new ArrayList<>(tmp));
             return;
         }
         for (int i = 0; i < len; i++) {
             int num = nums[i], count = unused[i];
-            if (num == last || count == 0) {
+            if (num == prevVal || count == 0) {
                 continue;
             }
             for (int j = 0; j < count; j++) {
-                tmp.add(num);
+                tmp.set(cur++, num);
                 unused[i]--;
-                permuteUnique(res, nums, total, unused, len, tmp, num);
+                permuteUnique(res, nums, unused, len, tmp, num, cur);
             }
-            for (int j = 0; j < count; j++) {
-                tmp.remove(tmp.size() - 1);
-            }
+            // restore
+            cur -= count;
             unused[i] = count;
         }
     }
