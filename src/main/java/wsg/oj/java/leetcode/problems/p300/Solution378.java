@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p300;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution668;
 
 /**
  * 378. Kth Smallest Element in a Sorted Matrix (Medium)
@@ -16,7 +17,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Smallest Element in a Sorted Matrix</a>
  * @since 2021-07-06
  */
-class Solution378 implements Solution {
+public class Solution378 implements Solution {
 
     /**
      * Merge sort.

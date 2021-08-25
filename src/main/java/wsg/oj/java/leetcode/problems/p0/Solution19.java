@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p1700.Solution1721;
 
 /**
  * 19. Remove Nth Node From End of List (Medium)
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * From End of List</a>
  * @since 2021-07-10
  */
-class Solution19 implements Solution {
+public class Solution19 implements Solution {
 
     /**
      * Finds the nth node with two pointers and removes it.

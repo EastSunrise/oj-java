@@ -17,6 +17,8 @@ import wsg.oj.java.leetcode.problems.p700.Solution746;
  */
 public class Solution70 implements Solution {
 
+    int mod = 1_000_000_007;
+
     /**
      * Fibonacci sequence.
      *
@@ -30,8 +32,9 @@ public class Solution70 implements Solution {
         }
         int prev = 1, cur = 2;
         for (int i = 3; i <= n; i++) {
-            cur = prev + cur;
-            prev = cur - prev;
+            int tmp = (prev + cur) % mod;
+            prev = cur;
+            cur = tmp;
         }
         return cur;
     }

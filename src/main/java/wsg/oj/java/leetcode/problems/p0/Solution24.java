@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.ListNode;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p1700.Solution1721;
 
 /**
  * 24. Swap Nodes in Pairs (Medium)
@@ -12,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/swap-nodes-in-pairs/">Swap Nodes in Pairs</a>
  * @since 2021-07-10
  */
-class Solution24 implements Solution {
+public class Solution24 implements Solution {
 
     /**
      * Traverses the list and swaps pairs.

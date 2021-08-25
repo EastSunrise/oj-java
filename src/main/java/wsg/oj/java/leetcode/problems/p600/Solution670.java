@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p600;
 
 import java.util.Arrays;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution321;
 
 /**
  * 670. Maximum Swap (MEDIUM)

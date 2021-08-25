@@ -25,11 +25,12 @@ public class Solution53 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int maxSubArray(int[] nums) {
-        // dp: the max subarray ends with nums[i]
-        int dp = 0, max = nums[0];
+        // the minimal prefix sum
+        int min = 0, sum = 0, max = nums[0];
         for (int num : nums) {
-            dp = Math.max(num, dp + num);
-            max = Math.max(max, dp);
+            sum += num;
+            max = Math.max(max, sum - min);
+            min = Math.min(min, sum);
         }
         return max;
     }
