@@ -31,21 +31,21 @@ public class Solution173 implements Solution {
         private final Deque<TreeNode> stack = new LinkedList<>();
 
         public BSTIterator(TreeNode root) {
-            do {
+            while (root != null) {
                 stack.push(root);
                 root = root.left;
-            } while (root != null);
+            }
         }
 
         public int next() {
             TreeNode node = stack.pop();
-            int res = node.val;
+            int val = node.val;
             node = node.right;
             while (node != null) {
                 stack.push(node);
                 node = node.left;
             }
-            return res;
+            return val;
         }
 
         public boolean hasNext() {

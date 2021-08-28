@@ -1,8 +1,5 @@
 package wsg.oj.java.leetcode.problems.p100;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -14,29 +11,28 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * String</a>
  * @since 2021-07-12
  */
-class Solution151 implements Solution {
+public class Solution151 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public String reverseWords(String s) {
-        List<String> res = new ArrayList<>();
-        StringBuilder builder = new StringBuilder();
-        for (char ch : s.toCharArray()) {
-            if (ch == ' ') {
-                if (builder.length() > 0) {
-                    res.add(builder.toString());
-                    builder = new StringBuilder();
+        int n = s.length();
+        char[] src = (' ' + s).toCharArray();
+        char[] dest = new char[n + 1];
+        int end = n + 1, j = 0;
+        for (int i = n; i >= 0; i--) {
+            if (src[i] == ' ') {
+                int len = end - i - 1;
+                if (len > 0) {
+                    System.arraycopy(src, i + 1, dest, j, len);
+                    j += len;
+                    dest[j++] = ' ';
                 }
-            } else {
-                builder.append(ch);
+                end = i;
             }
         }
-        if (builder.length() > 0) {
-            res.add(builder.toString());
-        }
-        Collections.reverse(res);
-        return String.join(" ", res);
+        return j == 0 ? "" : new String(dest, 0, j - 1);
     }
 }

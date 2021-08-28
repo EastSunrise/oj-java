@@ -35,33 +35,33 @@ public class Solution79 implements Solution {
      * @param j the column of the char to be compared
      * @param k the index of the char to be found
      */
-    private boolean exist(char[][] board, int i, int j, char[] chars, int k) {
-        if (k == chars.length) {
+    private boolean exist(char[][] board, int i, int j, char[] word, int k) {
+        if (k == word.length) {
             // all found
             return true;
         }
         if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
             return false;
         }
-        if (board[i][j] != chars[k]) {
+        if (board[i][j] != word[k]) {
             return false;
         }
         // used
         board[i][j] = '#';
-        if (exist(board, i - 1, j, chars, k + 1)) {
+        if (exist(board, i - 1, j, word, k + 1)) {
             return true;
         }
-        if (exist(board, i, j - 1, chars, k + 1)) {
+        if (exist(board, i, j - 1, word, k + 1)) {
             return true;
         }
-        if (exist(board, i + 1, j, chars, k + 1)) {
+        if (exist(board, i + 1, j, word, k + 1)) {
             return true;
         }
-        if (exist(board, i, j + 1, chars, k + 1)) {
+        if (exist(board, i, j + 1, word, k + 1)) {
             return true;
         }
         // restore the char
-        board[i][j] = chars[k];
+        board[i][j] = word[k];
         return false;
     }
 }
