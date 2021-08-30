@@ -2,6 +2,7 @@ package wsg.oj.java.leetcode.problems.p200;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution76;
+import wsg.oj.java.leetcode.problems.p700.Solution718;
 
 /**
  * 209. Minimum Size Subarray Sum (Medium)
@@ -27,7 +28,7 @@ public class Solution209 implements Solution {
         // i: the left (inclusive) of the window
         // j: the right (exclusive) of the window
         int i = 0, j = 0, n = nums.length;
-        int sum = 0, res = Integer.MAX_VALUE;
+        int sum = 0, min = Integer.MAX_VALUE;
         while (true) {
             if (sum < target) {
                 if (j == n) {
@@ -35,10 +36,10 @@ public class Solution209 implements Solution {
                 }
                 sum += nums[j++];
             } else {
-                res = Math.min(res, j - i);
+                min = Math.min(min, j - i);
                 sum -= nums[i++];
             }
         }
-        return res == Integer.MAX_VALUE ? 0 : res;
+        return min == Integer.MAX_VALUE ? 0 : min;
     }
 }

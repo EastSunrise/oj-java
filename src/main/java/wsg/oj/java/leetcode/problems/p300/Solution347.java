@@ -3,6 +3,9 @@ package wsg.oj.java.leetcode.problems.p300;
 import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.p200.Solution215;
+import wsg.oj.java.leetcode.problems.p400.Solution451;
+import wsg.oj.java.leetcode.problems.p600.Solution659;
+import wsg.oj.java.leetcode.problems.p600.Solution692;
 
 /**
  * 347. Top K Frequent Elements (Medium)
@@ -26,19 +29,19 @@ public class Solution347 extends Solution215 {
      * @complexity S=O(u), u=the number of distinct numbers
      */
     public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer, Integer> frequency = new HashMap<>(16);
+        Map<Integer, Integer> counts = new HashMap<>(16);
         for (int num : nums) {
-            frequency.put(num, frequency.getOrDefault(num, 0) + 1);
+            counts.put(num, counts.getOrDefault(num, 0) + 1);
         }
-        int[] counts = new int[frequency.size()];
+        int[] values = new int[counts.size()];
         int i = 0;
-        for (Map.Entry<Integer, Integer> entry : frequency.entrySet()) {
-            counts[i++] = entry.getValue();
+        for (int value : counts.values()) {
+            values[i++] = value;
         }
-        int kthLargest = findKthLargest(counts, k);
+        int kthLargest = findKthLargest(values, k);
         int[] res = new int[k];
         i = 0;
-        for (Map.Entry<Integer, Integer> entry : frequency.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
             if (entry.getValue() >= kthLargest) {
                 res[i++] = entry.getKey();
             }

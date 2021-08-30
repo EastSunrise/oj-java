@@ -22,6 +22,8 @@ import wsg.oj.java.leetcode.problems.p700.Solution703;
  */
 public class Solution215 implements Solution {
 
+    Random random = new Random();
+
     /**
      * Quick selection.
      *
@@ -33,35 +35,27 @@ public class Solution215 implements Solution {
     }
 
     protected int findKthSmallest(int[] nums, int k, int fromIn, int toEx) {
-        int pivot = nums[new Random().nextInt(toEx - fromIn) + fromIn];
-        int left = fromIn, right = toEx - 1;
-        while (left <= right) {
-            if (nums[left] <= pivot) {
-                left++;
-            } else if (nums[right] > pivot) {
-                right--;
+        int pivot = random.nextInt(toEx - fromIn) + fromIn;
+        swap(nums, pivot, fromIn);
+        int low = fromIn + 1, high = toEx - 1;
+        while (low <= high) {
+            if (nums[low] <= nums[fromIn]) {
+                low++;
+            } else if (nums[high] > nums[fromIn]) {
+                high--;
             } else {
-                int tmp = nums[left];
-                nums[left++] = nums[right];
-                nums[right--] = tmp;
+                int tmp = nums[low];
+                nums[low++] = nums[high];
+                nums[high--] = tmp;
             }
         }
-        int mid = fromIn;
-        while (mid <= right) {
-            if (nums[mid] == pivot) {
-                int tmp = nums[mid];
-                nums[mid] = nums[right];
-                nums[right--] = tmp;
-            } else {
-                mid++;
-            }
+        swap(nums, fromIn, high);
+        if (k == high) {
+            return nums[high];
         }
-        if (k <= right) {
-            return findKthSmallest(nums, k, fromIn, mid);
+        if (k < high) {
+            return findKthSmallest(nums, k, fromIn, high);
         }
-        if (k >= left) {
-            return findKthSmallest(nums, k, left, toEx);
-        }
-        return pivot;
+        return findKthSmallest(nums, k, low, toEx);
     }
 }

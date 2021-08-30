@@ -17,41 +17,49 @@ public class Sorts {
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_LOG_N
      */
+    public static <T extends Comparable<T>> T findKthSmallest(T[] ts, int k) {
+        return findKthSmallest(ts, k, 0, ts.length, Comparable::compareTo);
+    }
+
+    /**
+     * Finds the kth smallest element from the array.
+     *
+     * @see wsg.oj.java.Complexity#TIME_N
+     * @see wsg.oj.java.Complexity#SPACE_LOG_N
+     */
     public static <T> T findKthSmallest(T[] ts, int k, Comparator<? super T> comp) {
         return findKthSmallest(ts, k, 0, ts.length, comp);
     }
 
     private static <T> T findKthSmallest(T[] ts, int k, int fromIn, int toEx,
         Comparator<? super T> comp) {
-        T pivot = ts[new Random().nextInt(toEx - fromIn) + fromIn];
-        int left = fromIn, right = toEx - 1;
-        while (left <= right) {
-            if (comp.compare(ts[left], pivot) <= 0) {
-                left++;
-            } else if (comp.compare(pivot, ts[right]) < 0) {
-                right--;
+        int pivot = new Random().nextInt(toEx - fromIn) + fromIn;
+        swap(ts, pivot, fromIn);
+        int low = fromIn + 1, high = toEx - 1;
+        while (low <= high) {
+            if (comp.compare(ts[low], ts[fromIn]) <= 0) {
+                low++;
+            } else if (comp.compare(ts[fromIn], ts[high]) < 0) {
+                high--;
             } else {
-                T tmp = ts[left];
-                ts[left++] = ts[right];
-                ts[right--] = tmp;
+                T tmp = ts[low];
+                ts[low++] = ts[high];
+                ts[high--] = tmp;
             }
         }
-        int mid = fromIn;
-        while (mid <= right) {
-            if (comp.compare(ts[mid], pivot) == 0) {
-                T tmp = ts[mid];
-                ts[mid] = ts[right];
-                ts[right--] = tmp;
-            } else {
-                mid++;
-            }
+        swap(ts, fromIn, high);
+        if (k == high) {
+            return ts[high];
         }
-        if (k <= right) {
-            return findKthSmallest(ts, k, fromIn, mid, comp);
+        if (k < high) {
+            return findKthSmallest(ts, k, fromIn, high, comp);
         }
-        if (k >= left) {
-            return findKthSmallest(ts, k, left, toEx, comp);
-        }
-        return pivot;
+        return findKthSmallest(ts, k, low, toEx, comp);
+    }
+
+    private static <T> void swap(T[] ts, int i, int j) {
+        T tmp = ts[i];
+        ts[i] = ts[j];
+        ts[j] = tmp;
     }
 }

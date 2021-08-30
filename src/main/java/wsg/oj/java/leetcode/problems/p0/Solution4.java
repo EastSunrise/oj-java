@@ -21,40 +21,40 @@ public class Solution4 implements Solution {
         if (m > n) {
             return findMedianSortedArrays(nums2, nums1);
         }
-        int left = 0, right = m - 1, mid = (m + n - 1) / 2;
-        while (left <= right) {
-            int mid1 = left + (right - left) / 2;
+        int low = 0, high = m - 1, mid = (m + n - 1) / 2;
+        while (low <= high) {
+            int mid1 = low + (high - low) / 2;
             int mid2 = mid - mid1;
             if (mid2 < 0) {
-                right = mid1 - 1;
+                high = mid1 - 1;
             } else if (mid2 >= n) {
-                left = mid1 + 1;
+                low = mid1 + 1;
             } else if (nums1[mid1] < nums2[mid2]) {
-                left = mid1 + 1;
+                low = mid1 + 1;
             } else if (nums1[mid1] > nums2[mid2]) {
-                right = mid1 - 1;
+                high = mid1 - 1;
             } else {
                 return nums1[mid1];
             }
         }
-        // the possible medians of nums1: nums1[right], nums1[left]
-        // the possible medians of nums2: nums2[mid-left], nums2[mid-right]
+        // the possible medians of nums1: nums1[high], nums1[low]
+        // the possible medians of nums2: nums2[mid-low], nums2[mid-high]
         int median1 = Integer.MIN_VALUE;
-        if (right >= 0) {
-            median1 = Math.max(median1, nums1[right]);
+        if (high >= 0) {
+            median1 = Math.max(median1, nums1[high]);
         }
-        if (mid - left >= 0) {
-            median1 = Math.max(median1, nums2[mid - left]);
+        if (mid - low >= 0) {
+            median1 = Math.max(median1, nums2[mid - low]);
         }
         if ((m + n) % 2 == 1) {
             return median1;
         }
         int median2 = Integer.MAX_VALUE;
-        if (left < m) {
-            median2 = Math.min(median2, nums1[left]);
+        if (low < m) {
+            median2 = Math.min(median2, nums1[low]);
         }
-        if (mid - right < n) {
-            median2 = Math.min(median2, nums2[mid - right]);
+        if (mid - high < n) {
+            median2 = Math.min(median2, nums2[mid - high]);
         }
         return (median1 + median2) / 2.0;
     }
