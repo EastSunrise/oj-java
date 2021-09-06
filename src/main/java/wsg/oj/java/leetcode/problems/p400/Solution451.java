@@ -26,11 +26,11 @@ public class Solution451 implements Solution {
      * @complexity S=O(s)
      */
     public String frequencySort(String s) {
-        Map<Character, Integer> frequency = new HashMap<>(64);
+        Map<Character, Integer> counts = new HashMap<>(64);
         for (char ch : s.toCharArray()) {
-            frequency.put(ch, frequency.getOrDefault(ch, 0) + 1);
+            counts.put(ch, counts.getOrDefault(ch, 0) + 1);
         }
-        return frequency.entrySet().stream()
+        return counts.entrySet().stream()
             .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
             .map(entry -> String.valueOf(entry.getKey()).repeat(entry.getValue()))
             .collect(Collectors.joining());

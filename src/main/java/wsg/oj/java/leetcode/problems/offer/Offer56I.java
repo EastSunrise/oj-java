@@ -13,7 +13,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Offer56I implements Solution {
 
     /**
-     * @see wsg.oj.java.leetcode.problems.p100.Solution137
+     * @see wsg.oj.java.leetcode.problems.p200.Solution260
      */
     public int[] singleNumbers(int[] nums) {
         return new int[0];

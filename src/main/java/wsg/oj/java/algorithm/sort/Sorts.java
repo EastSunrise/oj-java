@@ -14,20 +14,25 @@ public class Sorts {
     /**
      * Finds the kth smallest element from the array.
      *
+     * @param k must be positive and not larger than the size of the array
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_LOG_N
      */
     public static <T extends Comparable<T>> T findKthSmallest(T[] ts, int k) {
-        return findKthSmallest(ts, k, 0, ts.length, Comparable::compareTo);
+        return findKthSmallest(ts, k, Comparable::compareTo);
     }
 
     /**
      * Finds the kth smallest element from the array.
      *
+     * @param k must be positive and not larger than the size of the array
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_LOG_N
      */
     public static <T> T findKthSmallest(T[] ts, int k, Comparator<? super T> comp) {
+        if (k < 1 || k > ts.length) {
+            throw new ArrayIndexOutOfBoundsException(k);
+        }
         return findKthSmallest(ts, k, 0, ts.length, comp);
     }
 
@@ -48,10 +53,10 @@ public class Sorts {
             }
         }
         swap(ts, fromIn, high);
-        if (k == high) {
+        if (k == low) {
             return ts[high];
         }
-        if (k < high) {
+        if (k < low) {
             return findKthSmallest(ts, k, fromIn, high, comp);
         }
         return findKthSmallest(ts, k, low, toEx, comp);

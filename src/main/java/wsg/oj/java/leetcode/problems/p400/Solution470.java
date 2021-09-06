@@ -14,8 +14,8 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution470 implements Solution {
 
     /**
-     * Assume that a is the number of calls to rand7() every time and p is the probability that the
-     * value is invalid, then the expected value E = a*(1+p+p^2+...) = a/(1-p). And
+     * Assume that a is the number of times to call rand7() and p is the probability that the value
+     * is invalid, then the expected value E = a*(1+p+p^2+...) = a/(1-p). And
      * p=(7^a-[(7^a)/10]*10)/7^a.
      * <p>
      * If a=2, p=9/49 and E=49/20.

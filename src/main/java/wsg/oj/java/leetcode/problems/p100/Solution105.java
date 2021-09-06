@@ -57,12 +57,12 @@ public class Solution105 implements Solution {
      * Builds the tree iteratively.
      */
     public TreeNode buildTree2(int[] preorder, int[] inorder) {
-        int len = preorder.length;
+        int n = preorder.length;
         TreeNode root = new TreeNode(preorder[0]);
         Stack<TreeNode> stack = new Stack<>();
         int inIdx = 0;
         stack.push(root);
-        for (int i = 1; i < len; i++) {
+        for (int i = 1; i < n; i++) {
             TreeNode node = stack.peek();
             if (inorder[inIdx] != node.val) {
                 // there is a left child node

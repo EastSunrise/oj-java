@@ -19,25 +19,20 @@ public class Solution14 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public String longestCommonPrefix(String[] strs) {
-        int length = strs.length;
-        if (length == 1) {
-            return strs[0];
+        int n = strs.length;
+        int min = Integer.MAX_VALUE;
+        for (String str : strs) {
+            min = Math.min(min, str.length());
         }
-        String first = strs[0];
-        for (int ci = 0; ci < first.length(); ci++) {
-            char fch = first.charAt(ci);
-            for (int si = 1; si < length; si++) {
-                String str = strs[si];
-                if (ci >= str.length()) {
-                    return first.substring(0, ci);
-                }
-                char ch = str.charAt(ci);
-                if (ch != fch) {
-                    return first.substring(0, ci);
+        for (int i = 0; i < min; i++) {
+            char ch = strs[0].charAt(i);
+            for (int j = 1; j < n; j++) {
+                if (ch != strs[j].charAt(i)) {
+                    return strs[0].substring(0, i);
                 }
             }
         }
-        return first;
+        return strs[0].substring(0, min);
     }
 
     /**
@@ -47,18 +42,17 @@ public class Solution14 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public String longestCommonPrefix2(String[] strs) {
-        int length = strs.length;
-        if (length == 1) {
+        int n = strs.length;
+        if (n == 1) {
             return strs[0];
         }
         Arrays.sort(strs);
         String first = strs[0];
         String last = strs[strs.length - 1];
-        int index = 0;
-        while (index < first.length() && index < last.length() && first.charAt(index) == last
-            .charAt(index)) {
-            index++;
+        int i = 0, max = Math.min(first.length(), last.length());
+        while (i < max && first.charAt(i) == last.charAt(i)) {
+            i++;
         }
-        return first.substring(0, index);
+        return first.substring(0, i);
     }
 }

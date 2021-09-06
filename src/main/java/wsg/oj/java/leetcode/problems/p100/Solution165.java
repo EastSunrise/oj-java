@@ -17,31 +17,30 @@ public class Solution165 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int compareVersion(String version1, String version2) {
-        int i1 = 0, i2 = 0, len1 = version1.length(), len2 = version2.length();
-        while (i1 < len1 || i2 < len2) {
-            int v1 = 0;
-            if (i1 < len1) {
-                int j1 = i1;
-                while (j1 < len1 && version1.charAt(j1) != '.') {
-                    j1++;
-                }
-                v1 = Integer.parseInt(version1, i1, j1, 10);
-                i1 = j1 + 1;
-            }
-            int v2 = 0;
-            if (i2 < len2) {
-                int j2 = i2;
-                while (j2 < len2 && version2.charAt(j2) != '.') {
-                    j2++;
-                }
-                v2 = Integer.parseInt(version2, i2, j2, 10);
-                i2 = j2 + 1;
-            }
-            if (v1 < v2) {
+        String[] parts1 = version1.split("\\.");
+        String[] parts2 = version2.split("\\.");
+        int i = 0, min = Math.min(parts1.length, parts2.length);
+        while (i < min) {
+            int v1 = Integer.parseInt(parts1[i]);
+            int v2 = Integer.parseInt(parts2[i]);
+            if (v1 > v2) {
+                return 1;
+            } else if (v1 < v2) {
                 return -1;
-            } else if (v1 > v2) {
+            }
+            i++;
+        }
+        while (i < parts1.length) {
+            if (Integer.parseInt(parts1[i]) > 0) {
                 return 1;
             }
+            i++;
+        }
+        while (i < parts2.length) {
+            if (Integer.parseInt(parts2[i]) > 0) {
+                return -1;
+            }
+            i++;
         }
         return 0;
     }

@@ -6,6 +6,7 @@ import wsg.oj.java.leetcode.problems.p300.Solution324;
 import wsg.oj.java.leetcode.problems.p300.Solution347;
 import wsg.oj.java.leetcode.problems.p400.Solution414;
 import wsg.oj.java.leetcode.problems.p700.Solution703;
+import wsg.oj.java.leetcode.problems.p900.Solution973;
 
 /**
  * 215. Kth Largest Element in an Array (Medium)
@@ -22,8 +23,6 @@ import wsg.oj.java.leetcode.problems.p700.Solution703;
  */
 public class Solution215 implements Solution {
 
-    Random random = new Random();
-
     /**
      * Quick selection.
      *
@@ -35,7 +34,7 @@ public class Solution215 implements Solution {
     }
 
     protected int findKthSmallest(int[] nums, int k, int fromIn, int toEx) {
-        int pivot = random.nextInt(toEx - fromIn) + fromIn;
+        int pivot = new Random().nextInt(toEx - fromIn) + fromIn;
         swap(nums, pivot, fromIn);
         int low = fromIn + 1, high = toEx - 1;
         while (low <= high) {
@@ -50,10 +49,10 @@ public class Solution215 implements Solution {
             }
         }
         swap(nums, fromIn, high);
-        if (k == high) {
+        if (k == low) {
             return nums[high];
         }
-        if (k < high) {
+        if (k < low) {
             return findKthSmallest(nums, k, fromIn, high);
         }
         return findKthSmallest(nums, k, low, toEx);

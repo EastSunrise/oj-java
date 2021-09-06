@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution372;
 
 /**
  * 50. Pow(x, n) (Medium)
@@ -16,8 +17,8 @@ public class Solution50 implements Solution {
     /**
      * Calculates bit by bit. Look to {@link Integer#MIN_VALUE}.
      *
-     * @complexity T=O(b), b=binary length
-     * @complexity S=O(b)
+     * @complexity T=O(32), b=binary length
+     * @complexity S=O(32)
      */
     public double myPow(double x, int n) {
         return n >= 0 ? positivePow(x, n) : 1 / positivePow(x, -(n + 1)) / x;
