@@ -12,6 +12,8 @@ import wsg.oj.java.Complexity;
  */
 public interface Solution extends Complexity {
 
+    int MOD = 1_000_000_007;
+
     /**
      * @see <a href="https://leetcode-cn.com/tag/backtracking/problemset/">Backtracking</a>
      */
@@ -49,6 +51,18 @@ public interface Solution extends Complexity {
             }
         }
         return -(low + 1);
+    }
+
+    default int pow(long base, int q, int mod) {
+        long res = 1;
+        while (q > 0) {
+            if (q % 2 != 0) {
+                res = (res * base) % mod;
+            }
+            q >>= 1;
+            base = base * base % mod;
+        }
+        return (int) res;
     }
 
     default int gcd(int a, int b) {

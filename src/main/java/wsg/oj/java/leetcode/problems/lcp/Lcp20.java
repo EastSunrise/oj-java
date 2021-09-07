@@ -19,7 +19,7 @@ public class Lcp20 implements Solution {
      * @see #DFS
      */
     public int busRapidTransit(int target, int inc, int dec, int[] jump, int[] cost) {
-        return (int) (dfs(target, inc, dec, jump, cost, jump.length) % 1_000_000_007);
+        return (int) (dfs(target, inc, dec, jump, cost, jump.length) % MOD);
     }
 
     private long dfs(long target, int inc, int dec, int[] jump, int[] cost, int n) {

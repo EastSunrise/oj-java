@@ -13,8 +13,6 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Solution1301 implements Solution {
 
-    static final int MOD = 1_000_000_007;
-
     /**
      * @see #DYNAMIC_PROGRAMMING
      * @see wsg.oj.java.Complexity#TIME_NN

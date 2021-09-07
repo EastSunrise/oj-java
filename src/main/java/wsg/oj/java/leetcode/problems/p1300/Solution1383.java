@@ -38,6 +38,6 @@ public class Solution1383 implements Solution {
             max = Math.max(max, sum * engineers[i][1]);
             speeds.offer(engineers[i][0]);
         }
-        return (int) (max % 1_000_000_007);
+        return (int) (max % MOD);
     }
 }

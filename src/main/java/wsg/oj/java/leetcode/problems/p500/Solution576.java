@@ -14,8 +14,6 @@ import wsg.oj.java.leetcode.problems.p600.Solution688;
  */
 public class Solution576 implements Solution {
 
-    long mod = 1_000_000_007;
-
     /**
      * @complexity T=O(mnN), N=maxMove
      * @complexity S=O(mnN)
@@ -46,7 +44,7 @@ public class Solution576 implements Solution {
         count += move(dp, m, n, moves - 1, r, c - 1);
         count += move(dp, m, n, moves - 1, r + 1, c);
         count += move(dp, m, n, moves - 1, r, c + 1);
-        count %= mod;
+        count %= MOD;
         dp[r][c][moves] = count;
         return count;
     }

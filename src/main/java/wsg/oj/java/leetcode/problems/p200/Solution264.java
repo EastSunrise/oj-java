@@ -1,6 +1,8 @@
 package wsg.oj.java.leetcode.problems.p200;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p0.Solution23;
+import wsg.oj.java.leetcode.problems.p300.Solution313;
 
 /**
  * 264. Ugly Number II (Medium)
@@ -27,9 +29,7 @@ public class Solution264 implements Solution {
         int i2 = 0, i3 = 0, i5 = 0;
         dp[0] = 1;
         for (int i = 1; i < n; i++) {
-            int num2 = 2 * dp[i2];
-            int num3 = 3 * dp[i3];
-            int num5 = 5 * dp[i5];
+            int num2 = 2 * dp[i2], num3 = 3 * dp[i3], num5 = 5 * dp[i5];
             dp[i] = Math.min(num2, Math.min(num3, num5));
             if (dp[i] == num2) {
                 i2++;

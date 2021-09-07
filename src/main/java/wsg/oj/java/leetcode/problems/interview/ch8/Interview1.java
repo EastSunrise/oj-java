@@ -12,8 +12,6 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Interview1 implements Solution {
 
-    int mod = 1_000_000_007;
-
     /**
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_N
@@ -28,7 +26,7 @@ public class Interview1 implements Solution {
             }
         }
         for (int i = 3; i < n; i++) {
-            dp[i] = ((dp[i - 1] + dp[i - 2]) % mod + dp[i - 3]) % mod;
+            dp[i] = ((dp[i - 1] + dp[i - 2]) % MOD + dp[i - 3]) % MOD;
         }
         return dp[n - 1];
     }

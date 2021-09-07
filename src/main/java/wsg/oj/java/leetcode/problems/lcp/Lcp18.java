@@ -22,7 +22,7 @@ public class Lcp18 implements Solution {
         int s = 0, d = drinks.length - 1, m = staple.length, cnt = 0;
         while (s < m && d >= 0) {
             if (staple[s] + drinks[d] <= x) {
-                cnt = (cnt + d + 1) % 1_000_000_007;
+                cnt = (cnt + d + 1) % MOD;
                 s++;
             } else {
                 d--;

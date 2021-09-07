@@ -13,8 +13,6 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Solution1155 implements Solution {
 
-    int mod = 1_000_000_007;
-
     /**
      * @complexity T=O(d*f*K), K=target
      * @complexity S=O(d*K)
@@ -29,7 +27,7 @@ public class Solution1155 implements Solution {
             for (int j = 1; j <= f; j++) {
                 int max = Math.min(target, (i + 1) * f);
                 for (int k = (i + j); k <= max; k++) {
-                    dp[i][k] = (dp[i][k] + dp[i - 1][k - j]) % mod;
+                    dp[i][k] = (dp[i][k] + dp[i - 1][k - j]) % MOD;
                 }
             }
         }

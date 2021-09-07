@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * (atoi)</a>
  * @since 2021-07-10
  */
-class Solution8 implements Solution {
+public class Solution8 implements Solution {
 
     /**
      * Processes as the description, comparing with the two limits when adding the next digit.

@@ -13,8 +13,6 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  */
 public class Solution552 implements Solution {
 
-    int mod = 1_000_000_007;
-
     /**
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_N
@@ -29,13 +27,13 @@ public class Solution552 implements Solution {
         total[1] = 4;
         for (int i = 2; i < n; i++) {
             present[i] = total[i - 1];
-            total[i] = ((present[i] + present[i - 1]) % mod + present[i - 2]) % mod;
+            total[i] = ((present[i] + present[i - 1]) % MOD + present[i - 2]) % MOD;
         }
         long absent = 0;
         for (int i = 1; i < n - 1; i++) {
-            absent = (absent + total[i - 1] * (long) total[n - 2 - i]) % mod;
+            absent = (absent + total[i - 1] * (long) total[n - 2 - i]) % MOD;
         }
         absent += 2 * (long) total[n - 2];
-        return (int) ((absent + (long) total[n - 1]) % mod);
+        return (int) ((absent + (long) total[n - 1]) % MOD);
     }
 }

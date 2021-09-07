@@ -28,6 +28,6 @@ public class Lcp28 implements Solution {
                 left++;
             }
         }
-        return (int) (cnt % 1_000_000_007);
+        return (int) (cnt % MOD);
     }
 }

@@ -32,11 +32,11 @@ public class Solution343 implements Solution {
         int remainder = n % 3;
         int quotient = n / 3;
         if (remainder == 0) {
-            return (int) Math.pow(3, quotient);
+            return pow(3, quotient, MOD);
+        } else if (remainder == 1) {
+            return (int) (pow(3, quotient - 1, MOD) * 4L % MOD);
+        } else {
+            return pow(3, quotient, MOD) * 2 % MOD;
         }
-        if (remainder == 1) {
-            return (int) (Math.pow(3, quotient - 1) * 4);
-        }
-        return (int) (Math.pow(3, quotient) * 2);
     }
 }
