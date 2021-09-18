@@ -10,7 +10,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/divide-two-integers/">Divide Two Integers</a>
  * @since 2021-07-10
  */
-class Solution29 implements Solution {
+public class Solution29 implements Solution {
 
     /**
      * Divides bit by bit.

@@ -15,29 +15,23 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution525 implements Solution {
 
     /**
-     * If nums[i,j] has the same count of 0's and 1's, nums[0,i-1] and nums[0,j] have the same
-     * difference between the count of 1's and that of 0's.
-     *
      * @see Solution523
      * @see wsg.oj.java.Complexity#TIME_N
      */
     public int findMaxLength(int[] nums) {
-        // d-i: the difference between the count of 1's and that of 0's within nums[0,i]
-        Map<Integer, Integer> differences = new HashMap<>();
-        int dif = 0, max = 0, n = nums.length;
+        // the indices of prefix sums regarding 0 as -1
+        Map<Integer, Integer> prefixSums = new HashMap<>();
+        prefixSums.put(0, -1);
+        int sum = 0, max = 0, n = nums.length;
         for (int i = 0; i < n; i++) {
-            dif += nums[i] == 1 ? 1 : -1;
-            if (dif == 0) {
-                // nums[0,i] has the same count of 0's and 1's
-                max = Math.max(max, i + 1);
-                continue;
-            }
-            Integer j = differences.get(dif);
+            sum += nums[i] * 2 - 1;
+            Integer j = prefixSums.get(sum);
             if (j != null) {
-                // nums[j+1,i] has the same count of 0's and 1's
+                // the sum of nums[j+1,i] is 0
+                // which means that the subarray has the same count of 0's and 1's
                 max = Math.max(max, i - j);
             } else {
-                differences.put(dif, i);
+                prefixSums.put(sum, i);
             }
         }
         return max;

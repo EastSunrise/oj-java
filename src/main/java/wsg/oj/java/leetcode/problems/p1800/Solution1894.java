@@ -19,10 +19,14 @@ public class Solution1894 implements Solution {
      */
     public int chalkReplacer(int[] chalk, int k) {
         int n = chalk.length;
-        long[] prefixSums = new long[n];
-        long sum = 0;
+        int[] prefixSums = new int[n];
+        int sum = 0;
         for (int i = 0; i < n; i++) {
-            prefixSums[i] = sum = sum + chalk[i];
+            sum += chalk[i];
+            if (sum > k) {
+                return i;
+            }
+            prefixSums[i] = sum;
         }
         k %= sum;
         int i = Arrays.binarySearch(prefixSums, k);

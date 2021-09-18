@@ -28,15 +28,15 @@ public class Lcp30 implements Solution {
 
         int cnt = 0;
         blood = 1;
-        Queue<Integer> monsters = new PriorityQueue<>();
+        Queue<Integer> heap = new PriorityQueue<>();
         for (int num : nums) {
             blood += num;
             if (num < 0) {
-                monsters.offer(num);
+                heap.offer(num);
             }
             if (blood <= 0) {
                 // move the monster with largest damage to the tail
-                blood -= monsters.remove();
+                blood -= heap.remove();
                 cnt++;
             }
         }

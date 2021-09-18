@@ -41,10 +41,10 @@ public class Solution338 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int[] countBits2(int n) {
-        int[] res = new int[n + 1];
+        int[] dp = new int[n + 1];
         for (int i = 0; i <= n; i++) {
-            res[i] = res[i >> 1] + (i & 1);
+            dp[i] = dp[i >> 1] + (i & 1);
         }
-        return res;
+        return dp;
     }
 }

@@ -18,7 +18,7 @@ import wsg.oj.java.leetcode.problems.p0.Solution75;
 public class Solution148 implements Solution {
 
     /**
-     * Quick sorting.
+     * Merge sorting.
      *
      * @see wsg.oj.java.Complexity#TIME_N_LOG_N
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT

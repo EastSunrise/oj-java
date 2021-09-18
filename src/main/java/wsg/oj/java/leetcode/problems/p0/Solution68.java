@@ -15,21 +15,21 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution68 implements Solution {
 
     public List<String> fullJustify(String[] words, int maxWidth) {
-        int len = words.length;
-        int[] sizes = new int[len];
-        for (int i = 0; i < len; i++) {
+        int n = words.length;
+        int[] sizes = new int[n];
+        for (int i = 0; i < n; i++) {
             sizes[i] = words[i].length();
         }
         List<String> res = new ArrayList<>();
-        int start = 0, end = 1, width = sizes[start];
-        while (end < len) {
-            int blanks = end - start;
-            if (width + blanks + sizes[end] <= maxWidth) {
-                width += sizes[end];
-                end++;
+        int s = 0, t = 1, width = sizes[s];
+        while (t < n) {
+            int blanks = t - s;
+            if (width + blanks + sizes[t] <= maxWidth) {
+                width += sizes[t];
+                t++;
                 continue;
             }
-            // words[start,end) as a line
+            // words[s,t) as a line
             if (blanks > 1) {
                 blanks--;
             }
@@ -37,26 +37,25 @@ public class Solution68 implements Solution {
             int remainder = (maxWidth - width) % blanks;
             StringBuilder line = new StringBuilder(maxWidth);
             for (int i = 0; i < remainder; i++) {
-                line.append(words[start + i]);
+                line.append(words[s + i]);
                 line.append(" ".repeat(blankWidth + 1));
             }
             for (int i = remainder; i < blanks; i++) {
-                line.append(words[start + i]);
+                line.append(words[s + i]);
                 line.append(" ".repeat(blankWidth));
             }
             // the rightmost word
             if (line.length() < maxWidth) {
-                line.append(words[end - 1]);
+                line.append(words[t - 1]);
             }
             res.add(line.toString());
-            start = end;
-            end = start + 1;
-            width = sizes[start];
+            s = t++;
+            width = sizes[s];
         }
         // the last line
         StringBuilder line = new StringBuilder(maxWidth);
-        line.append(words[start]);
-        for (int i = start + 1; i < end; i++) {
+        line.append(words[s]);
+        for (int i = s + 1; i < t; i++) {
             line.append(' ').append(words[i]);
         }
         while (line.length() < maxWidth) {

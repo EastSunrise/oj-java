@@ -1,7 +1,7 @@
 package wsg.oj.java.leetcode.problems.p200;
 
-import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution76;
 import wsg.oj.java.leetcode.problems.p100.Solution155;
@@ -30,7 +30,7 @@ public class Solution239 implements Solution {
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
         // the values are in descending order
-        Deque<Integer> indices = new ArrayDeque<>(k);
+        Deque<Integer> indices = new LinkedList<>();
         int[] res = new int[n - k + 1];
         for (int i = 0; i < k - 1; i++) {
             while (!indices.isEmpty() && nums[i] >= nums[indices.getLast()]) {

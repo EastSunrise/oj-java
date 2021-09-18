@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p200.Solution212;
 
 /**
  * 79. Word Search (Medium)
@@ -48,20 +49,12 @@ public class Solution79 implements Solution {
         }
         // used
         board[i][j] = '#';
-        if (exist(board, i - 1, j, word, k + 1)) {
-            return true;
-        }
-        if (exist(board, i, j - 1, word, k + 1)) {
-            return true;
-        }
-        if (exist(board, i + 1, j, word, k + 1)) {
-            return true;
-        }
-        if (exist(board, i, j + 1, word, k + 1)) {
-            return true;
-        }
+        boolean exists = exist(board, i - 1, j, word, k + 1)
+            || exist(board, i, j - 1, word, k + 1)
+            || exist(board, i + 1, j, word, k + 1)
+            || exist(board, i, j + 1, word, k + 1);
         // restore the char
         board[i][j] = word[k];
-        return false;
+        return exists;
     }
 }

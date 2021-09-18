@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p900.Solution989;
 
 /**
  * 67. Add Binary (Easy)
@@ -27,27 +28,19 @@ public class Solution67 implements Solution {
         char[] res = new char[ri + 1];
         int carry = 0;
         while (ai >= 0 && bi >= 0) {
-            int av = a.charAt(ai--) - '0';
-            int bv = b.charAt(bi--) - '0';
-            int sum = av + bv + carry;
+            int sum = a.charAt(ai--) - '0' + b.charAt(bi--) - '0' + carry;
             res[ri--] = (char) (sum % 2 + '0');
             carry = sum >>> 1;
         }
-        if (ai < 0) {
-            ai = bi;
-            a = b;
-        }
-        while (carry > 0 && ai >= 0) {
-            char ac = a.charAt(ai--);
-            if (ac == '0') {
-                carry = 0;
-                res[ri--] = '1';
-            } else {
-                res[ri--] = '0';
-            }
-        }
         while (ai >= 0) {
-            res[ri--] = a.charAt(ai--);
+            int sum = a.charAt(ai--) - '0' + carry;
+            res[ri--] = (char) (sum % 2 + '0');
+            carry = sum >>> 1;
+        }
+        while (bi >= 0) {
+            int sum = b.charAt(bi--) - '0' + carry;
+            res[ri--] = (char) (sum % 2 + '0');
+            carry = sum >>> 1;
         }
         if (carry == 0) {
             return String.valueOf(res, 1, res.length - 1);

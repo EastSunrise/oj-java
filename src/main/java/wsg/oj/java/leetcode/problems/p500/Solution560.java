@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p0.Solution1;
+import wsg.oj.java.leetcode.problems.p700.Solution713;
 import wsg.oj.java.leetcode.problems.p700.Solution724;
 
 /**
@@ -28,7 +29,7 @@ public class Solution560 implements Solution {
     public int subarraySum(int[] nums, int k) {
         Map<Integer, Integer> prefixSums = new HashMap<>();
         prefixSums.put(0, 1);
-        int sum = 0, n = nums.length, count = 0;
+        int sum = 0, count = 0;
         for (int num : nums) {
             sum += num;
             count += prefixSums.getOrDefault(sum - k, 0);
