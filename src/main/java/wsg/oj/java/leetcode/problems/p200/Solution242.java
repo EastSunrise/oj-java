@@ -17,7 +17,7 @@ import wsg.oj.java.leetcode.problems.p400.Solution438;
 public class Solution242 implements Solution {
 
     /**
-     * @complexity T=O(m+n)
+     * @complexity T=O(n)
      * @complexity S=O(26)
      */
     public boolean isAnagram(String s, String t) {

@@ -12,7 +12,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Difference</a>
  * @since 2021-07-20
  */
-class Solution539 implements Solution {
+public class Solution539 implements Solution {
 
     /**
      * @see wsg.oj.java.Complexity#TIME_N

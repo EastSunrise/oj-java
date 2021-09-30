@@ -22,15 +22,15 @@ public class Solution84 implements Solution {
      */
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
-        // heights[indices[i-1]] < heights[indices[i]]
+        // the indices of the subarray in ascending order
         Deque<Integer> indices = new LinkedList<>();
         int max = 0;
         for (int i = 0; i < n; i++) {
             while (!indices.isEmpty() && heights[indices.peek()] >= heights[i]) {
                 // the height of current rectangle
-                // that takes i as its right bound
+                // that takes i as its right bound (exclusive)
                 int height = heights[indices.pop()];
-                // the left bound of the rectangle
+                // the left bound of the rectangle (inclusive)
                 int left = indices.isEmpty() ? 0 : indices.peek() + 1;
                 max = Math.max(max, height * (i - left));
             }

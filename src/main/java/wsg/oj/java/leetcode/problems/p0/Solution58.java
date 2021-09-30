@@ -16,17 +16,14 @@ class Solution58 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int lengthOfLastWord(String s) {
-        int right = s.length() - 1;
-        while (right >= 0 && s.charAt(right) == ' ') {
-            right--;
+        int j = s.length() - 1;
+        while (j >= 0 && s.charAt(j) == ' ') {
+            j--;
         }
-        if (right < 0) {
-            return 0;
+        int i = j - 1;
+        while (i >= 0 && s.charAt(i) != ' ') {
+            i--;
         }
-        int left = right - 1;
-        while (left >= 0 && s.charAt(left) != ' ') {
-            left--;
-        }
-        return right - left;
+        return j - i;
     }
 }

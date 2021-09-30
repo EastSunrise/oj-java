@@ -18,7 +18,7 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  * Value in Each Tree Row</a>
  * @since 2021-07-20
  */
-class Solution515 implements Solution {
+public class Solution515 implements Solution {
 
     /**
      * @see BinaryTree#traverseLevels(Function, BiConsumer)
@@ -28,20 +28,20 @@ class Solution515 implements Solution {
         if (root == null) {
             return res;
         }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
+        Queue<TreeNode> level = new LinkedList<>();
+        level.add(root);
+        while (!level.isEmpty()) {
             // traverse a level
-            int size = queue.size();
+            int size = level.size();
             int max = Integer.MIN_VALUE;
             for (int i = 0; i < size; i++) {
-                TreeNode node = queue.remove();
+                TreeNode node = level.remove();
                 max = Math.max(max, node.val);
                 if (node.left != null) {
-                    queue.add(node.left);
+                    level.add(node.left);
                 }
                 if (node.right != null) {
-                    queue.add(node.right);
+                    level.add(node.right);
                 }
             }
             res.add(max);

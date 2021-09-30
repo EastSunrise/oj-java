@@ -22,13 +22,13 @@ public class Solution206 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public ListNode reverseList(ListNode head) {
-        ListNode pre = null, cur = head, next;
+        ListNode dest = null, cur = head, next;
         while (cur != null) {
             next = cur.next;
-            cur.next = pre;
-            pre = cur;
+            cur.next = dest;
+            dest = cur;
             cur = next;
         }
-        return pre;
+        return dest;
     }
 }

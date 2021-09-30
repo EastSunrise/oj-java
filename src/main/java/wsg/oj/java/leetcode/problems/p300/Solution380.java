@@ -16,7 +16,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * GetRandom O(1)</a>
  * @since 2021-07-06
  */
-class Solution380 implements Solution {
+public class Solution380 implements Solution {
 
     static class RandomizedSet {
 

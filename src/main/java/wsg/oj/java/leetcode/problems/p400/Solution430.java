@@ -24,28 +24,29 @@ public class Solution430 implements Solution {
         if (head == null) {
             return null;
         }
-        return headAndTail(head)[0];
+        tail(head);
+        return head;
     }
 
-    private Node[] headAndTail(Node head) {
+    private Node tail(Node head) {
         Node cur = head;
         while (true) {
             Node next = cur.next;
             Node child = cur.child;
             if (next == null && child == null) {
                 // reach the tail of the linked list
-                return new Node[]{head, cur};
+                return cur;
             }
             if (child != null) {
-                Node[] nodes = headAndTail(child);
+                Node tail = tail(child);
                 cur.child = null;
-                cur.next = nodes[0];
-                nodes[0].prev = cur;
+                cur.next = child;
+                child.prev = cur;
                 if (next == null) {
-                    return new Node[]{head, nodes[1]};
+                    return tail;
                 }
-                next.prev = nodes[1];
-                nodes[1].next = next;
+                next.prev = tail;
+                tail.next = next;
             }
             cur = next;
         }

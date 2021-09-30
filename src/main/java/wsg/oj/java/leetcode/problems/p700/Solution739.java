@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p700;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p400.Solution496;
 
@@ -21,7 +22,7 @@ public class Solution739 implements Solution {
     public int[] dailyTemperatures(int[] temperatures) {
         int n = temperatures.length;
         int[] res = new int[n];
-        Stack<Integer> indices = new Stack<>();
+        Deque<Integer> indices = new LinkedList<>();
         for (int i = 0; i < n; i++) {
             while (!indices.isEmpty() && temperatures[i] > temperatures[indices.peek()]) {
                 res[indices.peek()] = i - indices.pop();

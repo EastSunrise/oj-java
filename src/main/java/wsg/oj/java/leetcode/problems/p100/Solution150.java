@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p100;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -13,7 +14,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * Reverse Polish Notation</a>
  * @since 2021-07-12
  */
-class Solution150 implements Solution {
+public class Solution150 implements Solution {
 
     /**
      * Uses a stack to store the operands and the results.
@@ -22,7 +23,7 @@ class Solution150 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int evalRPN(String[] tokens) {
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new LinkedList<>();
         for (String token : tokens) {
             char ch = token.charAt(token.length() - 1);
             if ('+' == ch) {

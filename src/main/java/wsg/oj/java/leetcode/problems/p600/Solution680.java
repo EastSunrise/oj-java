@@ -23,6 +23,7 @@ public class Solution680 implements Solution {
             left++;
             right--;
         }
+        // check whether s[left+1,right] is a palindrome
         int i = left + 1, j = right;
         while (i < j && s.charAt(i) == s.charAt(j)) {
             i++;
@@ -33,6 +34,7 @@ public class Solution680 implements Solution {
         }
         i = left;
         j = right - 1;
+        // check whether s[left,right-1] is a palindrome
         while (i < j && s.charAt(i) == s.charAt(j)) {
             i++;
             j--;

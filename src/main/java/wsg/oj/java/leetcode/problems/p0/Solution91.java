@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p600.Solution639;
 
 /**
  * 91. Decode Ways (Medium)
@@ -10,7 +11,7 @@ import wsg.oj.java.leetcode.problems.base.Solution;
  * @see <a href="https://leetcode-cn.com/problems/decode-ways/">Decode Ways</a>
  * @since 2021-07-11
  */
-class Solution91 implements Solution {
+public class Solution91 implements Solution {
 
     /**
      * @see #DYNAMIC_PROGRAMMING
@@ -18,29 +19,21 @@ class Solution91 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public int numDecodings(String s) {
-        char[] chars = s.toCharArray();
-        int n = chars.length;
-        // dp[i]: the number of decodes of s[0,i]
-        int[] dp = new int[n];
-        dp[0] = chars[0] == '0' ? 0 : 1;
-        if (n == 1) {
-            return dp[0];
-        }
-
-        if (chars[1] > '0') {
-            dp[1] += dp[0];
-        }
-        if (chars[0] == '1' || (chars[0] == '2' && chars[1] <= '6')) {
-            dp[1] += 1;
-        }
-        for (int i = 2; i < n; i++) {
-            if (chars[i] > '0') {
+        int n = s.length();
+        // dp[i]: the number of decodes of s[0,i-1]
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        dp[1] = s.charAt(0) == '0' ? 0 : 1;
+        for (int i = 2; i <= n; i++) {
+            char cur = s.charAt(i - 1);
+            if (cur != '0') {
                 dp[i] += dp[i - 1];
             }
-            if (chars[i - 1] == '1' || (chars[i - 1] == '2' && chars[i] <= '6')) {
+            char prev = s.charAt(i - 2);
+            if (prev == '1' || (prev == '2' && cur <= '6')) {
                 dp[i] += dp[i - 2];
             }
         }
-        return dp[n - 1];
+        return dp[n];
     }
 }

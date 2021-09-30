@@ -17,10 +17,11 @@ public class Solution371 implements Solution {
      * Adds each bit without carries first and then add the carry at once.
      */
     public int getSum(int a, int b) {
-        // sum without carries
-        int sum = a ^ b;
-        // all carry
-        int carry = (a & b) << 1;
-        return carry != 0 ? getSum(sum, carry) : sum;
+        while (b != 0) {
+            int tmp = (a & b) << 1;
+            a = a ^ b;
+            b = tmp;
+        }
+        return a;
     }
 }

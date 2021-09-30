@@ -22,15 +22,16 @@ public class Solution125 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public boolean isPalindrome(String s) {
-        char[] chars = s.toCharArray();
-        int left = 0, right = chars.length - 1;
+        int left = 0, right = s.length() - 1;
         while (left < right) {
-            if (!isAlphanumeric(chars[left])) {
+            char lch = s.charAt(left);
+            char rch = s.charAt(right);
+            if (!isAlphanumeric(lch)) {
                 left++;
-            } else if (!isAlphanumeric(chars[right])) {
+            } else if (!isAlphanumeric(rch)) {
                 right--;
             } else {
-                if (Character.toLowerCase(chars[left]) == Character.toLowerCase(chars[right])) {
+                if (Character.toLowerCase(lch) == Character.toLowerCase(rch)) {
                     left++;
                     right--;
                 } else {
