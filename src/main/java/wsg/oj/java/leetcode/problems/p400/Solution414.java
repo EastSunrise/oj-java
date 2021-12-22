@@ -18,28 +18,24 @@ public class Solution414 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int thirdMax(int[] nums) {
-        int len = nums.length;
         int max = nums[0];
-        for (int i = 1; i < len; i++) {
-            max = Math.max(max, nums[i]);
-        }
-        Integer max2 = maxLessThan(nums, max);
-        if (max2 == null) {
-            return max;
-        }
-        Integer max3 = maxLessThan(nums, max2);
-        return max3 == null ? max : max3;
-    }
-
-    private Integer maxLessThan(int[] nums, int n) {
-        Integer max = null;
+        Integer max2 = null, max3 = null;
         for (int num : nums) {
-            if (num < n) {
-                if (max == null || max < num) {
-                    max = num;
+            if (num > max) {
+                max3 = max2;
+                max2 = max;
+                max = num;
+            } else if (num < max) {
+                if (max2 == null) {
+                    max2 = num;
+                } else if (num > max2) {
+                    max3 = max2;
+                    max2 = num;
+                } else if (num < max2 && (max3 == null || num > max3)) {
+                    max3 = num;
                 }
             }
         }
-        return max;
+        return max3 == null ? max : max3;
     }
 }

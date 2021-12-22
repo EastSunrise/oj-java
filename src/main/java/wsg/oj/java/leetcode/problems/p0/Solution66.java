@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p900.Solution989;
 
 /**
  * 66. Plus One (Easy)
@@ -23,13 +24,13 @@ public class Solution66 implements Solution {
      */
     public int[] plusOne(int[] digits) {
         boolean carry = true;
-        for (int i = digits.length - 1; carry && i >= 0; i--) {
-            int d = digits[i] + 1;
-            if (d == 10) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] == 9) {
                 digits[i] = 0;
             } else {
-                digits[i] = d;
+                digits[i]++;
                 carry = false;
+                break;
             }
         }
         if (!carry) {

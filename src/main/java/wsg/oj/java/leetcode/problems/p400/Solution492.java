@@ -13,10 +13,10 @@ import wsg.oj.java.leetcode.problems.base.Solution;
 public class Solution492 implements Solution {
 
     public int[] constructRectangle(int area) {
-        int W = (int) Math.sqrt(area);
-        while (area % W != 0) {
-            W--;
+        int w = (int) Math.sqrt(area);
+        while (area % w != 0) {
+            w--;
         }
-        return new int[]{area / W, W};
+        return new int[]{area / w, w};
     }
 }

@@ -20,13 +20,10 @@ public class Solution453 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int minMoves(int[] nums) {
-        int min = nums[0];
+        int min = nums[0], sum = 0;
         for (int num : nums) {
-            if (num < min) {
-                min = num;
-            }
+            min = Math.min(min, num);
         }
-        int sum = 0;
         for (int num : nums) {
             sum += num - min;
         }

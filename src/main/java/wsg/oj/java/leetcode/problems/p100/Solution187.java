@@ -1,7 +1,9 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -25,25 +27,25 @@ public class Solution187 implements Solution {
         if (n <= 10) {
             return new ArrayList<>();
         }
-        int value = 0;
-        // the value of the first 9 digits
+        int hash = 0;
+        // the hash of the first 9 digits
         for (int i = 0; i < 9; i++) {
-            value = (value << 2) + charToQuaternary(s.charAt(i));
+            hash = (hash << 2) + charToQuaternary(s.charAt(i));
         }
-        // counts[i]: the count of i which is the quaternary value of the 10-letter-long sequence
-        int[] counts = new int[1 << 20];
+        Map<Integer, Integer> counts = new HashMap<>();
         List<String> res = new ArrayList<>();
         // (1<<(c*2-1))-1
         int mask = 0x3ffff;
         for (int i = 9; i < n; i++) {
-            value = (value << 2) + charToQuaternary(s.charAt(i));
-            counts[value]++;
-            if (counts[value] == 2) {
+            hash = (hash << 2) + charToQuaternary(s.charAt(i));
+            int count = counts.getOrDefault(hash, 0);
+            if (count == 1) {
                 // more than one
                 res.add(s.substring(i - 9, i + 1));
             }
+            counts.put(hash, count + 1);
             // remove the first digit
-            value = value & mask;
+            hash = hash & mask;
         }
         return res;
     }

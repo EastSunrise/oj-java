@@ -14,6 +14,8 @@ import wsg.oj.java.leetcode.problems.base.TreeNode;
  */
 public class Solution538 implements Solution {
 
+    int sum;
+
     /**
      * Traverses in RVL order.
      *
@@ -21,23 +23,18 @@ public class Solution538 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_H
      */
     public TreeNode convertBST(TreeNode root) {
-        traverse(root, 0);
+        traverse(root);
         return root;
     }
 
-    private int traverse(TreeNode node, int sum) {
+    private void traverse(TreeNode node) {
         if (node == null) {
-            return 0;
+            return;
         }
-        if (node.right != null) {
-            sum = traverse(node.right, sum);
-        }
+        traverse(node.right);
         sum += node.val;
         node.val = sum;
-        if (node.left != null) {
-            sum = traverse(node.left, sum);
-        }
-        return sum;
+        traverse(node.left);
     }
 
     /**

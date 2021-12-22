@@ -26,6 +26,7 @@ public class Solution215 implements Solution {
     /**
      * Quick selection.
      *
+     * @param k 0-indexed
      * @see wsg.oj.java.Complexity#TIME_N
      * @see wsg.oj.java.Complexity#SPACE_LOG_N
      */

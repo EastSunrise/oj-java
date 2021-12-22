@@ -22,12 +22,12 @@ public class Solution220 implements Solution {
      * @complexity S=O(m)
      */
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-        int len = nums.length;
+        int n = nums.length;
         TreeSet<Long> window = new TreeSet<>();
         // slide the window
         // j: the right (inclusive) index of the window
-        for (int j = 0; j < len; j++) {
-            Long ceiling = window.ceiling(((long) nums[j] - t));
+        for (int j = 0; j < n; j++) {
+            Long ceiling = window.ceiling((long) nums[j] - t);
             if (ceiling != null && ceiling - nums[j] <= t) {
                 return true;
             }

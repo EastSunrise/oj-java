@@ -4,6 +4,7 @@ import wsg.oj.java.datastructure.TrieNode;
 import wsg.oj.java.datastructure.TrieOpt;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p200.Solution208;
+import wsg.oj.java.leetcode.problems.p700.Solution720;
 
 /**
  * 676. Implement Magic Dictionary (MEDIUM)

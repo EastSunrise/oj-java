@@ -1,6 +1,7 @@
 package wsg.oj.java.leetcode.problems.p0;
 
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution367;
 
 /**
  * 69. Sqrt(x) (Easy)
@@ -24,7 +25,7 @@ public class Solution69 implements Solution {
         }
         int left = 1, right = x;
         while (left < right) {
-            right = left + ((right - left) >> 1);
+            right = left + (right - left >> 1);
             left = x / right;
         }
         return right;

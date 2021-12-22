@@ -36,10 +36,10 @@ public class Solution229 implements Solution {
         // candidates of majorities
         Map<Integer, Integer> majorities = new HashMap<>(m - 1);
         for (int num : nums) {
-            int count = majorities.getOrDefault(num, 0);
-            if (count > 0) {
-                // count++
-                majorities.put(num, count + 1);
+            Integer cnt = majorities.get(num);
+            if (cnt != null) {
+                // count++ if exists
+                majorities.put(num, cnt + 1);
                 continue;
             }
             if (majorities.size() < m - 1) {

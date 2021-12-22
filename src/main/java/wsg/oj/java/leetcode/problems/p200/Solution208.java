@@ -6,6 +6,7 @@ import wsg.oj.java.datastructure.TrieNode;
 import wsg.oj.java.datastructure.TrieOpt;
 import wsg.oj.java.leetcode.problems.base.Solution;
 import wsg.oj.java.leetcode.problems.p600.Solution648;
+import wsg.oj.java.leetcode.problems.p600.Solution676;
 
 /**
  * 208. Implement Trie (Prefix Tree) (Medium)
@@ -22,7 +23,7 @@ import wsg.oj.java.leetcode.problems.p600.Solution648;
  */
 public class Solution208 implements Solution {
 
-    public static class Trie {
+    static class Trie {
 
         private final int size = 26;
         private final Function<Character, Integer> keyExtractor = ch -> ch - 'a';

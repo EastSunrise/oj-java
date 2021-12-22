@@ -3,6 +3,7 @@ package wsg.oj.java.leetcode.problems.p400;
 import java.util.Map;
 import java.util.TreeMap;
 import wsg.oj.java.leetcode.problems.base.Solution;
+import wsg.oj.java.leetcode.problems.p300.Solution352;
 
 /**
  * 436. Find Right Interval (Medium)

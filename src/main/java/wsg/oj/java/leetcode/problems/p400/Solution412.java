@@ -22,18 +22,14 @@ public class Solution412 implements Solution {
         List<String> res = new ArrayList<>(n);
         for (int i = 1; i <= n; i++) {
             boolean mod3 = i % 3 == 0, mod5 = i % 5 == 0;
-            if (mod3) {
-                if (mod5) {
-                    res.add("FizzBuzz");
-                } else {
-                    res.add("Fizz");
-                }
+            if (mod3 && mod5) {
+                res.add("FizzBuzz");
+            } else if (mod3) {
+                res.add("Fizz");
+            } else if (mod5) {
+                res.add("Buzz");
             } else {
-                if (mod5) {
-                    res.add("Buzz");
-                } else {
-                    res.add(String.valueOf(i));
-                }
+                res.add(String.valueOf(i));
             }
         }
         return res;

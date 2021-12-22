@@ -39,7 +39,7 @@ public class Solution347 extends Solution215 {
         for (int value : counts.values()) {
             values[i++] = value;
         }
-        int kthLargest = findKthLargest(values, k);
+        int kthLargest = findKthLargest(values, k - 1);
         int[] res = new int[k];
         i = 0;
         for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {

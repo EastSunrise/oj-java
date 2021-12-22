@@ -1,7 +1,9 @@
 package wsg.oj.java.leetcode.problems.p100;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import wsg.oj.java.leetcode.problems.base.Solution;
 
 /**
@@ -19,43 +21,54 @@ class Solution166 implements Solution {
      * if a remainder occurs before.
      */
     public String fractionToDecimal(int numerator, int denominator) {
+        if (numerator == 0) {
+            return "0";
+        }
         StringBuilder res = new StringBuilder();
-        if (numerator != 0 && (numerator < 0 ^ denominator < 0)) {
-            // negative
+        if (numerator < 0 ^ denominator < 0) {
+            // negative result
             res.append("-");
         }
         // the integer part
-        res.append(Math.abs(((long) numerator / denominator)));
+        res.append(Math.abs((long) numerator / denominator));
         long remainder = numerator % denominator;
         if (remainder == 0) {
+            // no fraction part
             return res.toString();
         }
-        res.append(".");
+
         // appeared remainders
         List<Long> remainders = new ArrayList<>();
+        Set<Long> occurrences = new HashSet<>();
         // fraction part
         List<Integer> fractions = new ArrayList<>();
-        do {
-            int idx = remainders.lastIndexOf(remainder);
-            if (idx >= 0) {
-                // recurring decimal
-                for (int i = 0; i < idx; i++) {
-                    res.append(fractions.get(i));
-                }
-                res.append("(");
-                for (int i = idx; i < remainders.size(); i++) {
-                    res.append(fractions.get(i));
-                }
-                return res.append(")").toString();
-            }
+        while (remainder != 0 && !occurrences.contains(remainder)) {
+            occurrences.add(remainder);
             remainders.add(remainder);
             remainder *= 10;
             fractions.add((int) Math.abs(remainder / denominator));
-            remainder = remainder % denominator;
-        } while (remainder != 0);
-        for (int fraction : fractions) {
-            res.append(fraction);
+            remainder %= denominator;
         }
-        return res.toString();
+
+        res.append(".");
+        if (remainder == 0) {
+            // no repeating part
+            for (int fraction : fractions) {
+                res.append(fraction);
+            }
+            return res.toString();
+        }
+
+        // recurring decimal
+        // the start of the repeating part
+        int idx = remainders.lastIndexOf(remainder);
+        for (int i = 0; i < idx; i++) {
+            res.append(fractions.get(i));
+        }
+        res.append("(");
+        for (int i = idx; i < remainders.size(); i++) {
+            res.append(fractions.get(i));
+        }
+        return res.append(")").toString();
     }
 }

@@ -39,8 +39,7 @@ public class Solution124 implements Solution {
         int left = Math.max(0, maxPathSumFrom(node.left, max));
         int right = Math.max(0, maxPathSumFrom(node.right, max));
         // the max sum of paths that contain current node
-        int sum = node.val + left + right;
-        max[0] = Math.max(max[0], sum);
+        max[0] = Math.max(max[0], node.val + left + right);
         return node.val + Math.max(left, right);
     }
 }

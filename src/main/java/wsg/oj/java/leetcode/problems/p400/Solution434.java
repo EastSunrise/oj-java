@@ -17,17 +17,15 @@ public class Solution434 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_CONSTANT
      */
     public int countSegments(String s) {
-        char[] chars = s.toCharArray();
-        int i = chars.length - 1;
-        int count = 0;
+        int i = s.length() - 1, cnt = 0;
         while (i >= 0) {
-            if (chars[i--] != ' ') {
-                count++;
-                while (i >= 0 && chars[i] != ' ') {
+            if (s.charAt(i--) != ' ') {
+                cnt++;
+                while (i >= 0 && s.charAt(i) != ' ') {
                     i--;
                 }
             }
         }
-        return count;
+        return cnt;
     }
 }

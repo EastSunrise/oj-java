@@ -17,14 +17,13 @@ public class Solution482 implements Solution {
      * @see wsg.oj.java.Complexity#SPACE_N
      */
     public String licenseKeyFormatting(String s, int k) {
-        int dashes = 0;
+        int len = 0;
         for (char ch : s.toCharArray()) {
-            if (ch == '-') {
-                dashes++;
+            if (ch != '-') {
+                len++;
             }
         }
-        int keysCount = s.length() - dashes;
-        char[] res = new char[keysCount + (keysCount - 1) / k];
+        char[] res = new char[len + (len - 1) / k];
         int i = s.length() - 1, c = 0, j = res.length - 1;
         while (i >= 0) {
             char ch = s.charAt(i--);
