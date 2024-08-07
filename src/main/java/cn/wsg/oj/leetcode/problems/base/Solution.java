@@ -1,15 +1,18 @@
 package cn.wsg.oj.leetcode.problems.base;
 
-import cn.wsg.oj.Complexity;
+import cn.kingen.oj.leetcode.util.ArrayUtils;
+
 import java.util.List;
-import java.util.function.BiFunction;
 
 /**
  * Supplies some common tags.
+ * <p>
+ * Use {@link cn.kingen.oj.leetcode.util} instead.
  *
  * @author Kingen
  */
-public interface Solution extends Complexity {
+@Deprecated(forRemoval = true)
+public interface Solution {
 
     int MOD = 1_000_000_007;
 
@@ -26,51 +29,9 @@ public interface Solution extends Complexity {
     String INORDER = "Inorder";
     String POSTORDER = "Postorder";
     String LEVEL_ORDER = "Level Order";
-    String HASHTABLE = "Hash Table";
-
-    default int hash(int[] counts) {
-        int hash = 0;
-        for (int i = 0; i < 26; i++) {
-            hash += i * counts[i];
-        }
-        return hash;
-    }
-
-    default int binarySearch(int[] nums, int target) {
-        int low = 0, high = nums.length - 1;
-        while (low <= high) {
-            int mid = (low + high) >>> 1;
-            int midVal = nums[mid];
-            if (midVal < target) {
-                low = mid + 1;
-            } else if (midVal > target) {
-                high = mid - 1;
-            } else {
-                return mid;
-            }
-        }
-        return -(low + 1);
-    }
-
-    default int pow(long base, int q, int mod) {
-        long res = 1;
-        while (q > 0) {
-            if (q % 2 != 0) {
-                res = (res * base) % mod;
-            }
-            q >>= 1;
-            base = base * base % mod;
-        }
-        return (int) res;
-    }
-
-    default int gcd(int a, int b) {
-        return a == 0 ? b : gcd(b % a, a);
-    }
 
     /**
-     * Accumulates a sorted array with duplicate numbers to an array only with distinct numbers
-     * in-place.
+     * Accumulates a sorted array with duplicate numbers to an array only with distinct numbers in-place.
      *
      * @param counts record count of each distinct number
      * @return the length of distinct numbers
@@ -94,64 +55,14 @@ public interface Solution extends Complexity {
         return len;
     }
 
-    /**
-     * @see #DYNAMIC_PROGRAMMING
-     * @see Complexity#TIME_MN
-     * @see Complexity#SPACE_MN
-     */
-    default int dp(int[][] matrix, int dp00, BiFunction<Integer, Integer, Integer> side,
-        TriFunction<Integer, Integer, Integer, Integer> inside) {
-        int m = matrix.length, n = matrix[0].length;
-        int[][] dp = new int[m][n];
-        dp[0][0] = dp00;
-        for (int i = 1; i < m; i++) {
-            dp[i][0] = side.apply(dp[i - 1][0], matrix[i][0]);
-        }
-        for (int j = 1; j < n; j++) {
-            dp[0][j] = side.apply(dp[0][j - 1], matrix[0][j]);
-        }
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                dp[i][j] = inside.apply(dp[i - 1][j], dp[i][j - 1], matrix[i][j]);
-            }
-        }
-        return dp[m - 1][n - 1];
-    }
-
-    /**
-     * Checks whether a character is a letter or a digit.
-     */
-    default boolean isAlphanumeric(char ch) {
-        return isDigit(ch) || isLetter(ch);
-    }
-
-    /**
-     * Checks whether the character is a digit.
-     */
-    default boolean isDigit(char ch) {
-        return '0' <= ch && ch <= '9';
-    }
-
-    /**
-     * Checks whether the character is a letter.
-     */
-    default boolean isLetter(char ch) {
-        return ('A' <= ch && ch <= 'Z') || ('a' <= ch && ch <= 'z');
-    }
-
     default int calculate(char operator, int operand1, int operand2) {
-        switch (operator) {
-            case '+':
-                return operand1 + operand2;
-            case '*':
-                return operand1 * operand2;
-            case '-':
-                return operand1 - operand2;
-            case '/':
-                return operand1 / operand2;
-            default:
-                throw new IllegalArgumentException("Unknown operator: " + operator);
-        }
+        return switch (operator) {
+            case '+' -> operand1 + operand2;
+            case '*' -> operand1 * operand2;
+            case '-' -> operand1 - operand2;
+            case '/' -> operand1 / operand2;
+            default -> throw new IllegalArgumentException("Unknown operator: " + operator);
+        };
     }
 
     default boolean isSquare(int num) {
@@ -165,7 +76,7 @@ public interface Solution extends Complexity {
         }
         // 0 < shift < 5
         char[] digits = new char[]{
-            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
         };
         StringBuilder builder = new StringBuilder(32 / shift);
         while (num != 0) {
@@ -185,13 +96,6 @@ public interface Solution extends Complexity {
     }
 
     default void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
-    }
-
-    interface TriFunction<T, U, V, R> {
-
-        R apply(T t, U u, V v);
+        ArrayUtils.swap(nums, i, j);
     }
 }

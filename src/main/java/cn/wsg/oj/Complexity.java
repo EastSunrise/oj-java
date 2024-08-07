@@ -2,9 +2,12 @@ package cn.wsg.oj;
 
 /**
  * Constants of complexity.
+ * <p>
+ * Use {@link cn.kingen.oj.leetcode.support.Complexity} instead.
  *
  * @author Kingen
  */
+@Deprecated(forRemoval = true)
 public interface Complexity {
 
     /**
@@ -30,13 +33,9 @@ public interface Complexity {
     String SPACE_LOG_N = "S=O(log{n})";
     String SPACE_H = "S=O(h)";
     String SPACE_N = "S=O(n)";
-    String SPACE_M = "S=O(m)";
     String SPACE_M_PLUS_N = "S=O(m+n)";
-    String SPACE_N_LOG_N = "S=O(n*log{n})";
-    String SPACE_M_LOG_N = "S=O(m*log{n})";
     String SPACE_NN = "S=O(n^2)";
     String SPACE_MN = "S=O(mn)";
-    String SPACE_NNN = "S=O(n^3)";
     String SPACE_2_N = "S=O(2^n)";
     String SPACE_NF = "S=O(n!)";
 }
