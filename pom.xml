@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.kingen</groupId>
-    <artifactId>oj-java</artifactId>
+    <artifactId>oj</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
