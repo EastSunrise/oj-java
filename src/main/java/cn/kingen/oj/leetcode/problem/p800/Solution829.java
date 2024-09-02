@@ -18,16 +18,13 @@ public class Solution829 {
 
     @Complexity(time = "O(sqrt{n})", space = "O(1)")
     public int consecutiveNumbersSum(int n) {
-        // n=(m+1)+(m+2)+...+(m+k)=km+sum{1,...,k}, m>=0, k>=1
-        int ans = 0, sum = 0;
-        for (int k = 1; ; k++) {
-            sum += k;
-            if (sum > n) {
-                break;
-            }
-            if ((n - sum) % k == 0) {
+        // n=(m+0)+(m+1)+...+(m+k-1)=km+sum{0,...,k-1}, m>=0, k>=0
+        int ans = 0;
+        for (int k = 1; n > 0; k++) {
+            if (n % k == 0) {
                 ans++;
             }
+            n -= k;
         }
         return ans;
     }
