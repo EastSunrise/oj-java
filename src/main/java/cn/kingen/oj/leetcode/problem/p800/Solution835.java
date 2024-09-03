@@ -1,19 +1,22 @@
-package cn.wsg.oj.leetcode.problems.p800;
+package cn.kingen.oj.leetcode.problem.p800;
 
-import cn.wsg.oj.leetcode.problems.base.Solution;
+import cn.kingen.oj.leetcode.support.Complexity;
+import cn.kingen.oj.leetcode.support.Difficulty;
+import cn.kingen.oj.leetcode.support.Question;
+import cn.kingen.oj.leetcode.support.Tag;
 
 /**
- * 835. Image Overlap (MEDIUM)
+ * <a href="https://leetcode.cn/problems/image-overlap/">835. Image Overlap</a>
  *
  * @author Kingen
- * @see <a href="https://leetcode-cn.com/problems/image-overlap/">Image Overlap</a>
  */
-public class Solution835 implements Solution {
+@Question(
+        tags = {Tag.ARRAY, Tag.MATRIX},
+        difficulty = Difficulty.MEDIUM
+)
+public class Solution835 {
 
-    /**
-     * @complexity T=O(n^4)
-     * @complexity S=O(1)
-     */
+    @Complexity(time = "O(n^4)", space = "O(1)")
     public int largestOverlap(int[][] img1, int[][] img2) {
         int n = img1.length;
         int max = 0;
@@ -24,7 +27,7 @@ public class Solution835 implements Solution {
                 int overlap = 0;
                 for (int r = rs; r < re; r++) {
                     for (int c = cs; c < ce; c++) {
-                        if (img1[r][c] == 1 && img2[r - dr][c - dc] == 1) {
+                        if ((img1[r][c] & img2[r - dr][c - dc]) == 1) {
                             overlap++;
                         }
                     }
