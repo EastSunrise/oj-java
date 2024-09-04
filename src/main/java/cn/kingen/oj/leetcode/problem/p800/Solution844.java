@@ -21,18 +21,18 @@ public class Solution844 {
     @Complexity(time = "O(m+n)", space = "O(1)")
     public boolean backspaceCompare(String s, String t) {
         int i = s.length() - 1, j = t.length() - 1;
-        int hs = 0, ht = 0;
+        int hs = 0, ht = 0; // count of right '#'s in s and t respectively
         while (i >= 0 && j >= 0) {
             if (s.charAt(i) == '#') {
                 hs++;
                 i--;
-            } else if (hs > 0) {
+            } else if (hs > 0) { // s[i] will be deleted
                 hs--;
                 i--;
             } else if (t.charAt(j) == '#') {
                 ht++;
                 j--;
-            } else if (ht > 0) {
+            } else if (ht > 0) { // t[j] will be deleted
                 ht--;
                 j--;
             } else if (s.charAt(i) == t.charAt(j)) {
