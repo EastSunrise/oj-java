@@ -5,6 +5,9 @@ import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <a href="https://leetcode.cn/problems/find-the-maximum-length-of-a-good-subsequence-i/">3176. Find the Maximum Length of a Good Subsequence I</a>
  *
@@ -18,31 +21,22 @@ import cn.kingen.oj.leetcode.support.Tag;
 )
 public class Solution3176 {
 
-    @Complexity(time = "O(n^2*k)", space = "O(n*k)")
+    @Complexity(time = "O(n*k)", space = "O(n*k)")
     public int maximumLength(int[] nums, int k) {
-        int n = nums.length;
-        // dp[t]: good subsequence ending with nums[i] with exactly t differences
-        int[][] dp = new int[n][k + 1];
-        dp[0][0] = 1;
-        int ans = 1;
-        for (int i = 1; i < n; i++) {
-            int num = nums[i];
-            dp[i][0] = 1; // only nums[i]
-            for (int j = 0; j < i; j++) { // ...,num[j],num[i]
-                if (num == nums[j]) {
-                    for (int t = 0; t <= k; t++) {
-                        dp[i][t] = Math.max(dp[i][t], dp[j][t] + 1);
-                    }
-                } else {
-                    for (int t = 1; t <= k; t++) {
-                        dp[i][t] = Math.max(dp[i][t], dp[j][t - 1] + 1);
-                    }
+        // dp{x:a[t]} is the max length of good subsequences with at most t differences ending with x
+        Map<Integer, int[]> dp = new HashMap<>();
+        // dpTotal[t]: max length of good subsequences with at most t differences ending with any number
+        int[] dpTotal = new int[k + 1];
+        for (int x : nums) {
+            int[] fp = dp.computeIfAbsent(x, key -> new int[k + 1]);
+            for (int t = k; t >= 0; t--) {
+                fp[t]++; // ...,x,x
+                if (t > 0) { // ...,y,x
+                    fp[t] = Math.max(fp[t], dpTotal[t - 1] + 1);
                 }
-            }
-            for (int t = 0; t <= k; t++) {
-                ans = Math.max(ans, dp[i][t]);
+                dpTotal[t] = Math.max(dpTotal[t], fp[t]); // update dpTotal
             }
         }
-        return ans;
+        return dpTotal[k];
     }
 }
