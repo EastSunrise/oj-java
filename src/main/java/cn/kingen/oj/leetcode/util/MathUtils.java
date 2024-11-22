@@ -1,5 +1,7 @@
 package cn.kingen.oj.leetcode.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
@@ -10,31 +12,31 @@ public final class MathUtils {
 
     public static final int MOD = 1_000_000_007;
     public static final Map<Character, Integer> ROMAN_SYMBOLS = Map.of(
-            'I', 1,
-            'V', 5,
-            'X', 10,
-            'L', 50,
-            'C', 100,
-            'D', 500,
-            'M', 1000
+        'I', 1,
+        'V', 5,
+        'X', 10,
+        'L', 50,
+        'C', 100,
+        'D', 500,
+        'M', 1000
     );
     public static final String[] NUMBER_WORDS = {
-            "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
-            "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
-            "Nineteen"
+        "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+        "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
+        "Nineteen"
     };
     public static final String[] TEN_NUMBER_WORDS = {
-            "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+        "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
     };
     public static char[] ROMAN_NUMBERS = new char[]{'I', 'V', 'X', 'L', 'C', 'D', 'M'};
     public static Map<Character, Integer> PRIORITIES = Map.of(
-            '(', 1,
-            ')', 1,
-            '*', 3,
-            '/', 3,
-            '%', 3,
-            '+', 4,
-            '-', 4
+        '(', 1,
+        ')', 1,
+        '*', 3,
+        '/', 3,
+        '%', 3,
+        '+', 4,
+        '-', 4
     );
 
     /**
@@ -123,5 +125,29 @@ public final class MathUtils {
             q >>= 1;
         }
         return ans;
+    }
+
+    /**
+     * Get all primes less than or equal to n by the sieve of Euler.
+     */
+    public static List<Integer> getPrimes(int n) {
+        List<Integer> primes = new ArrayList<>();
+        boolean[] notPrimes = new boolean[n + 1];
+        for (int i = 2; i <= n; i++) {
+            if (!notPrimes[i]) {
+                primes.add(i);
+            }
+            for (int p : primes) {
+                int x = p * i; // next sieved number
+                if (x > n) {
+                    break;
+                }
+                notPrimes[x] = true;
+                if (i % p == 0) {
+                    break;
+                }
+            }
+        }
+        return primes;
     }
 }
