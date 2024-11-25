@@ -1,25 +1,27 @@
-package cn.wsg.oj.leetcode.problems.p600;
+package cn.kingen.oj.leetcode.problem.p600;
 
-import cn.wsg.oj.Complexity;
-import cn.wsg.oj.leetcode.problems.base.Solution;
+import cn.kingen.oj.leetcode.support.Complexity;
+import cn.kingen.oj.leetcode.support.Difficulty;
+import cn.kingen.oj.leetcode.support.Question;
+import cn.kingen.oj.leetcode.support.Tag;
 
 /**
- * 661. Image Smoother (EASY)
+ * <a href="https://leetcode.cn/problems/image-smoother/">661. Image Smoother</a>
  *
  * @author Kingen
- * @see <a href="https://leetcode-cn.com/problems/image-smoother/">Image Smoother</a>
  */
-public class Solution661 implements Solution {
+@Question(
+        tags = {Tag.ARRAY, Tag.MATRIX},
+        difficulty = Difficulty.EASY
+)
+public class Solution661 {
 
-    /**
-     * @see Complexity#TIME_MN
-     * @see Complexity#SPACE_MN
-     */
+    @Complexity(time = "O(mn)", space = "O(mn)")
     public int[][] imageSmoother(int[][] img) {
         int m = img.length, n = img[0].length;
-        int[][] res = new int[m][n];
         int[] di = {-1, -1, -1, 0, 0, 1, 1, 1};
         int[] dj = {-1, 0, 1, -1, 1, -1, 0, 1};
+        int[][] ans = new int[m][n];
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 int sum = img[i][j], count = 1;
@@ -30,9 +32,9 @@ public class Solution661 implements Solution {
                         count++;
                     }
                 }
-                res[i][j] = sum / count;
+                ans[i][j] = sum / count;
             }
         }
-        return res;
+        return ans;
     }
 }
