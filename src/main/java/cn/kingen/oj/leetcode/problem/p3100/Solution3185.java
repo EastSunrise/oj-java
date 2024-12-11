@@ -18,7 +18,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 )
 public class Solution3185 {
 
-    @Complexity(time = "O(Cn)", space = "O(C)", note = "C is 24")
+    @Complexity(time = "O(n)", space = "O(C)", note = "C is 24")
     public long countCompleteDayPairs(int[] hours) {
         long ans = 0;
         int[] count = new int[24];
