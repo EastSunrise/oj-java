@@ -26,4 +26,14 @@ public @interface Question {
      * @return the difficulty of the question.
      */
     Difficulty difficulty();
+
+    /**
+     * @return the date as daily question
+     */
+    String daily() default "";
+
+    /**
+     * @return associated weekly contest number
+     */
+    int contest() default 0;
 }

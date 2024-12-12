@@ -12,7 +12,8 @@ import cn.kingen.oj.leetcode.support.Tag;
  */
 @Question(
         tags = {Tag.STRING, Tag.SLIDING_WINDOW},
-        difficulty = Difficulty.EASY
+        difficulty = Difficulty.EASY,
+        contest = 411
 )
 public class Solution3258 {
 

@@ -12,7 +12,8 @@ import cn.kingen.oj.leetcode.support.Tag;
  */
 @Question(
         tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING},
-        difficulty = Difficulty.MEDIUM
+        difficulty = Difficulty.MEDIUM,
+        contest = 411
 )
 public class Solution3259 {
 
