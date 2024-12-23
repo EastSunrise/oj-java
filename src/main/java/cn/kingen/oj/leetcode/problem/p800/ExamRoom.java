@@ -4,7 +4,6 @@ import cn.kingen.oj.leetcode.support.Complexity;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
-
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.TreeSet;
@@ -16,8 +15,9 @@ import java.util.TreeSet;
  * @see cn.kingen.oj.leetcode.problem.p800.Solution849
  */
 @Question(
-        tags = {Tag.DESIGN, Tag.ORDERED_SET, Tag.HEAP_PRIORITY_QUEUE},
-        difficulty = Difficulty.MEDIUM
+    tags = {Tag.DESIGN, Tag.ORDERED_SET, Tag.HEAP_PRIORITY_QUEUE},
+    difficulty = Difficulty.MEDIUM,
+    daily = "2024-12-23"
 )
 public class ExamRoom {
 
@@ -34,7 +34,8 @@ public class ExamRoom {
     public ExamRoom(int n) {
         this.n = n;
         this.seats = new TreeSet<>();
-        this.queue = new PriorityQueue<>(Comparator.<int[], Integer>comparing(a -> (a[1] - a[0]) / 2).reversed().thenComparing(a -> a[0]));
+        this.queue = new PriorityQueue<>(
+            Comparator.<int[], Integer>comparing(a -> (a[1] - a[0]) / 2).reversed().thenComparing(a -> a[0]));
     }
 
     @Complexity(time = "O(log(m))", space = "#", note = "m is the number of occupied seats")
