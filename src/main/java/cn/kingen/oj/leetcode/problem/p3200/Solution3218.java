@@ -19,7 +19,7 @@ import java.util.Arrays;
 )
 public class Solution3218 {
 
-    @Complexity(time = "O(m*log(m)+n*log(n))", space = "O(m*n)")
+    @Complexity(time = "O(m*log(m)+n*log(n)+m*n)", space = "O(m*n)")
     public int minimumCost(int m, int n, int[] horizontalCut, int[] verticalCut) {
         Arrays.sort(horizontalCut);
         Arrays.sort(verticalCut);
