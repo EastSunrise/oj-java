@@ -15,4 +15,6 @@ import java.lang.annotation.Target;
 public @interface SameAs {
 
     Class<?> value();
+
+    String note() default "";
 }
