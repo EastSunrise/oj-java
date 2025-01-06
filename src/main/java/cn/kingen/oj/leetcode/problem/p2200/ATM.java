@@ -14,7 +14,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
     tags = {Tag.GREEDY, Tag.DESIGN, Tag.ARRAY},
     difficulty = Difficulty.MEDIUM,
-    daily = "2024-01-05"
+        daily = "2025-01-05"
 )
 public class ATM {
 

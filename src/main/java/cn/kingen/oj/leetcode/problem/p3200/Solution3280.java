@@ -12,7 +12,8 @@ import cn.kingen.oj.leetcode.support.Question;
  * @see cn.kingen.oj.leetcode.problem.p1000.Solution1017
  */
 @Question(
-        difficulty = Difficulty.EASY
+        difficulty = Difficulty.EASY,
+        daily = "2025-01-01"
 )
 public class Solution3280 {
 
