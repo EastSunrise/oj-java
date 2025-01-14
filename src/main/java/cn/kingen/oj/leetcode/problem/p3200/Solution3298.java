@@ -15,7 +15,8 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
         tags = {Tag.HASH_TABLE, Tag.STRING, Tag.SLIDING_WINDOW},
         difficulty = Difficulty.HARD,
-        daily = "2025-01-10"
+        daily = "2025-01-10",
+        contest = 416
 )
 public class Solution3298 {
 
