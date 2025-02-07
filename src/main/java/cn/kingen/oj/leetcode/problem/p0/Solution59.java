@@ -14,8 +14,9 @@ import cn.kingen.oj.leetcode.support.Tag;
  * @see cn.kingen.oj.leetcode.problem.p2300.Solution2326
  */
 @Question(
-        tags = {Tag.ARRAY, Tag.MATRIX, Tag.SIMULATION},
-        difficulty = Difficulty.MEDIUM
+    tags = {Tag.ARRAY, Tag.MATRIX, Tag.SIMULATION},
+    difficulty = Difficulty.MEDIUM,
+    daily = "2025-02-07"
 )
 public class Solution59 {
 
