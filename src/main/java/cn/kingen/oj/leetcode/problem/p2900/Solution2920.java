@@ -18,7 +18,7 @@ import java.util.List;
 @Question(
         tags = {Tag.BIT_MANIPULATION, Tag.TREE, Tag.DEPTH_FIRST_SEARCH, Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING},
         difficulty = Difficulty.HARD,
-        daily = "2025-01-23"
+        date = "2025-01-23"
 )
 public class Solution2920 {
 

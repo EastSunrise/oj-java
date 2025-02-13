@@ -17,7 +17,7 @@ import java.util.PriorityQueue;
 @Question(
         tags = {Tag.ARRAY, Tag.SIMULATION, Tag.HEAP_PRIORITY_QUEUE},
         difficulty = Difficulty.MEDIUM,
-        daily = "2025-01-15"
+        date = "2025-01-15"
 )
 public class Solution3066 {
 

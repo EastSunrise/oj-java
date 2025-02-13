@@ -16,7 +16,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
     tags = {Tag.GRAPH, Tag.TOPOLOGICAL_SORT, Tag.MEMOIZATION, Tag.ARRAY, Tag.MATH, Tag.DYNAMIC_PROGRAMMING, Tag.GAME_THEORY, Tag.MATRIX},
     difficulty = Difficulty.HARD,
-    daily = "2025-02-11"
+        date = "2025-02-11"
 )
 public class Solution1728 {
 

@@ -1,8 +1,10 @@
 package cn.kingen.oj.leetcode.problem.p0;
 
+import cn.kingen.oj.leetcode.support.Complexity;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,10 +18,11 @@ import java.util.List;
 @Question(
     tags = {Tag.ARRAY, Tag.BACKTRACKING},
     difficulty = Difficulty.MEDIUM,
-    daily = "2025-01-26"
+        date = "2025-01-26"
 )
 public class Solution40 {
 
+    @Complexity(time = "O(2^n*n)", space = "O(n)")
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
 

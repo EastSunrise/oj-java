@@ -4,6 +4,7 @@ import cn.kingen.oj.leetcode.support.Complexity;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,9 +16,9 @@ import java.util.Map;
  * @see cn.kingen.oj.leetcode.problem.p200.Solution220
  */
 @Question(
-    tags = {Tag.ARRAY, Tag.HASH_TABLE, Tag.SLIDING_WINDOW},
-    difficulty = Difficulty.EASY,
-    daily = "2025-01-29"
+        tags = {Tag.ARRAY, Tag.HASH_TABLE, Tag.SLIDING_WINDOW},
+        difficulty = Difficulty.EASY,
+        date = "2025-01-29"
 )
 public class Solution219 {
 

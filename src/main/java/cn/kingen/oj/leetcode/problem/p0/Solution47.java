@@ -4,6 +4,7 @@ import cn.kingen.oj.leetcode.support.Complexity;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +21,7 @@ import java.util.List;
 @Question(tags =
     {Tag.ARRAY, Tag.BACKTRACKING, Tag.SORTING},
     difficulty = Difficulty.MEDIUM,
-    daily = "2025-02-06"
+        date = "2025-02-06"
 )
 public class Solution47 {
 

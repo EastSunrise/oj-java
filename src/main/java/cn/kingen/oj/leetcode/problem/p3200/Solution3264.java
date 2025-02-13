@@ -14,7 +14,7 @@ import java.util.PriorityQueue;
  */
 @Question(
         difficulty = Difficulty.EASY,
-        daily = "2024-12-13"
+        date = "2024-12-13"
 )
 public class Solution3264 {
 

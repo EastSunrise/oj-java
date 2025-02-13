@@ -16,15 +16,11 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
         tags = {Tag.DESIGN, Tag.SEGMENT_TREE, Tag.ARRAY, Tag.BINARY_SEARCH, Tag.ORDERED_SET},
         difficulty = Difficulty.MEDIUM,
-        daily = "2025-01-02"
+        date = "2025-01-02"
 )
 public class MyCalendar {
 
     @SameAs(value = MyCalendarTwo.class, note = "MAX is 1")
     public MyCalendar() {
-    }
-
-    public boolean book(int startTime, int endTime) {
-        return false;
     }
 }

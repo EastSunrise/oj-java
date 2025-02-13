@@ -13,7 +13,7 @@ import cn.kingen.oj.leetcode.support.Question;
  */
 @Question(
         difficulty = Difficulty.EASY,
-        daily = "2025-01-01"
+        date = "2025-01-01"
 )
 public class Solution3280 {
 

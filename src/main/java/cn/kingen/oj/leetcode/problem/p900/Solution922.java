@@ -17,7 +17,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
     tags = {Tag.ARRAY, Tag.TWO_POINTERS, Tag.SORTING},
     difficulty = Difficulty.EASY,
-    daily = "2025-02-04"
+        date = "2025-02-04"
 )
 public class Solution922 {
 

@@ -1,14 +1,15 @@
 package cn.kingen.oj.leetcode.problem.p3200;
 
-import static cn.kingen.oj.leetcode.util.MathUtils.MOD;
-import static cn.kingen.oj.leetcode.util.MathUtils.fastPow;
-
 import cn.kingen.oj.leetcode.support.Complexity;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
+
+import static cn.kingen.oj.leetcode.util.MathUtils.MOD;
+import static cn.kingen.oj.leetcode.util.MathUtils.fastPow;
 
 /**
  * <a href="https://leetcode.cn/problems/final-array-state-after-k-multiplication-operations-ii/">3266. Final Array State After K Multiplication Operations II</a>
@@ -19,7 +20,7 @@ import java.util.PriorityQueue;
 @Question(
     tags = {Tag.ARRAY, Tag.SIMULATION, Tag.HEAP_PRIORITY_QUEUE},
     difficulty = Difficulty.HARD,
-    daily = "2024-12-14"
+        date = "2024-12-14"
 )
 public class Solution3266 {
 

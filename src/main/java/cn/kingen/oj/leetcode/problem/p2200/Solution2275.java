@@ -15,7 +15,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
     tags = {Tag.BIT_MANIPULATION, Tag.ARRAY, Tag.HASH_TABLE, Tag.COUNTING},
     difficulty = Difficulty.MEDIUM,
-    daily = "2025-01-12"
+        date = "2025-01-12"
 )
 public class Solution2275 {
 

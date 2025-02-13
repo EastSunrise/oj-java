@@ -18,7 +18,7 @@ import java.util.Queue;
 @Question(
         tags = {Tag.GRAPH, Tag.TOPOLOGICAL_SORT, Tag.MEMOIZATION, Tag.MATH, Tag.DYNAMIC_PROGRAMMING, Tag.GAME_THEORY},
         difficulty = Difficulty.HARD,
-        daily = "2025-02-10"
+        date = "2025-02-10"
 )
 public class Solution913 {
 

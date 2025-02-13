@@ -12,9 +12,9 @@ import cn.kingen.oj.leetcode.support.Tag;
  * @see cn.kingen.oj.leetcode.problem.p100.Solution179
  */
 @Question(
-    tags = {Tag.MATH},
-    difficulty = Difficulty.EASY,
-    daily = "2025-01-11"
+        tags = {Tag.MATH},
+        difficulty = Difficulty.EASY,
+        date = "2025-01-11"
 )
 public class Solution3270 {
 

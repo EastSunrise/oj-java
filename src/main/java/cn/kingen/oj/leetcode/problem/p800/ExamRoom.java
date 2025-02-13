@@ -4,6 +4,7 @@ import cn.kingen.oj.leetcode.support.Complexity;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.TreeSet;
@@ -17,7 +18,7 @@ import java.util.TreeSet;
 @Question(
     tags = {Tag.DESIGN, Tag.ORDERED_SET, Tag.HEAP_PRIORITY_QUEUE},
     difficulty = Difficulty.MEDIUM,
-    daily = "2024-12-23"
+        date = "2024-12-23"
 )
 public class ExamRoom {
 

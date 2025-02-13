@@ -20,7 +20,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
         tags = {Tag.ARRAY, Tag.PREFIX_SUM},
         difficulty = Difficulty.MEDIUM,
-        daily = "2025-01-13"
+        date = "2025-01-13"
 )
 public class Solution2270 {
 

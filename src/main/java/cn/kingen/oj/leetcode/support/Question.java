@@ -30,7 +30,7 @@ public @interface Question {
     /**
      * @return the date as daily question
      */
-    String daily() default "";
+    String date() default "";
 
     /**
      * @return associated weekly contest number

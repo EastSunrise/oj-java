@@ -16,7 +16,7 @@ import java.util.List;
 @Question(
         tags = {Tag.ARRAY, Tag.HASH_TABLE},
         difficulty = Difficulty.MEDIUM,
-        daily = "2024-12-27"
+        date = "2024-12-27"
 )
 public class Solution3159 {
 

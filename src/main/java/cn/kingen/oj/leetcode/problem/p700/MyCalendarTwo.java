@@ -18,7 +18,7 @@ import java.util.TreeMap;
 @Question(
         tags = {Tag.DESIGN, Tag.SEGMENT_TREE, Tag.ARRAY, Tag.BINARY_SEARCH, Tag.ORDERED_SET, Tag.PREFIX_SUM},
         difficulty = Difficulty.MEDIUM,
-        daily = "2025-01-03"
+        date = "2025-01-03"
 )
 public class MyCalendarTwo {
 

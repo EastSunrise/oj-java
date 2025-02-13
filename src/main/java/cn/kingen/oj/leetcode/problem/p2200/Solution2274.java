@@ -17,7 +17,7 @@ import java.util.Arrays;
 @Question(
         tags = {Tag.ARRAY, Tag.SORTING},
         difficulty = Difficulty.MEDIUM,
-        daily = "2025-01-06"
+        date = "2025-01-06"
 )
 public class Solution2274 {
 

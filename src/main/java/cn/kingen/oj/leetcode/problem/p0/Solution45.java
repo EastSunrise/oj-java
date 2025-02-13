@@ -20,7 +20,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
     tags = {Tag.GREEDY, Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING},
     difficulty = Difficulty.MEDIUM,
-    daily = "2025-01-27"
+        date = "2025-01-27"
 )
 public class Solution45 {
 

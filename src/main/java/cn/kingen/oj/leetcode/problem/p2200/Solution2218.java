@@ -18,7 +18,7 @@ import java.util.List;
 @Question(
         tags = {Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING, Tag.PREFIX_SUM},
         difficulty = Difficulty.HARD,
-        daily = "2025-01-21"
+        date = "2025-01-21"
 )
 public class Solution2218 {
 

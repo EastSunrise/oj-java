@@ -4,6 +4,7 @@ import cn.kingen.oj.leetcode.support.Complexity;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
 @Question(
     tags = {Tag.BIT_MANIPULATION, Tag.ARRAY, Tag.BACKTRACKING},
     difficulty = Difficulty.MEDIUM,
-    daily = "2025-02-05"
+        date = "2025-02-05"
 )
 public class Solution90 {
 

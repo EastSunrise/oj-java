@@ -3,6 +3,7 @@ package cn.kingen.oj.leetcode.problem.p700;
 import cn.kingen.oj.leetcode.support.Difficulty;
 import cn.kingen.oj.leetcode.support.Question;
 import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
@@ -18,7 +19,7 @@ import java.util.TreeMap;
 @Question(
     tags = {Tag.DESIGN, Tag.SEGMENT_TREE, Tag.BINARY_SEARCH, Tag.ORDERED_SET, Tag.PREFIX_SUM},
     difficulty = Difficulty.HARD,
-    daily = "2025-01-04"
+        date = "2025-01-04"
 )
 public class MyCalendarThree {
 

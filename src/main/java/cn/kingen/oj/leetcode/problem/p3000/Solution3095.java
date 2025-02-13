@@ -16,7 +16,7 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
         tags = {Tag.BIT_MANIPULATION, Tag.ARRAY, Tag.SLIDING_WINDOW},
         difficulty = Difficulty.EASY,
-        daily = "2025-01-16"
+        date = "2025-01-16"
 )
 public class Solution3095 {
 
