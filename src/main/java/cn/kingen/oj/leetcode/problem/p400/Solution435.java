@@ -1,27 +1,27 @@
-package cn.wsg.oj.leetcode.problems.p400;
+package cn.kingen.oj.leetcode.problem.p400;
 
-import cn.wsg.oj.Complexity;
-import cn.wsg.oj.leetcode.problems.base.Solution;
+import cn.kingen.oj.leetcode.support.Complexity;
+import cn.kingen.oj.leetcode.support.Difficulty;
+import cn.kingen.oj.leetcode.support.Question;
+import cn.kingen.oj.leetcode.support.Tag;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * 435. Non-overlapping Intervals (Medium)
+ * <a href="https://leetcode.cn/problems/non-overlapping-intervals/">435. Non-overlapping Intervals</a>
  *
  * @author Kingen
- * @see Solution452
- * @see <a href="https://leetcode-cn.com/problems/non-overlapping-intervals/">Non-overlapping
- * Intervals</a>
- */
-class Solution435 implements Solution {
+ * @see cn.kingen.oj.leetcode.problem.p400.Solution452
 
-    /**
-     * Sorts the array, traverses from left to right and removes the interval with larger right
-     * bound if overlapping.
-     *
-     * @see Complexity#TIME_N_LOG_N
-     * @see Complexity#SPACE_CONSTANT
-     */
+ */
+@Question(
+        tags = {Tag.GREEDY, Tag.ARRAY, Tag.DYNAMIC_PROGRAMMING, Tag.SORTING},
+        difficulty = Difficulty.MEDIUM
+)
+public class Solution435 {
+
+    @Complexity(time = "O(n*log(n))", space = "O(1)")
     public int eraseOverlapIntervals(int[][] intervals) {
         int n = intervals.length;
         Arrays.sort(intervals, Comparator.comparing(arr -> arr[0]));
