@@ -14,8 +14,9 @@ import cn.kingen.oj.leetcode.support.Tag;
  * @see cn.kingen.oj.leetcode.problem.p700.MyLinkedList
  */
 @Question(
-        tags = {Tag.DESIGN, Tag.LINKED_LIST},
-        difficulty = Difficulty.HARD
+    tags = {Tag.DESIGN, Tag.LINKED_LIST},
+    difficulty = Difficulty.HARD,
+    date = "2025-02-23"
 )
 public class Skiplist {
 
