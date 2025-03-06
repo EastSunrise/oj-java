@@ -26,57 +26,39 @@ public class Solution5 {
      */
     @Complexity(time = "O(n)", space = "O(n)")
     public String longestPalindrome(String s) {
-        int n = s.length();
-        int length = n * 2 + 1;
-        char[] arr = new char[length];
+        int n = s.length(), len = n << 1 | 1;
+        char[] arr = new char[len];
         for (int i = 0; i < n; i++) {
-            arr[2 * i] = '#';
-            arr[2 * i + 1] = s.charAt(i);
+            arr[i << 1] = '#';
+            arr[i << 1 | 1] = s.charAt(i);
         }
-        arr[length - 1] = '#';
-        // the radius of the lps that centres around arr[i]
-        int[] radii = new int[length];
-        // rmlps: the rightmost of all calculated lps
-        // rm: the rightmost index of rmlps, rmc: the center index of rmlps
-        int rm = -1, rmc = -1;
-        for (int i = 1; i < length; i++) {
-            int left = i - 1, right = i + 1;
-            if (i < rm) {
-                // If arr[i] is within rmlps, find the symmetry point arr[j] against arr[i] in rmlps.
-                int j = rmc * 2 - i;
-                // If the lps around arr[j] is totally within rmlps, the lps around arr[i] is
-                // totally within rmlp too. So radii[i] = radii[j].
-                if (radii[j] < rm - i) {
-                    radii[i] = radii[j];
-                    continue;
-                }
-                // If beyond, the part arr[2i-rm, rm] is palindrome by symmetry. So the part is
-                // unnecessary to be calculated repeatedly.
-                left = 2 * i - rm - 1;
-                right = rm + 1;
+        arr[len - 1] = '#';
+
+        int[] radii = new int[len];
+        int left = -1, right = -1; // the bound of the rightmost calculated palindrome
+        int mxi = 0;
+        for (int i = 1; i < len; i++) {
+            if (i <= right) { // use the mirror which has been calculated
+                radii[i] = Math.min(radii[left + right - i], right - i);
             }
-            // Then calculate the part beyond rmlps and update rmlps
-            while (left >= 0 && right < length && arr[left] == arr[right]) {
-                left--;
-                right++;
+
+            int low = i - radii[i] - 1, high = i + radii[i] + 1;
+            while (low >= 0 && high < len && arr[low] == arr[high]) { // expand
+                low--;
+                high++;
             }
-            radii[i] = right - i - 1;
-            if (right > rm) {
-                rm = right - 1;
-                rmc = i;
+
+            radii[i] = high - i - 1;
+            if (high - 1 > right) {
+                left = low + 1;
+                right = high - 1;
+            }
+
+            if (radii[i] > radii[mxi]) {
+                mxi = i;
             }
         }
-        int max = 0, idx = 0;
-        for (int i = 0; i < length; i++) {
-            if (radii[i] > max) {
-                max = radii[i];
-                idx = i;
-            }
-        }
-        StringBuilder builder = new StringBuilder(max);
-        for (int i = idx - max + 1, j = idx + max; i < j; i += 2) {
-            builder.append(arr[i]);
-        }
-        return builder.toString();
+
+        return s.substring((mxi - radii[mxi]) >> 1, (mxi + radii[mxi]) >> 1);
     }
 }
