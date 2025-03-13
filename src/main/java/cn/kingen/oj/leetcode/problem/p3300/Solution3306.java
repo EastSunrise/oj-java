@@ -16,7 +16,8 @@ import cn.kingen.oj.leetcode.support.Tag;
 @Question(
         tags = {Tag.HASH_TABLE, Tag.STRING, Tag.SLIDING_WINDOW},
         difficulty = Difficulty.MEDIUM,
-        contest = 417
+        contest = 417,
+        date = "2025-03-13"
 )
 public class Solution3306 {
 
