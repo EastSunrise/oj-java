@@ -18,19 +18,17 @@ import cn.kingen.oj.leetcode.support.Tag;
 )
 public class Solution2680 {
 
-    @Complexity(time = "O(n)", space = "O(n)")
+    @Complexity(time = "O(n)", space = "O(1)")
     public long maximumOr(int[] nums, int k) {
-        int n = nums.length;
-        int[] prefixOr = new int[n + 1];
-        for (int i = 0; i < n; i++) {
-            prefixOr[i + 1] = prefixOr[i] | nums[i];
+        int or = 0, multiOr = 0;
+        for (int num : nums) {
+            multiOr |= or & num;
+            or |= num;
         }
 
         long ans = 0;
-        int suffixOr = 0;
-        for (int i = n - 1; i >= 0; i--) {
-            ans = Math.max(ans, prefixOr[i] | ((long) nums[i] << k) | suffixOr);
-            suffixOr |= nums[i];
+        for (int num : nums) {
+            ans = Math.max(ans, or ^ num | multiOr | (long) num << k);
         }
         return ans;
     }
