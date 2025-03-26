@@ -36,4 +36,9 @@ public @interface Question {
      * @return associated weekly contest number
      */
     int contest() default 0;
+
+    /**
+     * @return associated biweekly contest number
+     */
+    int contest2() default 0;
 }
